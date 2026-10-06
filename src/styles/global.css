@@ -342,16 +342,12 @@ details p {
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
-  margin-bottom: 0.8rem;
 }
 .footer-row nav {
   gap: 0.3rem 1rem;
 }
 .footer-row a {
   padding-block: 0.3rem;
-}
-.footer-small {
-  font-size: 0.73rem;
 }
 .skip-link {
   position: absolute;

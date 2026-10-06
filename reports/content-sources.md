@@ -36,4 +36,4 @@ Each research image has alt text and an expandable prose description. Full study
 ## Design and policy references
 
 - [Mengjun Wang’s academic homepage](https://wangmmstar.github.io/): visual reference for the introduction, news, and thumbnail-plus-publication layout. No personal content, photograph, source code, or assets were copied from the reference.
-- [UF accessibility resources](https://accessibility.ufl.edu/): institutional accessibility context. The interface follows the user's explicit no-UF-logo and neutral-color requirements; affiliations and non-official-site disclaimers are retained. This review does not claim institutional branding approval.
+- [UF accessibility resources](https://accessibility.ufl.edu/): institutional accessibility context. The interface follows the user's explicit no-UF-logo and neutral-color requirements; affiliations are retained. The owner subsequently requested removal of the footer disclaimer, update date, and layout credit. This review does not claim institutional branding approval.

@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-06T16:05:09.841Z",
+  "date": "2026-10-06T16:34:12.530Z",
   "base": "http://127.0.0.1:4480",
   "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
   "scans": [
@@ -78,21 +78,21 @@
       "mode": "desktop",
       "violations": [],
       "incomplete": [],
-      "passes": 14
+      "passes": 13
     },
     {
       "route": "/404.html",
       "mode": "mobile",
       "violations": [],
       "incomplete": [],
-      "passes": 14
+      "passes": 13
     },
     {
       "route": "/404.html",
       "mode": "text-spacing",
       "violations": [],
       "incomplete": [],
-      "passes": 14
+      "passes": 13
     }
   ],
   "checks": [
@@ -108,11 +108,6 @@
     },
     {
       "name": "/: loaded images with alt text",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/: UF disclaimer",
       "pass": true,
       "detail": ""
     },
@@ -232,11 +227,6 @@
       "detail": ""
     },
     {
-      "name": "/cv/: UF disclaimer",
-      "pass": true,
-      "detail": ""
-    },
-    {
       "name": "/cv/: restrictive CSP",
       "pass": true,
       "detail": ""
@@ -307,11 +297,6 @@
       "detail": ""
     },
     {
-      "name": "/accessibility/: UF disclaimer",
-      "pass": true,
-      "detail": ""
-    },
-    {
       "name": "/accessibility/: restrictive CSP",
       "pass": true,
       "detail": ""
@@ -368,11 +353,6 @@
     },
     {
       "name": "/404.html: loaded images with alt text",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/404.html: UF disclaimer",
       "pass": true,
       "detail": ""
     },

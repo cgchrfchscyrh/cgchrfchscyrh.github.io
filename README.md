@@ -46,6 +46,6 @@ The GitHub Actions workflow builds, checks dependencies, runs axe checks, and de
 
 ## Accessibility and privacy
 
-No UF logo, UF blue/orange theme, tracking scripts, remote fonts, autoplay, or external media embeds are used. Every page includes the personal-site disclaimer. The website does not publish the private address or telephone number from the original CV. It provides an HTML CV rather than redistributing an unreviewed document.
+No UF logo, UF blue/orange theme, tracking scripts, remote fonts, autoplay, or external media embeds are used. At the owner's request, the footer contains only copyright and navigation links. The website does not publish the private address or telephone number from the original CV. It provides an HTML CV rather than redistributing an unreviewed document.
 
 The axe script checks all four routes, desktop and 320 CSS-pixel layouts, text spacing, keyboard skip links, expandable descriptions, headings, and media. Automated checks do not establish complete WCAG or ADA compliance. See `reports/manual-review.md` and `reports/content-sources.md` for the scope and remaining limitations.

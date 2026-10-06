@@ -1,5 +1,13 @@
 # Pre-publication review
 
+## Footer revision requested by the owner
+
+On 6 October 2026, the owner explicitly requested removal of both footer paragraphs: the personal-site/UF disclaimer and the update-date/layout-credit line. The shared layout now retains only copyright, Accessibility, and Back to top on all four routes. The affiliation text in page content is unchanged. This request supersedes the earlier footer-disclaimer requirement in the initial release review below; the personal site's AGENTS.md and obsolete disclaimer assertion were updated accordingly.
+
+The revised production build and lint passed. The pre-publication axe run passed all 13 scans and 62 remaining auxiliary checks with zero violations or failures. All four built HTML footers were inspected to confirm the requested text is absent.
+
+## Initial release review
+
 Reviewed on 6 October 2026 against the final local production build.
 
 ## Completed checks

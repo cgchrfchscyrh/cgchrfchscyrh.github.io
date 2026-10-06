@@ -63,11 +63,6 @@ try {
             img.complete &&
             img.naturalWidth > 0,
         ),
-        footer: document
-          .querySelector("footer")
-          ?.textContent.includes(
-            "do not represent the official position of the University of Florida",
-          ),
         csp: Boolean(
           document.querySelector('meta[http-equiv="Content-Security-Policy"]'),
         ),
@@ -85,7 +80,6 @@ try {
       structure.h1 === 1 && structure.headings,
     );
     check(`${route}: loaded images with alt text`, structure.images);
-    check(`${route}: UF disclaimer`, structure.footer);
     check(`${route}: restrictive CSP`, structure.csp);
     check(`${route}: no embedded or automatic media`, structure.noMedia);
     check(`${route}: declared English language`, structure.lang === "en");
