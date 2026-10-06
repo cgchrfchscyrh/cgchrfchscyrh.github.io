@@ -1,0 +1,29 @@
+---
+import { education } from "../data/profile";
+interface Props {
+  detailed?: boolean;
+}
+const { detailed = false } = Astro.props;
+---
+
+<ol class="education-list">
+  {
+    education.map((item) => (
+      <li>
+        <div class="education-heading">
+          <>
+            <h3>{item.school}</h3>
+            <span class="dates">{item.dates}</span>
+          </>
+        </div>
+        <p>{item.degree}</p>
+        {detailed && (
+          <>
+            <p class="muted">{item.location}</p>
+            <p class="coursework">Selected coursework: {item.courses}.</p>
+          </>
+        )}
+      </li>
+    ))
+  }
+</ol>

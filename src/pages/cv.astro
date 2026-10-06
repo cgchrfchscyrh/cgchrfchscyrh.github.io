@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Education from "../components/Education.astro";
+import Authors from "../components/Authors.astro";
+import { asset, profile, research, otherPapers } from "../data/profile";
+---
+
+<Layout title="Academic CV | Songyang Liu">
+  <div class="page-intro">
+    <p class="eyebrow">Academic CV · Web edition</p><h1>Songyang Liu</h1><p>
+      Ph.D. student, Civil and Coastal Engineering<br />University of Florida ·
+      Gainesville, Florida
+    </p><p>
+      <a href={`mailto:${profile.email}`}>{profile.email}</a> · <a
+        href={profile.github}>GitHub</a
+      > · <a href={profile.linkedin}>LinkedIn</a>
+    </p><p class="muted">
+      A concise web edition of my academic background, research, and experience.
+      Updated {profile.updated}.
+    </p>
+  </div>
+  <section class="section" aria-labelledby="interests">
+    <h2 id="interests">Research interests</h2><p>
+      Robot learning; reinforcement and imitation learning; humanoid whole-body
+      locomotion and manipulation; autonomous transportation; human–robot
+      interaction.
+    </p>
+  </section>
+  <section class="section" aria-labelledby="education">
+    <h2 id="education">Education</h2><Education detailed />
+  </section>
+  <section class="section" aria-labelledby="papers">
+    <h2 id="papers">Selected publications & preprints</h2><ol
+      class="publication-list"
+    >
+      {
+        [...research, ...otherPapers].map((paper) => (
+          <li>
+            <h3>
+              <a href={"paper" in paper ? paper.paper : paper.url}>
+                {paper.title}
+              </a>
+            </h3>
+            <Authors names={paper.authors} />
+            <p class="venue">{paper.venue}</p>
+            {"description" in paper && <p>{paper.description}</p>}
+            {"project" in paper && (
+              <a
+                href={paper.project}
+                aria-label={`Project page: ${paper.title}`}
+              >
+                Project page
+              </a>
+            )}
+            {"award" in paper && paper.award && (
+              <p class="award">{paper.award}</p>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+  <section class="section" aria-labelledby="experience">
+    <h2 id="experience">Experience</h2><h3>Technical lead · EchoSpark</h3><p
+      class="muted"
+    >
+      NSF I-Corps · October 2024
+    </p><p>
+      Worked on a wearable device and AI-powered application concept for K–12
+      students, combining voice-based interaction with personalized academic
+      support, study planning, and mental wellness monitoring.
+    </p>
+  </section>
+  <section class="section" aria-labelledby="honors">
+    <h2 id="honors">Honors</h2><ul class="recognition-list">
+      <li>Best Paper Award, IEEE ICIR 2025.</li><li>
+        <a href="https://ascelibrary.org/jccee5/best_paper_awards"
+          >Best Paper Award, Journal of Computing in Civil Engineering</a
+        >, for the 2024 paper on teleoperation-driven imitation learning.
+      </li><li>Academic Year Progress Award, May 2018.</li>
+    </ul>
+  </section>
+  <p class="section"><a href={asset("")}>← Return to homepage</a></p>
+</Layout>

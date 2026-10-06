@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { profile } from "../data/profile";
+---
+
+<Layout title="Accessibility | Songyang Liu">
+  <div class="page-intro">
+    <p class="eyebrow">Using this website</p><h1>Accessibility</h1><p>
+      This personal website is designed with WCAG 2.1 Level A and AA
+      requirements in mind. Accessibility is an ongoing effort; automated checks
+      do not constitute a complete compliance certification.
+    </p>
+  </div>
+  <section class="section" aria-labelledby="navigation">
+    <h2 id="navigation">Navigation & reading</h2><p>
+      A skip link leads to the main content. Links and figure descriptions can
+      be operated with a keyboard, and focused controls have a visible outline.
+      The layout adapts to narrow screens and increased text spacing. Research
+      images include alternative text and expandable descriptions.
+    </p><p>
+      The academic CV is provided as an HTML web edition. No video, animation,
+      third-party embed, or automatically playing media is included on this
+      website.
+    </p>
+  </section>
+  <section class="section" aria-labelledby="attachments">
+    <h2 id="attachments">Research papers & external websites</h2><p>
+      Paper links open publisher or repository pages that may offer HTML and PDF
+      versions. Project pages are linked separately. Their content and
+      accessibility can differ from this website. PDF tagging, reading order,
+      equations, and screen-reader compatibility have not been fully verified
+      for external publications.
+    </p>
+  </section>
+  <section class="section" aria-labelledby="checks">
+    <h2 id="checks">Testing</h2><p>
+      Release checks include axe scans targeting WCAG 2.1 A and AA, keyboard
+      navigation, 320 CSS-pixel reflow, increased text spacing, image
+      descriptions, and heading structure. Manual review remains necessary,
+      including evaluation with assistive technology.
+    </p>
+  </section>
+  <section class="section" aria-labelledby="help">
+    <h2 id="help">Report an accessibility issue</h2><p>
+      If a page, figure, or linked publication is difficult to access, email <a
+        href={`mailto:${profile.email}`}>{profile.email}</a
+      > with the page address and the information you need. Please include your browser
+      or assistive technology if relevant.
+    </p>
+  </section>
+</Layout>

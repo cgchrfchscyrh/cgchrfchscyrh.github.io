@@ -1,0 +1,220 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Authors from "../components/Authors.astro";
+import Education from "../components/Education.astro";
+import { asset, profile, research, otherPapers } from "../data/profile";
+---
+
+<Layout>
+  <section class="about" id="about" aria-labelledby="name">
+    <div class="intro">
+      <p class="eyebrow">
+        Robotics · Reinforcement learning · Autonomous systems
+      </p>
+      <h1 id="name">Songyang Liu</h1>
+      <p class="position">Ph.D. student · University of Florida</p>
+      <p>
+        I am a Ph.D. student in the Department of Civil and Coastal Engineering
+        at the University of Florida. My research focuses on learning-based
+        control for robots and autonomous systems.
+      </p>
+      <p>
+        I study how robots can learn from human demonstrations and improve
+        through interaction. My recent work spans <strong
+          >humanoid locomotion and manipulation</strong
+        > for construction, alongside multi-agent traffic control and eVTOL motion
+        planning.
+      </p>
+      <nav class="profile-links" aria-label="Professional profiles and contact">
+        <a href={`mailto:${profile.email}`}>Email</a>
+        <a href={asset("cv/")}>CV <span class="link-note">(HTML)</span></a>
+        <a href={profile.github}>GitHub</a>
+        <a href={profile.linkedin}>LinkedIn</a>
+      </nav>
+    </div>
+    <figure class="intro-figure">
+      <img
+        src={asset("images/hoist.jpg")}
+        width="384"
+        height="432"
+        alt="A humanoid robot reaches toward a cable-suspended block above a marked platform in the HOIST laboratory experiment."
+        fetchpriority="high"
+      />
+      <figcaption>
+        From our <a href="https://cgchrfchscyrh.github.io/humanoid-hoisting/"
+          >HOIST experiments</a
+        >: learning to guide suspended loads.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="news" aria-labelledby="news-heading">
+    <h2 id="news-heading">News</h2>
+    <ul class="news-list">
+      <li>
+        <time datetime="2026-09">Sept. 2026</time><span
+          >Our preprint on <a href="#roofing"
+            >slope-adaptive humanoid locomotion for roofing</a
+          > is available.</span>
+      </li>
+      <li>
+        <time datetime="2026-05">May 2026</time><span
+          ><a href="#hoist">HOIST</a>, our work on humanoid manipulation of
+          suspended loads, is available as a preprint.</span>
+      </li>
+      <li>
+        <time datetime="2025-11">Nov. 2025</time><span
+          >Our paper on <a href="#surgery"
+            >AI-assisted visual feedback for laparoscopic training</a
+          > received the <strong>Best Paper Award at ICIR 2025</strong>.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="research" aria-labelledby="research-heading">
+    <div class="section-heading">
+      <h2 id="research-heading">Selected research</h2><span class="section-note"
+        >2025–2026</span>
+    </div>
+    <p class="section-intro">
+      Learning to move, manipulate, and coordinate in the physical world. Each
+      project page includes methods, results, and visual explanations.
+    </p>
+    <div class="research-list">
+      {
+        research.map((paper) => (
+          <article
+            class="research-item"
+            id={paper.id}
+            aria-labelledby={`${paper.id}-title`}
+          >
+            <figure class="paper-figure">
+              <img
+                src={asset(`images/${paper.image}`)}
+                width={paper.width}
+                height={paper.height}
+                alt={paper.alt}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <details>
+                  <>
+                    <summary>
+                      Figure description
+                      <span class="sr-only">: {paper.label}</span>
+                    </summary>
+                    <p>{paper.detail}</p>
+                  </>
+                </details>
+              </figcaption>
+            </figure>
+            <div class="paper-body">
+              <p class="paper-topic">{paper.label}</p>
+              <h3 id={`${paper.id}-title`}>
+                <a href={paper.project}>{paper.title}</a>
+              </h3>
+              <Authors names={paper.authors} />
+              <p class="venue">{paper.venue}</p>
+              <p class="paper-description">{paper.description}</p>
+              <nav class="paper-links" aria-label={`${paper.label} resources`}>
+                <a
+                  href={paper.project}
+                  aria-label={`Project page: ${paper.title}`}
+                >
+                  Project page <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href={paper.paper}
+                  aria-label={`${paper.venue.includes("preprint") ? "Preprint" : "Paper"}: ${paper.title}`}
+                >
+                  {paper.venue.includes("preprint") ? "Preprint" : "Paper"}
+                </a>
+                {paper.code && (
+                  <a
+                    href={paper.code}
+                    aria-label={`Research code: ${paper.title}`}
+                  >
+                    Code
+                  </a>
+                )}
+              </nav>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class="section"
+    id="publications"
+    aria-labelledby="publications-heading"
+  >
+    <h2 id="publications-heading">More publications</h2>
+    <ol class="publication-list">
+      {
+        otherPapers.map((paper, index) => (
+          <li id={index === 0 ? "surgery" : undefined}>
+            <h3>
+              <a href={paper.url}>{paper.title}</a>
+            </h3>
+            <Authors names={paper.authors} />
+            <p class="venue">{paper.venue}</p>
+            {paper.award && <p class="award">{paper.award}</p>}
+            <a
+              class="publication-link"
+              href={paper.url}
+              aria-label={`${paper.link}: ${paper.title}`}
+            >
+              {paper.link} <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section" id="education" aria-labelledby="education-heading">
+    <h2 id="education-heading">Education</h2><Education />
+  </section>
+
+  <section
+    class="section"
+    id="recognition"
+    aria-labelledby="recognition-heading"
+  >
+    <h2 id="recognition-heading">Recognition & experience</h2>
+    <ul class="recognition-list">
+      <li>
+        <strong>Best Paper Award, ICIR 2025.</strong> AI-assisted visual feedback
+        for laparoscopic training.
+      </li>
+      <li>
+        <strong
+          ><a href="https://ascelibrary.org/jccee5/best_paper_awards"
+            >Best Paper Award, Journal of Computing in Civil Engineering.</a
+          ></strong
+        > Teleoperation-driven and keyframe-based imitation learning for construction
+        robots.
+      </li>
+      <li>
+        <strong>Technical lead, EchoSpark · NSF I-Corps, 2024.</strong> A wearable
+        device and AI-powered application concept for personalized student support.
+      </li>
+    </ul>
+  </section>
+
+  <section
+    class="contact section"
+    id="contact"
+    aria-labelledby="contact-heading"
+  >
+    <h2 id="contact-heading">Get in touch</h2>
+    <p>
+      For questions about my research, please email <a
+        href={`mailto:${profile.email}`}>{profile.email}</a
+      >.
+    </p>
+  </section>
+</Layout>

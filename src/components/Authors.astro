@@ -1,0 +1,17 @@
+---
+interface Props {
+  names: string[];
+}
+const { names } = Astro.props;
+---
+
+<p class="authors">
+  {
+    names.map((name, index) => (
+      <>
+        {index > 0 && ", "}
+        {name === "Songyang Liu" ? <strong>{name}</strong> : name}
+      </>
+    ))
+  }
+</p>

@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-06T16:07:32.398050+00:00",
+  "resources": [
+    {
+      "url": "http://127.0.0.1:4480/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4480/cv/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4480/accessibility/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4480/404.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4480/images/hoist-comparison.png",
+      "status": 200,
+      "bytes": 1201210,
+      "type": "image/png"
+    },
+    {
+      "url": "http://127.0.0.1:4480/favicon.svg",
+      "status": 200,
+      "bytes": 232,
+      "type": "image/svg+xml"
+    },
+    {
+      "url": "http://127.0.0.1:4480/images/evtol.png",
+      "status": 200,
+      "bytes": 406029,
+      "type": "image/png"
+    },
+    {
+      "url": "http://127.0.0.1:4480/images/roofing.png",
+      "status": 200,
+      "bytes": 2699391,
+      "type": "image/png"
+    },
+    {
+      "url": "http://127.0.0.1:4480/images/mixed-traffic.png",
+      "status": 200,
+      "bytes": 700100,
+      "type": "image/png"
+    },
+    {
+      "url": "http://127.0.0.1:4480/images/hoist.jpg",
+      "status": 200,
+      "bytes": 38247,
+      "type": "image/jpeg"
+    },
+    {
+      "url": "http://127.0.0.1:4480/_astro/Layout.wnN3DMse.css",
+      "status": 200,
+      "bytes": 8104,
+      "type": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:4480/_astro/ibm-plex-sans-greek-wght-normal.CmyJS8uq.woff2",
+      "status": 200,
+      "bytes": 19500,
+      "type": "font/woff2"
+    },
+    {
+      "url": "http://127.0.0.1:4480/_astro/ibm-plex-sans-cyrillic-wght-normal.BAAhND-U.woff2",
+      "status": 200,
+      "bytes": 29512,
+      "type": "font/woff2"
+    },
+    {
+      "url": "http://127.0.0.1:4480/_astro/ibm-plex-sans-latin-ext-wght-normal.CIII54If.woff2",
+      "status": 200,
+      "bytes": 30964,
+      "type": "font/woff2"
+    },
+    {
+      "url": "http://127.0.0.1:4480/_astro/ibm-plex-sans-vietnamese-wght-normal.Dg1JeJN0.woff2",
+      "status": 200,
+      "bytes": 13160,
+      "type": "font/woff2"
+    },
+    {
+      "url": "http://127.0.0.1:4480/_astro/ibm-plex-sans-latin-wght-normal.IvpUvPa2.woff2",
+      "status": 200,
+      "bytes": 45712,
+      "type": "font/woff2"
+    },
+    {
+      "url": "http://127.0.0.1:4480/_astro/ibm-plex-sans-cyrillic-ext-wght-normal.d45eAU9y.woff2",
+      "status": 200,
+      "bytes": 23568,
+      "type": "font/woff2"
+    }
+  ],
+  "totalLinksInspected": 83,
+  "internalLinkErrors": []
+}
