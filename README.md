@@ -1,5 +1,7 @@
 # Songyang Liu personal homepage
 
+Live website: [cgchrfchscyrh.github.io](https://cgchrfchscyrh.github.io/). Source: [GitHub repository](https://github.com/cgchrfchscyrh/cgchrfchscyrh.github.io).
+
 A personal academic website inspired by the structure of [Mengjun Wang’s homepage](https://wangmmstar.github.io/). Built independently with Astro, semantic HTML, local fonts, and a neutral charcoal and off-white palette.
 
 ## Content
@@ -40,7 +42,7 @@ Run `npx playwright install chromium` if the test browser is unavailable. Altern
 
 ## Hosting
 
-The GitHub Actions workflow builds, checks dependencies, runs axe checks, and deploys the static site to GitHub Pages. The intended personal-site repository is `cgchrfchscyrh/cgchrfchscyrh.github.io`; it uses the domain root. The Pages source must be set to GitHub Actions. A repository subpath is also supported through `BASE_PATH` and the Pages workflow outputs.
+The GitHub Actions workflow builds, checks dependencies, runs axe checks, and deploys the static site to GitHub Pages. The personal-site repository is `cgchrfchscyrh/cgchrfchscyrh.github.io`; it uses the domain root. The Pages source must be set to GitHub Actions. A repository subpath is also supported through `BASE_PATH` and the Pages workflow outputs.
 
 ## Accessibility and privacy
 

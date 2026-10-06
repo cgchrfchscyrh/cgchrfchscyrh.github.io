@@ -1,0 +1,437 @@
+{
+  "date": "2026-10-06T16:26:00.444Z",
+  "base": "https://cgchrfchscyrh.github.io",
+  "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
+  "scans": [
+    {
+      "route": "/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [],
+      "passes": 21
+    },
+    {
+      "route": "/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [],
+      "passes": 21
+    },
+    {
+      "route": "/",
+      "mode": "text-spacing",
+      "violations": [],
+      "incomplete": [],
+      "passes": 21
+    },
+    {
+      "route": "/",
+      "mode": "mobile-spacing-expanded-figures",
+      "violations": [],
+      "incomplete": [],
+      "passes": 21
+    },
+    {
+      "route": "/cv/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [],
+      "passes": 17
+    },
+    {
+      "route": "/cv/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [],
+      "passes": 17
+    },
+    {
+      "route": "/cv/",
+      "mode": "text-spacing",
+      "violations": [],
+      "incomplete": [],
+      "passes": 17
+    },
+    {
+      "route": "/accessibility/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [],
+      "passes": 15
+    },
+    {
+      "route": "/accessibility/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [],
+      "passes": 15
+    },
+    {
+      "route": "/accessibility/",
+      "mode": "text-spacing",
+      "violations": [],
+      "incomplete": [],
+      "passes": 15
+    },
+    {
+      "route": "/404.html",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [],
+      "passes": 14
+    },
+    {
+      "route": "/404.html",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [],
+      "passes": 14
+    },
+    {
+      "route": "/404.html",
+      "mode": "text-spacing",
+      "violations": [],
+      "incomplete": [],
+      "passes": 14
+    }
+  ],
+  "checks": [
+    {
+      "name": "/: page response",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "/: one h1 and sequential headings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: loaded images with alt text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: UF disclaimer",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: restrictive CSP",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: no embedded or automatic media",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: declared English language",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: fragment targets",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "/: all seven publication titles rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: complete author lists rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: skip link first in keyboard order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: skip link focuses main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: desktop reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: mobile reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/: text-spacing reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Expanded figure descriptions: 320px reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: page response",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "/cv/: one h1 and sequential headings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: loaded images with alt text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: UF disclaimer",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: restrictive CSP",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: no embedded or automatic media",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: declared English language",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: fragment targets",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "/cv/: all seven publication titles rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: complete author lists rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: skip link first in keyboard order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: skip link focuses main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: desktop reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: mobile reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/cv/: text-spacing reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: page response",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "/accessibility/: one h1 and sequential headings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: loaded images with alt text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: UF disclaimer",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: restrictive CSP",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: no embedded or automatic media",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: declared English language",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: fragment targets",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "/accessibility/: skip link first in keyboard order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: skip link focuses main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: desktop reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: mobile reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/accessibility/: text-spacing reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: page response",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "/404.html: one h1 and sequential headings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: loaded images with alt text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: UF disclaimer",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: restrictive CSP",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: no embedded or automatic media",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: declared English language",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: fragment targets",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "/404.html: skip link first in keyboard order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: skip link focuses main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: desktop reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: mobile reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/404.html: text-spacing reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No browser or CSP errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "violationCount": 0,
+  "failedChecks": [],
+  "manualLimitations": [
+    "Screen-reader usability has not been fully evaluated.",
+    "External PDFs and publisher websites are outside this scan.",
+    "Automated checks cannot establish full ADA/WCAG compliance."
+  ]
+}

@@ -23,4 +23,10 @@ Reviewed on 6 October 2026 against the final local production build.
 
 This is not a complete ADA/WCAG certification or institutional branding approval. Screen-reader usability still requires a dedicated assistive-technology review. External publisher pages, project pages, PDF tagging, reading order, and equations were not comprehensively audited as part of this personal-site release.
 
-The local website is ready for review. Public deployment has not yet been performed. After publishing, verify HTTPS, root/subpath routing, internal links, all assets, and actual security response headers. GitHub Pages controls HTTP response headers; the source does not claim headers that have not been observed on the deployed site.
+Published with the user’s approval on 6 October 2026 at [cgchrfchscyrh.github.io](https://cgchrfchscyrh.github.io/). [GitHub Actions run 37495350713](https://github.com/cgchrfchscyrh/cgchrfchscyrh.github.io/actions/runs/37495350713) successfully deployed commit `49bc03d179661d64694ef3ca4e29ac8657b21e32` after the security audit, lint, type check, build, and accessibility checks passed.
+
+Post-deployment validation covered four personal-site routes, four existing project links, 13 assets with checksums matching the local build, 83 links, canonical URLs, the custom 404 response, and HTTP-to-HTTPS redirection. The live browser run repeated all 13 axe scans and 66 auxiliary checks with zero violations or failures. Reports are saved in `ci/axe-wcag21aa.json`, `live-axe-wcag21aa.json`, `live-deployment.json`, and `deployment.json`.
+
+An initial request for an image returned a transient 503 while the site was being checked. A subsequent complete resource verification passed. The browser checks also loaded every image successfully.
+
+HTTPS enforcement and HSTS were verified. GitHub Pages controls HTTP response headers: no HTTP Content-Security-Policy, X-Frame-Options, or X-Content-Type-Options header was observed. The site's restrictive CSP and referrer policy are delivered in HTML meta elements. These limitations are recorded rather than represented as server header settings.
