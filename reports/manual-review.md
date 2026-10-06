@@ -6,6 +6,8 @@ On 6 October 2026, the owner explicitly requested removal of both footer paragra
 
 The revised production build and lint passed. The pre-publication axe run passed all 13 scans and 62 remaining auxiliary checks with zero violations or failures. All four built HTML footers were inspected to confirm the requested text is absent.
 
+The revision was deployed successfully by [Actions run 37496885117](https://github.com/cgchrfchscyrh/cgchrfchscyrh.github.io/actions/runs/37496885117), commit `088316c27c29f5f9e720ce0fb47a8798c0844917`. CI repeated the 13 scans and 62 checks successfully. Post-deployment verification confirmed the requested footer text is absent on all four live routes; 13 assets matched the local build, 79 links were inspected, and HTTPS, existing project links, and the custom 404 response passed. See `footer-update-deployment.json`, `ci/footer-update-axe.json`, and `live-deployment.json`.
+
 ## Initial release review
 
 Reviewed on 6 October 2026 against the final local production build.
