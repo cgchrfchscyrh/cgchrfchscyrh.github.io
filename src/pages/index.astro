@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Authors from "../components/Authors.astro";
 import Education from "../components/Education.astro";
 import { asset, profile, research, otherPapers } from "../data/profile";
+import { labProjects } from "../data/lab-projects";
 ---
 
 <Layout>
@@ -146,6 +147,17 @@ import { asset, profile, research, otherPapers } from "../data/profile";
     </div>
   </section>
 
+  <section class="section" id="lab-projects" aria-labelledby="lab-projects-heading">
+    <h2 id="lab-projects-heading">More projects</h2>
+    <p class="section-intro">Project overviews adapted from DreamXLab’s research materials.</p>
+    <div class="research-list">
+      {labProjects.map(project => <article class="research-item" aria-labelledby={`${project.slug}-title`}>
+        <figure class="paper-figure"><a href={asset(`${project.slug}/`)} aria-label={`Explore ${project.title}`}><img src={asset(`projects/${project.slug}/${project.image}`)} width={project.imageWidth} height={project.imageHeight} alt={project.imageAlt} loading="lazy" decoding="async" /></a></figure>
+        <div class="paper-body"><p class="paper-topic">{project.topic}</p><h3 id={`${project.slug}-title`}><a href={asset(`${project.slug}/`)}>{project.title}</a></h3><p class="venue">DreamXLab research program</p><p class="paper-description">{project.description}</p><nav class="paper-links" aria-label={`${project.title} resources`}><a href={asset(`${project.slug}/`)}>Project page <span aria-hidden="true">↗</span></a></nav></div>
+      </article>)}
+    </div>
+  </section>
+
   <section
     class="section"
     id="publications"
@@ -169,6 +181,7 @@ import { asset, profile, research, otherPapers } from "../data/profile";
             >
               {paper.link} <span aria-hidden="true">↗</span>
             </a>
+            {index === 0 && <a style="margin-inline-start: .65rem" class="publication-link" href={asset("surgery-ai/")}>Surgery AI project page ↗</a>}
           </li>
         ))
       }

@@ -2,6 +2,7 @@ import { chromium } from "playwright";
 import AxeBuilder from "@axe-core/playwright";
 import { mkdir, writeFile } from "node:fs/promises";
 import { research, otherPapers } from "../src/data/profile.ts";
+import { labProjects, projectClips } from "../src/data/lab-projects.ts";
 
 const base = (process.env.TEST_URL || "http://127.0.0.1:4480").replace(
   /\/$/,
@@ -26,7 +27,8 @@ const spacing =
   "* { line-height: 1.5 !important; letter-spacing: .12em !important; word-spacing: .16em !important; } p { margin-bottom: 2em !important; }";
 await mkdir("reports/screenshots", { recursive: true });
 try {
-  for (const route of ["/", "/cv/", "/accessibility/", "/404.html"]) {
+  for (const route of ["/", "/cv/", "/accessibility/", "/404.html", ...labProjects.map(p => `/${p.slug}/`)]) {
+    const project = labProjects.find(p => route === `/${p.slug}/`);
     const page = await context.newPage();
     page.on("pageerror", (error) => errors.push(String(error)));
     page.on("console", (message) => {
@@ -59,7 +61,7 @@ try {
         images: [...document.images].every(
           (img) =>
             img.hasAttribute("alt") &&
-            img.alt.trim() &&
+            (img.alt.trim() || img.getAttribute("aria-hidden") === "true") &&
             img.complete &&
             img.naturalWidth > 0,
         ),
@@ -81,7 +83,7 @@ try {
     );
     check(`${route}: loaded images with alt text`, structure.images);
     check(`${route}: restrictive CSP`, structure.csp);
-    check(`${route}: no embedded or automatic media`, structure.noMedia);
+    check(`${route}: only reviewed local media`, project ? await page.locator('iframe,audio,object,embed,video[autoplay]').count() === 0 : structure.noMedia);
     check(`${route}: declared English language`, structure.lang === "en");
     check(
       `${route}: fragment targets`,
@@ -94,7 +96,7 @@ try {
       const normalize = (value) => value.replace(/\s+/g, " ").trim();
       const expected = [...research, ...otherPapers];
       check(
-        `${route}: all seven publication titles rendered`,
+        `${route}: original publication titles rendered`,
         expected.every((paper) => titles.map(normalize).includes(paper.title)),
       );
       check(
@@ -122,6 +124,57 @@ try {
         .locator("main")
         .evaluate((el) => el === document.activeElement),
     );
+    if (route === "/") {
+      for (const item of labProjects) check(`${item.title}: homepage project link`, await page.locator(`#lab-projects a[href$="/${item.slug}/"]`).count() > 0);
+      check("Team project bibliography is not added to personal publications", !(await page.locator('#publications').innerText()).includes('Simulation-based trade-off modeling'));
+    }
+    if (project) {
+      const clips = projectClips.filter(c => c.project === project.slug);
+      const videos = page.locator('video');
+      check(`${route}: expected project videos`, await videos.count() === clips.length);
+      check(`${route}: native controls, silent loops and descriptions`, await videos.evaluateAll(vs => vs.every(v => v.controls && v.muted && v.loop && v.playsInline && v.querySelector('track[kind="descriptions"]') && v.getAttribute('aria-describedby').split(' ').every(id => document.getElementById(id)))));
+      check(`${route}: standalone playback buttons absent`, await page.locator('#hero-playback-toggle,button[data-media-control]').count() === 0);
+      const first = page.locator('video').first();
+      const firstId = await first.getAttribute('id');
+      await page.evaluate(() => { window.scrollTo(0, 0); document.querySelector('main').focus(); });
+      await page.waitForFunction(id => !document.getElementById(id).paused, firstId);
+      check(`${route}: visible video starts automatically`, true);
+      await page.keyboard.press('Tab');
+      check(`${route}: native player is reachable by Tab`, await page.evaluate(id => document.activeElement.id === id, firstId));
+      await page.keyboard.press('Space');
+      await page.waitForFunction(id => document.getElementById(id).paused, firstId);
+      await page.locator('.project-footer').scrollIntoViewIfNeeded();
+      await first.scrollIntoViewIfNeeded();
+      await page.waitForTimeout(350);
+      check(`${route}: manual pause persists after scrolling`, await first.evaluate(v => v.paused));
+      await page.keyboard.press('Space');
+      await page.waitForFunction(id => !document.getElementById(id).paused, firstId);
+      check(`${route}: native keyboard resumes playback`, true);
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      await page.waitForFunction(() => [...document.querySelectorAll('video')].every(v => v.paused));
+      check(`${route}: reduced motion suppresses automatic playback`, true);
+      await first.focus(); await page.keyboard.press('Space');
+      await page.waitForFunction(id => !document.getElementById(id).paused, firstId);
+      check(`${route}: reduced-motion users can explicitly play`, true);
+      await page.keyboard.press('Space');
+      for (const clip of clips) {
+        const path = `${base}/projects/${project.slug}/${clip.id}`;
+        const track = await context.request.get(`${path}.vtt`);
+        const body = await track.text();
+        check(`${clip.id}: description track available`, track.ok() && body.startsWith('WEBVTT') && body.includes('-->'));
+        for (const ext of ['jpg','mp4']) check(`${clip.id}: ${ext} available`, (await context.request.head(`${path}.${ext}`)).ok());
+      }
+      const saved = await browser.newContext();
+      await saved.addInitScript(() => Object.defineProperty(navigator, 'connection', { value: { saveData: true, addEventListener() {} }, configurable: true }));
+      const savedPage = await saved.newPage();
+      await savedPage.goto(base+route, { waitUntil: 'networkidle' });
+      check(`${route}: data saving suppresses automatic playback`, await savedPage.locator('video').evaluateAll(vs => vs.every(v => v.paused)));
+      await saved.close();
+      const nojs = await browser.newContext({ javaScriptEnabled: false });
+      const nojsPage = await nojs.newPage(); await nojsPage.goto(base+route, { waitUntil: 'networkidle' });
+      check(`${route}: no-JavaScript content and controls`, await nojsPage.locator('video[controls]').count() === clips.length && await nojsPage.locator('h1').count() === 1);
+      await nojs.close();
+    }
     for (const mode of ["desktop", "mobile", "text-spacing"]) {
       await page.setViewportSize(
         mode === "desktop"
@@ -155,7 +208,7 @@ try {
         });
       }
     }
-    if (route === "/") {
+    if (route === "/" || project) {
       for (const summary of await page.locator("summary").all()) {
         await summary.focus();
         const outline = await summary.evaluate(
@@ -182,7 +235,7 @@ try {
         passes: result.passes.length,
       });
       check(
-        "Expanded figure descriptions: 320px reflow",
+        `${route}: expanded descriptions at 320px reflow`,
         await page.evaluate(
           () => document.documentElement.scrollWidth <= innerWidth + 1,
         ),

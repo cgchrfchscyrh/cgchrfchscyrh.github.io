@@ -1,0 +1,29 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro";
+import ProjectVideo from "../components/ProjectVideo.astro";
+import ProjectPlayback from "../components/ProjectPlayback.astro";
+import { labProjects, immunologyPublications } from "../data/lab-projects";
+import { asset } from "../data/profile";
+export function getStaticPaths() { return labProjects.map(project => ({ params: { project: project.slug }, props: { project } })); }
+const { project } = Astro.props;
+const surgery = project.slug === "surgery-ai";
+---
+<ProjectLayout title={project.title} description={project.description} slug={project.slug} source={project.source}>
+  <section class="project-hero" aria-labelledby="project-title">
+    <div class="hero-copy"><p class="eyebrow">{project.topic}</p><h1 id="project-title">{project.title}</h1><p class="hero-subtitle">{project.subtitle}</p><p class="project-credit">A DreamXLab research program</p></div>
+    <div class:list={["hero-media", { "paired": surgery }]}>{project.heroClips.map(id => <ProjectVideo id={id} hero />)}</div>
+    <p id="media-status" class="sr-only" role="status"></p>
+  </section>
+  <div class="project-content">
+    <section class="project-section abstract" id="abstract" aria-labelledby="abstract-title"><h2 id="abstract-title">Abstract</h2><p class="lead">{project.abstract}</p></section>
+    <section class="project-section" id="method" aria-labelledby="method-title"><h2 id="method-title">Method</h2><p class="section-intro">{project.methodIntro}</p>
+      <figure class="project-figure"><a class="figure-link" href={asset(`projects/${project.slug}/${project.figure}`)} aria-label={`View the full-size ${project.title} framework figure`}><img src={asset(`projects/${project.slug}/${project.figure}`)} width={project.figureWidth} height={project.figureHeight} alt={project.figureAlt} loading="lazy" decoding="async" /></a><figcaption><p>{project.figureCaption}</p><details><summary>Figure description & source</summary><p>{project.figureDescription}</p><p>Original figure from <a href={project.source}>DreamXLab’s {project.title} page</a>. The full-size image is available through the figure link.</p></details></figcaption></figure>
+      <ol class="method-steps">{project.steps.map(step => <li><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol>
+    </section>
+    <section class="project-section" id="demonstrations" aria-labelledby="demos-title"><h2 id="demos-title">Demonstrations</h2><p class="section-intro">{project.demoIntro}</p><div class:list={["demo-media", { "paired": surgery }]}>{project.demoClips.map(id => <ProjectVideo id={id} />)}</div><p class="scope-note">{project.scope}</p></section>
+    <section class="project-section publications" id="publications" aria-labelledby="publications-title"><h2 id="publications-title">Publications</h2>
+      {surgery ? <article class="publication"><p class="eyebrow">Related training study</p><h3><a href="https://arxiv.org/abs/2511.02233">Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback</a></h3><p>Songyang Liu, Yunpeng Tan, Shuai Li</p><p class="publication-meta">arXiv preprint · 2025</p><p>The study pairs a laparoscopic view with synchronized three-dimensional visual feedback in simulation. It focuses on spatial understanding during training.</p><a class="paper-link" href="https://arxiv.org/abs/2511.02233">Read the training paper on arXiv ↗</a></article> : <><p class="section-intro">Research cited by the original Building Immunology project page.</p><ol class="reference-list">{immunologyPublications.slice(0,3).map(text => <li>{text}</li>)}</ol><details class="more-publications"><summary>More publications from the project</summary><ol class="reference-list" start="4">{immunologyPublications.slice(3).map(text => <li>{text}</li>)}</ol></details></>}
+    </section>
+  </div>
+  <ProjectPlayback />
+</ProjectLayout>

@@ -1,0 +1,18 @@
+---
+import { projectClips } from "../data/lab-projects";
+import { asset } from "../data/profile";
+interface Props { id: string; hero?: boolean; }
+const { id, hero = false } = Astro.props;
+const clip = projectClips.find(item => item.id === id)!;
+const base = `projects/${clip.project}/${clip.id}`;
+---
+<figure class="project-video">
+  <video id={`${id}-video`} data-playback-group={hero ? "hero" : "research"} controls controlslist="nodownload" muted playsinline loop preload={hero ? "metadata" : "none"} width="1280" height="720" poster={asset(`${base}.jpg`)} aria-label={clip.title} aria-describedby={`${id}-caption ${id}-description`}>
+    <source src={asset(`${base}.mp4`)} type="video/mp4" />
+    <track kind="descriptions" src={asset(`${base}.vtt`)} srclang="en" label="English visual descriptions" />
+    Your browser does not support video playback. Read the complete description below.
+  </video>
+  <figcaption><p id={`${id}-caption`}>{clip.caption}</p>
+    <details><summary>Video description & source</summary><div id={`${id}-description`}><p>{clip.description}</p><p>{clip.audioNote}</p></div><p>Source: <a href={`https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842/${clip.sourceFile}`}>DreamXLab’s original recording</a>, excerpt {clip.sourceRange}. Original speed and complete frame retained.</p></details>
+  </figcaption>
+</figure>

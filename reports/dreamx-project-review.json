@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-21",
+  "scope": [
+    "/",
+    "/building-immunology/",
+    "/surgery-ai/"
+  ],
+  "source": {
+    "repository": "https://github.com/DreamXLab/DreamXLab.github.io",
+    "commit": "c4a06d081f7f22f9966cbc5248b7ceb61de8c842",
+    "originalSiteStatus": "404 on inspection"
+  },
+  "verified": [
+    "Desktop and mobile screenshots reviewed",
+    "21 axe scans: zero violations; 149 functional checks passed",
+    "Keyboard skip link, native video Space control, focus, and expandable descriptions",
+    "320 CSS pixel reflow with increased text spacing and expanded descriptions",
+    "Reduced-motion and Save-Data disable autoplay; manual pause persists",
+    "Six H.264 clips decode successfully and contain no audio stream",
+    "Original full frames and motion speed retained; excerpts documented in dreamx-media-provenance.json",
+    "Full HTML visual descriptions and WebVTT descriptions provided",
+    "Original figure labels retained and explained independently of color",
+    "Original bibliography authors retained; separate from personal publications",
+    "No UF logo, UF-themed palette, affiliation introduction, or UF disclaimer on project pages",
+    "Build, lint, and dependency audit passed; zero known dependency vulnerabilities"
+  ],
+  "limits": [
+    "Automated checks and browser inspection do not certify full ADA/WCAG compliance",
+    "Screen-reader usability across assistive technologies has not been fully verified",
+    "External PDFs and publisher pages have not been certified for tags or reading order",
+    "GitHub Pages controls HTTP security headers; CSP is applied through generated HTML"
+  ],
+  "runtime": "Node.js 24.22.1, official download SHA-256 verified"
+}

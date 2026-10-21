@@ -72,7 +72,7 @@ export const research = [
     height: 842,
     alt: "Three physical humanoid trials, labeled VLA-50, VLA-80, and HOIST, guiding a suspended block toward a marked platform.",
     detail:
-      "The comparison shows the placement task on a real humanoid platform. The robot guides a cable-suspended load; the crane supports its weight. Evaluation details and numerical results are available on the project page.",
+      "The comparison shows the placement task on a real humanoid platform. The robot guides a cable-suspended load; the crane supports its weight. The paper provides evaluation details.",
     project: "https://cgchrfchscyrh.github.io/humanoid-hoisting/",
     paper: "https://arxiv.org/abs/2606.00252",
     code: "",

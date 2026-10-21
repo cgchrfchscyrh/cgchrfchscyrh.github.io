@@ -1,0 +1,60 @@
+{
+  "sourceRepository": "https://github.com/DreamXLab/DreamXLab.github.io",
+  "sourceCommit": "c4a06d081f7f22f9966cbc5248b7ceb61de8c842",
+  "clips": [
+    {
+      "project": "building-immunology",
+      "source": "immunology-demo.mp4",
+      "file": "projects/building-immunology/building-system.mp4",
+      "sourceStart": 2,
+      "sourceEnd": 12,
+      "sourceSha256": "38ad8bfe1a27c7e3043e92abbabf03b8c66539969771555bf7ffdb45fc70e44a",
+      "audio": "Removed from web excerpts; source files unchanged. Vision/system source tracks are digitally silent; bench clip has laboratory sounds."
+    },
+    {
+      "project": "building-immunology",
+      "source": "immunology-demo.mp4",
+      "file": "projects/building-immunology/building-digital-twin.mp4",
+      "sourceStart": 16,
+      "sourceEnd": 26,
+      "sourceSha256": "38ad8bfe1a27c7e3043e92abbabf03b8c66539969771555bf7ffdb45fc70e44a",
+      "audio": "Removed from web excerpts; source files unchanged. Vision/system source tracks are digitally silent; bench clip has laboratory sounds."
+    },
+    {
+      "project": "surgery-ai",
+      "source": "surgery-vision.mp4",
+      "file": "projects/surgery-ai/camera-guidance.mp4",
+      "sourceStart": 36,
+      "sourceEnd": 48,
+      "sourceSha256": "c4546cf80aac91abf246e5e019b270188fe7bc9c1e30121cef6e3261f7af4dc8",
+      "audio": "Removed from web excerpts; source files unchanged. Vision/system source tracks are digitally silent; bench clip has laboratory sounds."
+    },
+    {
+      "project": "surgery-ai",
+      "source": "surgery-robot.mp4",
+      "file": "projects/surgery-ai/bench-prototype.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 8.8,
+      "sourceSha256": "2d4d9befa1c5d2ec89d976c95909f66063d9d602a93cf3d7d5db7ca2b3ca73fc",
+      "audio": "Removed from web excerpts; source files unchanged. Vision/system source tracks are digitally silent; bench clip has laboratory sounds."
+    },
+    {
+      "project": "surgery-ai",
+      "source": "surgery-vision.mp4",
+      "file": "projects/surgery-ai/camera-assembly.mp4",
+      "sourceStart": 5,
+      "sourceEnd": 17,
+      "sourceSha256": "c4546cf80aac91abf246e5e019b270188fe7bc9c1e30121cef6e3261f7af4dc8",
+      "audio": "Removed from web excerpts; source files unchanged. Vision/system source tracks are digitally silent; bench clip has laboratory sounds."
+    },
+    {
+      "project": "surgery-ai",
+      "source": "surgery-system.mp4",
+      "file": "projects/surgery-ai/instrument-motion.mp4",
+      "sourceStart": 7,
+      "sourceEnd": 19,
+      "sourceSha256": "4154c5e844644b478daa0d47baa852d23b50f907b9aa8defdbe2cabbc9804806",
+      "audio": "Removed from web excerpts; source files unchanged. Vision/system source tracks are digitally silent; bench clip has laboratory sounds."
+    }
+  ]
+}
