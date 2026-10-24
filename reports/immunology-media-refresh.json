@@ -24,7 +24,7 @@
       "preview": "building-immunity-preview.webp"
     },
     {
-      "file": "immunity-framework-white.webp",
+      "file": "immunity-framework-complete.webp",
       "source": "Building Immunology 1.pptx",
       "slide": 3,
       "embedded": "ppt/media/image3.png",
@@ -33,7 +33,75 @@
         1485,
         880
       ],
-      "transform": "Original transparent PNG composited on white before WebP conversion; complete labels, lines and frame retained"
+      "transform": "Complete native slide-3 picture composition on white: framework, two simulation GIF stills and face-redacted video poster; original positions, crops and layer order retained; full framework bounds include all titles",
+      "layers": [
+        {
+          "source": "ppt/media/image2.png",
+          "x": 9246777,
+          "y": 4321127,
+          "width": 2663056,
+          "height": 2064353,
+          "crop": {
+            "l": "15032",
+            "r": "6155"
+          },
+          "privacy": "Existing face-redacted poster used before applying the original slide crop",
+          "source_sha256": "e696d3af0a5ba0cd451cdeb5cc9dc7169adad415e9f92644d4aa151cd7891945",
+          "output_bounds": [
+            1138,
+            543,
+            335,
+            259
+          ]
+        },
+        {
+          "source": "ppt/media/image3.png",
+          "x": 185333,
+          "y": 0,
+          "width": 11821334,
+          "height": 7005234,
+          "crop": {},
+          "source_sha256": "3b7ab37a2264ed520f5ca57f577943fce3204a548978e31677ee132ee9b10b38",
+          "output_bounds": [
+            0,
+            0,
+            1485,
+            880
+          ]
+        },
+        {
+          "source": "ppt/media/image4.gif",
+          "x": 9676026,
+          "y": 2528189,
+          "width": 2233807,
+          "height": 1255535,
+          "crop": {},
+          "source_sha256": "ff37884b99f6d0ef780eb7103451f6f74f32f67379d19d400bd9751cbacce2a3",
+          "output_bounds": [
+            1192,
+            318,
+            281,
+            158
+          ],
+          "frame": 0
+        },
+        {
+          "source": "ppt/media/image5.gif",
+          "x": 7345386,
+          "y": 2528188,
+          "width": 2233806,
+          "height": 1255535,
+          "crop": {},
+          "source_sha256": "4a6d7a1357a0b522800ceb410f31a50b54214d55686c3c1238d825ed1c90907c",
+          "output_bounds": [
+            899,
+            318,
+            281,
+            158
+          ],
+          "frame": 0
+        }
+      ]
     },
     {
       "file": "occupant-interaction-redacted.webp",

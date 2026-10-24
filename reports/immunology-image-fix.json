@@ -4,7 +4,9 @@
     "source": "Building Immunology 1.pptx / ppt/media/image3.png",
     "cause": "RGBA transparency was discarded during RGB conversion, exposing black values in transparent pixels.",
     "conversion": "Alpha-composite the source onto white before WebP conversion; no diagram content is redrawn.",
-    "output": "public/projects/building-immunology/immunity-framework-white.webp"
+    "output": "public/projects/building-immunology/immunity-framework-complete.webp",
+    "completeness_fix": "image3.png is only the transparent framework layer. The complete figure now exports all four native picture layers from slide 3, preserving their XML positions, source crops and stacking order; it includes image4.gif and image5.gif first frames plus the face-redacted image2.png video poster.",
+    "export_bounds": "Full 1485 x 880 framework bounds, including the complete bottom title."
   },
   "face_edit": {
     "tool": "Built-in image_gen",
@@ -20,7 +22,7 @@
     "functional_checks": 309,
     "violations": 0,
     "failures": 0,
-    "review": "White diagram labels and lines visually verified; desktop figure and privacy image inspected; full-size link targets redacted file; 320px reflow verified.",
+    "review": "Complete source slide compared visually: both digital-twin simulation stills and lower-right human\u2013robot image restored; face redacted in inset and standalone image. Desktop and 320px preview checked; full-size image link opened and verified.",
     "limits": "Automated checks and visual inspection are not complete WCAG or ADA certification."
   }
 }
