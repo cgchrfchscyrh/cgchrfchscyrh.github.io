@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-24T21:52:58.706Z",
+  "date": "2026-10-24T22:04:19.205Z",
   "base": "http://127.0.0.1:4480",
   "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
   "scans": [
@@ -200,29 +200,52 @@
       "route": "/building-immunology/",
       "mode": "desktop",
       "violations": [],
-      "incomplete": [],
-      "passes": 23
+      "incomplete": [
+        {
+          "id": "video-caption",
+          "impact": "critical",
+          "nodes": 3
+        }
+      ],
+      "passes": 24
     },
     {
       "route": "/building-immunology/",
       "mode": "mobile",
       "violations": [],
-      "incomplete": [],
-      "passes": 23
+      "incomplete": [
+        {
+          "id": "video-caption",
+          "impact": "critical",
+          "nodes": 3
+        }
+      ],
+      "passes": 24
     },
     {
       "route": "/building-immunology/",
       "mode": "text-spacing",
       "violations": [],
-      "incomplete": [],
-      "passes": 23
+      "incomplete": [
+        {
+          "id": "video-caption",
+          "impact": "critical",
+          "nodes": 3
+        }
+      ],
+      "passes": 24
     },
     {
       "route": "/building-immunology/",
       "mode": "mobile-spacing-expanded-figures",
       "violations": [],
-      "incomplete": [],
-      "passes": 23
+      "incomplete": [
+        {
+          "id": "video-caption",
+          "nodes": 3
+        }
+      ],
+      "passes": 24
     },
     {
       "route": "/robotic-block-assembly/",
@@ -320,7 +343,7 @@
       "detail": ""
     },
     {
-      "name": "Microbiomes in Buildings: homepage project link",
+      "name": "Building Immunology: homepage project link",
       "pass": true,
       "detail": ""
     },
@@ -1360,6 +1383,81 @@
       "detail": ""
     },
     {
+      "name": "/building-immunology/: visible video starts automatically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: native player is reachable by Tab",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: manual pause persists after scrolling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: native keyboard resumes playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: reduced motion suppresses automatic playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: reduced-motion users can explicitly play",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "robotic-perception: description track available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "robotic-perception: jpg available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "robotic-perception: mp4 available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "surface-materials: description track available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "surface-materials: jpg available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "surface-materials: mp4 available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "adaptive-disinfection: description track available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "adaptive-disinfection: jpg available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "adaptive-disinfection: mp4 available",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "/building-immunology/: data saving suppresses automatic playback",
       "pass": true,
       "detail": ""
@@ -1416,6 +1514,36 @@
     },
     {
       "name": "/building-immunology/: text-spacing reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
       "pass": true,
       "detail": ""
     },

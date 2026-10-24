@@ -1,0 +1,77 @@
+{
+  "sources": [
+    {
+      "file": "Building Immunology 1.pptx",
+      "sha256": "f7c693e13aca66cb4fe8ab9182902cffe4016684a7941607d14f6274fe3cc661"
+    },
+    {
+      "file": "Animated_Infographics_May_09_2022.mp4",
+      "sha256": "914f2e250021655f9c8b1b12fae751d195892f5305455ebec4f2e7da92f684ea"
+    }
+  ],
+  "assets": [
+    {
+      "file": "building-immunity.webp",
+      "source": "Building Immunology 1.pptx",
+      "slide": 2,
+      "embedded": "ppt/media/image1.png",
+      "source_sha256": "51b0eb87843ce8ace1640771e3a16e1952e7fd7fdbf6a689df75890f45b7ae6c",
+      "dimensions": [
+        9437,
+        7087
+      ],
+      "transform": "WebP conversion; complete image, original colors and aspect ratio retained",
+      "preview": "building-immunity-preview.webp"
+    },
+    {
+      "file": "immunity-framework.webp",
+      "source": "Building Immunology 1.pptx",
+      "slide": 3,
+      "embedded": "ppt/media/image3.png",
+      "source_sha256": "3b7ab37a2264ed520f5ca57f577943fce3204a548978e31677ee132ee9b10b38",
+      "dimensions": [
+        1485,
+        880
+      ],
+      "transform": "WebP conversion; complete image, original colors and aspect ratio retained"
+    },
+    {
+      "file": "occupant-interaction.webp",
+      "source": "Building Immunology 1.pptx",
+      "slide": 3,
+      "embedded": "ppt/media/image2.png",
+      "source_sha256": "e696d3af0a5ba0cd451cdeb5cc9dc7169adad415e9f92644d4aa151cd7891945",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "transform": "WebP conversion; complete image, original colors and aspect ratio retained"
+    },
+    {
+      "file": "robotic-perception.mp4",
+      "source": "Animated_Infographics_May_09_2022.mp4",
+      "source_start_seconds": 8,
+      "duration_seconds": 9,
+      "poster_source_seconds": 13,
+      "transform": "Muted web excerpt; original speed, complete frame and publisher credits retained; 1280 x 720 H.264"
+    },
+    {
+      "file": "surface-materials.mp4",
+      "source": "Animated_Infographics_May_09_2022.mp4",
+      "source_start_seconds": 19.5,
+      "duration_seconds": 10,
+      "poster_source_seconds": 24,
+      "transform": "Muted web excerpt; original speed, complete frame and publisher credits retained; 1280 x 720 H.264"
+    },
+    {
+      "file": "adaptive-disinfection.mp4",
+      "source": "Animated_Infographics_May_09_2022.mp4",
+      "source_start_seconds": 32,
+      "duration_seconds": 21,
+      "poster_source_seconds": 47,
+      "transform": "Muted web excerpt; original speed, complete frame and publisher credits retained; 1280 x 720 H.264"
+    }
+  ],
+  "paper": "https://doi.org/10.1111/mice.12811",
+  "scope": "PPT concept and integration diagrams; publisher infographic excerpts; no new experimental or clinical efficacy claim."
+}

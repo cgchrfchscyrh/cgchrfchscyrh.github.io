@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-24T22:04:19.205Z",
+  "page": "/building-immunology/",
+  "automated_report": "axe-wcag21aa.json",
+  "reviewed": [
+    "Desktop and mobile layout; complete source frames and original motion speed; clean clip endpoints.",
+    "Three silent video excerpts with native controls, HTML alternatives and WebVTT descriptions.",
+    "Three original PPT figures with alt text and expanded descriptions; original image colors retained.",
+    "Viewport autoplay, manual pause memory, keyboard controls, reduced motion, Save-Data and no-JavaScript behavior verified by existing audit.",
+    "320 CSS pixel reflow including expanded descriptions; long source filenames now wrap.",
+    "No UF logo or theme added; removed research credit lines remain absent.",
+    "Original video and PPT checksums unchanged; no original attachments altered.",
+    "Paper identity and DOI checked against Wiley publisher record: https://doi.org/10.1111/mice.12811."
+  ],
+  "limitations": [
+    "Automated checks and visual review are not a complete WCAG or ADA certification.",
+    "Full screen-reader review and external publisher PDF accessibility were not verified.",
+    "Supplied diagrams express research concepts; the infographic is not a new robot experiment."
+  ]
+}

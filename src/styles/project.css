@@ -33,6 +33,7 @@ section[id] { scroll-margin-top:2rem; }
 .project-video figcaption,.project-figure figcaption { padding:1rem 0; color:#484844; font-size:.91rem; }
 .project-video figcaption>p,.project-figure figcaption>p { font-weight:500; }
 .project-video details,.project-figure details { font-size:.82rem; margin-top:.3rem; }
+.project-video details,.project-figure details,.source-section { overflow-wrap:anywhere; }
 details summary { cursor:pointer; line-height:1.65; padding:.35rem 0; }
 details p { margin-top:.8rem; }
 details[open] { padding-bottom:.6rem; }
@@ -78,6 +79,14 @@ h3 { overflow-wrap:anywhere; }
 .sampling-layout,.observation-feature { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:3rem; align-items:center; }
 .observation-feature { max-width:900px; margin:auto; }
 .observation-feature>p { font-size:1.1rem; }
+.immunity-hero .hero-media .project-figure img { height:auto; aspect-ratio:16/9; object-fit:contain; }
+.immunity-steps { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.immunity-interaction,.immunity-response { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:3rem; align-items:center; margin-top:3rem; }
+.immunity-interaction h3,.immunity-response h3 { font-size:1.5rem; line-height:1.3; letter-spacing:-.025em; margin:.7rem 0 1rem; }
+.immunity-interaction>div>p:last-child,.immunity-response>div>p { color:var(--muted); }
+.immunity-workflow { margin-top:2.5rem; }
+.immunity-observations .project-figure img { height:auto; aspect-ratio:4/3; object-fit:contain; }
+.immunity-publication { padding-bottom:2rem; margin-bottom:2rem; border-bottom:1px solid var(--line); }
 .related-project { display:block; margin-top:2.5rem; padding:1.8rem; border:1px solid #bdbdb5; text-decoration:none; }
 .related-project span { display:block; text-transform:uppercase; font-size:.72rem; letter-spacing:.1em; margin-bottom:.7rem; }
 .related-project strong { font-size:1.15rem; }
@@ -102,7 +111,7 @@ h3 { overflow-wrap:anywhere; }
   .project-header nav { margin-top:.9rem; gap:.3rem 1rem; }
   .project-header nav a { font-size:.8rem; }
   .hero-copy { padding:2.8rem 1.2rem 2rem; }
-  .paired,.risk-layout,.sampling-layout,.observation-feature { grid-template-columns:minmax(0,1fr); gap:1rem; }
+  .paired,.risk-layout,.sampling-layout,.observation-feature,.immunity-interaction,.immunity-response { grid-template-columns:minmax(0,1fr); gap:1rem; }
   .method-steps { grid-template-columns:minmax(0,1fr); gap:1.5rem; }
   .project-section { padding:3rem 0; }
   .project-section.abstract { padding:3rem 0; }

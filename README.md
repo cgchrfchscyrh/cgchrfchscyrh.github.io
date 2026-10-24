@@ -12,7 +12,7 @@ A personal academic website inspired by the structure of [Mengjun Wang’s homep
 - `/404.html`: accessible error page.
 - `/building-digital-twin/`: indoor simulation, room-level risk, and four building cases.
 - `/surgery-ai/`: camera-positioning prototypes and proposed biomimetic cleaning.
-- `/building-immunology/`: environmental sampling, microbial communities, and culture images.
+- `/building-immunology/`: building-immunity concepts, indoor sensing and simulation, material-adaptive robotic disinfection, and microbial communities. Media from `Building Immunology 1.pptx` and `Animated_Infographics_May_09_2022.mp4` are prepared with `python scripts/prepare-immunology-media.py`; provenance is recorded in `reports/immunology-media-refresh.json`.
 - `/robotic-block-assembly/`: architected modules and conceptual coastal breakwater assembly.
 
 Update biography and news in `src/pages/index.astro`. Edit publication links, authors, education, and profile URLs in `src/data/profile.ts`. There is no placeholder portrait or Google Scholar profile. The introductory image is labeled as a research image and can be replaced with a supplied portrait later.

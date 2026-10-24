@@ -1,5 +1,5 @@
 const source = "https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842";
-export interface ProjectClip { id: string; project: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceRange: string; audioNote: string; }
+export interface ProjectClip { id: string; project: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; }
 export const labProjects = [
   {
     slug: "building-digital-twin", title: "Building Digital Twins", shortTitle: "Building Digital Twins", topic: "Building simulation · Room-level infection risk",
@@ -20,13 +20,13 @@ export const labProjects = [
     sourceNotes: ["Redefine Surgery Intelligence with TEAM, slides 2–5: team, mechanism diagrams, rendered motion, and laboratory prototype.", "UF Robotics Workshop — Shuai Li — ESSIE, slides 4–6: adaptive mechanisms, visual obstruction examples, soft nozzle, and proposed cleaning control. The cleaning concept is separate from the prototype footage."]
   },
   {
-    slug: "building-immunology", title: "Microbiomes in Buildings", shortTitle: "Building Microbiomes", topic: "Building immunology · Microbial communities",
-    subtitle: "Explore the life within our everyday spaces.", description: "Environmental sampling and microbial community analysis across buildings and occupied spaces.",
+    slug: "building-immunology", title: "Building Immunology", shortTitle: "Building Immunology", topic: "Indoor environments · Microbiomes · Robotic response",
+    subtitle: "Sense the environment. Understand the risk. Adapt the response.", description: "Building immunology connects microbial observations, indoor sensing, simulation, and material-aware robotic disinfection.",
     source: `${source}/_projects/Immunology.md`, credit: "",
-    image: "culture-1-preview.webp", imageWidth: 3298, imageHeight: 2474, imageAlt: "Environmental culture image showing colonies with different shapes and sizes.",
-    abstract: "Buildings are habitats for microbial communities as well as people. Environmental sampling and community analysis help investigate how occupancy and building conditions relate to the microorganisms found in indoor spaces.",
-    heroClips: [], demoClips: [],
-    sourceNotes: ["Dreams, slide 1: Building M and Building T relative-abundance chart.", "Research Presentation, slide 12: school sampling, culture images, and community-analysis panels. These are separate source examples; the slides do not establish that they share a single sample set."]
+    image: "building-immunity-preview.webp", imageWidth: 9437, imageHeight: 7087, imageAlt: "Building immunology concept connecting human well-being, pathogen modeling, indoor sensing, building control, and AI interaction.",
+    abstract: "Buildings are shared habitats for people and microbial communities. Building immunology explores an AI-assisted framework that connects sensing, simulation, and adaptive responses to indoor hazards, while considering energy use, comfort, and the people inside.",
+    heroClips: ["robotic-perception"], demoClips: ["surface-materials", "adaptive-disinfection"],
+    sourceNotes: ["Building Immunology 1, slides 2–3: building-immunity concept, integrated modeling framework, and occupant–robot interaction photograph. The integrated AI-driven immune system is a research vision.", "Animated_Infographics_May_09_2022.mp4: Wiley infographic for Hu and Li (2022), Recognizing object surface materials to adapt robotic disinfection in infrastructure facilities, DOI: 10.1111/mice.12811. Three silent excerpts retain the complete frame, original speed, and publisher credits.", "Dreams, slide 1: Building M and Building T relative-abundance chart. Research Presentation, slide 12: school sampling and culture images. These are separate source examples; the slides do not establish that they share a single sample set."]
   },
   {
     slug: "robotic-block-assembly", title: "Robotic Block Assembly", shortTitle: "Robotic Block Assembly", topic: "Coastal construction · AMERICA",
@@ -40,6 +40,24 @@ export const labProjects = [
 ];
 
 export const projectClips: ProjectClip[] = [
+  {
+    id: "robotic-perception", project: "building-immunology", duration: 9,
+    title: "Perception and disinfection in a robotic system", caption: "Perception and disinfection tools on an illustrated mobile robot.",
+    description: "An animated mobile robot appears beside a surface. Labels identify a camera and LiDAR for perception and navigation, and UV, spray or wipe accessories for disinfection. The heading introduces adaptive, automated, routine disinfection. This is an illustrated overview of the research, not footage of a working robot. The Wiley logo, journal name, and Hu and Li (2022) paper credit remain along the bottom.",
+    sourceLabel: "Wiley infographic supplied as Animated_Infographics_May_09_2022.mp4; Hu and Li (2022)", sourceUrl: "https://doi.org/10.1111/mice.12811", sourceRange: "00:08–00:17", audioNote: "This web excerpt omits the source audio. The visual content is described here and in the description track."
+  },
+  {
+    id: "surface-materials", project: "building-immunology", duration: 10,
+    title: "Why surface materials matter", caption: "Glass, fabric, and metal motivate different disinfection choices.",
+    description: "Three labeled circular illustrations show glass, fabric and metal. Text explains that materials can affect pathogen growth, retention and transmission, and motivates cleaning methods that account for surface material. The illustrations introduce the problem; they do not provide a measured ranking of these materials. The Wiley and paper credits remain visible along the bottom.",
+    sourceLabel: "Wiley infographic supplied as Animated_Infographics_May_09_2022.mp4; Hu and Li (2022)", sourceUrl: "https://doi.org/10.1111/mice.12811", sourceRange: "00:19.5–00:29.5", audioNote: "This web excerpt omits the source audio. Material names and the research motivation are available as text."
+  },
+  {
+    id: "adaptive-disinfection", project: "building-immunology", duration: 21,
+    title: "Material recognition and adaptive disinfection", caption: "Recognize the surface, model transmission, and adapt the disinfection action.",
+    description: "The animation builds a left-to-right workflow. Pictures of a table, bed and window feed a deep learning network using multi-level feature fusion and texture features. Its outputs identify glass, fabric and metal. A second diagram connects identified materials with pathogen survivability on a surface, surface-to-hand transfer, and hand-to-mucous transfer. Arrows then lead to a suitable disinfection dosage. The completed panel summarizes adapted procedures and dose. The labeled arrows carry meaning independently of color. This is an animated explanation of the published framework, not a recorded robot experiment; the Wiley and paper credits are preserved.",
+    sourceLabel: "Wiley infographic supplied as Animated_Infographics_May_09_2022.mp4; Hu and Li (2022)", sourceUrl: "https://doi.org/10.1111/mice.12811", sourceRange: "00:32–00:53", audioNote: "This web excerpt omits the source audio. A complete text alternative and timed visual descriptions accompany the animation."
+  },
   {
     id: "indoor-transport", project: "building-digital-twin", duration: 9.067,
     title: "Indoor transport in a building model", caption: "A room-scale view of simulated transport.",
