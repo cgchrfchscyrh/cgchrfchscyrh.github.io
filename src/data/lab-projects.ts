@@ -13,7 +13,7 @@ export const labProjects = [
   {
     slug: "surgery-ai", title: "Surgery AI", shortTitle: "Surgery AI", topic: "Minimally invasive surgery · Robotic vision",
     subtitle: "Position the camera. Preserve the view.", description: "Magnetically actuated camera assistance and biomimetic cleaning concepts for minimally invasive surgery.",
-    source: `${source}/_projects/Surgery_AI.md`, credit: "Gregory Mancini · Jonathan DeLong · Jindong Tan · Shuai Li",
+    source: `${source}/_projects/Surgery_AI.md`, credit: "",
     image: "surgery-cover.png", imageWidth: 617, imageHeight: 347, imageAlt: "Robot-mounted external actuator and an internal camera in an abdominal model.",
     abstract: "Minimally invasive surgery requires clear views within a confined workspace. This project studies robotic camera positioning and shape-changing mechanisms, alongside a proposed soft robotic cleaning system inspired by the human eye.",
     heroClips: ["camera-guidance", "bench-prototype"], demoClips: ["camera-assembly", "instrument-motion"],

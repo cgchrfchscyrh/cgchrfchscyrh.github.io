@@ -19,7 +19,7 @@ const nav = [{ id: "abstract", label: "Abstract" }, { id: "method", label: "Meth
 ---
 <ProjectLayout title={project.title} shortTitle={project.shortTitle} description={project.description} slug={project.slug} source={project.source} nav={nav}>
   <section class:list={["project-hero", { "concept-hero": assembly }]} aria-labelledby="project-title">
-    <div class="hero-copy"><p class="eyebrow">{project.topic}</p><h1 id="project-title">{project.title}</h1><p class="hero-subtitle">{project.subtitle}</p><p class="project-credit">{project.credit}</p></div>
+    <div class="hero-copy"><p class="eyebrow">{project.topic}</p><h1 id="project-title">{project.title}</h1><p class="hero-subtitle">{project.subtitle}</p>{project.credit && <p class="project-credit">{project.credit}</p>}</div>
     <div class:list={["hero-media", { paired: !assembly }]}>
       {project.heroClips.map(id => <ProjectVideo id={id} hero />)}
       {micro && <><ProjectFigure id="culture-1" hero /><ProjectFigure id="culture-3" hero /></>}
