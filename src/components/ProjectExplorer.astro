@@ -1,0 +1,29 @@
+---
+import ProjectFigure from "./ProjectFigure.astro";
+interface Choice { id: string; title: string; description: string; figures: string[]; }
+interface Props { id: string; label: string; choices: Choice[]; }
+const { id, label, choices } = Astro.props;
+---
+<div class="project-explorer" data-explorer>
+  <div class="selector-toolbar" role="group" aria-label={label} hidden>{choices.map((choice, i) => <button type="button" data-choice={choice.id} aria-pressed={i === 0 ? "true" : "false"} aria-controls={`${id}-${choice.id}`}>{choice.title}</button>)}</div>
+  <p class="sr-only" role="status" data-choice-status></p>
+  {choices.map(choice => <div class="explorer-panel" id={`${id}-${choice.id}`} data-panel={choice.id}>
+    <div class="panel-intro"><h3>{choice.title}</h3><p>{choice.description}</p></div>
+    <div class:list={["explorer-images", { paired: choice.figures.length > 1 }]}>{choice.figures.map(figure => <ProjectFigure id={figure} />)}</div>
+  </div>)}
+</div>
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>("[data-explorer]")) {
+    const buttons = [...root.querySelectorAll<HTMLButtonElement>("[data-choice]")];
+    const panels = [...root.querySelectorAll<HTMLElement>("[data-panel]")];
+    const toolbar = root.querySelector<HTMLElement>(".selector-toolbar")!;
+    const status = root.querySelector<HTMLElement>("[data-choice-status]")!;
+    const select = (button: HTMLButtonElement, announce = false) => {
+      for (const b of buttons) b.setAttribute("aria-pressed", String(b === button));
+      for (const panel of panels) panel.hidden = panel.dataset.panel !== button.dataset.choice;
+      if (announce) status.textContent = `Showing ${button.textContent?.trim()}.`;
+    };
+    if (buttons.length) { select(buttons[0]); toolbar.hidden = false; }
+    for (const button of buttons) button.addEventListener("click", () => select(button, true));
+  }
+</script>

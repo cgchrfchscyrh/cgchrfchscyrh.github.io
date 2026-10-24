@@ -44,10 +44,10 @@ try {
         (route === "/404.html" && response.status() === 404),
       response.status(),
     );
-    for (const img of await page.locator("img").all())
+    for (const img of await page.locator("img:visible").all())
       await img.scrollIntoViewIfNeeded();
     await page.evaluate(async () => {
-      await Promise.all([...document.images].map((img) => img.decode()));
+      await Promise.all([...document.images].filter(img => img.getClientRects().length).map((img) => img.decode()));
     });
     const structure = await page.evaluate(() => {
       const levels = [...document.querySelectorAll("h1,h2,h3,h4,h5,h6")].map(
@@ -62,8 +62,7 @@ try {
           (img) =>
             img.hasAttribute("alt") &&
             (img.alt.trim() || img.getAttribute("aria-hidden") === "true") &&
-            img.complete &&
-            img.naturalWidth > 0,
+            (!img.getClientRects().length || (img.complete && img.naturalWidth > 0)),
         ),
         csp: Boolean(
           document.querySelector('meta[http-equiv="Content-Security-Policy"]'),
@@ -134,6 +133,7 @@ try {
       check(`${route}: expected project videos`, await videos.count() === clips.length);
       check(`${route}: native controls, silent loops and descriptions`, await videos.evaluateAll(vs => vs.every(v => v.controls && v.muted && v.loop && v.playsInline && v.querySelector('track[kind="descriptions"]') && v.getAttribute('aria-describedby').split(' ').every(id => document.getElementById(id)))));
       check(`${route}: standalone playback buttons absent`, await page.locator('#hero-playback-toggle,button[data-media-control]').count() === 0);
+      if (clips.length) {
       const first = page.locator('video').first();
       const firstId = await first.getAttribute('id');
       await page.evaluate(() => { window.scrollTo(0, 0); document.querySelector('main').focus(); });
@@ -164,6 +164,7 @@ try {
         check(`${clip.id}: description track available`, track.ok() && body.startsWith('WEBVTT') && body.includes('-->'));
         for (const ext of ['jpg','mp4']) check(`${clip.id}: ${ext} available`, (await context.request.head(`${path}.${ext}`)).ok());
       }
+      }
       const saved = await browser.newContext();
       await saved.addInitScript(() => Object.defineProperty(navigator, 'connection', { value: { saveData: true, addEventListener() {} }, configurable: true }));
       const savedPage = await saved.newPage();
@@ -173,7 +174,22 @@ try {
       const nojs = await browser.newContext({ javaScriptEnabled: false });
       const nojsPage = await nojs.newPage(); await nojsPage.goto(base+route, { waitUntil: 'networkidle' });
       check(`${route}: no-JavaScript content and controls`, await nojsPage.locator('video[controls]').count() === clips.length && await nojsPage.locator('h1').count() === 1);
+      for (const explorer of await nojsPage.locator('[data-explorer]').all()) {
+        check(`${route}: all cases available without JavaScript`, await explorer.locator('[data-panel]:visible').count() === await explorer.locator('[data-panel]').count());
+      }
       await nojs.close();
+      for (const explorer of await page.locator('[data-explorer]').all()) {
+        const buttons = explorer.locator('button[data-choice]');
+        for (const button of await buttons.all()) {
+          await button.focus(); await page.keyboard.press('Enter');
+          const target = await button.getAttribute('aria-controls');
+          check(`${route}: case selector keyboard action`, await button.getAttribute('aria-pressed') === 'true' && await page.locator('#'+target).isVisible() && await explorer.locator('[data-panel]:visible').count() === 1);
+          for (const img of await page.locator('#'+target+' img').all()) { await img.scrollIntoViewIfNeeded(); await img.evaluate(im => im.decode()); }
+        }
+        await buttons.first().focus(); await page.keyboard.press("Enter");
+      }
+      check(`${route}: figure descriptions and source attribution`, await page.locator('.project-figure').evaluateAll(fs => fs.every(f => f.querySelector('details p')?.textContent.length > 40 && f.querySelector('.source-credit'))));
+      for (const link of await page.locator('.figure-link').all()) check(`${route}: full-size source image available`, (await context.request.head(new URL(await link.getAttribute('href'), base).href)).ok());
     }
     for (const mode of ["desktop", "mobile", "text-spacing"]) {
       await page.setViewportSize(
@@ -209,12 +225,12 @@ try {
       }
     }
     if (route === "/" || project) {
-      for (const summary of await page.locator("summary").all()) {
+      for (const summary of await page.locator("summary:visible").all()) {
         await summary.focus();
         const outline = await summary.evaluate(
           (el) => getComputedStyle(el).outlineStyle,
         );
-        check("Figure description: visible keyboard focus", outline !== "none");
+        check(`${route}: figure description has visible keyboard focus`, outline !== "none");
         await page.keyboard.press("Enter");
         check(
           "Figure description: keyboard opens disclosure",

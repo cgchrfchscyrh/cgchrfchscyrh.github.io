@@ -2,8 +2,8 @@
 import "@fontsource-variable/ibm-plex-sans";
 import "../styles/project.css";
 import { asset } from "../data/profile";
-interface Props { title: string; description: string; slug: string; source: string; }
-const { title, description, slug, source } = Astro.props;
+interface Props { title: string; shortTitle: string; description: string; slug: string; source: string; nav: { id: string; label: string; }[]; }
+const { title, shortTitle, description, slug, source, nav } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 ---
 <!doctype html>
@@ -24,14 +24,14 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
   <body class="project-page">
     <a class="skip-link" href="#main">Skip to main content</a>
     <header class="project-header">
-      <a class="project-wordmark" href={asset(`${slug}/`)}><img src={asset(`projects/${slug}/favicon.svg`)} alt="" aria-hidden="true" width="30" height="30" />{title}</a>
-      <nav aria-label="Project sections">{["Abstract", "Method", "Demonstrations", "Publications"].map(name => <a href={`#${name.toLowerCase()}`}>{name}</a>)}</nav>
+      <a class="project-wordmark" href={asset(`${slug}/`)}><img src={asset(`projects/${slug}/favicon.svg`)} alt="" aria-hidden="true" width="30" height="30" />{shortTitle}</a>
+      <nav aria-label="Project sections">{nav.map(item => <a href={`#${item.id}`}>{item.label}</a>)}</nav>
     </header>
     <main id="main" tabindex="-1"><slot /></main>
     <footer class="project-footer">
       <div><strong>{title}</strong><a href="#main">Back to top ↑</a></div>
-      <nav aria-label="Project resources"><a href={asset("#lab-projects")}>Songyang Liu’s project collection</a><a href={source}>DreamXLab source materials</a><a href={asset("accessibility/#project-media")}>Accessibility & media notes</a></nav>
-      <p>Adapted from DreamXLab’s project materials. Original research and media credits are retained.</p>
+      <nav aria-label="Project resources"><a href={asset("#lab-projects")}>Songyang Liu’s project collection</a><a href="#sources">Project sources</a>{source && <a href={source}>Original research overview</a>}<a href={asset("accessibility/#project-media")}>Accessibility & media notes</a></nav>
+      <p>Original research and media credits are retained in the project sources.</p>
     </footer>
   </body>
 </html>

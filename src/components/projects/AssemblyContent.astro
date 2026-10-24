@@ -1,0 +1,22 @@
+---
+import Figure from "../ProjectFigure.astro";
+import Explorer from "../ProjectExplorer.astro";
+---
+<section class="project-section" id="method" aria-labelledby="method-title">
+  <div class="section-heading"><p class="eyebrow">AMERICA · Coastal construction concept</p><h2 id="method-title">Method</h2><p>Connect architected modules, fabrication, and robot-assisted placement.</p></div>
+  <Explorer id="assembly-concepts" label="Explore the coastal construction concept" choices={[
+    { id: "module", title: "Module design", description: "Geometry defines the unit and its connections.", figures: ["module"] },
+    { id: "fabrication", title: "Fabrication", description: "A manufacturing reference connects material deposition with module design.", figures: ["manufacturing"] },
+    { id: "coastal", title: "Coastal assembly", description: "A rendered scenario places modules along a breakwater.", figures: ["breakwater"] },
+  ]} />
+</section>
+<section class="project-section" id="assembly" aria-labelledby="assembly-title">
+  <div class="section-heading"><p class="eyebrow">The joint determines the motion</p><h2 id="assembly-title">Assembly sequence</h2><p>Grasp a unit, align its connection, and engage the joint.</p></div>
+  <ol class="method-steps numbered"><li><span aria-hidden="true">01</span><h3>Pick up</h3><p>Establish a grasp for the module’s geometry.</p></li><li><span aria-hidden="true">02</span><h3>Align</h3><p>Orient the unit relative to the existing structure.</p></li><li><span aria-hidden="true">03</span><h3>Interlock</h3><p>Place or slide the module into its joint.</p></li></ol>
+  <Figure id="connections" />
+</section>
+<section class="project-section" id="concept" aria-labelledby="concept-title">
+  <div class="section-heading"><p class="eyebrow">Gulf Futures Challenge</p><h2 id="concept-title">Coastal application</h2><p>The supplied AMERICA presentation brings design, materials, and construction together.</p></div>
+  <Figure id="coastal-overview" />
+  <p class="scope-note">Concept illustrations and a manufacturing reference. Assembly experiments and coastal performance measurements are not part of the materials presented here.</p>
+</section>

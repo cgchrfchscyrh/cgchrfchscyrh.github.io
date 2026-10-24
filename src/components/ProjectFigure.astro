@@ -1,0 +1,13 @@
+---
+import { labFigures } from "../data/lab-figures";
+import { asset } from "../data/profile";
+interface Props { id: string; hero?: boolean; }
+const { id, hero = false } = Astro.props;
+const figure = labFigures[id];
+const url = asset(`projects/${figure.project}/${figure.file}`);
+const displayUrl = asset(`projects/${figure.project}/${figure.preview || figure.file}`);
+---
+<figure class="project-figure" data-figure={id}>
+  <a class="figure-link" href={url} aria-label={`Open full-size image: ${figure.title}`}><img src={displayUrl} width={figure.width} height={figure.height} alt={figure.alt} loading={hero ? "eager" : "lazy"} decoding="async" /></a>
+  <figcaption><p>{figure.title}</p><details><summary>Image description & source</summary><p>{figure.description}</p><p class="source-credit">Source: {figure.source}</p></details></figcaption>
+</figure>

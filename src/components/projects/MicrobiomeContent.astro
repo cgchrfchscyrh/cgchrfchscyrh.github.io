@@ -1,0 +1,20 @@
+---
+import Figure from "../ProjectFigure.astro";
+import { asset } from "../../data/profile";
+---
+<section class="project-section" id="method" aria-labelledby="method-title">
+  <div class="section-heading"><p class="eyebrow">Observe, sample, compare</p><h2 id="method-title">Method</h2><p>Connect environmental observations with community analysis.</p></div>
+  <div class="sampling-layout"><Figure id="sampling" /><ol class="method-steps vertical"><li><h3>Sample indoor surfaces</h3><p>Collect environmental material from occupied spaces.</p></li><li><h3>Characterize communities</h3><p>Examine microbial composition and variation.</p></li><li><h3>Study the context</h3><p>Relate community patterns to buildings and human activity.</p></li></ol></div>
+</section>
+<section class="project-section" id="communities" aria-labelledby="communities-title">
+  <div class="section-heading"><p class="eyebrow">Building M and Building T</p><h2 id="communities-title">Microbial communities</h2><p>Each column is a sample; each row is a taxon. Larger circles represent greater relative abundance.</p></div>
+  <Figure id="abundance" />
+  <p class="scope-note">Microbial composition describes a community. It does not by itself assign an infection-risk score.</p>
+</section>
+<section class="project-section" id="observations" aria-labelledby="observations-title">
+  <div class="section-heading"><p class="eyebrow">A closer look</p><h2 id="observations-title">Observations</h2><p>Culture images reveal different colony forms; community plots compare sample relationships.</p></div>
+  <div class="observation-feature"><Figure id="culture-2" /><p>Colony shape is one way to observe a sample. Community analysis provides another view of relationships across samples and building conditions.</p></div>
+  <Figure id="community-patterns" />
+  <p class="scope-note">These culture and community-analysis examples accompany the school-sampling presentation. The supplied materials do not identify them as the Building M/T sample set.</p>
+  <a class="related-project" href={asset("building-digital-twin/")}><span>Related research</span><strong>Explore building simulation and room-level risk ↗</strong></a>
+</section>

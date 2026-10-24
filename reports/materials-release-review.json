@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-24",
+  "routes": [
+    "building-digital-twin",
+    "surgery-ai",
+    "building-immunology",
+    "robotic-block-assembly"
+  ],
+  "sourceMaterials": "User-supplied presentations in materials; original files unchanged.",
+  "validation": {
+    "axeScans": 29,
+    "functionalChecks": 288,
+    "axeViolations": 0,
+    "failedChecks": 0,
+    "build": "Passed, 8 static routes, no diagnostics",
+    "lint": "Passed",
+    "dependencyAudit": "Zero known vulnerabilities",
+    "visualReview": "Desktop screenshots for four project pages; 320 CSS pixel layouts checked.",
+    "media": "New MP4 files decoded successfully, with no audio streams; complete HTML and WebVTT descriptions."
+  },
+  "contentReview": [
+    "Airborne transport and surface-mediated room risk are described as distinct modeling examples.",
+    "Archived screenshots are not presented as a live risk calculation tool.",
+    "Surgical positioning prototypes and proposed cleaning concepts are identified separately.",
+    "Microbial community composition is not represented as an infection score; source sample sets are not conflated.",
+    "Coastal page explicitly presents design and assembly concepts; no assembly trials or field performance are claimed.",
+    "Original research authors and publication titles are retained; team papers remain outside the personal publication list.",
+    "No UF branding or affiliation introductions added to project pages."
+  ],
+  "limitations": [
+    "Automated checks do not certify complete ADA/WCAG compliance.",
+    "Screen-reader usability across assistive technologies has not been fully evaluated.",
+    "External PDFs and publisher pages are not certified for accessibility.",
+    "Original numerical datasets and interactive 3D models were not supplied; source figures are retained with text descriptions.",
+    "GitHub Pages controls HTTP response headers; a restrictive CSP is supplied in generated HTML."
+  ]
+}

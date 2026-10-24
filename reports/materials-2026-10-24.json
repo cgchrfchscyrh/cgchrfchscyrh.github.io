@@ -1,0 +1,686 @@
+[
+  {
+    "project": "building-digital-twin",
+    "file": "modeling-framework.webp",
+    "deck": "Research Presentation.pptx",
+    "slides": [
+      3
+    ],
+    "sourceMedia": "ppt/media/image8.png",
+    "sourceSha256": "7703781eb71a69bd91f7e63cd5e6e129481bc744864f55bbbde7b454747fe8c0",
+    "dimensions": [
+      1589,
+      990
+    ],
+    "originalDimensions": [
+      1589,
+      990
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "room-risk-workflow.webp",
+    "deck": "Research Presentation.pptx",
+    "slides": [
+      8
+    ],
+    "sourceMedia": "ppt/media/image22.jpeg",
+    "sourceSha256": "0cd0adf355324ccb1e4db3738b5dd5092e66f945e71203f8c2298946196e62dc",
+    "dimensions": [
+      624,
+      373
+    ],
+    "originalDimensions": [
+      624,
+      373
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "room-risk-interface.webp",
+    "deck": "Research Presentation.pptx",
+    "slides": [
+      8
+    ],
+    "sourceMedia": "ppt/media/image23.jpeg",
+    "sourceSha256": "9b7e769264958d1cf99c29ee91ff31f1b587ad03b0ac802582bb9db12fa26eac",
+    "dimensions": [
+      389,
+      521
+    ],
+    "originalDimensions": [
+      389,
+      521
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "building-viewer.webp",
+    "deck": "Research Presentation.pptx",
+    "slides": [
+      8
+    ],
+    "sourceMedia": "ppt/media/image24.jpeg",
+    "sourceSha256": "f388251f512f52b72c70eb28d5a6fcc6d10e639ee7f124e00ae3c7d09d54f720",
+    "dimensions": [
+      623,
+      246
+    ],
+    "originalDimensions": [
+      623,
+      246
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "university-plan.webp",
+    "deck": "Building.pptx",
+    "slides": [
+      3
+    ],
+    "sourceMedia": "ppt/media/image10.png",
+    "sourceSha256": "f9d1d663dea7957003d8a39c5ad4d1e98c4218436151c937c5fbada117be69cf",
+    "dimensions": [
+      925,
+      723
+    ],
+    "originalDimensions": [
+      925,
+      723
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "university-network.webp",
+    "deck": "Building.pptx",
+    "slides": [
+      3
+    ],
+    "sourceMedia": "ppt/media/image20.png",
+    "sourceSha256": "f053e7d8092e9160a096ddafa28e2a5e071d93c10248775cb9e6ee5117e06d8b",
+    "dimensions": [
+      906,
+      470
+    ],
+    "originalDimensions": [
+      906,
+      470
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "church-plan.webp",
+    "deck": "Building.pptx",
+    "slides": [
+      3
+    ],
+    "sourceMedia": "ppt/media/image12.png",
+    "sourceSha256": "aa600df9743c7ff37a6f9c0284b46cd3e8d8e53cc03b2b007c1eb0643ba9d0a9",
+    "dimensions": [
+      445,
+      360
+    ],
+    "originalDimensions": [
+      445,
+      360
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "church-network.webp",
+    "deck": "Building.pptx",
+    "slides": [
+      3
+    ],
+    "sourceMedia": "ppt/media/image21.jpeg",
+    "sourceSha256": "ae5385dc061786fddc558b85ffdd67e96af06dec8ecdd3c9b52e3213645cf7e4",
+    "dimensions": [
+      375,
+      293
+    ],
+    "originalDimensions": [
+      375,
+      293
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "office-plan.webp",
+    "deck": "Building.pptx",
+    "slides": [
+      3
+    ],
+    "sourceMedia": "ppt/media/image13.jpeg",
+    "sourceSha256": "30ec2416e90479bb9935f4aa76df946ee8b14ef10c7509fadefed1c445f23cb5",
+    "dimensions": [
+      476,
+      305
+    ],
+    "originalDimensions": [
+      476,
+      305
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "office-network.webp",
+    "deck": "Building.pptx",
+    "slides": [
+      3
+    ],
+    "sourceMedia": "ppt/media/image14.jpeg",
+    "sourceSha256": "a1d03eaf5959cdc308ad6253d82445aad678807e7ae0410849ea7b24926104bf",
+    "dimensions": [
+      778,
+      604
+    ],
+    "originalDimensions": [
+      778,
+      604
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "theater-plan.webp",
+    "deck": "Building.pptx",
+    "slides": [
+      3
+    ],
+    "sourceMedia": "ppt/media/image17.png",
+    "sourceSha256": "574afa41cdff445f00f82f1ec237a46e5b0d337396727c88071f8cd8bc696792",
+    "dimensions": [
+      1044,
+      746
+    ],
+    "originalDimensions": [
+      1044,
+      746
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "theater-network.webp",
+    "deck": "Building.pptx",
+    "slides": [
+      3
+    ],
+    "sourceMedia": "ppt/media/image18.jpeg",
+    "sourceSha256": "5a526b03b67984fdce28112b7edc186426e89d5fa0f4a2116b4b500c641b5fda",
+    "dimensions": [
+      810,
+      589
+    ],
+    "originalDimensions": [
+      810,
+      589
+    ],
+    "crop": null
+  },
+  {
+    "project": "surgery-ai",
+    "file": "adaptive-prototype.webp",
+    "deck": "UF Robotics Workshop_Shuai Li_ESSIE.pptx",
+    "slides": [
+      4
+    ],
+    "sourceMedia": "ppt/media/image5.png",
+    "sourceSha256": "38a583d6632449c5c2e1f19d04b6a4a524caf14ab74d9d84d1f899234135a332",
+    "dimensions": [
+      1460,
+      698
+    ],
+    "originalDimensions": [
+      1460,
+      698
+    ],
+    "crop": null
+  },
+  {
+    "project": "surgery-ai",
+    "file": "clear-view.webp",
+    "deck": "UF Robotics Workshop_Shuai Li_ESSIE.pptx",
+    "slides": [
+      5
+    ],
+    "sourceMedia": "ppt/media/image10.png",
+    "sourceSha256": "7752fffc8cd5d29f2f335b88067f2d35f7a4e4365f0d8d5ea65860aa1307a9cc",
+    "dimensions": [
+      377,
+      202
+    ],
+    "originalDimensions": [
+      377,
+      202
+    ],
+    "crop": null
+  },
+  {
+    "project": "surgery-ai",
+    "file": "obscured-view.webp",
+    "deck": "UF Robotics Workshop_Shuai Li_ESSIE.pptx",
+    "slides": [
+      5
+    ],
+    "sourceMedia": "ppt/media/image11.png",
+    "sourceSha256": "4240cafb56f4d71a325a04e50de5a7e18fec164dd4c476877365a3f419507248",
+    "dimensions": [
+      371,
+      199
+    ],
+    "originalDimensions": [
+      371,
+      199
+    ],
+    "crop": null
+  },
+  {
+    "project": "surgery-ai",
+    "file": "soft-nozzle.webp",
+    "deck": "UF Robotics Workshop_Shuai Li_ESSIE.pptx",
+    "slides": [
+      6
+    ],
+    "sourceMedia": "ppt/media/image14.png",
+    "sourceSha256": "dd510c80fdfc7e7fc3b0b3ccc8be3930def3b4228f6ff358ceb125154139f60e",
+    "dimensions": [
+      650,
+      209
+    ],
+    "originalDimensions": [
+      650,
+      209
+    ],
+    "crop": null
+  },
+  {
+    "project": "surgery-ai",
+    "file": "cleaning-control.webp",
+    "deck": "UF Robotics Workshop_Shuai Li_ESSIE.pptx",
+    "slides": [
+      6
+    ],
+    "sourceMedia": "ppt/media/image15.jpg",
+    "sourceSha256": "364bde468fb257b887638ba43ec9b596accff04e61dcb4f1e4acc3ec4d576aff",
+    "dimensions": [
+      4404,
+      2365
+    ],
+    "originalDimensions": [
+      4404,
+      2365
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-immunology",
+    "file": "microbiome-abundance.webp",
+    "deck": "Dreams.pptx",
+    "slides": [
+      1
+    ],
+    "sourceMedia": "ppt/media/image1.png",
+    "sourceSha256": "75b7087589db0515354e171b04243a4ccdc2427bb0df802e480a009b3cfc6452",
+    "dimensions": [
+      1430,
+      1083
+    ],
+    "originalDimensions": [
+      1430,
+      1083
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-immunology",
+    "file": "sampling.webp",
+    "deck": "Research Presentation.pptx",
+    "slides": [
+      12
+    ],
+    "sourceMedia": "ppt/media/image27.png",
+    "sourceSha256": "82a98a89f6dce7b7213e8f7420febcc08d1de85f0d728ae6bfd54ebf3626b591",
+    "dimensions": [
+      469,
+      251
+    ],
+    "originalDimensions": [
+      469,
+      251
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-immunology",
+    "file": "community-patterns.webp",
+    "deck": "Research Presentation.pptx",
+    "slides": [
+      12
+    ],
+    "sourceMedia": "ppt/media/image28.png",
+    "sourceSha256": "a48f480cc9ad0fe27ec3368bf30463210ddfd842b8cacb92004e582979861f45",
+    "dimensions": [
+      2054,
+      627
+    ],
+    "originalDimensions": [
+      2054,
+      627
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-immunology",
+    "file": "culture-1.webp",
+    "deck": "Research Presentation.pptx",
+    "slides": [
+      12
+    ],
+    "sourceMedia": "ppt/media/image29.jpeg",
+    "sourceSha256": "324729750d866416600045a68b39fb60439f7feb5ad936faeb436b129e0c4844",
+    "dimensions": [
+      3298,
+      2474
+    ],
+    "originalDimensions": [
+      3298,
+      2474
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-immunology",
+    "file": "culture-2.webp",
+    "deck": "Research Presentation.pptx",
+    "slides": [
+      12
+    ],
+    "sourceMedia": "ppt/media/image30.png",
+    "sourceSha256": "d79dd5dd51bab7210dc29c2fd2395310e59f8549fb5ba40cf35f5dd6676c0421",
+    "dimensions": [
+      1500,
+      1125
+    ],
+    "originalDimensions": [
+      1500,
+      1125
+    ],
+    "crop": null
+  },
+  {
+    "project": "building-immunology",
+    "file": "culture-3.webp",
+    "deck": "Research Presentation.pptx",
+    "slides": [
+      12
+    ],
+    "sourceMedia": "ppt/media/image31.jpeg",
+    "sourceSha256": "662c21c2f1fc9ff631c9b2dfe25f11eb0244e7b15b71abc525719b2484048759",
+    "dimensions": [
+      3298,
+      2474
+    ],
+    "originalDimensions": [
+      3298,
+      2474
+    ],
+    "crop": null
+  },
+  {
+    "project": "robotic-block-assembly",
+    "file": "coastal-overview.webp",
+    "deck": "UF Robotics Workshop_Shuai Li.pptx",
+    "slides": [
+      7
+    ],
+    "sourceMedia": "ppt/media/image17.png",
+    "sourceSha256": "53bac96cab4b0bcb1158e10e00bbba618e0f0e679927951ee2d215f0cd064d14",
+    "dimensions": [
+      1904,
+      978
+    ],
+    "originalDimensions": [
+      1904,
+      978
+    ],
+    "crop": null
+  },
+  {
+    "project": "robotic-block-assembly",
+    "file": "breakwater-assembly.webp",
+    "deck": "UF Robotics Workshop_Shuai Li.pptx",
+    "slides": [
+      7
+    ],
+    "sourceMedia": "ppt/media/image17.png",
+    "sourceSha256": "53bac96cab4b0bcb1158e10e00bbba618e0f0e679927951ee2d215f0cd064d14",
+    "dimensions": [
+      832,
+      571
+    ],
+    "originalDimensions": [
+      1904,
+      978
+    ],
+    "crop": [
+      1072,
+      407,
+      1904,
+      978
+    ]
+  },
+  {
+    "project": "robotic-block-assembly",
+    "file": "module-design.webp",
+    "deck": "UF Robotics Workshop_Shuai Li.pptx",
+    "slides": [
+      7
+    ],
+    "sourceMedia": "ppt/media/image17.png",
+    "sourceSha256": "53bac96cab4b0bcb1158e10e00bbba618e0f0e679927951ee2d215f0cd064d14",
+    "dimensions": [
+      332,
+      321
+    ],
+    "originalDimensions": [
+      1904,
+      978
+    ],
+    "crop": [
+      103,
+      68,
+      435,
+      389
+    ]
+  },
+  {
+    "project": "robotic-block-assembly",
+    "file": "connection-strategies.webp",
+    "deck": "UF Robotics Workshop_Shuai Li.pptx",
+    "slides": [
+      7
+    ],
+    "sourceMedia": "ppt/media/image17.png",
+    "sourceSha256": "53bac96cab4b0bcb1158e10e00bbba618e0f0e679927951ee2d215f0cd064d14",
+    "dimensions": [
+      1071,
+      589
+    ],
+    "originalDimensions": [
+      1904,
+      978
+    ],
+    "crop": [
+      0,
+      389,
+      1071,
+      978
+    ]
+  },
+  {
+    "project": "robotic-block-assembly",
+    "file": "manufacturing.webp",
+    "deck": "UF Robotics Workshop_Shuai Li.pptx",
+    "slides": [
+      7
+    ],
+    "sourceMedia": "ppt/media/image17.png",
+    "sourceSha256": "53bac96cab4b0bcb1158e10e00bbba618e0f0e679927951ee2d215f0cd064d14",
+    "dimensions": [
+      398,
+      321
+    ],
+    "originalDimensions": [
+      1904,
+      978
+    ],
+    "crop": [
+      771,
+      68,
+      1169,
+      389
+    ]
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "indoor-transport.mp4",
+    "deck": "Building.pptx",
+    "slides": [
+      4
+    ],
+    "sourceMedia": "ppt/media/image24.gif",
+    "sourceSha256": "ff37884b99f6d0ef780eb7103451f6f74f32f67379d19d400bd9751cbacce2a3",
+    "sourceStart": 0,
+    "sourceDuration": 9.07,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1280,
+          "height": 718
+        }
+      ],
+      "format": {
+        "duration": "9.067000"
+      }
+    },
+    "transformation": "Full-frame silent web conversion; original timing retained, 30 fps output."
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "building-layers.mp4",
+    "deck": "Building.pptx",
+    "slides": [
+      4
+    ],
+    "sourceMedia": "ppt/media/image25.gif",
+    "sourceSha256": "4a6d7a1357a0b522800ceb410f31a50b54214d55686c3c1238d825ed1c90907c",
+    "sourceStart": 0,
+    "sourceDuration": 4.74,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1280,
+          "height": 718
+        }
+      ],
+      "format": {
+        "duration": "4.734000"
+      }
+    },
+    "transformation": "Full-frame silent web conversion; original timing retained, 30 fps output."
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "indoor-mapping.mp4",
+    "deck": "Building.pptx",
+    "slides": [
+      10
+    ],
+    "sourceMedia": "ppt/media/media5.mov",
+    "sourceSha256": "112de62425ce0940b12b1c5f2ca1122ace7f539d2cf7545bc63d852a611ca18d",
+    "sourceStart": 8,
+    "sourceDuration": 12,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 808,
+          "height": 720
+        }
+      ],
+      "format": {
+        "duration": "12.000000"
+      }
+    },
+    "transformation": "Full-frame silent web conversion; original timing retained, 30 fps output."
+  },
+  {
+    "project": "building-digital-twin",
+    "file": "disinfection-simulation.mp4",
+    "deck": "Building.pptx",
+    "slides": [
+      11
+    ],
+    "sourceMedia": "ppt/media/media6.mp4",
+    "sourceSha256": "bf7f7ae5a3092b89d238a981d039068c296855d1f4e5b24e8b93dde90afdd464",
+    "sourceStart": 19,
+    "sourceDuration": 12,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1280,
+          "height": 718
+        }
+      ],
+      "format": {
+        "duration": "12.000000"
+      }
+    },
+    "transformation": "Full-frame silent web conversion; original timing retained, 30 fps output."
+  },
+  {
+    "project": "building-immunology",
+    "file": "culture-1-preview.webp",
+    "derivedFrom": "culture-1.webp",
+    "transformation": "Full-frame display preview, maximum 1600 pixels per side; original-resolution source remains linked.",
+    "sha256": "1a9ebb38f49e7ce9c665b2ed41178d155b448ce9fca724e2a5039fac554d32b8"
+  },
+  {
+    "project": "building-immunology",
+    "file": "culture-2-preview.webp",
+    "derivedFrom": "culture-2.webp",
+    "transformation": "Full-frame display preview, maximum 1600 pixels per side; original-resolution source remains linked.",
+    "sha256": "10b495f48023b54bf986a0ca8abdda7ffc455317685075604b5307027b432d1e"
+  },
+  {
+    "project": "building-immunology",
+    "file": "culture-3-preview.webp",
+    "derivedFrom": "culture-3.webp",
+    "transformation": "Full-frame display preview, maximum 1600 pixels per side; original-resolution source remains linked.",
+    "sha256": "fff5c227bc5edb9e0b2647b9b934d8c873c752499937c543242b5ecfbfe56940"
+  },
+  {
+    "project": "surgery-ai",
+    "file": "cleaning-control-preview.webp",
+    "derivedFrom": "cleaning-control.webp",
+    "transformation": "Full-frame display preview, maximum 1600 pixels per side; original-resolution source remains linked.",
+    "sha256": "2423cdf27f15e4b9bcf32bb14e92f5762694643ca5c5dd3b781967266ae6e495"
+  }
+]

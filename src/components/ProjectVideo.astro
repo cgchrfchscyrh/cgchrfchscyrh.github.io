@@ -13,6 +13,6 @@ const base = `projects/${clip.project}/${clip.id}`;
     Your browser does not support video playback. Read the complete description below.
   </video>
   <figcaption><p id={`${id}-caption`}>{clip.caption}</p>
-    <details><summary>Video description & source</summary><div id={`${id}-description`}><p>{clip.description}</p><p>{clip.audioNote}</p></div><p>Source: <a href={`https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842/${clip.sourceFile}`}>DreamXLab’s original recording</a>, excerpt {clip.sourceRange}. Original speed and complete frame retained.</p></details>
+    <details><summary>Video description & source</summary><div id={`${id}-description`}><p>{clip.description}</p><p>{clip.audioNote}</p></div><p>Source: {clip.sourceFile ? <a href={`https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842/${clip.sourceFile}`}>DreamXLab’s original recording</a> : clip.sourceLabel}; {clip.sourceRange}. Original speed and complete frame retained.</p></details>
   </figcaption>
 </figure>

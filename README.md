@@ -6,10 +6,14 @@ A personal academic website inspired by the structure of [Mengjun Wang’s homep
 
 ## Content
 
-- Homepage: biography, research news, four project pages, additional publications, education, awards, and contact.
+- Homepage: biography, research news, four linked paper projects, four locally hosted research overviews, additional publications, education, awards, and contact.
 - `/cv/`: concise HTML CV, based on the supplied 2026 CV and verified publication records. It is a summary, not a full transcription of the original document.
 - `/accessibility/`: accessibility information and known limits.
 - `/404.html`: accessible error page.
+- `/building-digital-twin/`: indoor simulation, room-level risk, and four building cases.
+- `/surgery-ai/`: camera-positioning prototypes and proposed biomimetic cleaning.
+- `/building-immunology/`: environmental sampling, microbial communities, and culture images.
+- `/robotic-block-assembly/`: architected modules and conceptual coastal breakwater assembly.
 
 Update biography and news in `src/pages/index.astro`. Edit publication links, authors, education, and profile URLs in `src/data/profile.ts`. There is no placeholder portrait or Google Scholar profile. The introductory image is labeled as a research image and can be replaced with a supplied portrait later.
 
@@ -46,6 +50,12 @@ The GitHub Actions workflow builds, checks dependencies, runs axe checks, and de
 
 ## Accessibility and privacy
 
-No UF logo, UF blue/orange theme, tracking scripts, remote fonts, autoplay, or external media embeds are used. At the owner's request, the footer contains only copyright and navigation links. The website does not publish the private address or telephone number from the original CV. It provides an HTML CV rather than redistributing an unreviewed document.
+No UF logo, UF blue/orange interface theme, tracking scripts, remote fonts, or external media embeds are used. Original scientific figures retain their source colors. Research videos play silently when visible, with native controls, reduced-motion and Save-Data support, and remembered manual pause. The homepage and CV remain static. The website does not publish the private address or telephone number from the original CV. It provides an HTML CV rather than redistributing an unreviewed document.
 
-The axe script checks all four routes, desktop and 320 CSS-pixel layouts, text spacing, keyboard skip links, expandable descriptions, headings, and media. Automated checks do not establish complete WCAG or ADA compliance. See `reports/manual-review.md` and `reports/content-sources.md` for the scope and remaining limitations.
+The axe script checks all eight routes, desktop and 320 CSS-pixel layouts, text spacing, keyboard skip links, expandable descriptions, headings, and media. Automated checks do not establish complete WCAG or ADA compliance. See `reports/manual-review.md` and `reports/content-sources.md` for the scope and remaining limitations.
+
+## Research media
+
+Project metadata and video descriptions live in `src/data/lab-projects.ts`; figure descriptions and source references are in `src/data/lab-figures.ts`. Page-specific sections are under `src/components/projects/`. Source media hashes, slide numbers, and extracted-detail coordinates are recorded in `reports/materials-2026-10-24.json`. Supplied presentations remain unchanged.
+
+Full-resolution source images are available through figure links. Large culture and control images use smaller web previews. The case selectors progressively enhance complete HTML: all cases remain readable without JavaScript. The building interface is shown as archived screenshots, and the coastal assembly page is a concept presentation, not an operational simulator.

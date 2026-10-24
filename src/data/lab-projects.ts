@@ -1,78 +1,68 @@
 const source = "https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842";
-
+export interface ProjectClip { id: string; project: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceRange: string; audioNote: string; }
 export const labProjects = [
   {
-    slug: "building-immunology",
-    title: "Building Immunology",
-    topic: "Healthy built environments",
-    subtitle: "Toward buildings that sense, predict, and respond.",
-    description: "A research framework connecting indoor infection-risk modeling, energy, thermal comfort, and human-centered building management.",
-    source: `${source}/_projects/Immunology.md`,
-    image: "immunology-title.png",
-    imageWidth: 534,
-    imageHeight: 323,
-    imageAlt: "Cutaway building model linking human well-being, pathogen modeling, sensing, building control, and AI reasoning.",
-    figure: "immunology-method.png",
-    figureWidth: 1280,
-    figureHeight: 720,
-    figureAlt: "Health, energy, and occupant preference surround Humanity, alongside a building model labeled with sensing, pathogen modeling, control, and AI reasoning.",
-    figureCaption: "Connect the building, its environment, and the people inside.",
-    figureDescription: "The left diagram places Humanity at the center of Health, Energy, and Preference. The right cutaway building connects Human Well-Being, Pathogen Modeling, IoT Sensing & Monitoring, Building Control, and AI Reasoning & Interaction. These labels express the program’s proposed connections; colors are not required to distinguish them. The source slide asks whether buildings could become more disease-resistant, efficient, and responsive. It presents a research vision, rather than measured performance.",
-    abstract: "Building Immunology draws an analogy with the human immune system: buildings should be able to sense changing conditions, model hazards, and adapt their response. The program brings together occupants, pathogens, and the indoor environment while considering health, energy use, and comfort.",
-    methodIntro: "Link environmental models with building information and human activity.",
-    steps: [
-      { title: "Sense", text: "Connect building information, indoor conditions, and occupancy." },
-      { title: "Model", text: "Study airborne infection risk alongside energy and thermal comfort." },
-      { title: "Respond", text: "Explore digital twins and AI-supported interaction for building management." },
-    ],
-    demoIntro: "From environmental models to an interactive building representation.",
-    scope: "The animation presents a combined research framework and illustrative demonstrations. The cited studies provide the underlying evidence; this overview does not establish disease prevention or an operational building-control system.",
-    heroClips: ["building-system"],
-    demoClips: ["building-digital-twin"],
+    slug: "building-digital-twin", title: "Building Digital Twins", shortTitle: "Building Digital Twins", topic: "Building simulation · Room-level infection risk",
+    subtitle: "See how a building shapes exposure.", description: "Building models, indoor transport simulations, and room-level infection-risk visualization.",
+    source: `${source}/_projects/Immunology.md`, credit: "Research materials by Shuai Li and collaborators",
+    image: "indoor-transport.jpg", imageWidth: 854, imageHeight: 480, imageAlt: "An indoor building model with visible particle paths between rooms.",
+    abstract: "Indoor exposure depends on spaces, people, and the way contaminants move. This research connects building information, occupant activity, and transmission models to visualize conditions across a building and communicate risk at the room level.",
+    heroClips: ["indoor-transport", "building-layers"], demoClips: ["indoor-mapping", "disinfection-simulation"],
+    sourceNotes: ["Building, slides 2–4 and 10–11: building models, simulation animations, mapping, and disinfection simulation.", "Research Presentation, slides 3–5 and 8: modeling framework and room-level risk interface."]
   },
   {
-    slug: "surgery-ai",
-    title: "Surgery AI",
-    topic: "Physical AI for surgical assistance",
-    subtitle: "Help surgeons see, understand, and act.",
-    description: "Research into robotic camera assistance, spatial intelligence, and AI-assisted feedback for minimally invasive surgery.",
-    source: `${source}/_projects/Surgery_AI.md`,
-    image: "surgery-cover.png",
-    imageWidth: 617,
-    imageHeight: 347,
-    imageAlt: "Illustration of a robot-mounted external actuator above an abdominal model, with an internal camera and surgical instruments.",
-    figure: "surgery-overview.png",
-    figureWidth: 1920,
-    figureHeight: 718,
-    figureAlt: "Robotic camera-assistance concept with a manipulator and external actuator above an abdominal model, plus exploded actuator and internal-camera assemblies.",
-    figureCaption: "A robotic platform for camera positioning and visual access.",
-    figureDescription: "The main drawing labels a six-degree-of-freedom manipulator, force-torque sensor, external actuator, abdominal wall, in-vivo camera, and surgical instruments. Separate views show the actuator and camera. The actuator’s exploded diagram identifies the connection interface, actuator housing, driver board, left bearing, motor shaft, EPM, rotor housing, micro motor, motor housing, right bearing, and bearing support. The camera’s exploded diagram identifies the tub cap, O-ring, bearing, IPM, board shaft, battery pack, lens, PCB board, and camera tube. Numbers identify parts, not experimental results; the abbreviations follow the original diagram. This is a hardware concept illustration.",
-    abstract: "Minimally invasive surgery places demanding constraints on visual access and spatial understanding. Surgery AI explores cognitive and physical assistance: robotic camera positioning, spatial interpretation, and feedback that helps a person understand the operative scene.",
-    methodIntro: "Supervision, automation, and models connect the project’s research directions.",
-    steps: [
-      { title: "Supervision", text: "Explore three-dimensional vision and spatial intelligence for surgical assistance." },
-      { title: "Automation", text: "Investigate robotic and personalized laparoscope control." },
-      { title: "Model", text: "Connect planning, guidance, analysis, and surgeon–AI co-learning." },
-    ],
-    demoIntro: "Hardware concepts and simulated motion, viewed from complementary perspectives.",
-    scope: "These materials show a laboratory setup and rendered demonstrations. They do not establish clinical performance. The related training paper below addresses AI-assisted spatial feedback; it does not validate every capability envisioned by the broader project.",
-    heroClips: ["camera-guidance", "bench-prototype"],
-    demoClips: ["camera-assembly", "instrument-motion"],
+    slug: "surgery-ai", title: "Surgery AI", shortTitle: "Surgery AI", topic: "Minimally invasive surgery · Robotic vision",
+    subtitle: "Position the camera. Preserve the view.", description: "Magnetically actuated camera assistance and biomimetic cleaning concepts for minimally invasive surgery.",
+    source: `${source}/_projects/Surgery_AI.md`, credit: "Gregory Mancini · Jonathan DeLong · Jindong Tan · Shuai Li",
+    image: "surgery-cover.png", imageWidth: 617, imageHeight: 347, imageAlt: "Robot-mounted external actuator and an internal camera in an abdominal model.",
+    abstract: "Minimally invasive surgery requires clear views within a confined workspace. This project studies robotic camera positioning and shape-changing mechanisms, alongside a proposed soft robotic cleaning system inspired by the human eye.",
+    heroClips: ["camera-guidance", "bench-prototype"], demoClips: ["camera-assembly", "instrument-motion"],
+    sourceNotes: ["Redefine Surgery Intelligence with TEAM, slides 2–5: team, mechanism diagrams, rendered motion, and laboratory prototype.", "UF Robotics Workshop — Shuai Li — ESSIE, slides 4–6: adaptive mechanisms, visual obstruction examples, soft nozzle, and proposed cleaning control. The cleaning concept is separate from the prototype footage."]
+  },
+  {
+    slug: "building-immunology", title: "Microbiomes in Buildings", shortTitle: "Building Microbiomes", topic: "Building immunology · Microbial communities",
+    subtitle: "Explore the life within our everyday spaces.", description: "Environmental sampling and microbial community analysis across buildings and occupied spaces.",
+    source: `${source}/_projects/Immunology.md`, credit: "Research materials by Shuai Li and collaborators",
+    image: "culture-1-preview.webp", imageWidth: 3298, imageHeight: 2474, imageAlt: "Environmental culture image showing colonies with different shapes and sizes.",
+    abstract: "Buildings are habitats for microbial communities as well as people. Environmental sampling and community analysis help investigate how occupancy and building conditions relate to the microorganisms found in indoor spaces.",
+    heroClips: [], demoClips: [],
+    sourceNotes: ["Dreams, slide 1: Building M and Building T relative-abundance chart.", "Research Presentation, slide 12: school sampling, culture images, and community-analysis panels. These are separate source examples; the slides do not establish that they share a single sample set."]
+  },
+  {
+    slug: "robotic-block-assembly", title: "Robotic Block Assembly", shortTitle: "Robotic Block Assembly", topic: "Coastal construction · AMERICA",
+    subtitle: "Interlocking modules for coastal structures.", description: "A concept for robot-assisted assembly of architected modules into coastal breakwaters.",
+    source: "", credit: "Research materials by Shuai Li and collaborators",
+    image: "breakwater-assembly.webp", imageWidth: 832, imageHeight: 571, imageAlt: "Rendered concept of a mobile robot placing interlocking modules along a breakwater.",
+    abstract: "Architected modules connect material design with construction. This concept explores how robots could grasp, align, and interlock individual units to form coastal breakwaters, with joint geometry shaping the assembly sequence.",
+    heroClips: [], demoClips: [],
+    sourceNotes: ["UF Robotics Workshop — Shuai Li, slide 7: Architected Materials for Extreme Resistance in Coastal Applications (AMERICA), labeled Gulf Futures Challenge Award Phase I in the supplied deck. The page presents its design and assembly concepts."]
   },
 ];
 
-export const projectClips = [
+export const projectClips: ProjectClip[] = [
   {
-    id: "building-system", project: "building-immunology", duration: 10,
-    title: "A connected building-health framework", caption: "Risk modeling, environmental simulation, and a digital twin in one framework.",
-    description: "A two-column animated presentation combines modeling and management. On the left, epidemiological scenarios, community information, building information, human behavior, and virus-specific parameters feed risk modeling and infection risk. Environmental models, indoor setpoints, occupancy activities, and operating schedules connect to thermal comfort and energy consumption; small plots illustrate trade-offs. On the right, a building model and an Internet of Things illustration sit above changing digital-twin views. A simulation-prediction block and a large-language-model block connect to a video of a person interacting with a humanoid robot. The panels change within a fixed full-frame diagram; this is a program overview, not a labeled performance comparison.",
-    sourceFile: "assets/video/Immunology/slide3.mp4", sourceRange: "00:02–00:12", audioNote: "The source has no audio track.",
+    id: "indoor-transport", project: "building-digital-twin", duration: 9.067,
+    title: "Indoor transport in a building model", caption: "A room-scale view of simulated transport.",
+    description: "A camera moves through a digital building with desks, chairs, partitions, and overhead services. Green particle-like traces appear around rooms and passages. The view reveals how spatial boundaries and transport are represented in the animation. The colors are visual layers, not a numerical risk scale. This is a recorded model visualization rather than a live forecast.",
+    sourceLabel: "Building, slide 4, embedded image24.gif", sourceRange: "complete animation", audioNote: "Silent source animation, converted to a video with native controls."
   },
   {
-    id: "building-digital-twin", project: "building-immunology", duration: 10,
-    title: "Digital-twin and interaction illustrations", caption: "A second excerpt of the same framework animation shows its digital-twin views.",
-    description: "The fixed diagram again shows infection-risk modeling and health–energy–comfort trade-offs on the left. On the right, views of a building interior and a point-cloud-like reconstruction change above a person interacting with a humanoid robot. Building information, sensing, simulation-based predictions, and a large language model are linked by arrows. This is a later excerpt of the same presentation animation, not a separate experiment. It does not identify a deployed controller or provide measured infection-prevention outcomes.",
-    sourceFile: "assets/video/Immunology/slide3.mp4", sourceRange: "00:16–00:26", audioNote: "The source has no audio track.",
+    id: "building-layers", project: "building-digital-twin", duration: 4.734,
+    title: "Building layers from above", caption: "A complementary view across rooms and model layers.",
+    description: "An overhead camera moves across the same indoor model. Furniture, room boundaries, overhead elements, and colored overlays become visible from above. This recorded model view complements the room-scale animation. The source does not supply a risk legend for these overlays, so their colors should not be interpreted as infection-risk categories.",
+    sourceLabel: "Building, slide 4, embedded image25.gif", sourceRange: "complete animation", audioNote: "Silent source animation, converted to a video with native controls."
+  },
+  {
+    id: "indoor-mapping", project: "building-digital-twin", duration: 12,
+    title: "An indoor map taking shape", caption: "A recorded mapping sequence reveals indoor geometry.",
+    description: "A point-cloud-like indoor map expands against a white background as the recorded view changes. Walls, floor regions, and objects appear as colored clusters. The sequence is from the source presentation’s affordance-aware navigation section. It illustrates a spatial representation used in a robotic setting; its colors do not encode infection risk.",
+    sourceLabel: "Building, slide 10, embedded media5.mov", sourceRange: "00:08–00:20", audioNote: "The source has no audio track."
+  },
+  {
+    id: "disinfection-simulation", project: "building-digital-twin", duration: 12,
+    title: "A robotic response in simulation", caption: "A simulated robot approaches surfaces in a hospital room.",
+    description: "A mobile robot with an arm moves near a bed and furniture in a rendered hospital room. A small inset provides a second view. The excerpt shows motion and positioning as part of a simulated disinfection scenario. It does not measure pathogen removal or demonstrate a live connection to the risk interface on this page.",
+    sourceLabel: "Building, slide 11 / Research Presentation, slide 7", sourceRange: "00:19–00:31", audioNote: "This web excerpt omits source audio and presents the full visual scene at its original speed."
   },
   {
     id: "camera-guidance", project: "surgery-ai", duration: 12,
@@ -99,6 +89,7 @@ export const projectClips = [
     sourceFile: "assets/video/surgery_ai/video_3.mp4", sourceRange: "00:07–00:19", audioNote: "The source audio track is digitally silent; it is omitted from the web excerpt.",
   },
 ];
+
 
 export const immunologyPublications = [
   "Xu, Y., Chen, J., Cai, J., Li, S., & He, Q. (2023). Simulation-based trade-off modeling for indoor infection risk of airborne diseases, energy consumption, and thermal comfort. Journal of Building Engineering, 76, 107137.",
