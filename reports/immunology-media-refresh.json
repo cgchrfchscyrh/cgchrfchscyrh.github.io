@@ -24,7 +24,7 @@
       "preview": "building-immunity-preview.webp"
     },
     {
-      "file": "immunity-framework.webp",
+      "file": "immunity-framework-white.webp",
       "source": "Building Immunology 1.pptx",
       "slide": 3,
       "embedded": "ppt/media/image3.png",
@@ -33,10 +33,10 @@
         1485,
         880
       ],
-      "transform": "WebP conversion; complete image, original colors and aspect ratio retained"
+      "transform": "Original transparent PNG composited on white before WebP conversion; complete labels, lines and frame retained"
     },
     {
-      "file": "occupant-interaction.webp",
+      "file": "occupant-interaction-redacted.webp",
       "source": "Building Immunology 1.pptx",
       "slide": 3,
       "embedded": "ppt/media/image2.png",
@@ -45,7 +45,7 @@
         1280,
         720
       ],
-      "transform": "WebP conversion; complete image, original colors and aspect ratio retained"
+      "transform": "Privacy mosaic applied to face region only; remaining source pixels retained before WebP conversion"
     },
     {
       "file": "robotic-perception.mp4",

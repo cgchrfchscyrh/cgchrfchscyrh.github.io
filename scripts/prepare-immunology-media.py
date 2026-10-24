@@ -5,6 +5,7 @@ from io import BytesIO
 import hashlib
 import json
 import subprocess
+import argparse
 from PIL import Image
 
 REPO = Path(__file__).resolve().parents[1]
@@ -13,6 +14,9 @@ OUT = REPO / "public/projects/building-immunology"
 VIDEO = MATERIALS / "Animated_Infographics_May_09_2022.mp4"
 DECK = MATERIALS / "Building Immunology 1.pptx"
 OUT.mkdir(parents=True, exist_ok=True)
+parser = argparse.ArgumentParser()
+parser.add_argument("--images-only", action="store_true", help="Refresh figures without re-encoding unchanged videos")
+args = parser.parse_args()
 records = []
 
 def sha(path):
@@ -25,11 +29,25 @@ with ZipFile(DECK) as archive:
         ("image2.png", "occupant-interaction", 3),
     ]:
         data = archive.read("ppt/media/" + source)
-        image = Image.open(BytesIO(data)).convert("RGB")
+        original = Image.open(BytesIO(data))
+        transform = "WebP conversion; complete image, original colors and aspect ratio retained"
+        if name == "immunity-framework":
+            # Discarding alpha exposes black RGB values stored in transparent pixels.
+            rgba = original.convert("RGBA")
+            image = Image.alpha_composite(Image.new("RGBA", rgba.size, "white"), rgba).convert("RGB")
+            name = "immunity-framework-white"
+            transform = "Original transparent PNG composited on white before WebP conversion; complete labels, lines and frame retained"
+        elif name == "occupant-interaction":
+            # Never recreate a public unredacted photograph during media refreshes.
+            image = Image.open(REPO / "assets/edited/occupant-interaction-redacted.png").convert("RGB")
+            name = "occupant-interaction-redacted"
+            transform = "Privacy mosaic applied to face region only; remaining source pixels retained before WebP conversion"
+        else:
+            image = original.convert("RGB")
         image.save(OUT / f"{name}.webp", quality=90, method=6)
         record = {"file": f"{name}.webp", "source": DECK.name, "slide": slide,
                   "embedded": "ppt/media/" + source, "source_sha256": hashlib.sha256(data).hexdigest(),
-                  "dimensions": image.size, "transform": "WebP conversion; complete image, original colors and aspect ratio retained"}
+                  "dimensions": image.size, "transform": transform}
         if name == "building-immunity":
             image.thumbnail((1600, 1600), Image.Resampling.LANCZOS)
             image.save(OUT / f"{name}-preview.webp", quality=87, method=6)
@@ -55,11 +73,12 @@ def stamp(seconds):
     return f"{ms // 3600000:02}:{ms // 60000 % 60:02}:{ms // 1000 % 60:02}.{ms % 1000:03}"
 
 for name, start, duration, poster, cues in clips:
-    subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(start), "-i", str(VIDEO),
+    if not args.images_only:
+        subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(start), "-i", str(VIDEO),
                     "-t", str(duration), "-an", "-vf", "scale=1280:-2", "-c:v", "libx264", "-preset", "slow",
                     "-crf", "21", "-pix_fmt", "yuv420p", "-threads", "2", "-movflags", "+faststart",
                     "-y", str(OUT / f"{name}.mp4")], check=True)
-    subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(poster), "-i", str(VIDEO),
+        subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(poster), "-i", str(VIDEO),
                     "-frames:v", "1", "-vf", "scale=1280:-2", "-q:v", "2", "-y", str(OUT / f"{name}.jpg")], check=True)
     (OUT / f"{name}.vtt").write_text("WEBVTT\n\n" + "\n\n".join(
         f"{stamp(a)} --> {stamp(b)}\n{text}" for a, b, text in cues) + "\n")

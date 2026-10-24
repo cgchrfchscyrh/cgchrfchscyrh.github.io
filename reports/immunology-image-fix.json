@@ -1,0 +1,26 @@
+{
+  "request": "Restore the Method figure to its original white background and obscure the face in People in the loop.",
+  "method_fix": {
+    "source": "Building Immunology 1.pptx / ppt/media/image3.png",
+    "cause": "RGBA transparency was discarded during RGB conversion, exposing black values in transparent pixels.",
+    "conversion": "Alpha-composite the source onto white before WebP conversion; no diagram content is redrawn.",
+    "output": "public/projects/building-immunology/immunity-framework-white.webp"
+  },
+  "face_edit": {
+    "tool": "Built-in image_gen",
+    "prompt": "Use case: precise-object-edit. Edit target: the supplied 1280 x 720 photograph for an academic project website. Privacy edit only: apply a strong coarse rectangular mosaic/pixelation over the entire real person's face on the right, including eyes, glasses, nose, mouth, cheeks and ears; fully obscure all facial features. Cover the face from just above the eyebrows down through the chin, expanding slightly to include both ears. Keep the hair outside the face region, the body, pose, hands, clothes, robot and its screen, chair, lighting, background and exact framing unchanged. Do not generate or reconstruct facial features. Do not blur the robot or its illustrated screen. Maintain the source 16:9 composition and 1280 x 720 resolution. No other additions, no text, no watermark.",
+    "processing": "Resize generated edit and composite only the 200 x 190 pixel face region at (790, 60) onto the original 1280 x 720 image. Outside this region all RGB pixels were verified identical before WebP conversion.",
+    "editable_asset": "assets/edited/occupant-interaction-redacted.png",
+    "output": "public/projects/building-immunology/occupant-interaction-redacted.webp"
+  },
+  "privacy_delivery": "Both page preview and full-size image link use the redacted copy. The unredacted web image is removed from the current public build.",
+  "originals": "Original PPT and research video unchanged.",
+  "validation": {
+    "axe_scans": 29,
+    "functional_checks": 309,
+    "violations": 0,
+    "failures": 0,
+    "review": "White diagram labels and lines visually verified; desktop figure and privacy image inspected; full-size link targets redacted file; 320px reflow verified.",
+    "limits": "Automated checks and visual inspection are not complete WCAG or ADA certification."
+  }
+}
