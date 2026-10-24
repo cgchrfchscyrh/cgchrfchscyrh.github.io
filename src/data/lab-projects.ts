@@ -4,7 +4,7 @@ export const labProjects = [
   {
     slug: "building-digital-twin", title: "Building Digital Twins", shortTitle: "Building Digital Twins", topic: "Building simulation · Room-level infection risk",
     subtitle: "See how a building shapes exposure.", description: "Building models, indoor transport simulations, and room-level infection-risk visualization.",
-    source: `${source}/_projects/Immunology.md`, credit: "Research materials by Shuai Li and collaborators",
+    source: `${source}/_projects/Immunology.md`, credit: "",
     image: "indoor-transport.jpg", imageWidth: 854, imageHeight: 480, imageAlt: "An indoor building model with visible particle paths between rooms.",
     abstract: "Indoor exposure depends on spaces, people, and the way contaminants move. This research connects building information, occupant activity, and transmission models to visualize conditions across a building and communicate risk at the room level.",
     heroClips: ["indoor-transport", "building-layers"], demoClips: ["indoor-mapping", "disinfection-simulation"],
@@ -22,7 +22,7 @@ export const labProjects = [
   {
     slug: "building-immunology", title: "Microbiomes in Buildings", shortTitle: "Building Microbiomes", topic: "Building immunology · Microbial communities",
     subtitle: "Explore the life within our everyday spaces.", description: "Environmental sampling and microbial community analysis across buildings and occupied spaces.",
-    source: `${source}/_projects/Immunology.md`, credit: "Research materials by Shuai Li and collaborators",
+    source: `${source}/_projects/Immunology.md`, credit: "",
     image: "culture-1-preview.webp", imageWidth: 3298, imageHeight: 2474, imageAlt: "Environmental culture image showing colonies with different shapes and sizes.",
     abstract: "Buildings are habitats for microbial communities as well as people. Environmental sampling and community analysis help investigate how occupancy and building conditions relate to the microorganisms found in indoor spaces.",
     heroClips: [], demoClips: [],
@@ -31,7 +31,7 @@ export const labProjects = [
   {
     slug: "robotic-block-assembly", title: "Robotic Block Assembly", shortTitle: "Robotic Block Assembly", topic: "Coastal construction · AMERICA",
     subtitle: "Interlocking modules for coastal structures.", description: "A concept for robot-assisted assembly of architected modules into coastal breakwaters.",
-    source: "", credit: "Research materials by Shuai Li and collaborators",
+    source: "", credit: "",
     image: "breakwater-assembly.webp", imageWidth: 832, imageHeight: 571, imageAlt: "Rendered concept of a mobile robot placing interlocking modules along a breakwater.",
     abstract: "Architected modules connect material design with construction. This concept explores how robots could grasp, align, and interlock individual units to form coastal breakwaters, with joint geometry shaping the assembly sequence.",
     heroClips: [], demoClips: [],
