@@ -1,0 +1,118 @@
+.coastal-page {
+  --coastal-paper: #f2f2ee;
+  --coastal-ink: #222321;
+  --coastal-muted: #555751;
+  background: var(--coastal-paper);
+  color: var(--coastal-ink);
+}
+.coastal-page .coastal-wrap { width: min(100% - 6rem, 1440px); margin-inline: auto; }
+.coastal-page .project-header { padding: 1.35rem 3rem; background: #20211f; color: #f3f3ed; border-color: #4b4c47; }
+.coastal-page .project-wordmark { font-size: 1rem; }
+.coastal-page .project-wordmark img { filter: invert(1); }
+.coastal-page .project-header nav { font-size: .9rem; gap: 1.6rem; }
+.coastal-page .project-header :focus-visible,
+.coastal-page .coastal-dark :focus-visible { outline-color: #fff; }
+.coastal-page .coastal-dark { background: #20211f; color: #f3f3ed; }
+.coastal-page .coastal-hero-topline,
+.coastal-page .coastal-hero-bottom,
+.coastal-page .coastal-image-label { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem 1.5rem; }
+.coastal-page .coastal-hero-topline { padding: 2.25rem 0 1rem; text-transform: uppercase; font-size: .73rem; letter-spacing: .1em; color: #c4c6bf; }
+.coastal-page .coastal-hero-topline > p { margin: 0; }
+.coastal-page .coastal-hero-grid { display: grid; grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr); gap: 3rem; padding: 1.5rem 0 2rem; align-items: center; }
+.coastal-page .coastal-hero-copy { padding: 1rem 0 3rem; }
+.coastal-page h1 { font-size: clamp(2.8rem, 5.15vw, 5.3rem); font-weight: 500; letter-spacing: -.06em; line-height: 1.02; margin: 0; overflow-wrap: anywhere; }
+.coastal-page .coastal-tagline { font-size: clamp(1.6rem, 3vw, 2.75rem); line-height: 1.2; letter-spacing: -.035em; color: #c4c6bf; margin-top: 1.1rem; }
+.coastal-page .coastal-hero-intro { font-size: 1.05rem; line-height: 1.65; margin-top: 2.75rem; color: #d2d4cd; }
+.coastal-page .coastal-text-link { display: inline-flex; align-items: center; gap: 2.5rem; padding: .65rem 0; margin-top: 1.5rem; border-bottom: 1px solid #a6aaa0; text-decoration: none; font-size: .9rem; }
+.coastal-page .coastal-text-link:hover { border-color: white; text-decoration: underline; }
+.coastal-page .coastal-text-link span { font-size: 1.35rem; }
+.coastal-page .coastal-image-label { font-size: .69rem; text-transform: uppercase; letter-spacing: .06em; padding-bottom: .85rem; color: #c4c6bf; }
+.coastal-page .coastal-hero-visual .project-figure { margin: 0; }
+.coastal-page .coastal-hero-visual img { width: 100%; height: auto; }
+.coastal-page .coastal-hero-bottom { padding: 1.4rem 0 1.75rem; border-top: 1px solid #4b4c47; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; color: #c4c6bf; }
+.coastal-page .figure-link { border: 0; border-radius: 0; }
+.coastal-page .project-figure figcaption { padding: .9rem 0 0; font-size: .85rem; color: var(--coastal-muted); }
+.coastal-page .project-figure details { font-size: .8rem; }
+.coastal-page .coastal-dark .project-figure figcaption,
+.coastal-page .coastal-dark .source-credit { color: #c4c6bf; }
+.coastal-page .coastal-section { padding: clamp(3.25rem, 7vw, 7rem) 0; }
+.coastal-page .coastal-index { font-size: .74rem; text-transform: uppercase; letter-spacing: .08em; line-height: 1.6; color: var(--coastal-muted); }
+.coastal-page h2 { font-size: clamp(2.2rem, 4.2vw, 4rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.08; margin: 0 0 1.2rem; }
+.coastal-page .coastal-editorial,
+.coastal-page .coastal-section-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 3rem; align-items: start; }
+.coastal-page .coastal-section-heading { margin-bottom: 3rem; }
+.coastal-page .coastal-section-heading > div > p,
+.coastal-page .coastal-body-copy { max-width: 42rem; color: var(--coastal-muted); font-size: 1.08rem; line-height: 1.7; }
+.coastal-page .coastal-body-copy { margin-top: 2rem; }
+.coastal-page .coastal-intro .coastal-index { padding-top: .5rem; }
+.coastal-page .coastal-method { background: #e7e8e2; }
+.coastal-page .coastal-materials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+.coastal-page .coastal-material { border-top: 1px solid #9b9e94; padding-top: 1.25rem; }
+.coastal-page .coastal-material-title { display: flex; align-items: baseline; gap: 1.25rem; }
+.coastal-page .coastal-material-title > span { color: var(--coastal-muted); font-size: .8rem; }
+.coastal-page .coastal-material h3 { font-size: 1.35rem; font-weight: 500; letter-spacing: -.025em; }
+.coastal-page .coastal-material .project-figure { margin: 1.5rem 0 0; }
+.coastal-page .coastal-material .figure-link { display: flex; align-items: center; justify-content: center; padding: 1.5rem; min-height: 350px; }
+.coastal-page .coastal-material img { width: auto; height: auto; max-height: 320px; object-fit: contain; }
+.coastal-page .coastal-reference-note { color: var(--coastal-muted); font-size: .8rem; margin-top: .3rem; }
+.coastal-page .coastal-dark .coastal-index,
+.coastal-page .coastal-dark .coastal-section-heading > div > p { color: #c4c6bf; }
+.coastal-page .coastal-assembly .project-figure { margin: 0 auto; max-width: 1140px; }
+.coastal-page .coastal-assembly .figure-link { padding: clamp(.5rem, 2vw, 2rem); }
+.coastal-page .coastal-sequence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; list-style: none; padding: 0; margin: 3rem 0 0; }
+.coastal-page .coastal-sequence li { display: flex; gap: 1.25rem; border-top: 1px solid #66695e; padding-top: 1.5rem; }
+.coastal-page .coastal-sequence li > span { font-size: .75rem; color: #c4c6bf; padding-top: .4rem; }
+.coastal-page .coastal-sequence h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 500; letter-spacing: -.035em; margin-bottom: .6rem; }
+.coastal-page .coastal-sequence p { font-size: .92rem; color: #c4c6bf; }
+.coastal-page .coastal-project .project-figure { margin: 0; }
+.coastal-page .coastal-project .figure-link { padding: .8rem; }
+.coastal-page .coastal-scope { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 3rem; border-top: 1px solid #b7b9b0; margin-top: 3rem; padding-top: 1.5rem; }
+.coastal-page .coastal-scope p + p { margin: 0; font-size: .9rem; color: var(--coastal-muted); max-width: 44rem; }
+.coastal-page .source-section { padding: 1.5rem 0 2.5rem; border-color: #b7b9b0; }
+.coastal-page .project-footer { background: #20211f; padding: 3rem; }
+.coastal-page .project-footer > div > strong { font-size: clamp(1.6rem, 3vw, 2.75rem); letter-spacing: -.035em; font-weight: 500; }
+.coastal-page .project-footer > div { align-items: center; }
+@media (min-width: 1700px) {
+  .coastal-page .project-header { padding-inline: max(3rem, calc((100vw - 1440px) / 2)); }
+}
+@media (max-width: 1100px) {
+  .coastal-page .coastal-wrap { width: calc(100% - 4rem); }
+  .coastal-page .project-header { padding-inline: 2rem; }
+  .coastal-page .coastal-hero-grid { gap: 2rem; }
+  .coastal-page .coastal-editorial,
+  .coastal-page .coastal-section-heading,
+  .coastal-page .coastal-scope { grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 2rem; }
+}
+@media (max-width: 800px) {
+  .coastal-page .coastal-wrap { width: calc(100% - 2.5rem); }
+  .coastal-page .project-header { padding: 1rem 1.25rem; }
+  .coastal-page .project-header nav { gap: .5rem 1.2rem; }
+  .coastal-page .project-header nav a { font-size: .85rem; }
+  .coastal-page .coastal-hero-topline { padding-top: 1.5rem; }
+  .coastal-page .coastal-hero-grid,
+  .coastal-page .coastal-editorial,
+  .coastal-page .coastal-section-heading,
+  .coastal-page .coastal-scope { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .coastal-page h1 { font-size: clamp(2.8rem, 10.4vw, 5rem); }
+  .coastal-page .coastal-hero-copy { padding: .3rem 0 1.5rem; }
+  .coastal-page .coastal-tagline { font-size: clamp(1.7rem, 6vw, 2.7rem); }
+  .coastal-page .coastal-hero-intro { margin-top: 1.5rem; font-size: 1rem; }
+  .coastal-page .coastal-text-link { margin-top: .8rem; }
+  .coastal-page .coastal-hero-bottom { font-size: .66rem; }
+  .coastal-page .coastal-section-heading { margin-bottom: 2rem; }
+  .coastal-page .coastal-body-copy { margin-top: 1.25rem; font-size: 1rem; }
+  .coastal-page .coastal-materials { gap: 1.5rem; }
+  .coastal-page .coastal-material .figure-link { min-height: 240px; padding: .75rem; }
+  .coastal-page .coastal-material img { max-height: 240px; }
+  .coastal-page .coastal-material-title { gap: .7rem; }
+  .coastal-page .coastal-material h3 { font-size: 1.1rem; }
+  .coastal-page .coastal-sequence { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; margin-top: 2rem; }
+  .coastal-page .coastal-sequence li { padding-top: 1.25rem; }
+  .coastal-page .coastal-project .figure-link { padding: .25rem; }
+  .coastal-page .coastal-scope { gap: .7rem; margin-top: 2rem; }
+  .coastal-page .project-footer { padding: 2rem 1.25rem; }
+}
+@media (max-width: 500px) {
+  .coastal-page .coastal-materials { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .coastal-page .coastal-material .figure-link { min-height: 0; padding: 1rem; }
+}

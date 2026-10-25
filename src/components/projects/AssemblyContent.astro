@@ -1,22 +1,66 @@
 ---
 import Figure from "../ProjectFigure.astro";
-import Explorer from "../ProjectExplorer.astro";
+import "../../styles/coastal.css";
+interface Props { sourceNotes: string[]; }
+const { sourceNotes } = Astro.props;
 ---
-<section class="project-section" id="method" aria-labelledby="method-title">
-  <div class="section-heading"><p class="eyebrow">AMERICA · Coastal construction concept</p><h2 id="method-title">Method</h2><p>Connect architected modules, fabrication, and robot-assisted placement.</p></div>
-  <Explorer id="assembly-concepts" label="Explore the coastal construction concept" choices={[
-    { id: "module", title: "Module design", description: "Geometry defines the unit and its connections.", figures: ["module"] },
-    { id: "fabrication", title: "Fabrication", description: "A manufacturing reference connects material deposition with module design.", figures: ["manufacturing"] },
-    { id: "coastal", title: "Coastal assembly", description: "A rendered scenario places modules along a breakwater.", figures: ["breakwater"] },
-  ]} />
+<section class="coastal-hero coastal-dark" aria-labelledby="project-title">
+  <div class="coastal-wrap">
+    <div class="coastal-hero-topline"><p>AMERICA / Coastal robotics</p><p>Research concept</p></div>
+    <div class="coastal-hero-grid">
+      <div class="coastal-hero-copy">
+        <h1 id="project-title">Coastal<br />construction.</h1>
+        <p class="coastal-tagline">Block by block.</p>
+        <p class="coastal-hero-intro">Architected modules.<br />Robot-assisted assembly.<br />A new approach to breakwaters.</p>
+        <a class="coastal-text-link" href="#abstract">Explore the concept <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="coastal-hero-visual">
+        <div class="coastal-image-label"><span>01 / Breakwater assembly</span><span>Concept rendering</span></div>
+        <Figure id="breakwater" hero />
+      </div>
+    </div>
+    <div class="coastal-hero-bottom"><span>Robotic block assembly</span><span>Gulf Futures Challenge</span></div>
+  </div>
 </section>
-<section class="project-section" id="assembly" aria-labelledby="assembly-title">
-  <div class="section-heading"><p class="eyebrow">The joint determines the motion</p><h2 id="assembly-title">Assembly sequence</h2><p>Grasp a unit, align its connection, and engage the joint.</p></div>
-  <ol class="method-steps numbered"><li><span aria-hidden="true">01</span><h3>Pick up</h3><p>Establish a grasp for the module’s geometry.</p></li><li><span aria-hidden="true">02</span><h3>Align</h3><p>Orient the unit relative to the existing structure.</p></li><li><span aria-hidden="true">03</span><h3>Interlock</h3><p>Place or slide the module into its joint.</p></li></ol>
-  <Figure id="connections" />
+
+<section class="coastal-section coastal-intro" id="abstract" aria-labelledby="abstract-title">
+  <div class="coastal-wrap coastal-editorial">
+    <p class="coastal-index">01 / Concept</p>
+    <div>
+      <h2 id="abstract-title">From a single module<br />to a coastal structure.</h2>
+      <p class="coastal-body-copy">Architected geometry shapes both the structure and how it can be built. AMERICA explores how robots could grasp, align, and interlock individual units into coastal breakwaters.</p>
+    </div>
+  </div>
 </section>
-<section class="project-section" id="concept" aria-labelledby="concept-title">
-  <div class="section-heading"><p class="eyebrow">Gulf Futures Challenge</p><h2 id="concept-title">Coastal application</h2><p>The supplied AMERICA presentation brings design, materials, and construction together.</p></div>
-  <Figure id="coastal-overview" />
-  <p class="scope-note">Concept illustrations and a manufacturing reference. Assembly experiments and coastal performance measurements are not part of the materials presented here.</p>
+
+<section class="coastal-section coastal-method" id="method" aria-labelledby="method-title">
+  <div class="coastal-wrap">
+    <div class="coastal-section-heading"><p class="coastal-index">02 / Method</p><div><h2 id="method-title">Design for assembly.</h2><p>Connect the geometry of a module with the way it is made and placed.</p></div></div>
+    <div class="coastal-materials">
+      <article class="coastal-material"><div class="coastal-material-title"><span aria-hidden="true">[ A ]</span><h3>Module geometry</h3></div><Figure id="module" /></article>
+      <article class="coastal-material"><div class="coastal-material-title"><span aria-hidden="true">[ B ]</span><h3>Material deposition</h3></div><Figure id="manufacturing" /><p class="coastal-reference-note">Fabrication reference from the source presentation.</p></article>
+    </div>
+  </div>
 </section>
+
+<section class="coastal-section coastal-dark coastal-assembly" id="assembly" aria-labelledby="assembly-title">
+  <div class="coastal-wrap">
+    <div class="coastal-section-heading"><p class="coastal-index">03 / Assembly</p><div><h2 id="assembly-title">The connection<br />sets the motion.</h2><p>Joint geometry guides how a robot approaches, places, and interlocks each unit.</p></div></div>
+    <Figure id="connections" />
+    <ol class="coastal-sequence">
+      <li><span aria-hidden="true">01</span><div><h3>Pick up.</h3><p>Grasp the module for placement.</p></div></li>
+      <li><span aria-hidden="true">02</span><div><h3>Align.</h3><p>Orient the unit to meet the joint.</p></div></li>
+      <li><span aria-hidden="true">03</span><div><h3>Interlock.</h3><p>Place or slide the unit into position.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="coastal-section coastal-project" id="concept" aria-labelledby="concept-title">
+  <div class="coastal-wrap">
+    <div class="coastal-section-heading"><p class="coastal-index">04 / Gulf Futures Challenge</p><div><h2 id="concept-title">AMERICA</h2><p>Architected Materials for Extreme Resistance in Coastal Applications.</p></div></div>
+    <Figure id="coastal-overview" />
+    <div class="coastal-scope"><p class="coastal-index">Research scope</p><p>Design and assembly concepts from the AMERICA presentation. Assembly experiments and coastal performance measurements are not reported in these materials.</p></div>
+  </div>
+</section>
+
+<section class="coastal-wrap source-section" id="sources" aria-label="Project source materials"><details><summary>Sources & media notes</summary><p>The page uses supplied project materials. Source credits and complete text descriptions accompany each figure.</p><ul>{sourceNotes.map(note => <li>{note}</li>)}</ul><p>The concept images are extracted from the original presentation. The manufacturing photograph is a fabrication reference; it does not establish production of the illustrated breakwater modules.</p></details></section>

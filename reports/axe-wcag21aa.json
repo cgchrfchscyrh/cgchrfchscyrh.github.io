@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-24T22:27:55.763Z",
+  "date": "2026-10-25T18:24:42.287Z",
   "base": "http://127.0.0.1:4480",
   "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
   "scans": [
@@ -252,28 +252,28 @@
       "mode": "desktop",
       "violations": [],
       "incomplete": [],
-      "passes": 24
+      "passes": 20
     },
     {
       "route": "/robotic-block-assembly/",
       "mode": "mobile",
       "violations": [],
       "incomplete": [],
-      "passes": 24
+      "passes": 20
     },
     {
       "route": "/robotic-block-assembly/",
       "mode": "text-spacing",
       "violations": [],
       "incomplete": [],
-      "passes": 24
+      "passes": 20
     },
     {
       "route": "/robotic-block-assembly/",
       "mode": "mobile-spacing-expanded-figures",
       "violations": [],
       "incomplete": [],
-      "passes": 24
+      "passes": 20
     }
   ],
   "checks": [
@@ -1693,32 +1693,7 @@
       "detail": ""
     },
     {
-      "name": "/robotic-block-assembly/: all cases available without JavaScript",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/robotic-block-assembly/: case selector keyboard action",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/robotic-block-assembly/: case selector keyboard action",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/robotic-block-assembly/: case selector keyboard action",
-      "pass": true,
-      "detail": ""
-    },
-    {
       "name": "/robotic-block-assembly/: figure descriptions and source attribution",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/robotic-block-assembly/: full-size source image available",
       "pass": true,
       "detail": ""
     },
@@ -1759,6 +1734,16 @@
     },
     {
       "name": "/robotic-block-assembly/: text-spacing reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/robotic-block-assembly/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
       "pass": true,
       "detail": ""
     },

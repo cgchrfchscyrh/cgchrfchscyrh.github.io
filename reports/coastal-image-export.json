@@ -1,0 +1,60 @@
+{
+  "source": "UF Robotics Workshop_Shuai Li.pptx",
+  "slide": 7,
+  "sourceMedia": "ppt/media/image17.png",
+  "sourceSha256": "53bac96cab4b0bcb1158e10e00bbba618e0f0e679927951ee2d215f0cd064d14",
+  "transformation": "Original native image, resolved against the white slide background; lossless WebP. Detail crops retain their original coordinates. No generated or altered research content.",
+  "exports": [
+    {
+      "file": "coastal-overview-full.webp",
+      "crop": null,
+      "dimensions": [
+        1904,
+        978
+      ],
+      "sha256": "eb1cd045b881a400d9ea00a8df1706e45739a62db3e7e9d0dc8f750e010cf63e"
+    },
+    {
+      "file": "module-geometry.webp",
+      "crop": [
+        103,
+        68,
+        435,
+        389
+      ],
+      "dimensions": [
+        332,
+        321
+      ],
+      "sha256": "636aa8815720913fdf218c7c00695c456d941bf52bdd5ef1a83e0dfebd2a38fe"
+    },
+    {
+      "file": "connection-strategies-full.webp",
+      "crop": [
+        0,
+        389,
+        1071,
+        978
+      ],
+      "dimensions": [
+        1071,
+        589
+      ],
+      "sha256": "3cc2862e568645cd2a852f113fecb5eb47d2eb5c81f90c30827020e694133207"
+    },
+    {
+      "file": "manufacturing-reference.webp",
+      "crop": [
+        771,
+        68,
+        1169,
+        389
+      ],
+      "dimensions": [
+        398,
+        321
+      ],
+      "sha256": "569165475a1c5cd09d6ecfff300e970087f71c417cd14387aaf837c6b54ce15b"
+    }
+  ]
+}

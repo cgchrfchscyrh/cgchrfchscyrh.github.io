@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-25T18:25:48.711087+00:00",
+  "route": "/robotic-block-assembly/",
+  "designReferences": [
+    {
+      "url": "https://useflywheel.ai/",
+      "applied": "Short equipment-led opening and concise copy."
+    },
+    {
+      "url": "https://ursamining.com/",
+      "applied": "Indexed sections, oversized typography, and a restrained industrial grid."
+    },
+    {
+      "url": "https://bedrockrobotics.com/",
+      "applied": "Generous image-led composition and alternating dark/light sections."
+    },
+    {
+      "url": "https://www.gravisrobotics.com/",
+      "applied": "Equipment imagery as the main narrative, followed by a clear technology sequence."
+    }
+  ],
+  "implementation": [
+    "Coastal-only layout and stylesheet; existing URLs retained. Other project layouts and content preserved.",
+    "Hero displays the full original assembly concept beside the title; no research image cropped by CSS.",
+    "Concept, method, assembly sequence, and AMERICA overview are visible without JavaScript or carousel controls.",
+    "Native slide artwork re-exported losslessly with source transparency resolved on white. Source presentation unchanged.",
+    "No company logos, videos, marketing claims, performance metrics, UF theme colors, or UF affiliation statements added.",
+    "Research scope identifies concept renderings and distinguishes the manufacturing reference from evidence of module fabrication."
+  ],
+  "validation": {
+    "build": "Passed: 8 static routes, zero diagnostics",
+    "lint": "Passed",
+    "axeScans": 29,
+    "functionalChecks": 306,
+    "axeViolations": 0,
+    "failedChecks": 0,
+    "dependencyVulnerabilities": 0,
+    "visualReview": "Desktop hero, material images, complete overview, and 320px mobile reviewed in Chrome.",
+    "reflowWidths": [
+      320,
+      390,
+      768,
+      1024,
+      1920
+    ],
+    "textSpacing": "320px with 1.5 line-height, .12em letter-spacing, .16em word-spacing, and 2em paragraph spacing: no horizontal overflow.",
+    "accessibility": "Alt text, detailed figure descriptions, keyboard-operable full-size links, focus outlines, skip link, heading hierarchy, no-JavaScript content, and expanded source notes checked."
+  },
+  "limitations": [
+    "Automated checks do not establish full ADA/WCAG compliance; screen-reader usability across assistive technologies has not been fully evaluated.",
+    "External papers and publisher websites are outside the audit.",
+    "No coastal assembly footage or performance measurements were supplied; the page remains a concept presentation."
+  ]
+}
