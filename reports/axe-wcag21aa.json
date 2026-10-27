@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-27T16:23:28.156Z",
+  "date": "2026-10-27T19:15:55.309Z",
   "base": "http://127.0.0.1:4480",
   "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
   "scans": [
@@ -123,7 +123,7 @@
         {
           "id": "color-contrast",
           "impact": "serious",
-          "nodes": 1
+          "nodes": 2
         },
         {
           "id": "video-caption",
@@ -141,7 +141,7 @@
         {
           "id": "color-contrast",
           "impact": "serious",
-          "nodes": 2
+          "nodes": 1
         },
         {
           "id": "video-caption",
@@ -156,6 +156,11 @@
       "mode": "text-spacing",
       "violations": [],
       "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 1
+        },
         {
           "id": "video-caption",
           "impact": "critical",
@@ -908,6 +913,11 @@
       "detail": ""
     },
     {
+      "name": "Building images have no visible caption block",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "/building-immunology/: full-size source image available",
       "pass": true,
       "detail": ""
@@ -1009,106 +1019,6 @@
     },
     {
       "name": "/building-immunology/: text-spacing reflow",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
       "pass": true,
       "detail": ""
     },

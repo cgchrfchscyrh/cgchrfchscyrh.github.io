@@ -1,0 +1,10 @@
+---
+import { labFigures, buildingCases } from "../data/lab-figures";
+const ids = ["building-immunity", "sampling", "culture-2", "abundance", "twin-framework", "risk-workflow", "building-viewer", "risk-interface", ...buildingCases.flatMap(c => [`${c.id}-plan`, `${c.id}-network`]), "immunity-framework", "occupant-interaction"];
+---
+<div class="project-image-notes">
+  <h2>Image descriptions &amp; sources</h2>
+  <p>Columns represent samples; rows identify taxa; circle size shows relative abundance. The Building M/T chart and school-sampling images are separate source examples. Community composition alone does not establish infection risk.</p>
+  <p>Archived interface examples. This room-level workflow models surface-mediated transmission; the building animations illustrate indoor transport. The microbial observations above are not presented as calibration data for these models.</p>
+  {ids.map(id => { const figure = labFigures[id]; return <section data-image-note={id}><h3>{figure.title}</h3><p id={`image-${id}-description`}>{figure.description}</p><p class="source-credit">Source: {figure.source}</p></section>; })}
+</div>

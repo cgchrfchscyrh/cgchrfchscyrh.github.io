@@ -8,16 +8,15 @@ import { asset } from "../../data/profile";
 <section class="project-section" id="simulation" aria-labelledby="simulation-title">
   <span id="method" class="section-anchor" aria-hidden="true"></span>
   <div class="section-heading"><p class="eyebrow">Model a specific setting</p><h2 id="simulation-title">From a room to its building</h2><p>Represent geometry, occupant activity, and transport within the building.</p></div>
-  <Figure id="twin-framework" />
+  <Figure id="twin-framework" notes />
   <Video id="building-layers" />
 </section>
 <section class="project-section" id="room-risk" aria-labelledby="risk-title">
   <div class="section-heading"><p class="eyebrow">Make the model useful</p><h2 id="risk-title">Put risk in a room’s context</h2><p>Locate a room, understand the scenario, and communicate its risk category.</p></div>
-  <div class="risk-layout"><div><Figure id="risk-workflow" /><Figure id="building-viewer" /></div><Figure id="risk-interface" /></div>
-  <p class="scope-note">Archived interface examples. This room-level workflow models surface-mediated transmission; the building animations illustrate indoor transport. The microbial observations above are not presented as calibration data for these models.</p>
+  <div class="risk-layout"><div><Figure id="risk-workflow" notes /><Figure id="building-viewer" notes /></div><Figure id="risk-interface" notes /></div>
 </section>
 <section class="project-section" id="building-cases" aria-labelledby="cases-title">
   <div class="section-heading"><p class="eyebrow">Different spaces, different connections</p><h2 id="cases-title">Building cases</h2><p>Explore the source layouts and their spatial networks.</p></div>
-  <Explorer id="buildings" label="Choose a building case" choices={buildingCases.map(c => ({ id: c.id, title: c.title, description: c.description, figures: [`${c.id}-plan`, `${c.id}-network`] }))} />
+  <Explorer figureNotes id="buildings" label="Choose a building case" choices={buildingCases.map(c => ({ id: c.id, title: c.title, description: c.description, figures: [`${c.id}-plan`, `${c.id}-network`] }))} />
   <a class="related-project" id="response" href={asset("disinfection-robot/")}><span>Separate project</span><strong>Explore material-aware robotic disinfection ↗</strong></a>
 </section>

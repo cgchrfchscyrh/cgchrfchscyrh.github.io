@@ -215,7 +215,13 @@ try {
         }
         await buttons.first().focus(); await page.keyboard.press("Enter");
       }
-      check(`${route}: figure descriptions and source attribution`, await page.locator('.project-figure').evaluateAll(fs => fs.every(f => f.querySelector('details p')?.textContent.length > 40 && f.querySelector('.source-credit'))));
+      check(`${route}: figure descriptions and source attribution`, await page.locator('.project-figure').evaluateAll(fs => fs.every(f => {
+        const noteId = f.querySelector('img').getAttribute('aria-describedby');
+        const description = noteId ? document.getElementById(noteId) : f.querySelector('details p');
+        const source = noteId ? description?.parentElement.querySelector('.source-credit') : f.querySelector('.source-credit');
+        return description?.textContent.length > 40 && source?.textContent.length > 10;
+      })));
+      if (route === "/building-immunology/") check("Building images have no visible caption block", await page.locator('.project-figure figcaption, .project-figure details, .scope-note').count() === 0);
       for (const link of await page.locator('.figure-link').all()) check(`${route}: full-size source image available`, (await context.request.head(new URL(await link.getAttribute('href'), base).href)).ok());
     }
     for (const mode of ["desktop", "mobile", "text-spacing"]) {

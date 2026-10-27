@@ -1,15 +1,15 @@
 ---
 import ProjectFigure from "./ProjectFigure.astro";
 interface Choice { id: string; title: string; description: string; figures: string[]; }
-interface Props { id: string; label: string; choices: Choice[]; }
-const { id, label, choices } = Astro.props;
+interface Props { id: string; label: string; choices: Choice[]; figureNotes?: boolean; }
+const { id, label, choices, figureNotes = false } = Astro.props;
 ---
 <div class="project-explorer" data-explorer>
   <div class="selector-toolbar" role="group" aria-label={label} hidden>{choices.map((choice, i) => <button type="button" data-choice={choice.id} aria-pressed={i === 0 ? "true" : "false"} aria-controls={`${id}-${choice.id}`}>{choice.title}</button>)}</div>
   <p class="sr-only" role="status" data-choice-status></p>
   {choices.map(choice => <div class="explorer-panel" id={`${id}-${choice.id}`} data-panel={choice.id}>
     <div class="panel-intro"><h3>{choice.title}</h3><p>{choice.description}</p></div>
-    <div class:list={["explorer-images", { paired: choice.figures.length > 1 }]}>{choice.figures.map(figure => <ProjectFigure id={figure} />)}</div>
+    <div class:list={["explorer-images", { paired: choice.figures.length > 1 }]}>{choice.figures.map(figure => <ProjectFigure id={figure} notes={figureNotes} />)}</div>
   </div>)}
 </div>
 <script>
