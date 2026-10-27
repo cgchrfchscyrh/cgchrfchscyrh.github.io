@@ -2,6 +2,9 @@
 import Vision from "../Vision.astro";
 import stories from "../../data/vision-stories.json";
 import Figure from "../ProjectFigure.astro";
+import Video from "../ProjectVideo.astro";
+import ProjectPlayback from "../ProjectPlayback.astro";
+import ProjectMediaNotes from "../ProjectMediaNotes.astro";
 import "../../styles/coastal.css";
 interface Props { sourceNotes: string[]; }
 const { sourceNotes } = Astro.props;
@@ -13,11 +16,11 @@ const { sourceNotes } = Astro.props;
         <h1 id="project-title" class="project-display-title">{stories["robotic-block-assembly"].headlineLines.map(line => <span class="display-line">{line}{" "}</span>)}</h1>
       </div>
       <div class="coastal-hero-visual">
-        <div class="coastal-image-label"><span>01 / Breakwater assembly</span><span>Concept rendering</span></div>
-        <Figure id="breakwater" hero />
+        <Video id="excavator-assembly" hero />
       </div>
     </div>
   </div>
+  <p id="media-status" class="sr-only" role="status"></p>
 </section>
 
 <section class="coastal-section coastal-intro" id="abstract" aria-labelledby="abstract-title">
@@ -25,14 +28,16 @@ const { sourceNotes } = Astro.props;
     <p class="coastal-index">01 / Concept</p>
     <div>
       <h2 id="abstract-title">Begin with a joint.</h2>
-      <p class="coastal-body-copy">Before assembling a breakwater, a robot must connect one module to the next. The AMERICA concept starts with joint geometry: where to grasp a unit, how to align it, and which motion engages the connection.</p>
+      <p class="coastal-body-copy">One module. One connection. Local TPMS designs and an excavator model make the assembly idea visible in MuJoCo. These scripted motions explore placement; contact, gripping forces, and coastal performance remain to be validated.</p>
     </div>
   </div>
+  <div class="coastal-wrap coastal-motion"><Video id="joint-alignment" /></div>
 </section>
 
 <section class="coastal-section coastal-method" id="method" aria-labelledby="method-title">
   <div class="coastal-wrap">
     <div class="coastal-section-heading"><p class="coastal-index">02 / Method</p><div><h2 id="method-title">Design for assembly.</h2><p>Connect the geometry of a module with the way it is made and placed.</p></div></div>
+    <Video id="tpms-families" />
     <div class="coastal-materials">
       <article class="coastal-material"><div class="coastal-material-title"><span aria-hidden="true">[ A ]</span><h3>Module geometry</h3></div><Figure id="module" /></article>
       <article class="coastal-material"><div class="coastal-material-title"><span aria-hidden="true">[ B ]</span><h3>Material deposition</h3></div><Figure id="manufacturing" /><p class="coastal-reference-note">Fabrication reference from the source presentation.</p></article>
@@ -52,6 +57,7 @@ const { sourceNotes } = Astro.props;
   </div>
 </section>
 
-<div class="coastal-wrap" id="concept"><Vision project="robotic-block-assembly"><details class="vision-source-figures"><summary>AMERICA concept & source illustration</summary><Figure id="coastal-overview" /></details></Vision></div>
+<div class="coastal-wrap" id="concept"><Vision project="robotic-block-assembly"><details class="vision-source-figures"><summary>AMERICA concept & source illustrations</summary><Figure id="breakwater" /><Figure id="coastal-overview" /></details></Vision></div>
 
-<section class="coastal-wrap source-section" id="sources" aria-label="Project source materials"><details><summary>Sources & media notes</summary><p>The page uses supplied project materials. Source credits and complete text descriptions accompany each figure.</p><ul>{sourceNotes.map(note => <li>{note}</li>)}</ul><p>The concept images are extracted from the original presentation. The manufacturing photograph is a fabrication reference; it does not establish production of the illustrated breakwater modules.</p></details></section>
+<section class="coastal-wrap source-section" id="sources" aria-label="Project source materials"><details><summary>Sources & media notes</summary><p>The page uses supplied project materials and new CAD-based MuJoCo visualizations. Source credits and complete text descriptions accompany each figure.</p><ul>{sourceNotes.map(note => <li>{note}</li>)}</ul><p>The concept images are extracted from the original presentation. The manufacturing photograph is a fabrication reference; it does not establish production of the illustrated breakwater modules.</p><ProjectMediaNotes project="robotic-block-assembly" /></details></section>
+<ProjectPlayback />

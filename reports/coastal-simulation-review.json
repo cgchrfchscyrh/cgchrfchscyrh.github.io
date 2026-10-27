@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-27",
+  "engine": "MuJoCo 3.3.7",
+  "scope": "Scripted kinematic CAD visualization, not force-based assembly or field validation",
+  "originals_unchanged": true,
+  "raw_cad_published": false,
+  "visual_review": "Five keyframes per video inspected; desktop and 320 CSS-pixel page layouts reviewed",
+  "video_checks": [
+    {
+      "kind": "excavator",
+      "duration": 24,
+      "frames": 576,
+      "width": 1600,
+      "height": 900,
+      "audio": false,
+      "full_decode": "passed",
+      "sha256": "99ed30ff440b84d70f4a10f4aa68a1b115f1c3920a02e7fb548b5ad085063e3c",
+      "bytes": 3137445
+    },
+    {
+      "kind": "joint",
+      "duration": 14,
+      "frames": 336,
+      "width": 1600,
+      "height": 900,
+      "audio": false,
+      "full_decode": "passed",
+      "sha256": "61a9e2e68a7ea097c91d1ab6f238b8eb566a0be785f592e0884f7b0f71022be6",
+      "bytes": 1539983
+    },
+    {
+      "kind": "families",
+      "duration": 16,
+      "frames": 384,
+      "width": 1600,
+      "height": 900,
+      "audio": false,
+      "full_decode": "passed",
+      "sha256": "d50b0f93f6bc6219b7ad34ece2565570ff01d85562dce8665f058806fd5c9f39",
+      "bytes": 838135
+    }
+  ],
+  "trajectory_check": {
+    "samples": 1153,
+    "max_position_residual_m": 6.6450964940864535e-12,
+    "joint_limits_checked": true,
+    "collision_validation": false
+  },
+  "limitations": [
+    "Prescribed block poses and joint angles; contacts disabled",
+    "Illustrative swivel clamp replaces the original bucket",
+    "Nominal approach and placement do not validate insertion direction, fit or tolerance",
+    "No grasp force, load capacity, stability, collision-free motion, or coastal performance is established"
+  ],
+  "media_accessibility": [
+    "Native keyboard-operable controls",
+    "Viewport autoplay with reduced-motion and SaveData handling",
+    "Remembered manual pause",
+    "Complete text alternatives and timed WebVTT descriptions"
+  ]
+}

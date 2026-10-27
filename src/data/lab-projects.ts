@@ -1,5 +1,5 @@
 const source = "https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842";
-export interface ProjectClip { id: string; project: string; assetProject?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; }
+export interface ProjectClip { id: string; project: string; assetProject?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; processingNote?: string; }
 export const labProjects = [
   {
     slug: "building-immunology", title: "Building Immunology", shortTitle: "Building Immunology", topic: "Microbiomes · Building simulation · Room-level risk",
@@ -38,12 +38,49 @@ export const labProjects = [
     image: "breakwater-assembly.webp", imageWidth: 832, imageHeight: 571, imageAlt: "Rendered concept of a mobile robot placing interlocking modules along a breakwater.",
     question: "Start with a connection.",
     abstract: "An interlocking module is a starting point for a larger coastal structure. This concept links joint geometry to robotic placement; field assembly and coastal performance remain questions for future investigation.",
-    heroClips: [], demoClips: [],
+    heroClips: ["excavator-assembly"], demoClips: ["joint-alignment", "tpms-families"],
     sourceNotes: ["UF Robotics Workshop — Shuai Li, slide 7: Architected Materials for Extreme Resistance in Coastal Applications (AMERICA), labeled Gulf Futures Challenge Award Phase I in the supplied deck. The page presents its design and assembly concepts."]
   },
 ];
 
 export const projectClips: ProjectClip[] = [
+{
+  "id": "excavator-assembly",
+  "duration": 24,
+  "title": "From pickup to placement in MuJoCo",
+  "description": "A tracked excavator stands beside a conceptual shoreline and a row of porous blocks. An illustrative swivel clamp lowers around a primitive TPMS block, closes, lifts the block, swings toward a fixed partner, lowers it, approaches the nominal adjacent position, and opens before retreating. Phase labels read Pick, Lift, Transfer, Align, Place, and Release. The excavator geometry and boom, stick, and wrist limits come from a local URDF; the clamp is newly added concept geometry. Joint angles and block poses are scripted. The block follows a prescribed path, not a force-based grasp. The flat water-colored area indicates context and is not a wave simulation.",
+  "sourceLabel": "Local excavator_inverse_kinematics model and supplied TPMS primitive STL models",
+  "sourceUrl": "https://git.rwth-aachen.de/ferreiralexandre/excavator_inverse_kinematics",
+  "project": "robotic-block-assembly",
+  "caption": "",
+  "sourceRange": "new CAD-based visualization",
+  "audioNote": "Silent visualization. Full text alternatives and timed visual descriptions are provided.",
+  "processingNote": "Rendered in MuJoCo 3.3.7 at 1600 × 900 and 24 frames per second. Prescribed joint and object trajectories; contact forces disabled. No learned policy, force-based gripping, collision-free planning, insertion tolerance, payload capacity, or coastal-performance result is claimed."
+},
+{
+  "id": "joint-alignment",
+  "duration": 14,
+  "title": "TPMS joint alignment concept",
+  "description": "Two primitive TPMS blocks are shown in a close oblique view: a stationary slot variant and a moving tenon variant. The camera slowly changes angle as the tenon moves horizontally toward its nominal neighboring position, revealing porous surfaces and the external connection features. The phases are Align, Approach, and Nominal alignment. Shapes come from the supplied CAD; their centers are repositioned for this illustrative sequence. This is a geometric motion study, not a verified insertion path or a test of manufacturing clearance, contact, locking, or strength.",
+  "sourceLabel": "Supplied TPMS_primitive_slot.stl and TPMS_primitive_tenon.stl",
+  "project": "robotic-block-assembly",
+  "caption": "",
+  "sourceRange": "new CAD-based visualization",
+  "audioNote": "Silent visualization. Full text alternatives and timed visual descriptions are provided.",
+  "processingNote": "Rendered in MuJoCo 3.3.7 at 1600 × 900 and 24 frames per second. Prescribed joint and object trajectories; contact forces disabled. No learned policy, force-based gripping, collision-free planning, insertion tolerance, payload capacity, or coastal-performance result is claimed."
+},
+{
+  "id": "tpms-families",
+  "duration": 16,
+  "title": "Diamond, gyroid, and primitive TPMS geometries",
+  "description": "Three labeled pairs of porous blocks appear in an elevated view: Diamond on the left, Gyroid in the center, and Primitive on the right. Each pair contains the locally supplied slot and tenon variants. The moving variants approach their nominal neighboring positions in a staggered sequence and hold. Text labels distinguish the families independently of shading. This compares CAD geometries and illustrates possible placement; it does not establish that the same physical assembly path works for every family.",
+  "sourceLabel": "Six supplied TPMS STL models: diamond, gyroid, and primitive, each with slot and tenon variants",
+  "project": "robotic-block-assembly",
+  "caption": "",
+  "sourceRange": "new CAD-based visualization",
+  "audioNote": "Silent visualization. Full text alternatives and timed visual descriptions are provided.",
+  "processingNote": "Rendered in MuJoCo 3.3.7 at 1600 × 900 and 24 frames per second. Prescribed joint and object trajectories; contact forces disabled. No learned policy, force-based gripping, collision-free planning, insertion tolerance, payload capacity, or coastal-performance result is claimed."
+},
   {
     id: "robotic-perception", project: "disinfection-robot", assetProject: "building-immunology", duration: 9,
     title: "Perception and disinfection in a robotic system", caption: "Perception and disinfection tools on an illustrated mobile robot.",

@@ -24,3 +24,12 @@ The current build and lint pass. The browser suite passed **32 axe scans and 319
 
 Automated checks are not complete ADA/WCAG certification. External PDF reading order, detailed scientific-artwork contrast, and multi-screen-reader usability still require separate review.
 
+
+
+## Coastal CAD motion videos — 27 October 2026
+
+Three silent MuJoCo clips now show excavator placement, primitive TPMS alignment, and three module families. Each includes an embedded kinematic-concept label, a complete linked text alternative, timed WebVTT descriptions, a poster, and native keyboard-operable playback controls. Viewport autoplay respects reduced motion, SaveData, and manual pause. No caption block is added beneath the videos. Existing concept imagery and original research materials are retained.
+
+All three MP4 files were fully decoded and checked for dimensions, frame count, duration, and absence of audio. The original URDF arm limits and prescribed end-effector positions were checked along the path. Contact/grasp forces, insertion fit, collision-free planning, load capacity, and coastal performance are not validated by these visualizations. The clamp is newly added concept geometry. Raw CAD is not published.
+
+Build, lint, and the dependency audit passed with zero reported vulnerabilities. The project browser suite passed 32 axe scans and 315 functional checks with no violations or failures. Desktop and 320 CSS-pixel layouts were inspected, including native video controls. See `reports/coastal-simulation-review.json` and `reports/axe-wcag21aa.json`. These checks do not constitute complete ADA/WCAG certification; the existing PDF and screen-reader limitations remain.

@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.500
+MuJoCo kinematic concept. The excavator lowers an illustrative clamp and closes it around a TPMS block.
+
+00:00:03.500 --> 00:00:06.000
+The scripted arm lifts the block from the pickup position.
+
+00:00:06.000 --> 00:00:11.000
+The upper body rotates, transferring the block toward the coastal assembly layout.
+
+00:00:11.000 --> 00:00:14.000
+The arm lowers the block beside the stationary partner.
+
+00:00:14.000 --> 00:00:18.000
+The block approaches a nominal adjacent alignment. Contact forces and fit are not validated.
+
+00:00:18.000 --> 00:00:24.000
+The clamp opens and withdraws. This is scripted CAD motion, not a physical assembly test.

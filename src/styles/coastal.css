@@ -18,8 +18,14 @@
 .coastal-page .coastal-image-label { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem 1.5rem; }
 .coastal-page .coastal-hero-topline { padding: 2.25rem 0 1rem; text-transform: uppercase; font-size: .73rem; letter-spacing: .1em; color: #c4c6bf; }
 .coastal-page .coastal-hero-topline > p { margin: 0; }
-.coastal-page .coastal-hero-grid { display: grid; grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr); gap: 3rem; padding: 1.5rem 0 2rem; align-items: center; }
-.coastal-page .coastal-hero-copy { padding: 1rem 0 3rem; }
+.coastal-page .coastal-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; padding: 1.5rem 0 2rem; align-items: center; }
+.coastal-page .coastal-hero-copy { max-width: 64rem; }
+.coastal-page .coastal-hero-visual .project-video { margin: 0; }
+.coastal-page .coastal-hero-visual video { display: block; border-radius: 0; }
+.coastal-page .coastal-motion { margin-top: 3rem; }
+.coastal-page .coastal-method > .coastal-wrap > .project-video { margin: 0 0 3rem; }
+.coastal-page .coastal-hero-copy { padding: .5rem 0 1rem; }
+.coastal-page .coastal-hero h1.project-display-title { max-width: none; font-size: clamp(2.6rem, 4.5vw, 4.8rem); }
 .coastal-page h1 { font-size: clamp(2.8rem, 5.15vw, 5.3rem); font-weight: 500; letter-spacing: -.06em; line-height: 1.02; margin: 0; overflow-wrap: anywhere; }
 .coastal-page .coastal-tagline { font-size: clamp(1.6rem, 3vw, 2.75rem); line-height: 1.2; letter-spacing: -.035em; color: #c4c6bf; margin-top: 1.1rem; }
 .coastal-page .coastal-hero-intro { font-size: 1.05rem; line-height: 1.65; margin-top: 2.75rem; color: #d2d4cd; }
