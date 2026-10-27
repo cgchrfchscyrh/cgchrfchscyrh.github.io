@@ -27,9 +27,19 @@ const spacing =
   "* { line-height: 1.5 !important; letter-spacing: .12em !important; word-spacing: .16em !important; } p { margin-bottom: 2em !important; }";
 await mkdir("reports/screenshots", { recursive: true });
 try {
-  for (const route of ["/", "/cv/", "/accessibility/", "/404.html", ...labProjects.map(p => `/${p.slug}/`)]) {
+  for (const route of ["/", "/cv/", "/accessibility/", "/404.html", "/building-digital-twin/", ...labProjects.map(p => `/${p.slug}/`)]) {
     const project = labProjects.find(p => route === `/${p.slug}/`);
-    const page = await context.newPage();
+    const legacyContext = route === "/building-digital-twin/" ? await browser.newContext({ viewport: { width: 1360, height: 1000 } }) : null;
+    const page = await (legacyContext || context).newPage();
+    console.log(`Checking ${route}`);
+    // Audit the legacy fallback with only its redirect script removed. Astro may
+    // inline this script; blocking script requests alone would still redirect.
+    // A separate JavaScript-disabled context below verifies the actual fallback.
+    if (legacyContext) await page.route(base + route, async request => {
+      const response = await request.fetch();
+      const fallback = (await response.text()).replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+      await request.fulfill({ response, body: fallback });
+    });
     page.on("pageerror", (error) => errors.push(String(error)));
     page.on("console", (message) => {
       if (message.type() === "error" && !message.text().includes("404"))
@@ -127,6 +137,17 @@ try {
       for (const item of labProjects) check(`${item.title}: homepage project link`, await page.locator(`#lab-projects a[href$="/${item.slug}/"]`).count() > 0);
       check("Team project bibliography is not added to personal publications", !(await page.locator('#publications').innerText()).includes('Simulation-based trade-off modeling'));
     }
+    if (route === "/building-immunology/") {
+      check("Combined building page retains microbiomes, digital twins and room risk", await page.locator('#communities,#simulation,#room-risk,#building-cases').count() === 4);
+      check("Combined building page retains complete framework and face redaction", await page.locator('img[src$="immunity-framework-complete.webp"],img[src$="occupant-interaction-redacted.webp"]').count() === 2);
+      check("Disinfection demonstrations moved out of the building page", await page.locator('#robotic-perception-video,#adaptive-disinfection-video,#surface-materials-video,#disinfection-simulation-video,#indoor-mapping-video').count() === 0);
+      check("Combined building page links to separate robotic disinfection", await page.locator('a[href$="/disinfection-robot/"]').count() > 0);
+    }
+    if (route === "/disinfection-robot/") {
+      check("Robot page retains the material-adaptive paper", await page.locator('#publications a[href="https://doi.org/10.1111/mice.12811"]').count() === 1);
+      check("Robot page links back to combined building research", await page.locator('a[href$="/building-immunology/"]').count() > 0);
+    }
+    if (legacyContext) check("Legacy fallback has usable destination links", await page.locator('#combined-project,#robot-project').count() === 2);
     if (project) {
       const clips = projectClips.filter(c => c.project === project.slug);
       const videos = page.locator('video');
@@ -158,7 +179,7 @@ try {
       check(`${route}: reduced-motion users can explicitly play`, true);
       await page.keyboard.press('Space');
       for (const clip of clips) {
-        const path = `${base}/projects/${project.slug}/${clip.id}`;
+        const path = `${base}/projects/${clip.assetProject || clip.project}/${clip.id}`;
         const track = await context.request.get(`${path}.vtt`);
         const body = await track.text();
         check(`${clip.id}: description track available`, track.ok() && body.startsWith('WEBVTT') && body.includes('-->'));
@@ -258,7 +279,28 @@ try {
       );
     }
     await page.close();
+    await legacyContext?.close();
   }
+  const migration = await context.newPage();
+  for (const [from, to] of [
+    ["/building-digital-twin/", "/building-immunology/#simulation"],
+    ["/building-digital-twin/#room-risk", "/building-immunology/#room-risk"],
+    ["/building-digital-twin/#building-cases", "/building-immunology/#building-cases"],
+    ["/building-digital-twin/#demonstrations", "/disinfection-robot/#navigation"],
+  ]) {
+    await migration.goto(base + from);
+    await migration.waitForURL(base + to);
+    check(`Legacy destination: ${from}`, migration.url() === base + to && await migration.locator(to.slice(to.indexOf("#"))).count() === 1);
+  }
+  await migration.close();
+  const legacyNoJs = await browser.newContext({ javaScriptEnabled: false });
+  const legacyFallback = await legacyNoJs.newPage();
+  await legacyFallback.goto(base + "/building-digital-twin/", { waitUntil: "networkidle" });
+  check("Legacy entry remains usable without JavaScript", legacyFallback.url() === base + "/building-digital-twin/" && await legacyFallback.locator('#combined-project,#robot-project').count() === 2);
+  await legacyFallback.locator('#combined-project').click();
+  await legacyFallback.waitForURL(base + "/building-immunology/#simulation");
+  check("Legacy no-JavaScript link reaches combined content", await legacyFallback.locator('#simulation h2').count() === 1);
+  await legacyNoJs.close();
   check("No browser or CSP errors", errors.length === 0, errors);
 } finally {
   await browser.close();

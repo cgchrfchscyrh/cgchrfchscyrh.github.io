@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-25T18:24:42.287Z",
+  "date": "2026-10-27T15:21:38.909Z",
   "base": "http://127.0.0.1:4480",
   "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
   "scans": [
@@ -98,52 +98,124 @@
       "route": "/building-digital-twin/",
       "mode": "desktop",
       "violations": [],
+      "incomplete": [],
+      "passes": 13
+    },
+    {
+      "route": "/building-digital-twin/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [],
+      "passes": 13
+    },
+    {
+      "route": "/building-digital-twin/",
+      "mode": "text-spacing",
+      "violations": [],
+      "incomplete": [],
+      "passes": 13
+    },
+    {
+      "route": "/building-immunology/",
+      "mode": "desktop",
+      "violations": [],
       "incomplete": [
         {
           "id": "video-caption",
           "impact": "critical",
-          "nodes": 4
+          "nodes": 2
         }
       ],
       "passes": 24
     },
     {
-      "route": "/building-digital-twin/",
+      "route": "/building-immunology/",
       "mode": "mobile",
       "violations": [],
       "incomplete": [
         {
           "id": "video-caption",
           "impact": "critical",
-          "nodes": 4
+          "nodes": 2
         }
       ],
       "passes": 24
     },
     {
-      "route": "/building-digital-twin/",
+      "route": "/building-immunology/",
       "mode": "text-spacing",
       "violations": [],
       "incomplete": [
         {
           "id": "video-caption",
           "impact": "critical",
-          "nodes": 4
+          "nodes": 2
         }
       ],
       "passes": 24
     },
     {
-      "route": "/building-digital-twin/",
+      "route": "/building-immunology/",
       "mode": "mobile-spacing-expanded-figures",
       "violations": [],
       "incomplete": [
         {
           "id": "video-caption",
-          "nodes": 4
+          "nodes": 2
         }
       ],
       "passes": 24
+    },
+    {
+      "route": "/disinfection-robot/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "video-caption",
+          "impact": "critical",
+          "nodes": 5
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "route": "/disinfection-robot/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "video-caption",
+          "impact": "critical",
+          "nodes": 5
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "route": "/disinfection-robot/",
+      "mode": "text-spacing",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "video-caption",
+          "impact": "critical",
+          "nodes": 5
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "route": "/disinfection-robot/",
+      "mode": "mobile-spacing-expanded-figures",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "video-caption",
+          "nodes": 5
+        }
+      ],
+      "passes": 22
     },
     {
       "route": "/surgery-ai/",
@@ -192,57 +264,6 @@
         {
           "id": "video-caption",
           "nodes": 4
-        }
-      ],
-      "passes": 24
-    },
-    {
-      "route": "/building-immunology/",
-      "mode": "desktop",
-      "violations": [],
-      "incomplete": [
-        {
-          "id": "video-caption",
-          "impact": "critical",
-          "nodes": 3
-        }
-      ],
-      "passes": 24
-    },
-    {
-      "route": "/building-immunology/",
-      "mode": "mobile",
-      "violations": [],
-      "incomplete": [
-        {
-          "id": "video-caption",
-          "impact": "critical",
-          "nodes": 3
-        }
-      ],
-      "passes": 24
-    },
-    {
-      "route": "/building-immunology/",
-      "mode": "text-spacing",
-      "violations": [],
-      "incomplete": [
-        {
-          "id": "video-caption",
-          "impact": "critical",
-          "nodes": 3
-        }
-      ],
-      "passes": 24
-    },
-    {
-      "route": "/building-immunology/",
-      "mode": "mobile-spacing-expanded-figures",
-      "violations": [],
-      "incomplete": [
-        {
-          "id": "video-caption",
-          "nodes": 3
         }
       ],
       "passes": 24
@@ -333,17 +354,17 @@
       "detail": ""
     },
     {
-      "name": "Building Digital Twins: homepage project link",
+      "name": "Building Immunology: homepage project link",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Robotic Disinfection: homepage project link",
       "pass": true,
       "detail": ""
     },
     {
       "name": "Surgery AI: homepage project link",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Building Immunology: homepage project link",
       "pass": true,
       "detail": ""
     },
@@ -653,47 +674,132 @@
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: expected project videos",
+      "name": "Legacy fallback has usable destination links",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: native controls, silent loops and descriptions",
+      "name": "/building-digital-twin/: desktop reflow",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: standalone playback buttons absent",
+      "name": "/building-digital-twin/: mobile reflow",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: visible video starts automatically",
+      "name": "/building-digital-twin/: text-spacing reflow",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: native player is reachable by Tab",
+      "name": "/building-immunology/: page response",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "/building-immunology/: one h1 and sequential headings",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: manual pause persists after scrolling",
+      "name": "/building-immunology/: loaded images with alt text",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: native keyboard resumes playback",
+      "name": "/building-immunology/: restrictive CSP",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: reduced motion suppresses automatic playback",
+      "name": "/building-immunology/: only reviewed local media",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: reduced-motion users can explicitly play",
+      "name": "/building-immunology/: declared English language",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: fragment targets",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "/building-immunology/: skip link first in keyboard order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: skip link focuses main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Combined building page retains microbiomes, digital twins and room risk",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Combined building page retains complete framework and face redaction",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Disinfection demonstrations moved out of the building page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Combined building page links to separate robotic disinfection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: expected project videos",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: native controls, silent loops and descriptions",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: standalone playback buttons absent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: visible video starts automatically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: native player is reachable by Tab",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: manual pause persists after scrolling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: native keyboard resumes playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: reduced motion suppresses automatic playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: reduced-motion users can explicitly play",
       "pass": true,
       "detail": ""
     },
@@ -728,6 +834,461 @@
       "detail": ""
     },
     {
+      "name": "/building-immunology/: data saving suppresses automatic playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: no-JavaScript content and controls",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: all cases available without JavaScript",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: case selector keyboard action",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: case selector keyboard action",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: case selector keyboard action",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: case selector keyboard action",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure descriptions and source attribution",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: desktop reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: mobile reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: text-spacing reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: expanded descriptions at 320px reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: page response",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "/disinfection-robot/: one h1 and sequential headings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: loaded images with alt text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: restrictive CSP",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: only reviewed local media",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: declared English language",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: fragment targets",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "/disinfection-robot/: skip link first in keyboard order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: skip link focuses main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Robot page retains the material-adaptive paper",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Robot page links back to combined building research",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: expected project videos",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: native controls, silent loops and descriptions",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: standalone playback buttons absent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: visible video starts automatically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: native player is reachable by Tab",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: manual pause persists after scrolling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: native keyboard resumes playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: reduced motion suppresses automatic playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: reduced-motion users can explicitly play",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "robotic-perception: description track available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "robotic-perception: jpg available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "robotic-perception: mp4 available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "surface-materials: description track available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "surface-materials: jpg available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "surface-materials: mp4 available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "adaptive-disinfection: description track available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "adaptive-disinfection: jpg available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "adaptive-disinfection: mp4 available",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "indoor-mapping: description track available",
       "pass": true,
       "detail": ""
@@ -758,122 +1319,37 @@
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: data saving suppresses automatic playback",
+      "name": "/disinfection-robot/: data saving suppresses automatic playback",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: no-JavaScript content and controls",
+      "name": "/disinfection-robot/: no-JavaScript content and controls",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: all cases available without JavaScript",
+      "name": "/disinfection-robot/: figure descriptions and source attribution",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: case selector keyboard action",
+      "name": "/disinfection-robot/: desktop reflow",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: case selector keyboard action",
+      "name": "/disinfection-robot/: mobile reflow",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: case selector keyboard action",
+      "name": "/disinfection-robot/: text-spacing reflow",
       "pass": true,
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: case selector keyboard action",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: figure descriptions and source attribution",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: desktop reflow",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: mobile reflow",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: text-spacing reflow",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
+      "name": "/disinfection-robot/: figure description has visible keyboard focus",
       "pass": true,
       "detail": ""
     },
@@ -883,7 +1359,7 @@
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
+      "name": "/disinfection-robot/: figure description has visible keyboard focus",
       "pass": true,
       "detail": ""
     },
@@ -893,7 +1369,7 @@
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
+      "name": "/disinfection-robot/: figure description has visible keyboard focus",
       "pass": true,
       "detail": ""
     },
@@ -903,7 +1379,7 @@
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
+      "name": "/disinfection-robot/: figure description has visible keyboard focus",
       "pass": true,
       "detail": ""
     },
@@ -913,7 +1389,7 @@
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
+      "name": "/disinfection-robot/: figure description has visible keyboard focus",
       "pass": true,
       "detail": ""
     },
@@ -923,7 +1399,7 @@
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
+      "name": "/disinfection-robot/: figure description has visible keyboard focus",
       "pass": true,
       "detail": ""
     },
@@ -933,67 +1409,7 @@
       "detail": ""
     },
     {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-digital-twin/: expanded descriptions at 320px reflow",
+      "name": "/disinfection-robot/: expanded descriptions at 320px reflow",
       "pass": true,
       "detail": ""
     },
@@ -1323,306 +1739,6 @@
       "detail": ""
     },
     {
-      "name": "/building-immunology/: page response",
-      "pass": true,
-      "detail": 200
-    },
-    {
-      "name": "/building-immunology/: one h1 and sequential headings",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: loaded images with alt text",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: restrictive CSP",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: only reviewed local media",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: declared English language",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: fragment targets",
-      "pass": true,
-      "detail": []
-    },
-    {
-      "name": "/building-immunology/: skip link first in keyboard order",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: skip link focuses main",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: expected project videos",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: native controls, silent loops and descriptions",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: standalone playback buttons absent",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: visible video starts automatically",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: native player is reachable by Tab",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: manual pause persists after scrolling",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: native keyboard resumes playback",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: reduced motion suppresses automatic playback",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: reduced-motion users can explicitly play",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "robotic-perception: description track available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "robotic-perception: jpg available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "robotic-perception: mp4 available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "surface-materials: description track available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "surface-materials: jpg available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "surface-materials: mp4 available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "adaptive-disinfection: description track available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "adaptive-disinfection: jpg available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "adaptive-disinfection: mp4 available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: data saving suppresses automatic playback",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: no-JavaScript content and controls",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure descriptions and source attribution",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: desktop reflow",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: mobile reflow",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: text-spacing reflow",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: expanded descriptions at 320px reflow",
-      "pass": true,
-      "detail": ""
-    },
-    {
       "name": "/robotic-block-assembly/: page response",
       "pass": true,
       "detail": 200
@@ -1799,6 +1915,36 @@
     },
     {
       "name": "/robotic-block-assembly/: expanded descriptions at 320px reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Legacy destination: /building-digital-twin/",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Legacy destination: /building-digital-twin/#room-risk",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Legacy destination: /building-digital-twin/#building-cases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Legacy destination: /building-digital-twin/#demonstrations",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Legacy entry remains usable without JavaScript",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Legacy no-JavaScript link reaches combined content",
       "pass": true,
       "detail": ""
     },

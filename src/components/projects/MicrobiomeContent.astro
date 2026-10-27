@@ -1,34 +1,22 @@
 ---
 import Figure from "../ProjectFigure.astro";
-import Video from "../ProjectVideo.astro";
-import { asset } from "../../data/profile";
 ---
-<section class="project-section" id="method" aria-labelledby="method-title">
-  <div class="section-heading"><p class="eyebrow">An integrated research vision</p><h2 id="method-title">Method</h2><p>Connect what a building senses with how it responds.</p></div>
-  <Figure id="immunity-framework" />
-  <ol class="method-steps immunity-steps">
-    <li><h3>Sense</h3><p>Observe indoor conditions, surfaces, and occupant activity.</p></li>
-    <li><h3>Predict</h3><p>Model exposure alongside energy use and thermal comfort.</p></li>
-    <li><h3>Respond</h3><p>Inform building control and robotic disinfection.</p></li>
-    <li><h3>Adapt</h3><p>Consider changing conditions and the people inside.</p></li>
-  </ol>
-  <div class="immunity-interaction">
-    <Figure id="occupant-interaction" />
-    <div><p class="eyebrow">People in the loop</p><h3>Health, energy, and everyday experience</h3><p>The building-immunology vision brings occupant preferences and human interaction into the same picture as environmental sensing.</p></div>
-  </div>
-</section>
-<section class="project-section" id="response" aria-labelledby="response-title">
-  <div class="section-heading"><p class="eyebrow">Material-aware disinfection</p><h2 id="response-title">Robotic response</h2><p>Recognize the surface before choosing the action.</p></div>
-  <div class="immunity-response">
-    <Video id="surface-materials" />
-    <div><h3>Different surfaces, different decisions</h3><p>Material recognition connects the objects a robot sees with a model of surface transmission.</p><p class="scope-note">Illustrated research workflow from Hu and Li (2022). <a href="https://doi.org/10.1111/mice.12811">Read the material-adaptive disinfection paper ↗</a></p></div>
-  </div>
-  <div class="immunity-workflow"><Video id="adaptive-disinfection" /></div>
-</section>
 <section class="project-section" id="communities" aria-labelledby="communities-title">
   <div class="section-heading"><p class="eyebrow">The biological context</p><h2 id="communities-title">Microbial communities</h2><p>Sample shared spaces. Observe colonies. Compare communities.</p></div>
   <div class="paired immunity-observations"><Figure id="sampling" /><Figure id="culture-2" /></div>
   <Figure id="abundance" />
   <p class="scope-note">Columns represent samples; rows identify taxa; circle size shows relative abundance. The Building M/T chart and school-sampling images are separate source examples. Community composition alone does not establish infection risk.</p>
-  <a class="related-project" href={asset("building-digital-twin/")}><span>Related research</span><strong>Explore building simulation and room-level risk ↗</strong></a>
+</section>
+<section class="project-section" id="method" aria-labelledby="method-title">
+  <div class="section-heading"><p class="eyebrow">An integrated research vision</p><h2 id="method-title">Method</h2><p>Connect indoor sensing, simulation, and building decisions.</p></div>
+  <Figure id="immunity-framework" />
+  <ol class="method-steps">
+    <li><h3>Sense</h3><p>Observe indoor conditions and occupant activity.</p></li>
+    <li><h3>Model</h3><p>Explore exposure, energy use, and thermal comfort.</p></li>
+    <li><h3>Inform</h3><p>Support building decisions and communicate room-level risk.</p></li>
+  </ol>
+  <div class="immunity-interaction">
+    <Figure id="occupant-interaction" />
+    <div><p class="eyebrow">People in the loop</p><h3>Health, energy, and everyday experience</h3><p>The building-immunology vision considers occupant preferences alongside environmental sensing and simulation.</p></div>
+  </div>
 </section>

@@ -10,9 +10,10 @@ A personal academic website inspired by the structure of [Mengjun Wang’s homep
 - `/cv/`: concise HTML CV, based on the supplied 2026 CV and verified publication records. It is a summary, not a full transcription of the original document.
 - `/accessibility/`: accessibility information and known limits.
 - `/404.html`: accessible error page.
-- `/building-digital-twin/`: indoor simulation, room-level risk, and four building cases.
+- `/building-digital-twin/`: legacy entry that redirects into the combined building page; old room-risk and building-case anchors are preserved. The former demonstrations anchor goes to the robot page.
 - `/surgery-ai/`: camera-positioning prototypes and proposed biomimetic cleaning.
-- `/building-immunology/`: building-immunity concepts, indoor sensing and simulation, material-adaptive robotic disinfection, and microbial communities. Media from `Building Immunology 1.pptx` and `Animated_Infographics_May_09_2022.mp4` are prepared with `python scripts/prepare-immunology-media.py`; provenance is recorded in `reports/immunology-media-refresh.json`.
+- `/building-immunology/`: combined microbiomes, building-immunity framework, digital-twin simulation, room-level risk, and four building cases. Figure assets from `Building Immunology 1.pptx` and the robot page’s excerpts from `Animated_Infographics_May_09_2022.mp4` are prepared with `python scripts/prepare-immunology-media.py`; provenance is recorded in `reports/immunology-media-refresh.json`.
+- `/disinfection-robot/`: material-aware robotic disinfection, indoor mapping, and hospital-room simulation. Videos retain their original asset URLs via `ProjectClip.assetProject`; project ownership and bibliography are separated from the combined building page.
 - `/robotic-block-assembly/`: architected modules and conceptual coastal breakwater assembly.
 
 Update biography and news in `src/pages/index.astro`. Edit publication links, authors, education, and profile URLs in `src/data/profile.ts`. There is no placeholder portrait or Google Scholar profile. The introductory image is labeled as a research image and can be replaced with a supplied portrait later.
@@ -52,7 +53,7 @@ The GitHub Actions workflow builds, checks dependencies, runs axe checks, and de
 
 No UF logo, UF blue/orange interface theme, tracking scripts, remote fonts, or external media embeds are used. Original scientific figures retain their source colors. Research videos play silently when visible, with native controls, reduced-motion and Save-Data support, and remembered manual pause. The homepage and CV remain static. The website does not publish the private address or telephone number from the original CV. It provides an HTML CV rather than redistributing an unreviewed document.
 
-The axe script checks all eight routes, desktop and 320 CSS-pixel layouts, text spacing, keyboard skip links, expandable descriptions, headings, and media. Automated checks do not establish complete WCAG or ADA compliance. See `reports/manual-review.md` and `reports/content-sources.md` for the scope and remaining limitations.
+The axe script checks all nine routes, including the legacy entry without JavaScript, desktop and 320 CSS-pixel layouts, text spacing, keyboard skip links, expandable descriptions, headings, and media. Automated checks do not establish complete WCAG or ADA compliance. See `reports/manual-review.md` and `reports/content-sources.md` for the scope and remaining limitations.
 
 ## Research media
 

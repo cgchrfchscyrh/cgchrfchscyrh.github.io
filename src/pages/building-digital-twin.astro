@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { asset } from "../data/profile";
+---
+<Layout title="Building Digital Twins has moved" description="Building simulations, microbiomes, and room-level risk now share one project page. Robotic disinfection has its own project page." noindex>
+  <div class="page-intro">
+    <p class="eyebrow">Updated project pages</p>
+    <h1>Building Digital Twins has moved</h1>
+    <p>Building simulations, microbiomes, and room-level infection risk are now presented together.</p>
+    <p><a id="combined-project" href={asset("building-immunology/#simulation")}>Explore Building Immunology and Digital Twins ↗</a></p>
+    <p>Robot perception, navigation, and disinfection demonstrations are available separately.</p>
+    <p><a id="robot-project" href={asset("disinfection-robot/#navigation")}>Explore Robotic Disinfection ↗</a></p>
+  </div>
+</Layout>
+<script>
+  const building = document.querySelector<HTMLAnchorElement>("#combined-project");
+  const robot = document.querySelector<HTMLAnchorElement>("#robot-project");
+  if (building && robot) {
+    const fragment = location.hash;
+    const destination = new URL(fragment === "#demonstrations" ? robot.href : building.href);
+    if (["#abstract", "#method", "#room-risk", "#building-cases", "#publications", "#sources"].includes(fragment)) destination.hash = fragment;
+    location.replace(destination.href);
+  }
+</script>

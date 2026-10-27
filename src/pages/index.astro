@@ -149,7 +149,7 @@ import { labProjects } from "../data/lab-projects";
 
   <section class="section" id="lab-projects" aria-labelledby="lab-projects-heading">
     <h2 id="lab-projects-heading">More projects</h2>
-    <p class="section-intro">Microbial communities, building simulation, surgical robotics, and coastal construction.</p>
+    <p class="section-intro">Building microbiomes and digital twins, robotic disinfection, surgical robotics, and coastal construction.</p>
     <div class="research-list">
       {labProjects.map(project => <article class="research-item" aria-labelledby={`${project.slug}-title`}>
         <figure class="paper-figure"><a href={asset(`${project.slug}/`)} aria-label={`Explore ${project.title}`}><img src={asset(`projects/${project.slug}/${project.image}`)} width={project.imageWidth} height={project.imageHeight} alt={project.imageAlt} loading="lazy" decoding="async" /></a></figure>

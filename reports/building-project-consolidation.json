@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-27T15:23:00.436475+00:00",
+  "combinedProject": "/building-immunology/",
+  "robotProject": "/disinfection-robot/",
+  "legacyRoute": "/building-digital-twin/",
+  "changes": [
+    "Building Immunology now combines microbial sampling and communities, the complete integrated framework, indoor simulations, room-level risk, four building cases, and all seven related building/microbiome references.",
+    "Robotic Disinfection has a separate homepage card, neutral favicon, two hero clips, three method/navigation clips, and the Hu and Li (2022) paper.",
+    "Each of the seven building/disinfection clips is displayed once across the two pages. Asset URLs remain stable through assetProject metadata; source videos are unchanged.",
+    "Legacy digital-twin links preserve room-risk and building-case fragments. The former demonstrations fragment leads to robot navigation. A readable fallback supports users without JavaScript.",
+    "The complete framework and redacted interaction image match their prior committed bytes. Original presentation layers and face redaction remain intact.",
+    "The disinfection simulation visual-description track now refers to separate building risk models instead of a risk interface on the same page.",
+    "Personal collection links, accessibility information, and README route documentation updated."
+  ],
+  "validation": {
+    "build": "Passed: 9 static routes, no errors or warnings",
+    "lint": "Passed",
+    "axeScans": 32,
+    "functionalChecks": 331,
+    "axeViolations": 0,
+    "failedChecks": 0,
+    "dependencyVulnerabilities": 0,
+    "visualReview": "Desktop hero and full layouts for the two pages; mobile layouts; complete images, captions, and article placement reviewed.",
+    "accessibilityCoverage": "Keyboard focus and playback, reduced motion, data saving, persistent manual pause, 320px reflow, increased text spacing, image descriptions, case selectors, and sources.",
+    "legacyCoverage": "Axe scans the fallback HTML with its redirect script removed so scanning can run. Separate checks verify automatic redirects and actual JavaScript-disabled fallback navigation."
+  },
+  "limitations": [
+    "Automated checks do not certify full ADA/WCAG compliance; assistive-technology usability has not been fully evaluated.",
+    "External paper accessibility is outside the automated scan.",
+    "Animations, mapping recordings and robot simulations remain identified as distinct research examples, not a validated end-to-end disinfection deployment."
+  ]
+}

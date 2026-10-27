@@ -6,16 +6,19 @@ import ProjectPlayback from "../components/ProjectPlayback.astro";
 import DigitalTwinContent from "../components/projects/DigitalTwinContent.astro";
 import SurgeryContent from "../components/projects/SurgeryContent.astro";
 import MicrobiomeContent from "../components/projects/MicrobiomeContent.astro";
+import DisinfectionContent from "../components/projects/DisinfectionContent.astro";
 import AssemblyContent from "../components/projects/AssemblyContent.astro";
 import { labProjects, immunologyPublications } from "../data/lab-projects";
 export function getStaticPaths() { return labProjects.map(project => ({ params: { project: project.slug }, props: { project } })); }
 const { project } = Astro.props;
 const surgery = project.slug === "surgery-ai";
-const digital = project.slug === "building-digital-twin";
+const disinfection = project.slug === "disinfection-robot";
 const micro = project.slug === "building-immunology";
 const assembly = project.slug === "robotic-block-assembly";
-const papers = micro ? [4,5] : [0,1,2,3,6];
-const nav = assembly ? [{ id: "abstract", label: "Concept" }, { id: "method", label: "Method" }, { id: "assembly", label: "Assembly" }, { id: "concept", label: "AMERICA" }] : [{ id: "abstract", label: "Abstract" }, { id: "method", label: "Method" }, ...(digital ? [{ id: "room-risk", label: "Room-level risk" }, { id: "building-cases", label: "Cases" }] : surgery ? [{ id: "cleaning", label: "Cleaning concept" }] : [{ id: "response", label: "Robotic response" }, { id: "communities", label: "Communities" }]), { id: "publications", label: "Publications" }];
+const papers = [4,5,6,0,1,2,3];
+const nav = assembly ? [{ id: "abstract", label: "Concept" }, { id: "method", label: "Method" }, { id: "assembly", label: "Assembly" }, { id: "concept", label: "AMERICA" }]
+  : micro ? [{ id: "abstract", label: "Abstract" }, { id: "communities", label: "Microbiomes" }, { id: "method", label: "Method" }, { id: "simulation", label: "Digital twins" }, { id: "room-risk", label: "Room-level risk" }, { id: "publications", label: "Publications" }]
+  : [{ id: "abstract", label: "Abstract" }, { id: "method", label: "Method" }, ...(surgery ? [{ id: "cleaning", label: "Cleaning concept" }] : [{ id: "navigation", label: "Navigation" }]), { id: "publications", label: "Publications" }];
 ---
 <ProjectLayout title={project.title} shortTitle={project.shortTitle} description={project.description} slug={project.slug} source={project.source} nav={nav}>
   {assembly ? <AssemblyContent sourceNotes={project.sourceNotes} /> : <>
@@ -29,12 +32,12 @@ const nav = assembly ? [{ id: "abstract", label: "Concept" }, { id: "method", la
   </section>
   <div class="project-content">
     <section class="project-section abstract" id="abstract" aria-labelledby="abstract-title"><p class="eyebrow">The research</p><h2 id="abstract-title">Abstract</h2><p class="lead">{project.abstract}</p></section>
-    {digital && <DigitalTwinContent />}
     {surgery && <SurgeryContent />}
-    {micro && <MicrobiomeContent />}
+    {micro && <><MicrobiomeContent /><DigitalTwinContent /></>}
+    {disinfection && <DisinfectionContent />}
     <section class="project-section publications" id="publications" aria-labelledby="publications-title"><div class="section-heading"><p class="eyebrow">Further reading</p><h2 id="publications-title">Publications</h2></div>
-      {micro && <article class="publication immunity-publication"><p class="publication-meta">Material-adaptive robotic disinfection · 2022</p><h3><a href="https://doi.org/10.1111/mice.12811">Recognizing object surface materials to adapt robotic disinfection in infrastructure facilities</a></h3><p>Da Hu, Shuai Li</p><p class="scope-note">Computer-Aided Civil and Infrastructure Engineering, 37, 1521–1546. The supplied Wiley infographic illustrates this study.</p></article>}
-      {surgery ? <article class="publication"><p class="publication-meta">Related training study · 2025</p><h3><a href="https://arxiv.org/abs/2511.02233">Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback</a></h3><p>Songyang Liu, Yunpeng Tan, Shuai Li</p><p class="scope-note">AI-assisted spatial feedback in simulation. This training study is distinct from the hardware and cleaning concepts above.</p><a class="paper-link" href="https://arxiv.org/abs/2511.02233">Read the training paper on arXiv ↗</a></article> : <><p class="section-intro">Related research cited by the original Building Immunology project.</p><ol class="reference-list">{papers.slice(0,3).map(i => <li>{immunologyPublications[i]}</li>)}</ol>{papers.length > 3 && <details class="more-publications"><summary>More related publications</summary><ol class="reference-list" start="4">{papers.slice(3).map(i => <li>{immunologyPublications[i]}</li>)}</ol></details>}</>}
+      {disinfection && <article class="publication immunity-publication"><p class="publication-meta">Material-adaptive robotic disinfection · 2022</p><h3><a href="https://doi.org/10.1111/mice.12811">Recognizing object surface materials to adapt robotic disinfection in infrastructure facilities</a></h3><p>Da Hu, Shuai Li</p><p class="scope-note">Computer-Aided Civil and Infrastructure Engineering, 37, 1521–1546. The supplied Wiley infographic illustrates this study.</p></article>}
+      {surgery ? <article class="publication"><p class="publication-meta">Related training study · 2025</p><h3><a href="https://arxiv.org/abs/2511.02233">Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback</a></h3><p>Songyang Liu, Yunpeng Tan, Shuai Li</p><p class="scope-note">AI-assisted spatial feedback in simulation. This training study is distinct from the hardware and cleaning concepts above.</p><a class="paper-link" href="https://arxiv.org/abs/2511.02233">Read the training paper on arXiv ↗</a></article> : micro && <><p class="section-intro">Related research cited by the original Building Immunology project.</p><ol class="reference-list">{papers.slice(0,3).map(i => <li>{immunologyPublications[i]}</li>)}</ol>{papers.length > 3 && <details class="more-publications"><summary>More related publications</summary><ol class="reference-list" start="4">{papers.slice(3).map(i => <li>{immunologyPublications[i]}</li>)}</ol></details>}</>}
     </section>
     <section class="source-section" id="sources" aria-label="Project source materials"><details><summary>Sources & media notes</summary><p>The page uses supplied project materials. Source credits accompany the figures, videos, and publications.</p><ul>{project.sourceNotes.map(note => <li>{note}</li>)}</ul><p>Images are extracted from the original materials; enlarged details are identified in their captions. Complete descriptions are available beneath each figure and video.</p></details></section>
   </div>

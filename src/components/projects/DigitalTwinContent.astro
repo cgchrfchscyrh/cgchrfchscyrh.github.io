@@ -3,22 +3,20 @@ import Figure from "../ProjectFigure.astro";
 import Video from "../ProjectVideo.astro";
 import Explorer from "../ProjectExplorer.astro";
 import { buildingCases } from "../../data/lab-figures";
+import { asset } from "../../data/profile";
 ---
-<section class="project-section" id="method" aria-labelledby="method-title">
-  <div class="section-heading"><p class="eyebrow">Model the environment</p><h2 id="method-title">Method</h2><p>Connect a building’s geometry with activity and transmission.</p></div>
+<section class="project-section" id="simulation" aria-labelledby="simulation-title">
+  <div class="section-heading"><p class="eyebrow">Building simulations & digital twins</p><h2 id="simulation-title">From spaces to exposure</h2><p>Represent geometry, occupant activity, and transport within the building.</p></div>
   <Figure id="twin-framework" />
-  <ol class="method-steps"><li><h3>Represent the space</h3><p>Building geometry, ventilation, and room function.</p></li><li><h3>Describe activity</h3><p>Occupancy, movement, and environmental conditions.</p></li><li><h3>Model exposure</h3><p>Transport and transmission under a specified scenario.</p></li></ol>
+  <div class="immunity-response"><Video id="building-layers" /><div><h3>See across rooms and model layers</h3><p>The overhead view complements the room-scale animation above. These recorded model views illustrate spatial relationships; their colors are not a calibrated risk scale.</p></div></div>
 </section>
 <section class="project-section" id="room-risk" aria-labelledby="risk-title">
   <div class="section-heading"><p class="eyebrow">At the scale of a room</p><h2 id="risk-title">Room-level risk</h2><p>Locate a room, understand the scenario, and communicate its risk category.</p></div>
   <div class="risk-layout"><div><Figure id="risk-workflow" /><Figure id="building-viewer" /></div><Figure id="risk-interface" /></div>
-  <p class="scope-note">Archived interface examples. This room-level workflow models surface-mediated transmission; the opening animations illustrate indoor transport.</p>
+  <p class="scope-note">Archived interface examples. This room-level workflow models surface-mediated transmission; the building animations illustrate indoor transport. The microbial observations above are not presented as calibration data for these models.</p>
 </section>
 <section class="project-section" id="building-cases" aria-labelledby="cases-title">
   <div class="section-heading"><p class="eyebrow">Different spaces, different connections</p><h2 id="cases-title">Building cases</h2><p>Explore the source layouts and their spatial networks.</p></div>
   <Explorer id="buildings" label="Choose a building case" choices={buildingCases.map(c => ({ id: c.id, title: c.title, description: c.description, figures: [`${c.id}-plan`, `${c.id}-network`] }))} />
-</section>
-<section class="project-section" id="demonstrations" aria-labelledby="demos-title">
-  <div class="section-heading"><p class="eyebrow">Spatial understanding and action</p><h2 id="demos-title">Demonstrations</h2><p>Mapping and a simulated robotic response, shown as separate research examples.</p></div>
-  <div class="paired"><Video id="indoor-mapping" /><Video id="disinfection-simulation" /></div>
+  <a class="related-project" id="response" href={asset("disinfection-robot/")}><span>Separate project</span><strong>Explore material-aware robotic disinfection ↗</strong></a>
 </section>

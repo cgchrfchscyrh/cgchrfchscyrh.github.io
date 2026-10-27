@@ -4,7 +4,7 @@ import { asset } from "../data/profile";
 interface Props { id: string; hero?: boolean; }
 const { id, hero = false } = Astro.props;
 const clip = projectClips.find(item => item.id === id)!;
-const base = `projects/${clip.project}/${clip.id}`;
+const base = `projects/${clip.assetProject || clip.project}/${clip.id}`;
 ---
 <figure class="project-video">
   <video id={`${id}-video`} data-playback-group={hero ? "hero" : "research"} controls controlslist="nodownload" muted playsinline loop preload={hero ? "metadata" : "none"} width="1280" height="720" poster={asset(`${base}.jpg`)} aria-label={clip.title} aria-describedby={`${id}-caption ${id}-description`}>
