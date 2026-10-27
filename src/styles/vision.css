@@ -21,6 +21,8 @@
 .vision-connections li div>span { display:block; margin-top:.4rem; color:#575753; font-size:.75rem; line-height:1.55; }
 .vision-scene { border:1px dashed #85857d; background:#f3f3ef; aspect-ratio:1.5; display:grid; place-items:center; }
 .vision-scene svg { display:block; width:100%; height:auto; color:#42423f; overflow:visible; }
+.vision-scene.vision-scene-image { aspect-ratio:16 / 9; border-style:solid; }
+.research-vision .vision-scene img { display:block; width:100%; height:100%; object-fit:contain; margin:0; border:0; border-radius:0; background:transparent; }
 .research-vision .vision-system-labels { display:flex; flex-wrap:wrap; gap:.4rem .75rem; list-style:none; padding:0; margin:1rem 0 0; color:#484844; }
 .research-vision .vision-system-labels li { border-top:1px solid #b8b8b0; padding-top:.45rem; font-size:.72rem; line-height:1.5; }
 .vision-context:empty { display:none; }

@@ -156,7 +156,7 @@ try {
       check(`${route}: no introductory subtitles`, await page.locator('.hero-copy > .eyebrow,.hero-subtitle,.coastal-hero .coastal-tagline,.coastal-hero .coastal-intro-copy').count() === 0);
       check(`${route}: no text captions below videos`, await page.locator('figure:has(video) > figcaption,figure:has(video) > details').count() === 0);
       check(`${route}: larger vision section exists`, await page.locator('#vision').count() === 1);
-      check(`${route}: visual collaboration map`, await page.locator(".vision-connections li").count() === 3 && await page.locator(".vision-scene svg[role=img]").count() === 1);
+      check(`${route}: visual collaboration map`, await page.locator(".vision-connections li").count() === 3 && await page.locator(".vision-scene").getByRole("img").count() === 1);
 
       const clips = projectClips.filter(c => c.project === project.slug);
       const videos = page.locator('video');

@@ -116,6 +116,11 @@
     "imageAlt": "Source presentation showing several module joints and their pick, place and interlock sequences.",
     "sourceAnchor": "#assembly",
     "scene": "coastal",
+    "sceneImage": {
+      "src": "projects/robotic-block-assembly/assembly-vision-frame.webp",
+      "width": 1920,
+      "height": 1080
+    },
     "future": "Modules, machines & coastal systems",
     "systems": [
       "Interlocking blocks",
@@ -136,8 +141,8 @@
         "partners": "Coastal science + field teams"
       }
     ],
-    "sceneAlt": "Future concept: an assembly arm places interlocking blocks along a breakwater between waves and the shoreline.",
-    "description": "The supplied work presents interlocking module and robotic assembly concepts. Durable materials, reliable assembly and coastal evaluation must connect materials science, coastal engineering, robotics, construction and field teams. The drawing shows modular units forming a breakwater between waves and the shore, with an assembly arm and worker. It is a future concept; the supplied materials do not establish assembly experiments, wave performance or field durability.",
+    "sceneAlt": "Frame from the opening Isaac Sim video: a tracked excavator beside seven interlocking TPMS modules forming a breakwater segment on a sandy shoreline. Kinematic concept visualization.",
+    "description": "The supplied work presents interlocking module and robotic assembly concepts. Durable materials, reliable assembly and coastal evaluation must connect materials science, coastal engineering, robotics, construction and field teams. The shared-vision image is a frame from the opening Isaac Sim video after six prescribed placements beside a starter module. The excavator holds its clamp clear of the completed row on the rendered shoreline. This kinematic concept illustrates the larger vision; it does not establish physical assembly, wave performance or field durability.",
     "headlineLines": [
       "Coastal resilience,",
       "block by block."

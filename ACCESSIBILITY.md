@@ -1,5 +1,9 @@
 # Accessibility review
 
+## Coastal shared-vision screenshot — 27 October 2026
+
+The shared-vision illustration now uses a complete frame from the opening assembly video, with descriptive alt text and an updated extended description identifying it as an Isaac Sim kinematic concept. Desktop and 320 CSS-pixel views were inspected; the image keeps its full aspect ratio. Build and lint passed. The existing audit passed 32 axe scans and 315 functional checks with zero violations or failures. Source-frame provenance is recorded in `reports/coastal-vision-frame.json`. Existing PDF and screen-reader review limitations remain; automated checks are not complete WCAG certification.
+
 ## Vertical block insertion revision — 27 October 2026
 
 All three coastal movies now follow the vertical side-groove direction: lift from a common staging height, transfer above the partner, pause in alignment, then descend at fixed horizontal position. The excavator releases only after nominal seating. Original source meshes and earlier renders remain unchanged; cast shadows and ambient occlusion remain disabled.

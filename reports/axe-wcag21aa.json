@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-27T21:55:38.386Z",
+  "date": "2026-10-27T22:11:55.410Z",
   "base": "http://127.0.0.1:4480",
   "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
   "scans": [
@@ -298,7 +298,7 @@
           "nodes": 3
         }
       ],
-      "passes": 24
+      "passes": 23
     },
     {
       "route": "/robotic-block-assembly/",
@@ -311,7 +311,7 @@
           "nodes": 3
         }
       ],
-      "passes": 24
+      "passes": 23
     },
     {
       "route": "/robotic-block-assembly/",
@@ -324,7 +324,7 @@
           "nodes": 3
         }
       ],
-      "passes": 24
+      "passes": 23
     },
     {
       "route": "/robotic-block-assembly/",
@@ -336,7 +336,7 @@
           "nodes": 3
         }
       ],
-      "passes": 24
+      "passes": 23
     }
   ],
   "checks": [

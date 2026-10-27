@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-27T22:13:03.205911+00:00",
+  "source": "public/projects/robotic-block-assembly/excavator-assembly.mp4",
+  "source_sha256": "d73e11c074bcc5e07d3c038de1ee68502f0896614f2e12fbcfbb17b3aca5f84d",
+  "timestamp_seconds": 66,
+  "output": "public/projects/robotic-block-assembly/assembly-vision-frame.webp",
+  "output_sha256": "cf6de80614a6d263814aa8d16382d9615c6d3d02856a3bb3f5af4af7d1b25913",
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "processing": "ffmpeg video frame extraction; WebP quality 92; complete frame without crop",
+  "description": "Screenshot from the opening Isaac Sim kinematic concept video, showing the completed seven-module segment.",
+  "checks": {
+    "build": "passed",
+    "lint": "passed",
+    "axe_scans": 32,
+    "functional_checks": 315,
+    "violations": 0,
+    "failures": 0,
+    "desktop_and_320px_manual_review": "passed"
+  },
+  "scope": "Illustrative kinematics, not physical assembly or coastal performance evidence."
+}
