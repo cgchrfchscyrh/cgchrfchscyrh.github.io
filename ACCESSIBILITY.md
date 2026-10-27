@@ -1,5 +1,15 @@
 # Accessibility review
 
+## Vertical block insertion revision — 27 October 2026
+
+All three coastal movies now follow the vertical side-groove direction: lift from a common staging height, transfer above the partner, pause in alignment, then descend at fixed horizontal position. The excavator releases only after nominal seating. Original source meshes and earlier renders remain unchanged; cast shadows and ambient occlusion remain disabled.
+
+The three 1080p silent MP4s passed full decoding, duration, frame-count and audio-track checks. Actual USD trajectories were checked for vertical descent and clearance before insertion. All frames of both detail scenes were checked for complete block framing, after correcting an initial crop and label overlap. Main-machine linkage continuity also passed. Tight-fit and tessellation contacts remain in the supplied meshes; these films do not certify manufacturing clearance, contact forces or physically feasible assembly.
+
+All three posters, full text alternatives and 68 timed visual-description cues were updated with the new cache version. Native controls, keyboard focus, viewport playback, reduced-motion/data-saving preferences and manual pause persistence are retained. No new caption blocks were added under the players. Build, lint and security audit passed; **32 axe scans and 315 functional checks** reported zero violations or failures. Desktop and 320 CSS-pixel views were inspected. See `reports/coastal-insertion-review.json` and `reports/axe-wcag21aa.json`.
+
+These checks do not constitute complete ADA/WCAG certification. Existing PDF and multi-screen-reader review limitations remain.
+
 ## Detailed excavator and beach video — 27 October 2026
 
 The opening coastal clip now uses the supplied Excavator02 appearance model from the local Unity project, retargeted in Isaac Sim with a concept clamp, and sand textures plus complete beach-rock meshes exported from the local Unreal project. Six new placements form a seven-module segment beside the shoreline. Retraction timing and the wider machine's distance from the assembly row were revised. Cast shadows and ambient occlusion remain disabled. The joint and geometry-comparison clips are unchanged.

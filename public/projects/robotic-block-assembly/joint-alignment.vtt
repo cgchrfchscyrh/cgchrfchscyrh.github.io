@@ -1,10 +1,19 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.000
-Isaac Sim kinematic concept. Primitive TPMS slot and tenon variants begin separated. The light-gray slot stays fixed.
+00:00:00.000 --> 00:00:02.000
+Two primitive TPMS blocks start at the same center height. The slot is stationary on the left; the tenon is forward and to the right. This is an Isaac Sim kinematic concept.
 
-00:00:03.000 --> 00:00:09.000
-The darker tenon approaches its partner as the camera slowly changes angle. Original geometry is shown without cast shadows.
+00:00:02.000 --> 00:00:05.000
+The tenon lifts straight up above the slot block.
+
+00:00:05.000 --> 00:00:08.000
+The raised tenon transfers toward its partner, keeping its bottom clear.
+
+00:00:08.000 --> 00:00:09.000
+The mating features pause above the vertical groove.
 
 00:00:09.000 --> 00:00:14.000
-Both parts hold a nominal neighboring alignment. The physical insertion direction, fit, tolerance, and contact are not validated.
+The tenon lowers vertically into its nominal neighboring position. Horizontal position remains fixed.
+
+00:00:14.000 --> 00:00:18.000
+The pair holds the nominal seated pose. Geometry is unchanged; manufacturing clearance and physical contact are not validated.

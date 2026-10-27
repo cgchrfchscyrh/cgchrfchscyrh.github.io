@@ -1,10 +1,19 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:02.000
-Isaac Sim kinematic concept. Diamond, Gyroid, and Primitive slot-tenon pairs are labeled from left to right.
+Three labeled TPMS pairs begin at the same center height: Diamond, Gyroid, and Primitive. Each has a slot and a tenon. Cast shadows are disabled.
 
-00:00:02.000 --> 00:00:10.000
-The darker tenon variants move toward the stationary partners in a staggered sequence. Family names distinguish the shapes independently of color.
+00:00:02.000 --> 00:00:05.000
+The tenons begin lifting vertically in a staggered sequence: Diamond, Gyroid, then Primitive.
 
-00:00:10.000 --> 00:00:16.000
-The three pairs hold nominal neighboring positions. This is a shadow-free CAD geometry comparison, not proof of physical assembly.
+00:00:05.000 --> 00:00:08.000
+Diamond begins its elevated transfer; Gyroid and Primitive follow after finishing their lifts.
+
+00:00:08.000 --> 00:00:09.000
+Diamond pauses over its aligned groove while the other tenons finish transferring.
+
+00:00:09.000 --> 00:00:15.600
+Each tenon pauses over its aligned groove, then lowers straight down. Diamond starts, followed by Gyroid and Primitive. Horizontal position stays fixed during insertion.
+
+00:00:15.600 --> 00:00:20.000
+Three seated pairs remain in view. The original porous geometries differ; each follows the vertical groove direction. This animation does not validate contact, clearance, or strength.

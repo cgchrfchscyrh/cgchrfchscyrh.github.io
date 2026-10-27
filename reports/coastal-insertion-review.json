@@ -1,0 +1,263 @@
+{
+  "date": "2026-10-27T22:02:58.327154+00:00",
+  "change": "All three coastal films now use same-height pickup, vertical lift, elevated transfer, above-joint alignment, and vertical insertion at fixed X/Y. Main excavator releases only after seating.",
+  "videos": [
+    {
+      "scene": "coastal_assembly",
+      "video": "continuous-assembly.mp4",
+      "duration": 67,
+      "frames": 1608,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "audio": false,
+      "full_decode": "passed",
+      "bytes": 31764793,
+      "sha256": "d73e11c074bcc5e07d3c038de1ee68502f0896614f2e12fbcfbb17b3aca5f84d",
+      "shadows": false,
+      "ambient_occlusion": false,
+      "unresolved_assets": 0
+    },
+    {
+      "scene": "joint",
+      "video": "joint.mp4",
+      "duration": 18,
+      "frames": 432,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "audio": false,
+      "full_decode": "passed",
+      "bytes": 1874534,
+      "sha256": "781dd8ade2c146daf3b34f4f1bd79219bd06269d6a273118de28935f2d06d9dc",
+      "shadows": false,
+      "ambient_occlusion": false,
+      "unresolved_assets": 0
+    },
+    {
+      "scene": "families",
+      "video": "families.mp4",
+      "duration": 20,
+      "frames": 480,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "audio": false,
+      "full_decode": "passed",
+      "bytes": 2221813,
+      "sha256": "9f5769352e80c6dc9981d34c7400441de8c7017a753e9103ee76cb7a40796dec",
+      "shadows": false,
+      "ambient_occlusion": false,
+      "unresolved_assets": 0
+    }
+  ],
+  "path_checks": [
+    {
+      "path": "/World/Blocks/Unit_1",
+      "window_seconds": [
+        6.8,
+        8.6
+      ],
+      "frames": 43,
+      "horizontal_drift_m": 0.0,
+      "monotone_vertical_descent": true,
+      "initial_vertical_clearance_m": 0.24493299162502835,
+      "final_center": [
+        0.75,
+        0.0,
+        0.46500849389676757
+      ]
+    },
+    {
+      "path": "/World/Blocks/Unit_2",
+      "window_seconds": [
+        16.8,
+        18.6
+      ],
+      "frames": 43,
+      "horizontal_drift_m": 0.0,
+      "monotone_vertical_descent": true,
+      "initial_vertical_clearance_m": 0.24493299162502824,
+      "final_center": [
+        1.5,
+        0.0,
+        0.46500849389676735
+      ]
+    },
+    {
+      "path": "/World/Blocks/Unit_3",
+      "window_seconds": [
+        26.8,
+        28.6
+      ],
+      "frames": 43,
+      "horizontal_drift_m": 0.0,
+      "monotone_vertical_descent": true,
+      "initial_vertical_clearance_m": 0.24493299162502824,
+      "final_center": [
+        2.25,
+        0.0,
+        0.46500849389676735
+      ]
+    },
+    {
+      "path": "/World/Blocks/Unit_4",
+      "window_seconds": [
+        36.8,
+        38.6
+      ],
+      "frames": 43,
+      "horizontal_drift_m": 0.0,
+      "monotone_vertical_descent": true,
+      "initial_vertical_clearance_m": 0.24493299162502824,
+      "final_center": [
+        3.0,
+        0.0,
+        0.46500849389676624
+      ]
+    },
+    {
+      "path": "/World/Blocks/Unit_5",
+      "window_seconds": [
+        46.8,
+        48.6
+      ],
+      "frames": 43,
+      "horizontal_drift_m": 0.0,
+      "monotone_vertical_descent": true,
+      "initial_vertical_clearance_m": 0.24493299162502824,
+      "final_center": [
+        3.75,
+        0.0,
+        0.46500849389676624
+      ]
+    },
+    {
+      "path": "/World/Blocks/Unit_6",
+      "window_seconds": [
+        56.8,
+        58.6
+      ],
+      "frames": 43,
+      "horizontal_drift_m": 0.0,
+      "monotone_vertical_descent": true,
+      "initial_vertical_clearance_m": 0.24493299162502824,
+      "final_center": [
+        4.5,
+        0.0,
+        0.46500849389676624
+      ]
+    },
+    {
+      "path": "/World/Blocks/primitive_tenon",
+      "window_seconds": [
+        9,
+        14
+      ],
+      "frames": 121,
+      "horizontal_drift_m": 0.0,
+      "monotone_vertical_descent": true,
+      "initial_vertical_clearance_m": 0.24499999642372128,
+      "final_center": [
+        0.375,
+        0.0,
+        0.4650000000000001
+      ],
+      "scene": "joint"
+    },
+    {
+      "path": "/World/Blocks/diamond_tenon",
+      "window_seconds": [
+        9.0,
+        14.0
+      ],
+      "frames": 121,
+      "horizontal_drift_m": 0.0,
+      "monotone_vertical_descent": true,
+      "initial_vertical_clearance_m": 0.24499999642372128,
+      "final_center": [
+        -2.025,
+        0.0,
+        0.4650000000000001
+      ],
+      "scene": "families"
+    },
+    {
+      "path": "/World/Blocks/gyroid_tenon",
+      "window_seconds": [
+        9.8,
+        14.8
+      ],
+      "frames": 120,
+      "horizontal_drift_m": 0.0,
+      "monotone_vertical_descent": true,
+      "initial_vertical_clearance_m": 0.2449968136713263,
+      "final_center": [
+        0.375,
+        0.0,
+        0.4650000501059861
+      ],
+      "scene": "families"
+    },
+    {
+      "path": "/World/Blocks/primitive_tenon",
+      "window_seconds": [
+        10.6,
+        15.6
+      ],
+      "frames": 120,
+      "horizontal_drift_m": 0.0,
+      "monotone_vertical_descent": true,
+      "initial_vertical_clearance_m": 0.2449986503252526,
+      "final_center": [
+        2.775,
+        0.0,
+        0.46500039984527297
+      ],
+      "scene": "families"
+    }
+  ],
+  "framing": [
+    {
+      "scene": "joint",
+      "frames": 432,
+      "all_block_bounds_visible": true,
+      "pixel_min": [
+        729.8580414442677,
+        109.40939162309206
+      ],
+      "pixel_max": [
+        1325.2332307666175,
+        944.0021882850467
+      ],
+      "family_names_clear": false
+    },
+    {
+      "scene": "families",
+      "frames": 480,
+      "all_block_bounds_visible": true,
+      "pixel_min": [
+        299.7573238030187,
+        172.0149120470448
+      ],
+      "pixel_max": [
+        1819.1108058443042,
+        862.0120584606532
+      ],
+      "family_names_clear": true
+    }
+  ],
+  "original_source_files_unchanged": 59,
+  "earlier_renders_preserved": true,
+  "text_alternatives": "Full descriptions, new posters and 68 continuous timed-description cues updated with media version vertical-insertion-20261027.",
+  "manual_review": [
+    "Main pickup, transfer, insertion and completed row visually reviewed.",
+    "Both detail openings, elevated poses and seated states reviewed; crop and label overlap corrected.",
+    "Desktop 1440 by 1100 and mobile 320 by 800 inspected; native controls reachable by keyboard."
+  ],
+  "automation": "32 axe scans and 315 functional checks passed with zero violations or failures; build, lint and security audit passed.",
+  "limitations": "Prescribed geometric animation. Nominal source mesh fitting retains tight contacts and small tessellation intersections; manufacturing clearance, contact forces and collision-free physical assembly are not certified. Automated website checks do not constitute full ADA/WCAG certification."
+}
