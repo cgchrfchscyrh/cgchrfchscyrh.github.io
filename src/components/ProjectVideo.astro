@@ -5,11 +5,12 @@ interface Props { id: string; hero?: boolean; }
 const { id, hero = false } = Astro.props;
 const clip = projectClips.find(item => item.id === id)!;
 const base = `projects/${clip.assetProject || clip.project}/${clip.id}`;
+const version = clip.mediaVersion ? `?v=${encodeURIComponent(clip.mediaVersion)}` : "";
 ---
 <figure class="project-video">
-  <video id={`${id}-video`} data-playback-group={hero ? "hero" : "research"} controls controlslist="nodownload" muted playsinline loop preload={hero ? "metadata" : "none"} width="1280" height="720" poster={asset(`${base}.jpg`)} aria-label={clip.title} aria-describedby={`${id}-description`}>
-    <source src={asset(`${base}.mp4`)} type="video/mp4" />
-    <track kind="descriptions" src={asset(`${base}.vtt`)} srclang="en" label="English visual descriptions" />
+  <video id={`${id}-video`} data-playback-group={hero ? "hero" : "research"} controls controlslist="nodownload" muted playsinline loop preload={hero ? "metadata" : "none"} width="1280" height="720" poster={asset(`${base}.jpg`) + version} aria-label={clip.title} aria-describedby={`${id}-description`}>
+    <source src={asset(`${base}.mp4`) + version} type="video/mp4" />
+    <track kind="descriptions" src={asset(`${base}.vtt`) + version} srclang="en" label="English visual descriptions" />
     Your browser does not support video playback. A complete text alternative is available in the media notes.
   </video>
   <p id={`${id}-description`} class="sr-only">{clip.description} {clip.audioNote}</p>

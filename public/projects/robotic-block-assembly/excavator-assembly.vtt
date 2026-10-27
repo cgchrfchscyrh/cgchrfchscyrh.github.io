@@ -1,19 +1,151 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.500
-MuJoCo kinematic concept. The excavator lowers an illustrative clamp and closes it around a TPMS block.
+00:00:00.000 --> 00:00:02.000
+Isaac Sim kinematic concept. Six staged TPMS blocks wait beside an excavator. One starter block marks the coastal assembly row. Cast shadows are disabled.
 
-00:00:03.500 --> 00:00:06.000
-The scripted arm lifts the block from the pickup position.
+00:00:02.000 --> 00:00:03.800
+Block 1 of 6. The arm approaches the next staged block.
 
-00:00:06.000 --> 00:00:11.000
-The upper body rotates, transferring the block toward the coastal assembly layout.
+00:00:03.800 --> 00:00:04.300
+Block 1 of 6. The illustrative clamp closes.
 
-00:00:11.000 --> 00:00:14.000
-The arm lowers the block beside the stationary partner.
+00:00:04.300 --> 00:00:05.300
+Block 1 of 6. The arm lifts the block on its prescribed path.
 
-00:00:14.000 --> 00:00:18.000
-The block approaches a nominal adjacent alignment. Contact forces and fit are not validated.
+00:00:05.300 --> 00:00:07.000
+Block 1 of 6. The upper body swings and transfers the block toward the row.
 
-00:00:18.000 --> 00:00:24.000
-The clamp opens and withdraws. This is scripted CAD motion, not a physical assembly test.
+00:00:07.000 --> 00:00:08.100
+Block 1 of 6. The arm aligns and lowers the block beside the existing modules.
+
+00:00:08.100 --> 00:00:09.000
+Block 1 of 6. The block approaches a nominal adjacent position. This does not validate insertion fit or contact.
+
+00:00:09.000 --> 00:00:10.500
+Block 1 of 6. The clamp opens and withdraws; another progress marker fills.
+
+00:00:10.500 --> 00:00:12.000
+Block 1 of 6. The machine repositions for the next block.
+
+00:00:12.000 --> 00:00:13.800
+Block 2 of 6. The arm approaches the next staged block.
+
+00:00:13.800 --> 00:00:14.300
+Block 2 of 6. The illustrative clamp closes.
+
+00:00:14.300 --> 00:00:15.300
+Block 2 of 6. The arm lifts the block on its prescribed path.
+
+00:00:15.300 --> 00:00:17.000
+Block 2 of 6. The upper body swings and transfers the block toward the row.
+
+00:00:17.000 --> 00:00:18.100
+Block 2 of 6. The arm aligns and lowers the block beside the existing modules.
+
+00:00:18.100 --> 00:00:19.000
+Block 2 of 6. The block approaches a nominal adjacent position. This does not validate insertion fit or contact.
+
+00:00:19.000 --> 00:00:20.500
+Block 2 of 6. The clamp opens and withdraws; another progress marker fills.
+
+00:00:20.500 --> 00:00:22.000
+Block 2 of 6. The machine repositions for the next block.
+
+00:00:22.000 --> 00:00:23.800
+Block 3 of 6. The arm approaches the next staged block.
+
+00:00:23.800 --> 00:00:24.300
+Block 3 of 6. The illustrative clamp closes.
+
+00:00:24.300 --> 00:00:25.300
+Block 3 of 6. The arm lifts the block on its prescribed path.
+
+00:00:25.300 --> 00:00:27.000
+Block 3 of 6. The upper body swings and transfers the block toward the row.
+
+00:00:27.000 --> 00:00:28.100
+Block 3 of 6. The arm aligns and lowers the block beside the existing modules.
+
+00:00:28.100 --> 00:00:29.000
+Block 3 of 6. The block approaches a nominal adjacent position. This does not validate insertion fit or contact.
+
+00:00:29.000 --> 00:00:30.500
+Block 3 of 6. The clamp opens and withdraws; another progress marker fills.
+
+00:00:30.500 --> 00:00:32.000
+Block 3 of 6. The machine repositions for the next block.
+
+00:00:32.000 --> 00:00:33.800
+Block 4 of 6. The arm approaches the next staged block.
+
+00:00:33.800 --> 00:00:34.300
+Block 4 of 6. The illustrative clamp closes.
+
+00:00:34.300 --> 00:00:35.300
+Block 4 of 6. The arm lifts the block on its prescribed path.
+
+00:00:35.300 --> 00:00:37.000
+Block 4 of 6. The upper body swings and transfers the block toward the row.
+
+00:00:37.000 --> 00:00:38.100
+Block 4 of 6. The arm aligns and lowers the block beside the existing modules.
+
+00:00:38.100 --> 00:00:39.000
+Block 4 of 6. The block approaches a nominal adjacent position. This does not validate insertion fit or contact.
+
+00:00:39.000 --> 00:00:40.500
+Block 4 of 6. The clamp opens and withdraws; another progress marker fills.
+
+00:00:40.500 --> 00:00:42.000
+Block 4 of 6. The machine repositions for the next block.
+
+00:00:42.000 --> 00:00:43.800
+Block 5 of 6. The arm approaches the next staged block.
+
+00:00:43.800 --> 00:00:44.300
+Block 5 of 6. The illustrative clamp closes.
+
+00:00:44.300 --> 00:00:45.300
+Block 5 of 6. The arm lifts the block on its prescribed path.
+
+00:00:45.300 --> 00:00:47.000
+Block 5 of 6. The upper body swings and transfers the block toward the row.
+
+00:00:47.000 --> 00:00:48.100
+Block 5 of 6. The arm aligns and lowers the block beside the existing modules.
+
+00:00:48.100 --> 00:00:49.000
+Block 5 of 6. The block approaches a nominal adjacent position. This does not validate insertion fit or contact.
+
+00:00:49.000 --> 00:00:50.500
+Block 5 of 6. The clamp opens and withdraws; another progress marker fills.
+
+00:00:50.500 --> 00:00:52.000
+Block 5 of 6. The machine repositions for the next block.
+
+00:00:52.000 --> 00:00:53.800
+Block 6 of 6. The arm approaches the next staged block.
+
+00:00:53.800 --> 00:00:54.300
+Block 6 of 6. The illustrative clamp closes.
+
+00:00:54.300 --> 00:00:55.300
+Block 6 of 6. The arm lifts the block on its prescribed path.
+
+00:00:55.300 --> 00:00:57.000
+Block 6 of 6. The upper body swings and transfers the block toward the row.
+
+00:00:57.000 --> 00:00:58.100
+Block 6 of 6. The arm aligns and lowers the block beside the existing modules.
+
+00:00:58.100 --> 00:00:59.000
+Block 6 of 6. The block approaches a nominal adjacent position. This does not validate insertion fit or contact.
+
+00:00:59.000 --> 00:01:00.500
+Block 6 of 6. The clamp opens and withdraws; another progress marker fills.
+
+00:01:00.500 --> 00:01:02.000
+Block 6 of 6. All six placements are complete; the arm holds clear.
+
+00:01:02.000 --> 00:01:07.000
+The camera moves to the water side, showing the completed seven-module segment. Original CAD, prescribed motion, and illustrative equipment are used; this is not a physical assembly or wave-response test.

@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-27",
+  "project": "robotic-block-assembly",
+  "engine": "Isaac Sim 5.1.0",
+  "visual_scope": "Prescribed kinematic concept, not validated contact/force-based assembly or wave response",
+  "rendering": {
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 24,
+    "cast_shadows": false,
+    "ambient_occlusion": false,
+    "aa_mode": 4,
+    "native_resolution": true
+  },
+  "sequence": {
+    "new_blocks": 6,
+    "starter_blocks": 1,
+    "total_modules": 7,
+    "continuous_duration_seconds": 67
+  },
+  "checks": [
+    {
+      "trajectory_frames": 1608,
+      "new_blocks": 6,
+      "completed_placements": 6,
+      "final_positions_match": true,
+      "max_block_step_m": 0.17679777072582684,
+      "scope": "Geometric animation continuity, not a dynamics or collision test"
+    },
+    {
+      "scene": "coastal_assembly.usdc",
+      "lights_cast_shadows": false,
+      "sha256": "4d8fbb09dc9369a57463078b7b4117359686557f5c7b6af73f0429baef4e87cd"
+    },
+    {
+      "scene": "joint.usdc",
+      "lights_cast_shadows": false,
+      "sha256": "1bb7bf60e91ed3d72ee7c032b9259a9877aea7ac879e2e74472eee0c10dcb599"
+    },
+    {
+      "scene": "families.usdc",
+      "lights_cast_shadows": false,
+      "sha256": "530447e4cd269d3c8e035b24d78ba39b4ef90e789fdac4d3dd18c0ea5d75c3d2"
+    },
+    {
+      "video": "continuous-assembly",
+      "duration": 67,
+      "frames": 1608,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "audio": false,
+      "full_decode": "passed",
+      "bytes": 21485537,
+      "sha256": "de866746a81d1d421f47e2bbadc3c9181581d021f53daec5f076a5dfdd5cbb71"
+    },
+    {
+      "video": "joint",
+      "duration": 14,
+      "frames": 336,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "audio": false,
+      "full_decode": "passed",
+      "bytes": 2268221,
+      "sha256": "d7daaf50d576da47ad23c6d326aa9eb6b1f9402677c083ed95ca4b0745479a4d"
+    },
+    {
+      "video": "families",
+      "duration": 16,
+      "frames": 384,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "audio": false,
+      "full_decode": "passed",
+      "bytes": 1442952,
+      "sha256": "25ccfaf6ab6cebcdf6ac0ffbdb857ce7837ea86b3b96f2331dbe836630ba8228"
+    },
+    {
+      "original_mesh_files_unchanged": 11
+    }
+  ],
+  "renderer_reports": [
+    {
+      "engine": "Isaac Sim 5.1.0",
+      "renderer": "RaytracedLighting",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "frames": 1608,
+      "fps": 24,
+      "shadow_setting": false,
+      "ambient_occlusion": false,
+      "aa_mode": 4,
+      "subframes": 4,
+      "elapsed_seconds": 425.8694656579755,
+      "scope": "Prescribed USD kinematics. Not a force-based grasp/contact or wave simulation."
+    },
+    {
+      "engine": "Isaac Sim 5.1.0",
+      "renderer": "RaytracedLighting",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "frames": 336,
+      "fps": 24,
+      "shadow_setting": false,
+      "ambient_occlusion": false,
+      "aa_mode": 4,
+      "subframes": 4,
+      "elapsed_seconds": 86.00989157502772,
+      "scope": "Prescribed USD kinematics. Not a force-based grasp/contact or wave simulation."
+    },
+    {
+      "engine": "Isaac Sim 5.1.0",
+      "renderer": "RaytracedLighting",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "frames": 384,
+      "fps": 24,
+      "shadow_setting": false,
+      "ambient_occlusion": false,
+      "aa_mode": 4,
+      "subframes": 4,
+      "elapsed_seconds": 100.34027114603668,
+      "scope": "Prescribed USD kinematics. Not a force-based grasp/contact or wave simulation."
+    }
+  ],
+  "accessibility_report": "axe-wcag21aa.json",
+  "source_preservation": "Original CAD and prior MuJoCo derivatives remain unchanged. Only derived video, poster and WebVTT files replace the web assets. Raw CAD is not deployed.",
+  "limits": "Automated accessibility checks do not establish complete ADA/WCAG certification. Existing PDF and screen-reader review limitations remain."
+}

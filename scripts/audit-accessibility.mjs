@@ -46,8 +46,11 @@ try {
         errors.push(message.text());
     });
     const response = await page.goto(base + route, {
-      waitUntil: "networkidle",
+      // Video range requests can remain active after the page is usable.
+      // Wait for the DOM, then check decoded images and playable media explicitly.
+      waitUntil: "domcontentloaded",
     });
+    await page.evaluate(() => document.fonts.ready);
     check(
       `${route}: page response`,
       response.status() === 200 ||
@@ -164,7 +167,10 @@ try {
       const first = page.locator('video').first();
       const firstId = await first.getAttribute('id');
       await page.evaluate(() => { window.scrollTo(0, 0); document.querySelector('main').focus(); });
-      await page.waitForFunction(id => !document.getElementById(id).paused, firstId);
+      await page.waitForFunction(id => {
+        const video = document.getElementById(id);
+        return !video.paused && video.readyState >= 2 && !video.error;
+      }, firstId);
       check(`${route}: visible video starts automatically`, true);
       await page.keyboard.press('Tab');
       check(`${route}: native player is reachable by Tab`, await page.evaluate(id => document.activeElement.id === id, firstId));
@@ -195,11 +201,11 @@ try {
       const saved = await browser.newContext();
       await saved.addInitScript(() => Object.defineProperty(navigator, 'connection', { value: { saveData: true, addEventListener() {} }, configurable: true }));
       const savedPage = await saved.newPage();
-      await savedPage.goto(base+route, { waitUntil: 'networkidle' });
+      await savedPage.goto(base+route, { waitUntil: 'domcontentloaded' });
       check(`${route}: data saving suppresses automatic playback`, await savedPage.locator('video').evaluateAll(vs => vs.every(v => v.paused)));
       await saved.close();
       const nojs = await browser.newContext({ javaScriptEnabled: false });
-      const nojsPage = await nojs.newPage(); await nojsPage.goto(base+route, { waitUntil: 'networkidle' });
+      const nojsPage = await nojs.newPage(); await nojsPage.goto(base+route, { waitUntil: 'domcontentloaded' });
       check(`${route}: no-JavaScript content and controls`, await nojsPage.locator('video[controls]').count() === clips.length && await nojsPage.locator('h1').count() === 1);
       for (const explorer of await nojsPage.locator('[data-explorer]').all()) {
         check(`${route}: all cases available without JavaScript`, await explorer.locator('[data-panel]:visible').count() === await explorer.locator('[data-panel]').count());
@@ -311,7 +317,7 @@ try {
   await migration.close();
   const legacyNoJs = await browser.newContext({ javaScriptEnabled: false });
   const legacyFallback = await legacyNoJs.newPage();
-  await legacyFallback.goto(base + "/building-digital-twin/", { waitUntil: "networkidle" });
+  await legacyFallback.goto(base + "/building-digital-twin/", { waitUntil: "domcontentloaded" });
   check("Legacy entry remains usable without JavaScript", legacyFallback.url() === base + "/building-digital-twin/" && await legacyFallback.locator('#combined-project,#robot-project').count() === 2);
   await legacyFallback.locator('#combined-project').click();
   await legacyFallback.waitForURL(base + "/building-immunology/#simulation");

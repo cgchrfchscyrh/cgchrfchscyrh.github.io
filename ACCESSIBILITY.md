@@ -1,5 +1,15 @@
 # Accessibility review
 
+## Coastal Isaac Sim video revision — 27 October 2026
+
+The three coastal videos now use Isaac Sim 5.1.0 RTX rendering at 1920 × 1080 and 24 frames per second. The opening sequence shows six continuous placements beside a starter module. Cast shadows and ambient occlusion are disabled, with native-resolution antialiasing and no motion blur. All three clips retain an embedded kinematic-concept label, native controls, full linked text alternatives, and reviewed timed WebVTT descriptions. Media version URLs prevent earlier cached MuJoCo assets from being reused with the new descriptions. No visible caption blocks have been added below the players.
+
+The three MP4s passed full decode, frame-count, duration, and audio-track checks. Scene assets resolve locally; the portable USD archive passed integrity checks. The original eleven source meshes remain unchanged. The prescribed arm motion stays within the original URDF joint limits, but contact, force-based grasping, collision-free planning, insertion fit, structural strength, and coastal performance are not validated. Editable scenes and raw CAD remain local; only derived media are deployed.
+
+Build, lint, and dependency audit passed with zero reported vulnerabilities. The browser suite passed **32 axe scans and 315 functional checks**, with no violations or failures. Desktop and 320 CSS-pixel views were manually inspected. The audit now waits for DOM readiness, decoded images, and a playable video frame instead of network idleness, since video range requests may remain active. Keyboard playback, manual pause persistence, reduced-motion and data-saving preferences, text spacing, and reflow checks passed. See `reports/coastal-isaac-review.json` and `reports/axe-wcag21aa.json`.
+
+These checks do not constitute complete ADA/WCAG certification. Existing PDF reading-order and multi-screen-reader review limitations remain.
+
 ## Light vision presentation — 27 October 2026
 
 Vision sections now share the surrounding light page background, dark type, and dark SVG linework. Evidence imagery uses a white surface; focus outlines, concept badges, and diagram relationships remain visible without relying on color. On Building Immunology, all 18 figure captions and adjacent scope notes are consolidated in the end-of-page source disclosure. Each image retains its alternative text and links to its complete description through aria-describedby. Full-size image links, source credits, complete framework composition, and face redaction are preserved.

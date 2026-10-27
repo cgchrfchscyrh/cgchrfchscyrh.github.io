@@ -1,10 +1,10 @@
 WEBVTT
 
 00:00:00.000 --> 00:00:03.000
-MuJoCo kinematic concept. The slot and tenon variants of a primitive TPMS block begin separated.
+Isaac Sim kinematic concept. Primitive TPMS slot and tenon variants begin separated. The light-gray slot stays fixed.
 
 00:00:03.000 --> 00:00:09.000
-The tenon moves toward the slot in a prescribed horizontal approach while the camera reveals the geometry.
+The darker tenon approaches its partner as the camera slowly changes angle. Original geometry is shown without cast shadows.
 
 00:00:09.000 --> 00:00:14.000
-The two blocks hold a nominal adjacent alignment. Mating clearances and contact are not validated.
+Both parts hold a nominal neighboring alignment. The physical insertion direction, fit, tolerance, and contact are not validated.

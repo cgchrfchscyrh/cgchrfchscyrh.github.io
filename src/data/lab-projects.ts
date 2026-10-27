@@ -1,5 +1,5 @@
 const source = "https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842";
-export interface ProjectClip { id: string; project: string; assetProject?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; processingNote?: string; }
+export interface ProjectClip { id: string; project: string; assetProject?: string; mediaVersion?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; processingNote?: string; }
 export const labProjects = [
   {
     slug: "building-immunology", title: "Building Immunology", shortTitle: "Building Immunology", topic: "Microbiomes · Building simulation · Room-level risk",
@@ -46,40 +46,43 @@ export const labProjects = [
 export const projectClips: ProjectClip[] = [
 {
   "id": "excavator-assembly",
-  "duration": 24,
-  "title": "From pickup to placement in MuJoCo",
-  "description": "A tracked excavator stands beside a conceptual shoreline and a row of porous blocks. An illustrative swivel clamp lowers around a primitive TPMS block, closes, lifts the block, swings toward a fixed partner, lowers it, approaches the nominal adjacent position, and opens before retreating. Phase labels read Pick, Lift, Transfer, Align, Place, and Release. The excavator geometry and boom, stick, and wrist limits come from a local URDF; the clamp is newly added concept geometry. Joint angles and block poses are scripted. The block follows a prescribed path, not a force-based grasp. The flat water-colored area indicates context and is not a wave simulation.",
+  "mediaVersion": "isaac-20261027",
+  "duration": 67,
+  "title": "Continuous coastal assembly in Isaac Sim",
+  "description": "Beside a rendered shoreline, a tracked excavator collects six porous TPMS blocks from a staged row, one after another. For each block, an illustrative clamp closes, the arm lifts and transfers the part, aligns it beside the growing row, approaches the nominal placement position, and releases it. The machine moves along the work area between placements. A starter block and the six new blocks form a seven-module segment. The camera gradually moves to the water side for the completed view. Six outlined markers fill in as placements finish; phase labels identify the action independently of color. The excavator meshes and joint frames come from the local URDF, and the blocks use the original primitive slot and tenon meshes. The clamp, supports, terrain, and water are illustrative. Motions and block poses are prescribed; this is not a force-based assembly test, and the water is not a fluid simulation.",
   "sourceLabel": "Local excavator_inverse_kinematics model and supplied TPMS primitive STL models",
   "sourceUrl": "https://git.rwth-aachen.de/ferreiralexandre/excavator_inverse_kinematics",
   "project": "robotic-block-assembly",
   "caption": "",
   "sourceRange": "new CAD-based visualization",
   "audioNote": "Silent visualization. Full text alternatives and timed visual descriptions are provided.",
-  "processingNote": "Rendered in MuJoCo 3.3.7 at 1600 × 900 and 24 frames per second. Prescribed joint and object trajectories; contact forces disabled. No learned policy, force-based gripping, collision-free planning, insertion tolerance, payload capacity, or coastal-performance result is claimed."
+  "processingNote": "Rendered in Isaac Sim 5.1.0 with RTX lighting at 1920 × 1080 and 24 frames per second. Cast shadows and ambient occlusion are disabled. Full source triangle geometry is retained, recentered, and scaled for visualization. Prescribed motion only; no force-based gripping, collision-free planning, insertion tolerance, load capacity, or coastal-performance result is claimed. The original TPMS unit convention is multiplied by 0.75 for this scene; this is a visual scale, not confirmation of fabrication dimensions."
 },
 {
   "id": "joint-alignment",
+  "mediaVersion": "isaac-20261027",
   "duration": 14,
   "title": "TPMS joint alignment concept",
-  "description": "Two primitive TPMS blocks are shown in a close oblique view: a stationary slot variant and a moving tenon variant. The camera slowly changes angle as the tenon moves horizontally toward its nominal neighboring position, revealing porous surfaces and the external connection features. The phases are Align, Approach, and Nominal alignment. Shapes come from the supplied CAD; their centers are repositioned for this illustrative sequence. This is a geometric motion study, not a verified insertion path or a test of manufacturing clearance, contact, locking, or strength.",
+  "description": "Two primitive TPMS blocks appear on a neutral surface in an oblique view. The stationary slot variant is light gray and the moving tenon is darker. As the camera changes angle, the tenon approaches its nominal neighboring position, revealing the porous surfaces and connection features. Phase labels read Align, Approach, and Nominal alignment. Original triangle geometry is retained with smooth surface normals, and cast shadows are disabled. This prescribed geometric approach does not establish the correct physical insertion direction, manufacturing clearance, contact, locking, or strength.",
   "sourceLabel": "Supplied TPMS_primitive_slot.stl and TPMS_primitive_tenon.stl",
   "project": "robotic-block-assembly",
   "caption": "",
   "sourceRange": "new CAD-based visualization",
   "audioNote": "Silent visualization. Full text alternatives and timed visual descriptions are provided.",
-  "processingNote": "Rendered in MuJoCo 3.3.7 at 1600 × 900 and 24 frames per second. Prescribed joint and object trajectories; contact forces disabled. No learned policy, force-based gripping, collision-free planning, insertion tolerance, payload capacity, or coastal-performance result is claimed."
+  "processingNote": "Rendered in Isaac Sim 5.1.0 with RTX lighting at 1920 × 1080 and 24 frames per second. Cast shadows and ambient occlusion are disabled. Full source triangle geometry is retained, recentered, and scaled for visualization. Prescribed motion only; no force-based gripping, collision-free planning, insertion tolerance, load capacity, or coastal-performance result is claimed."
 },
 {
   "id": "tpms-families",
+  "mediaVersion": "isaac-20261027",
   "duration": 16,
   "title": "Diamond, gyroid, and primitive TPMS geometries",
-  "description": "Three labeled pairs of porous blocks appear in an elevated view: Diamond on the left, Gyroid in the center, and Primitive on the right. Each pair contains the locally supplied slot and tenon variants. The moving variants approach their nominal neighboring positions in a staggered sequence and hold. Text labels distinguish the families independently of shading. This compares CAD geometries and illustrates possible placement; it does not establish that the same physical assembly path works for every family.",
+  "description": "Three labeled pairs of porous blocks are shown from above: Diamond on the left, Gyroid in the center, and Primitive on the right. Each pair contains the original slot and tenon variants. The darker tenon variants approach the stationary light-gray partners in a staggered sequence and hold their nominal neighboring positions. Family names distinguish the geometries without relying on shading. Full source triangle geometry is retained and cast shadows are disabled. The sequence compares CAD shapes; it does not verify that the illustrated approach is a workable physical assembly path.",
   "sourceLabel": "Six supplied TPMS STL models: diamond, gyroid, and primitive, each with slot and tenon variants",
   "project": "robotic-block-assembly",
   "caption": "",
   "sourceRange": "new CAD-based visualization",
   "audioNote": "Silent visualization. Full text alternatives and timed visual descriptions are provided.",
-  "processingNote": "Rendered in MuJoCo 3.3.7 at 1600 × 900 and 24 frames per second. Prescribed joint and object trajectories; contact forces disabled. No learned policy, force-based gripping, collision-free planning, insertion tolerance, payload capacity, or coastal-performance result is claimed."
+  "processingNote": "Rendered in Isaac Sim 5.1.0 with RTX lighting at 1920 × 1080 and 24 frames per second. Cast shadows and ambient occlusion are disabled. Full source triangle geometry is retained, recentered, and scaled for visualization. Prescribed motion only; no force-based gripping, collision-free planning, insertion tolerance, load capacity, or coastal-performance result is claimed."
 },
   {
     id: "robotic-perception", project: "disinfection-robot", assetProject: "building-immunology", duration: 9,
