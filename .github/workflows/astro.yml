@@ -82,8 +82,16 @@ jobs:
             --base "${{ steps.pages.outputs.base_path }}"
           node scripts/apply-csp.mjs
         working-directory: ${{ env.BUILD_PATH }}
-      - name: Install accessibility test browser
-        run: npx playwright install --with-deps chromium
+      - name: Select accessibility test browser
+        timeout-minutes: 5
+        run: |
+          # Hosted Ubuntu includes Chrome; avoid an unnecessary apt mirror update.
+          if command -v google-chrome > /dev/null 2>&1; then
+            printf 'CHROME_PATH=%s\n' "$(command -v google-chrome)" >> "$GITHUB_ENV"
+            google-chrome --version
+          else
+            npx playwright install --with-deps chromium
+          fi
         working-directory: ${{ env.BUILD_PATH }}
       - name: Verify WCAG 2.1 AA before deployment
         env:
