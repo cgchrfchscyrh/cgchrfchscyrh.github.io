@@ -1,4 +1,5 @@
 ---
+import Vision from "../Vision.astro";
 import Video from "../ProjectVideo.astro";
 import { asset } from "../../data/profile";
 ---
@@ -15,4 +16,4 @@ import { asset } from "../../data/profile";
   <a class="related-project" href={asset("building-immunology/")}><span>Related research</span><strong>Explore building microbiomes, digital twins, and room-level risk ↗</strong></a>
 </section>
 
-<section class="project-section story-vision" id="vision" aria-labelledby="vision-title"><div class="section-heading"><p class="eyebrow">The larger vision</p><h2 id="vision-title">Toward routine care of occupied buildings.</h2></div><p class="vision-copy">Material recognition is one part of the system. Routine deployment would also need navigation around people, compatible treatment methods, and evidence that the intended treatment is delivered. Robotics, infection-control research, materials science, and facility teams must develop and evaluate those pieces together.</p></section>
+<Vision project="disinfection-robot" />

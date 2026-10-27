@@ -29,7 +29,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     </header>
     <main id="main" tabindex="-1"><slot /></main>
     <footer class="project-footer">
-      <div><strong>{title}</strong><a href="#main">Back to top ↑</a></div>
+      <div><strong>{shortTitle}</strong><a href="#main">Back to top ↑</a></div>
       <nav aria-label="Project resources"><a href={asset("#lab-projects")}>Songyang Liu’s project collection</a><a href="#sources">Project sources</a>{source && <a href={source}>Original research overview</a>}<a href={asset("accessibility/#project-media")}>Accessibility & media notes</a></nav>
       <p>Original research and media credits are retained in the project sources.</p>
     </footer>

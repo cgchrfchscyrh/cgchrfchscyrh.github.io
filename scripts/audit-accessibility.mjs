@@ -57,7 +57,7 @@ try {
     for (const img of await page.locator("img:visible").all())
       await img.scrollIntoViewIfNeeded();
     await page.evaluate(async () => {
-      await Promise.all([...document.images].filter(img => img.getClientRects().length).map((img) => img.decode()));
+      await Promise.all([...document.images].filter(img => img.getClientRects().length && !img.closest("details:not([open])")).map((img) => img.decode()));
     });
     const structure = await page.evaluate(() => {
       const levels = [...document.querySelectorAll("h1,h2,h3,h4,h5,h6")].map(
@@ -72,7 +72,7 @@ try {
           (img) =>
             img.hasAttribute("alt") &&
             (img.alt.trim() || img.getAttribute("aria-hidden") === "true") &&
-            (!img.getClientRects().length || (img.complete && img.naturalWidth > 0)),
+            (!img.getClientRects().length || img.closest("details:not([open])") || (img.complete && img.naturalWidth > 0)),
         ),
         csp: Boolean(
           document.querySelector('meta[http-equiv="Content-Security-Policy"]'),
@@ -153,6 +153,7 @@ try {
       check(`${route}: no introductory subtitles`, await page.locator('.hero-copy > .eyebrow,.hero-subtitle,.coastal-hero .coastal-tagline,.coastal-hero .coastal-intro-copy').count() === 0);
       check(`${route}: no text captions below videos`, await page.locator('figure:has(video) > figcaption,figure:has(video) > details').count() === 0);
       check(`${route}: larger vision section exists`, await page.locator('#vision').count() === 1);
+      check(`${route}: visual collaboration map`, await page.locator(".vision-connections li").count() === 3 && await page.locator(".vision-scene svg[role=img]").count() === 1);
 
       const clips = projectClips.filter(c => c.project === project.slug);
       const videos = page.locator('video');
@@ -262,6 +263,10 @@ try {
           "Figure description: keyboard opens disclosure",
           await summary.evaluate((el) => el.parentElement.open),
         );
+      }
+      for (const img of await page.locator(".vision-source-figures[open] img:visible").all()) {
+        await img.scrollIntoViewIfNeeded();
+        await img.evaluate(image => image.decode());
       }
       const result = await new AxeBuilder({ page })
         .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])

@@ -1,0 +1,146 @@
+{
+  "building-immunology": {
+    "headline": "Connecting buildings and human health.",
+    "title": "One room. A responsive building.",
+    "current": "Microbes & room-risk models",
+    "evidence": "Observations + model examples",
+    "image": "projects/building-digital-twin/room-risk-interface.webp",
+    "imageAlt": "Archived room-level risk interface from the supplied presentation, showing a selected room and its labeled risk category.",
+    "sourceAnchor": "#room-risk",
+    "scene": "building",
+    "future": "Buildings that sense, model & respond",
+    "systems": [
+      "Microbiomes",
+      "Room models",
+      "Occupants"
+    ],
+    "connections": [
+      {
+        "task": "Connect measurements",
+        "partners": "Microbiology + building science"
+      },
+      {
+        "task": "Make models actionable",
+        "partners": "Simulation + facility operations"
+      },
+      {
+        "task": "Include the people",
+        "partners": "Occupants + human factors"
+      }
+    ],
+    "sceneAlt": "Future concept: an occupied building connects microbial observations, room sensing, a digital model, and thermal conditions.",
+    "description": "Microbial observations and room-level modeling address separate local questions. Linking measurements, actionable models and occupant needs calls for microbiology, building science, simulation, facility operations and human-factors expertise. A cutaway occupied building connects microbes, sensing, a digital model and thermal conditions. The illustration describes a shared research vision, not an installed autonomous building controller or a validated calibration between the separate studies.",
+    "headlineLines": [
+      "Connecting buildings",
+      "and human health."
+    ]
+  },
+  "disinfection-robot": {
+    "headline": "Disinfection starts with the surface.",
+    "title": "One surface. Building-wide care.",
+    "current": "Recognize surface materials",
+    "evidence": "Published framework",
+    "image": "projects/building-immunology/adaptive-disinfection.jpg",
+    "imageAlt": "Still from the supplied Wiley research infographic, linking surface-material recognition to transmission modeling and adapted treatment.",
+    "sourceAnchor": "#method",
+    "scene": "disinfection",
+    "future": "A robot working around people",
+    "systems": [
+      "Surface sensing",
+      "Treatment",
+      "Occupied rooms"
+    ],
+    "connections": [
+      {
+        "task": "Deliver the right treatment",
+        "partners": "Materials + infection control"
+      },
+      {
+        "task": "Move around people",
+        "partners": "Navigation + human factors"
+      },
+      {
+        "task": "Verify the outcome",
+        "partners": "Facility teams + evaluation"
+      }
+    ],
+    "sceneAlt": "Future concept: a mobile manipulator treats a table while navigating around furniture and an occupant.",
+    "description": "The published framework connects material recognition with transmission modeling and treatment decisions. Delivering compatible treatment, navigating occupied rooms and verifying outcomes require materials, infection-control, navigation, human-factors and facility expertise. The concept scene shows a mobile manipulator approaching a table while a person occupies the room. The supplied animations and mapping examples do not establish a complete deployed system or measured pathogen removal.",
+    "headlineLines": [
+      "Disinfection starts",
+      "with the surface."
+    ]
+  },
+  "surgery-ai": {
+    "headline": "A clearer view for surgery.",
+    "title": "One camera. Continuous visual assistance.",
+    "current": "Position an internal camera",
+    "evidence": "Benchtop prototype",
+    "image": "projects/surgery-ai/bench-prototype.jpg",
+    "imageAlt": "Laboratory robot-mounted actuator above an abdominal model, from the original prototype recording.",
+    "sourceAnchor": "#method",
+    "scene": "surgery",
+    "future": "Camera motion, lens care & the surgeon",
+    "systems": [
+      "Positioning",
+      "Lens care",
+      "Visual feedback"
+    ],
+    "connections": [
+      {
+        "task": "Keep the lens clear",
+        "partners": "Soft robotics + materials"
+      },
+      {
+        "task": "Interpret the view",
+        "partners": "Computer vision + control"
+      },
+      {
+        "task": "Fit the procedure",
+        "partners": "Surgeons + clinical evaluation"
+      }
+    ],
+    "sceneAlt": "Future concept: external actuation, an internal camera, lens care, and visual feedback connect to the surgeon.",
+    "description": "The current benchtop prototype explores external actuation of an internal camera. Lens care, visual interpretation and integration into the procedure require soft robotics, materials, computer vision, control, surgeons and clinical evaluation. A concept diagram connects an actuator and internal camera with a cleaning flow, display and surgeon. The positioning demonstration and proposed cleaning architecture are separate; clinical outcomes are not established.",
+    "headlineLines": [
+      "A clearer view",
+      "for surgery."
+    ]
+  },
+  "robotic-block-assembly": {
+    "headline": "Coastal resilience, block by block.",
+    "title": "One joint. A resilient coastline.",
+    "current": "Interlocking module design",
+    "evidence": "Assembly concept",
+    "image": "projects/robotic-block-assembly/connection-strategies-full.webp",
+    "imageAlt": "Source presentation showing several module joints and their pick, place and interlock sequences.",
+    "sourceAnchor": "#assembly",
+    "scene": "coastal",
+    "future": "Modules, machines & coastal systems",
+    "systems": [
+      "Interlocking blocks",
+      "Assembly",
+      "Wave response"
+    ],
+    "connections": [
+      {
+        "task": "Design durable modules",
+        "partners": "Materials + coastal engineering"
+      },
+      {
+        "task": "Assemble reliably",
+        "partners": "Robotics + construction"
+      },
+      {
+        "task": "Evaluate the coastline",
+        "partners": "Coastal science + field teams"
+      }
+    ],
+    "sceneAlt": "Future concept: an assembly arm places interlocking blocks along a breakwater between waves and the shoreline.",
+    "description": "The supplied work presents interlocking module and robotic assembly concepts. Durable materials, reliable assembly and coastal evaluation must connect materials science, coastal engineering, robotics, construction and field teams. The drawing shows modular units forming a breakwater between waves and the shore, with an assembly arm and worker. It is a future concept; the supplied materials do not establish assembly experiments, wave performance or field durability.",
+    "headlineLines": [
+      "Coastal resilience,",
+      "block by block."
+    ]
+  }
+}

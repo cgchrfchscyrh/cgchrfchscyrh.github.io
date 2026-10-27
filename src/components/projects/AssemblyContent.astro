@@ -1,4 +1,6 @@
 ---
+import Vision from "../Vision.astro";
+import stories from "../../data/vision-stories.json";
 import Figure from "../ProjectFigure.astro";
 import "../../styles/coastal.css";
 interface Props { sourceNotes: string[]; }
@@ -8,7 +10,7 @@ const { sourceNotes } = Astro.props;
   <div class="coastal-wrap">
     <div class="coastal-hero-grid">
       <div class="coastal-hero-copy">
-        <h1 id="project-title">Coastal<br />construction.</h1>
+        <h1 id="project-title" class="project-display-title">{stories["robotic-block-assembly"].headlineLines.map(line => <span class="display-line">{line}{" "}</span>)}</h1>
       </div>
       <div class="coastal-hero-visual">
         <div class="coastal-image-label"><span>01 / Breakwater assembly</span><span>Concept rendering</span></div>
@@ -50,13 +52,6 @@ const { sourceNotes } = Astro.props;
   </div>
 </section>
 
-<section class="coastal-section coastal-project" id="concept" aria-labelledby="concept-title">
-  <div class="coastal-wrap">
-    <div class="coastal-section-heading"><p class="coastal-index">04 / The larger vision</p><div><span id="vision" class="section-anchor" aria-hidden="true"></span><h2 id="concept-title">From one joint to a coastline.</h2><p>Architected Materials for Extreme Resistance in Coastal Applications.</p></div></div>
-    <Figure id="coastal-overview" />
-    <p class="vision-copy">AMERICA connects module design with a larger coastal ambition. Realizing it would require materials researchers, roboticists, coastal engineers, and construction teams to evaluate durability, wave response, placement, and the assembled structure together. The supplied material establishes the concept; it does not yet demonstrate field performance.</p>
-    <div class="coastal-scope"><p class="coastal-index">Research scope</p><p>Design and assembly concepts from the AMERICA presentation. Assembly experiments and coastal performance measurements are not reported in these materials.</p></div>
-  </div>
-</section>
+<div class="coastal-wrap" id="concept"><Vision project="robotic-block-assembly"><details class="vision-source-figures"><summary>AMERICA concept & source illustration</summary><Figure id="coastal-overview" /></details></Vision></div>
 
 <section class="coastal-wrap source-section" id="sources" aria-label="Project source materials"><details><summary>Sources & media notes</summary><p>The page uses supplied project materials. Source credits and complete text descriptions accompany each figure.</p><ul>{sourceNotes.map(note => <li>{note}</li>)}</ul><p>The concept images are extracted from the original presentation. The manufacturing photograph is a fabrication reference; it does not establish production of the illustrated breakwater modules.</p></details></section>
