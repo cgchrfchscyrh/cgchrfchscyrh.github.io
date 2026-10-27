@@ -3,16 +3,16 @@ import Video from "../ProjectVideo.astro";
 import { asset } from "../../data/profile";
 ---
 <section class="project-section" id="method" aria-labelledby="method-title">
-  <div class="section-heading"><p class="eyebrow">Material-aware disinfection</p><h2 id="method-title">Method</h2><p>Recognize the surface before choosing the action.</p></div>
-  <div class="immunity-response">
-    <Video id="surface-materials" />
-    <div><h3>Different surfaces, different decisions</h3><p>Material recognition connects the objects a robot sees with a model of surface transmission.</p><p class="scope-note">Illustrated framework from Hu and Li (2022). Glass, fabric, and metal motivate different treatment choices.</p></div>
-  </div>
+  <div class="section-heading"><p class="eyebrow">A concrete step</p><h2 id="method-title">Make the material part of the decision</h2><p>Recognize the surface before choosing the action.</p></div>
+  <Video id="surface-materials" />
   <div class="immunity-workflow"><Video id="adaptive-disinfection" /></div>
   <ol class="method-steps"><li><h3>Recognize</h3><p>Identify surface materials from visual features.</p></li><li><h3>Model</h3><p>Account for material-dependent transmission.</p></li><li><h3>Adapt</h3><p>Inform the disinfection procedure and dose.</p></li></ol>
 </section>
 <section class="project-section" id="navigation" aria-labelledby="navigation-title">
-  <div class="section-heading"><p class="eyebrow">Spatial understanding</p><h2 id="navigation-title">Indoor navigation</h2><p>Build a spatial representation of the robot’s surroundings.</p></div>
-  <div class="immunity-response"><Video id="indoor-mapping" /><div><h3>A map for navigating indoor space</h3><p>The recorded mapping sequence illustrates indoor geometry. The opening simulation shows a robot approaching furniture in a hospital room.</p><p class="scope-note">These are separate research examples; they do not demonstrate a complete deployed system or measure disinfection effectiveness.</p></div></div>
+  <div class="section-heading"><p class="eyebrow">Expand the task</p><h2 id="navigation-title">From one surface to a room</h2><p>Build a spatial representation of the robot’s surroundings.</p></div>
+  <p class="scope-note">Navigation expands the task beyond recognizing a surface. These separate research examples do not yet demonstrate a complete deployed system or measure disinfection effectiveness.</p>
+  <Video id="indoor-mapping" />
   <a class="related-project" href={asset("building-immunology/")}><span>Related research</span><strong>Explore building microbiomes, digital twins, and room-level risk ↗</strong></a>
 </section>
+
+<section class="project-section story-vision" id="vision" aria-labelledby="vision-title"><div class="section-heading"><p class="eyebrow">The larger vision</p><h2 id="vision-title">Toward routine care of occupied buildings.</h2></div><p class="vision-copy">Material recognition is one part of the system. Routine deployment would also need navigation around people, compatible treatment methods, and evidence that the intended treatment is delivered. Robotics, infection-control research, materials science, and facility teams must develop and evaluate those pieces together.</p></section>

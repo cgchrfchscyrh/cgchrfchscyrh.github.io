@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-27",
+  "revision": "Concrete research task to collaborative vision",
+  "changes": [
+    "Remove introductory topic subtitles and marketing taglines, retaining paper titles and authors.",
+    "Remove per-video visible captions and disclosure blocks; retain linked full text alternatives and timed descriptions.",
+    "Consolidate complete media descriptions and original source credits in a keyboard-operable end-of-page disclosure.",
+    "Connect specific demonstrated, simulated, or proposed work to a broader collaborative vision without claiming unvalidated deployment.",
+    "Remove the Surgery AI a–h multipanel prototype figure; retain the source asset, complete Building Immunology framework, and existing face redaction."
+  ],
+  "validation": {
+    "axe_scans": 32,
+    "functional_checks": 319,
+    "violations": 0,
+    "errors": 0,
+    "build": "passed",
+    "lint": "passed",
+    "dependency_audit": "zero vulnerabilities",
+    "visual_review": "Desktop and 320 CSS pixel screenshots inspected; full figures loaded; no horizontal overflow."
+  },
+  "limitations": [
+    "Automated testing is not a full WCAG or ADA certification.",
+    "External PDF tags and reading order and multi-screen-reader usability remain outside this automated review.",
+    "Original scientific figure colors and published source materials are retained."
+  ],
+  "pages": [
+    {
+      "name": "building-immunology",
+      "status": 200,
+      "headings": [
+        "What can one room tell us?",
+        "Read the microbial community",
+        "From a room to its building",
+        "Put risk in a room’s context",
+        "Building cases",
+        "A building that can respond",
+        "Publications",
+        "Video descriptions & sources"
+      ],
+      "videos": 2,
+      "visible_video_captions": 0,
+      "mobile_overflow": false
+    },
+    {
+      "name": "disinfection-robot",
+      "status": 200,
+      "headings": [
+        "Start with the surface.",
+        "Make the material part of the decision",
+        "From one surface to a room",
+        "Toward routine care of occupied buildings.",
+        "Publications",
+        "Video descriptions & sources"
+      ],
+      "videos": 5,
+      "visible_video_captions": 0,
+      "mobile_overflow": false
+    },
+    {
+      "name": "surgery-ai",
+      "status": 200,
+      "headings": [
+        "Move the camera. Keep a usable view.",
+        "Position the internal camera",
+        "Position is only part of visibility",
+        "A biomimetic cleaning system",
+        "Maintain the view throughout the procedure.",
+        "Publications",
+        "Video descriptions & sources"
+      ],
+      "videos": 4,
+      "visible_video_captions": 0,
+      "mobile_overflow": false
+    },
+    {
+      "name": "robotic-block-assembly",
+      "status": 200,
+      "headings": [
+        "Begin with a joint.",
+        "Design for assembly.",
+        "The connectionsets the motion.",
+        "From one joint to a coastline."
+      ],
+      "videos": 0,
+      "visible_video_captions": 0,
+      "mobile_overflow": false
+    }
+  ]
+}

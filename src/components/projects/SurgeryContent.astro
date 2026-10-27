@@ -3,20 +3,21 @@ import Figure from "../ProjectFigure.astro";
 import Video from "../ProjectVideo.astro";
 ---
 <section class="project-section" id="method" aria-labelledby="method-title">
-  <div class="section-heading"><p class="eyebrow">Work within a confined space</p><h2 id="method-title">Method</h2><p>Coordinate external actuation with an internal viewpoint.</p></div>
+  <div class="section-heading"><p class="eyebrow">A concrete step</p><h2 id="method-title">Position the internal camera</h2><p>Coordinate external actuation with an internal viewpoint.</p></div>
   <Figure id="surgery-mechanism" />
   <div class="paired media-row"><Video id="camera-assembly" /><Video id="instrument-motion" /></div>
-  <Figure id="adaptive-prototype" />
 </section>
-<section class="project-section" id="vision" aria-labelledby="vision-title">
-  <div class="section-heading"><p class="eyebrow">Keep the scene visible</p><h2 id="vision-title">The visibility challenge</h2><p>Contamination and smoke can obscure a laparoscopic camera.</p></div>
+<section class="project-section" id="visibility" aria-labelledby="visibility-title">
+  <div class="section-heading"><p class="eyebrow">The next constraint</p><h2 id="visibility-title">Position is only part of visibility</h2><p>Contamination and smoke can obscure a laparoscopic camera.</p></div>
   <div class="paired clinical-examples"><Figure id="clear-view" /><Figure id="obscured-view" /></div>
   <p class="scope-note">Source examples of visual clarity and obstruction; these are not a before-and-after cleaning trial.</p>
 </section>
 <section class="project-section" id="cleaning" aria-labelledby="cleaning-title">
-  <div class="section-heading"><p class="eyebrow">Proposed research direction</p><h2 id="cleaning-title">A biomimetic cleaning system</h2><p>Inspired by how the eye protects and maintains its optical surface.</p></div>
+  <div class="section-heading"><p class="eyebrow">A proposed next step</p><h2 id="cleaning-title">A biomimetic cleaning system</h2><p>Inspired by how the eye protects and maintains its optical surface.</p></div>
   <Figure id="soft-nozzle" />
   <ol class="method-steps"><li><h3>Sense the view</h3><p>Estimate visual obstruction and the camera’s state.</p></li><li><h3>Protect the lens</h3><p>Explore an eyelid-like soft cleaning mechanism.</p></li><li><h3>Coordinate cleaning</h3><p>Direct flow and actuation through a feedback controller.</p></li></ol>
   <Figure id="cleaning-control" />
   <p class="scope-note">The positioning footage shows a laboratory prototype. Lens cleaning is presented here as a proposed design and control architecture.</p>
 </section>
+
+<section class="project-section story-vision" id="vision" aria-labelledby="vision-title"><div class="section-heading"><p class="eyebrow">The larger vision</p><h2 id="vision-title">Maintain the view throughout the procedure.</h2></div><p class="vision-copy">A useful surgical assistant must connect camera motion, visual feedback, and lens care with the surgeon’s workflow. Moving from separate mechanisms to that system will require surgeons, roboticists, materials researchers, and clinical evaluation. The benchtop positioning study is one step toward that shared goal.</p></section>

@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-27T15:21:38.909Z",
+  "date": "2026-10-27T15:46:17.446Z",
   "base": "http://127.0.0.1:4480",
   "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
   "scans": [
@@ -759,6 +759,21 @@
       "detail": ""
     },
     {
+      "name": "/building-immunology/: no introductory subtitles",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: no text captions below videos",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/building-immunology/: larger vision section exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "/building-immunology/: expected project videos",
       "pass": true,
       "detail": ""
@@ -1119,26 +1134,6 @@
       "detail": ""
     },
     {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/building-immunology/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
       "name": "/building-immunology/: expanded descriptions at 320px reflow",
       "pass": true,
       "detail": ""
@@ -1195,6 +1190,21 @@
     },
     {
       "name": "Robot page links back to combined building research",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: no introductory subtitles",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: no text captions below videos",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disinfection-robot/: larger vision section exists",
       "pass": true,
       "detail": ""
     },
@@ -1359,56 +1369,6 @@
       "detail": ""
     },
     {
-      "name": "/disinfection-robot/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/disinfection-robot/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/disinfection-robot/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/disinfection-robot/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/disinfection-robot/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
       "name": "/disinfection-robot/: expanded descriptions at 320px reflow",
       "pass": true,
       "detail": ""
@@ -1455,6 +1415,26 @@
     },
     {
       "name": "/surgery-ai/: skip link focuses main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Surgery multipanel a-h prototype figure removed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/surgery-ai/: no introductory subtitles",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/surgery-ai/: no text captions below videos",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/surgery-ai/: larger vision section exists",
       "pass": true,
       "detail": ""
     },
@@ -1604,11 +1584,6 @@
       "detail": ""
     },
     {
-      "name": "/surgery-ai/: full-size source image available",
-      "pass": true,
-      "detail": ""
-    },
-    {
       "name": "/surgery-ai/: desktop reflow",
       "pass": true,
       "detail": ""
@@ -1620,56 +1595,6 @@
     },
     {
       "name": "/surgery-ai/: text-spacing reflow",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/surgery-ai/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/surgery-ai/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/surgery-ai/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/surgery-ai/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/surgery-ai/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
       "pass": true,
       "detail": ""
     },
@@ -1780,6 +1705,21 @@
     },
     {
       "name": "/robotic-block-assembly/: skip link focuses main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/robotic-block-assembly/: no introductory subtitles",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/robotic-block-assembly/: no text captions below videos",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/robotic-block-assembly/: larger vision section exists",
       "pass": true,
       "detail": ""
     },

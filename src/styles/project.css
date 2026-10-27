@@ -127,3 +127,12 @@ h3 { overflow-wrap:anywhere; }
   .selector-toolbar button { padding:.7rem .9rem; font-size:.86rem; }
   .project-footer>div { flex-wrap:wrap; }
 }
+
+/* Concise project stories: media stays visually quiet; full alternatives live in notes. */
+.project-media-notes section { margin-top: 1.5rem; }
+.project-media-notes h2 { font-size: 1.3rem; }
+.project-media-notes h3 { font-size: 1rem; }
+.story-vision .section-heading { margin-bottom: 1.2rem; }
+.vision-copy { font-size: 1.1rem; line-height: 1.8; max-width: 850px; margin-top: 2rem; }
+.section-anchor { display: block; scroll-margin-top: 2rem; }
+.hero-copy { padding-bottom: 2rem; }

@@ -1,0 +1,6 @@
+---
+import { projectClips } from "../data/lab-projects";
+interface Props { project: string; }
+const clips = projectClips.filter(clip => clip.project === Astro.props.project);
+---
+{clips.length > 0 && <div class="project-media-notes"><h2>Video descriptions & sources</h2>{clips.map(clip => <section><h3>{clip.title}</h3><p>{clip.description}</p><p>{clip.audioNote}</p><p>Source: {clip.sourceFile ? <a href={`https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842/${clip.sourceFile}`}>DreamXLab’s original recording</a> : clip.sourceUrl ? <a href={clip.sourceUrl}>{clip.sourceLabel}</a> : clip.sourceLabel}; {clip.sourceRange}. Original speed and complete frame retained.</p></section>)}</div>}

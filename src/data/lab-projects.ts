@@ -6,7 +6,8 @@ export const labProjects = [
     subtitle: "Microbiomes. Digital twins. Healthier indoor environments.", description: "Microbial communities, building simulations and digital twins, and infection-risk visualization at the room level.",
     source: `${source}/_projects/Immunology.md`, credit: "",
     image: "building-immunity-preview.webp", imageWidth: 9437, imageHeight: 7087, imageAlt: "Building immunology concept connecting human well-being, pathogen modeling, indoor sensing, building control, and AI interaction.",
-    abstract: "Buildings are shared habitats for people and microbial communities. This research brings microbial observations together with building simulation and digital-twin concepts to study indoor environments, visualize room-level exposure, and consider health alongside energy use and comfort.",
+    question: "What can one room tell us?",
+    abstract: "A surface sample reveals a microbial community; a room model describes where exposure may occur. These studies address distinct, local questions. Bringing them into the same building context opens a larger challenge: making health, comfort, and energy decisions work together.",
     heroClips: ["indoor-transport"], demoClips: ["building-layers"],
     sourceNotes: ["Building Immunology 1, slides 2–3: building-immunity concept, integrated modeling framework, and occupant–robot interaction photograph. The integrated AI-driven immune system is a research vision.", "Dreams, slide 1: Building M and Building T relative-abundance chart. Research Presentation, slide 12: school sampling and culture images. These are separate source examples; the slides do not establish that they share a single sample set.", "Building, slides 2–4: building models, spatial networks, and indoor simulation animations.", "Research Presentation, slides 3–5 and 8: modeling framework and room-level risk interface. Airborne transport and surface-mediated transmission are distinct modeling examples."]
   },
@@ -15,7 +16,8 @@ export const labProjects = [
     subtitle: "See the surface. Adapt the response.", description: "Surface-material recognition, indoor mapping, and simulated robotic disinfection in built environments.",
     source: `${source}/_projects/Immunology.md`, credit: "",
     image: "disinfection-simulation.jpg", imageWidth: 1280, imageHeight: 720, imageAlt: "A simulated mobile manipulator positioned beside a hospital bed and nearby furniture.",
-    abstract: "Robotic disinfection connects perception and navigation with decisions about how to treat a surface. This research presents a material-aware disinfection framework alongside separate examples of indoor mapping and robot motion in a simulated hospital room.",
+    question: "Start with the surface.",
+    abstract: "A robot can locate a table without knowing how its material should affect treatment. The published framework addresses that specific gap through visual material recognition and transmission modeling. Reliable building-wide disinfection asks a larger question: how can perception, movement, and treatment work together?",
     heroClips: ["disinfection-simulation", "robotic-perception"], demoClips: ["surface-materials", "adaptive-disinfection", "indoor-mapping"],
     sourceNotes: ["Animated_Infographics_May_09_2022.mp4: Wiley infographic for Hu and Li (2022), Recognizing object surface materials to adapt robotic disinfection in infrastructure facilities, DOI: 10.1111/mice.12811. Three silent excerpts retain the complete frame, original speed, and publisher credits.", "Building, slides 10–11: affordance-aware navigation and disinfection simulation. Research Presentation, slide 7: simulated robotic disinfection. These examples do not demonstrate a complete deployed system or measure pathogen removal."]
   },
@@ -24,7 +26,8 @@ export const labProjects = [
     subtitle: "Position the camera. Preserve the view.", description: "Magnetically actuated camera assistance and biomimetic cleaning concepts for minimally invasive surgery.",
     source: `${source}/_projects/Surgery_AI.md`, credit: "",
     image: "surgery-cover.png", imageWidth: 617, imageHeight: 347, imageAlt: "Robot-mounted external actuator and an internal camera in an abdominal model.",
-    abstract: "Minimally invasive surgery requires clear views within a confined workspace. This project studies robotic camera positioning and shape-changing mechanisms, alongside a proposed soft robotic cleaning system inspired by the human eye.",
+    question: "Move the camera. Keep a usable view.",
+    abstract: "Camera positioning is a concrete task within minimally invasive surgery. The benchtop prototype explores external actuation of an internal camera. Maintaining a usable view throughout a procedure adds another problem: visibility can deteriorate even when the camera is correctly positioned.",
     heroClips: ["camera-guidance", "bench-prototype"], demoClips: ["camera-assembly", "instrument-motion"],
     sourceNotes: ["Redefine Surgery Intelligence with TEAM, slides 2–5: team, mechanism diagrams, rendered motion, and laboratory prototype.", "UF Robotics Workshop — Shuai Li — ESSIE, slides 4–6: adaptive mechanisms, visual obstruction examples, soft nozzle, and proposed cleaning control. The cleaning concept is separate from the prototype footage."]
   },
@@ -33,7 +36,8 @@ export const labProjects = [
     subtitle: "Interlocking modules for coastal structures.", description: "A concept for robot-assisted assembly of architected modules into coastal breakwaters.",
     source: "", credit: "",
     image: "breakwater-assembly.webp", imageWidth: 832, imageHeight: 571, imageAlt: "Rendered concept of a mobile robot placing interlocking modules along a breakwater.",
-    abstract: "Architected modules connect material design with construction. This concept explores how robots could grasp, align, and interlock individual units to form coastal breakwaters, with joint geometry shaping the assembly sequence.",
+    question: "Start with a connection.",
+    abstract: "An interlocking module is a starting point for a larger coastal structure. This concept links joint geometry to robotic placement; field assembly and coastal performance remain questions for future investigation.",
     heroClips: [], demoClips: [],
     sourceNotes: ["UF Robotics Workshop — Shuai Li, slide 7: Architected Materials for Extreme Resistance in Coastal Applications (AMERICA), labeled Gulf Futures Challenge Award Phase I in the supplied deck. The page presents its design and assembly concepts."]
   },
