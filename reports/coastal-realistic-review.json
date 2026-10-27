@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-27",
+  "project": "robotic-block-assembly",
+  "variant": "Detailed local excavator and Unreal beach assets",
+  "scope": "Prescribed kinematic concept; no physical grasp, contact, mechanical-limit, collision-free, or coastal-performance claim.",
+  "video": {
+    "checks": [
+      {
+        "trajectory_frames": 1608,
+        "new_blocks": 6,
+        "starter_blocks": 1,
+        "completed_placements": 6,
+        "final_positions_match": true,
+        "max_block_step_m": 0.2002283766305364,
+        "scope": "Geometric animation continuity, not a dynamics or collision test"
+      },
+      {
+        "scene": "coastal_assembly.usdc",
+        "lights_cast_shadows": false,
+        "unresolved_assets": 0
+      },
+      {
+        "video": "continuous-assembly.mp4",
+        "duration": 67,
+        "frames": 1608,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "audio": false,
+        "full_decode": "passed",
+        "bytes": 32020251,
+        "sha256": "fdf0ba8d9211e874616f1487791c92d6ba938e499dda963825732c17e558771c"
+      },
+      {
+        "original_source_files_unchanged": 59
+      },
+      {
+        "prior_isaac_videos_preserved": true
+      }
+    ],
+    "render": {
+      "engine": "Isaac Sim 5.1.0",
+      "renderer": "RaytracedLighting",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "frames": 1608,
+      "fps": 24,
+      "shadow_setting": false,
+      "ambient_occlusion": false,
+      "aa_mode": 4,
+      "subframes": 2,
+      "elapsed_seconds": 333.4738899730146,
+      "scope": "Prescribed USD kinematics. Not a force-based grasp/contact or wave simulation."
+    },
+    "geometry": {
+      "source": "Local Unity test02 / Excavator02.skp and existing import cache",
+      "model": "CASE CX80C appearance model",
+      "source_triangles": 147416,
+      "retained_triangles": 103132,
+      "removed_or_replaced_parts": [
+        "Componente#30",
+        "Componente#30 3",
+        "Componente#31",
+        "Componente#31 1",
+        "Componente#34",
+        "Componente#34 1",
+        "Componente#35",
+        "Componente#35 1",
+        "Componente#37",
+        "Componente#37 1",
+        "Componente#47",
+        "Componente#48",
+        "m5"
+      ],
+      "boom_length": 3.5445407671516485,
+      "stick_length": 1.571098023676435,
+      "max_visual_ik_error_m": 1.3506446028928519e-15,
+      "angles_min_rad": [
+        0.37220741087283415,
+        -2.4524997961902377
+      ],
+      "angles_max_rad": [
+        0.8110880682222554,
+        -1.8945480929443574
+      ],
+      "frames": 1608,
+      "duration": 67,
+      "shadow_enabled": false,
+      "unresolved_assets": [],
+      "scope": "Prescribed kinematic concept. New visual joint pivots and telescoping cylinders, not manufacturer joint limits or a force/contact/grasp validation. Clamp is illustrative. Original TPMS geometry is retained at presentation scale."
+    }
+  },
+  "rig_continuity": {
+    "sampled_frames": 1608,
+    "link_length_min": [
+      3.5445407671516476,
+      1.5710980236764343
+    ],
+    "link_length_max": [
+      3.5445407671516493,
+      1.5710980236764365
+    ],
+    "max_joint_position_step_m": 0.208891846089502,
+    "links_remain_connected": true,
+    "carried_frames": 606,
+    "max_clamp_block_center_offset_m": 0.00017768526032884303,
+    "max_clamp_rotation_matrix_error": 2.0388543822366052e-15,
+    "final_tracks_row_lateral_clearance_m": 0.28062484264373766,
+    "scope": "Visual linkage continuity and final lateral spacing only; not mechanical limits, contact, or complete collision validation."
+  },
+  "accessibility": {
+    "axe_scans": 32,
+    "functional_checks": 315,
+    "violations": 0,
+    "failures": [],
+    "manual_review": [
+      "Desktop hero with new video",
+      "320 CSS pixel reflow",
+      "Native keyboard playback and visible focus"
+    ],
+    "report": "axe-wcag21aa.json"
+  },
+  "validation": {
+    "build": "passed",
+    "lint": "passed",
+    "security_vulnerabilities": 0,
+    "video_full_decode": "passed",
+    "timed_descriptions": "retimed to new movement phases"
+  },
+  "preservation": "Original source assets and prior Isaac videos are unchanged; only derived opening video, poster, descriptions and source notes replace the web assets. Raw models stay local.",
+  "limitations": "Automated scans do not establish complete ADA/WCAG certification. Existing PDF and multi-screen-reader limitations remain."
+}

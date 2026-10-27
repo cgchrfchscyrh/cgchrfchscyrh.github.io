@@ -1,5 +1,15 @@
 # Accessibility review
 
+## Detailed excavator and beach video — 27 October 2026
+
+The opening coastal clip now uses the supplied Excavator02 appearance model from the local Unity project, retargeted in Isaac Sim with a concept clamp, and sand textures plus complete beach-rock meshes exported from the local Unreal project. Six new placements form a seven-module segment beside the shoreline. Retraction timing and the wider machine's distance from the assembly row were revised. Cast shadows and ambient occlusion remain disabled. The joint and geometry-comparison clips are unchanged.
+
+The 1080p silent movie passed full decoding, frame-count and duration checks. All 1,608 visual linkage frames were checked for continuity; original source files and earlier renders remain unchanged. This new appearance rig does not inherit the prior model's manufacturer joint-limit claims. Grasp forces, contact, complete collision avoidance, insertion fit, load capacity and coastal performance remain unvalidated. Only derived media are published; editable scenes and raw assets stay local.
+
+The poster, media cache version, full text alternative, source notes, and 50 timed visual-description cues were updated together. Native controls, keyboard focus, viewport playback, reduced-motion/data-saving preferences and manual pause persistence are retained, without adding caption blocks beneath the player. Build, lint and security audit passed. The browser suite passed **32 axe scans and 315 functional checks**, with zero violations or failures. Desktop and 320 CSS-pixel views were manually inspected. See `reports/coastal-realistic-review.json` and `reports/axe-wcag21aa.json`.
+
+These checks do not constitute complete ADA/WCAG certification. Existing PDF and multi-screen-reader review limitations remain.
+
 ## Coastal Isaac Sim video revision — 27 October 2026
 
 The three coastal videos now use Isaac Sim 5.1.0 RTX rendering at 1920 × 1080 and 24 frames per second. The opening sequence shows six continuous placements beside a starter module. Cast shadows and ambient occlusion are disabled, with native-resolution antialiasing and no motion blur. All three clips retain an embedded kinematic-concept label, native controls, full linked text alternatives, and reviewed timed WebVTT descriptions. Media version URLs prevent earlier cached MuJoCo assets from being reused with the new descriptions. No visible caption blocks have been added below the players.

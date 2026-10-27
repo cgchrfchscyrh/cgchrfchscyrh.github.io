@@ -46,17 +46,16 @@ export const labProjects = [
 export const projectClips: ProjectClip[] = [
 {
   "id": "excavator-assembly",
-  "mediaVersion": "isaac-20261027",
+  "mediaVersion": "isaac-realistic-20261027",
   "duration": 67,
   "title": "Continuous coastal assembly in Isaac Sim",
-  "description": "Beside a rendered shoreline, a tracked excavator collects six porous TPMS blocks from a staged row, one after another. For each block, an illustrative clamp closes, the arm lifts and transfers the part, aligns it beside the growing row, approaches the nominal placement position, and releases it. The machine moves along the work area between placements. A starter block and the six new blocks form a seven-module segment. The camera gradually moves to the water side for the completed view. Six outlined markers fill in as placements finish; phase labels identify the action independently of color. The excavator meshes and joint frames come from the local URDF, and the blocks use the original primitive slot and tenon meshes. The clamp, supports, terrain, and water are illustrative. Motions and block poses are prescribed; this is not a force-based assembly test, and the water is not a fluid simulation.",
-  "sourceLabel": "Local excavator_inverse_kinematics model and supplied TPMS primitive STL models",
-  "sourceUrl": "https://git.rwth-aachen.de/ferreiralexandre/excavator_inverse_kinematics",
+  "description": "Beside a rendered shoreline, a tracked excavator collects six porous TPMS blocks from a staged row, one after another. For each block, an illustrative clamp closes, the arm lifts and transfers the part, aligns it beside the growing row, approaches the nominal placement position, and releases it. The machine moves along the work area between placements. A starter block and the six new blocks form a seven-module segment. The camera gradually moves to the water side for the completed view. Six outlined markers fill in as placements finish; phase labels identify the action independently of color. The detailed CASE-style excavator comes from the supplied Unity project, with a new visual rig and illustrative clamp. Sand textures and beach-rock meshes come from the local Unreal beach project; the blocks use the original primitive slot and tenon meshes. Supports, shoreline layout, and water are illustrative. Motions and block poses are prescribed; this is not a force-based assembly test, and the water is not a fluid simulation.",
+  "sourceLabel": "Supplied Excavator02 model from Unity test02; Brushify beach assets from the local Unreal project; original TPMS primitive STL models",
   "project": "robotic-block-assembly",
   "caption": "",
   "sourceRange": "new CAD-based visualization",
   "audioNote": "Silent visualization. Full text alternatives and timed visual descriptions are provided.",
-  "processingNote": "Rendered in Isaac Sim 5.1.0 with RTX lighting at 1920 × 1080 and 24 frames per second. Cast shadows and ambient occlusion are disabled. Full source triangle geometry is retained, recentered, and scaled for visualization. Prescribed motion only; no force-based gripping, collision-free planning, insertion tolerance, load capacity, or coastal-performance result is claimed. The original TPMS unit convention is multiplied by 0.75 for this scene; this is a visual scale, not confirmation of fabrication dimensions."
+  "processingNote": "Rendered in Isaac Sim 5.1.0 with RTX lighting at 1920 × 1080 and 24 frames per second. Cast shadows and ambient occlusion are disabled. The excavator appearance model is retargeted with new visual pivots and telescoping cylinders; its bucket is replaced by an illustrative clamp. Original TPMS triangle geometry is retained. Unreal sand and rock textures are rebound to USD materials. Prescribed motion only; no force-based gripping, collision-free planning, insertion tolerance, load capacity, or coastal-performance result is claimed. The original TPMS unit convention is multiplied by 0.75 for this scene; this is a visual scale, not confirmation of fabrication dimensions."
 },
 {
   "id": "joint-alignment",
