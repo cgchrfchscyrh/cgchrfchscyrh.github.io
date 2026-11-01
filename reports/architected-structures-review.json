@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-01T20:58:12.001710+00:00",
+  "route": "/architected-structures/",
+  "title": "Design and Robotic Assembly of Architected Structures",
+  "brief": {
+    "filename": "Design and Robotic Assembly of Architected Structures.docx",
+    "sha256": "d27a4b365ef693fd50b2168e1c2060fa1f37f31b63ae3f1e8c0abc8c61a8c3e9",
+    "original_unmodified": true
+  },
+  "structure": [
+    "Problem",
+    "Innovations & Solutions: modules, connections, robotic assembly",
+    "Research Demonstrations",
+    "Application: NACRE within AMERICA",
+    "Our Vision",
+    "Research disciplines and collaboration contact"
+  ],
+  "media": {
+    "new_video_files": 0,
+    "new_raster_images": 0,
+    "existing_video_hashes": {
+      "tpms-families": "9f5769352e80c6dc9981d34c7400441de8c7017a753e9103ee76cb7a40796dec",
+      "joint-alignment": "781dd8ade2c146daf3b34f4f1bd79219bd06269d6a273118de28935f2d06d9dc",
+      "excavator-assembly": "d73e11c074bcc5e07d3c038de1ee68502f0896614f2e12fbcfbb17b3aca5f84d"
+    },
+    "new_svg": [
+      "favicon.svg",
+      "future-structure.svg"
+    ],
+    "figure_ids": [
+      "module",
+      "manufacturing",
+      "connections",
+      "breakwater"
+    ],
+    "full_frames_and_source_figures_retained": true,
+    "cast_shadows_remain_disabled": true
+  },
+  "source_links": [
+    "https://ccs.eng.ufl.edu/building-living-reefs-for-stronger-coastlines/",
+    "https://ccs.eng.ufl.edu/uf-ut-team-wins-875000-award-to-pilot-living-coastal-protection-in-cedar-key/"
+  ],
+  "related_publication": {
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0029801825025880",
+    "provenance": "Direct link in the coastal pilot overview. Publisher returned 403 to the research fetch; no unverified title, author list, DOI, or findings are presented."
+  },
+  "evidence_limits": [
+    "The assembly films show prescribed kinematic motion, not physical trials.",
+    "Gripping, contact, clearance, joint strength, load capacity, collision-free planning, and wave-response performance remain unvalidated by these films.",
+    "The manufacturing photograph is a source reference, not proof of manufacturing the displayed modules.",
+    "NACRE is application context; the rendered TPMS assembly does not document NACRE field installation.",
+    "Extension and maintenance are future concepts."
+  ],
+  "local_checks": {
+    "build": "passed",
+    "lint": "passed",
+    "axe_scans": 44,
+    "functional_checks": 454,
+    "violations": 0,
+    "failures": 0,
+    "dependency_vulnerabilities": 0,
+    "desktop_visual_review": "passed",
+    "320_css_pixel_visual_review": "passed",
+    "connection_disclosure": "passed",
+    "neutral_branding": "passed"
+  },
+  "manual_limits": [
+    "Automatic checks do not establish full WCAG/ADA certification.",
+    "Full assistive-technology review and external paper accessibility remain unverified."
+  ],
+  "screenshots": "research/architected-structures/{desktop-preview,mobile-preview,vision-preview}.png"
+}

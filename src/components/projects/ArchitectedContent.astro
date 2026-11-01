@@ -1,0 +1,60 @@
+---
+import Video from "../ProjectVideo.astro";
+import Figure from "../ProjectFigure.astro";
+import Playback from "../ProjectPlayback.astro";
+import MediaNotes from "../ProjectMediaNotes.astro";
+import Vision from "../Vision.astro";
+import { labFigures } from "../../data/lab-figures";
+import { asset, profile } from "../../data/profile";
+import "../../styles/architected.css";
+interface Props { sourceNotes: string[]; }
+const { sourceNotes } = Astro.props;
+const imageIds = ["module", "manufacturing", "connections", "breakwater"];
+const questions = [
+  { title: "Material meets construction", text: "Geometry must serve its intended function while accommodating fabrication and robotic handling.", path: "m12 25 20-11 20 11-20 11ZM12 25v23l20 11 20-11V25M32 36v23M22 20l20 11M22 31v22M42 31v22" },
+  { title: "Connections define access", text: "A joint needs a feasible approach, accessible grasping locations, and appropriate assembly tolerances.", path: "M9 36h17v7h12v-7h17v20H9ZM23 5h18v18H23ZM32 23v12m-6-6 6 6 6-6" },
+  { title: "Every placement changes the next", text: "Repeated assembly must account for alignment, workspace access, and previously placed components.", path: "M5 38h17v18H5Zm19 0h17v18H24Zm19 0h17v18H43ZM43 8h17v18H43ZM13 31V17h22m-6-6 6 6-6 6M51 27v7" },
+];
+const operations = ["Grasp", "Lift & transport", "Align above", "Insert vertically", "Release", "Repeat"];
+---
+<section class="architected-hero" id="module-demo" aria-labelledby="project-title">
+  <div class="architected-hero-intro"><h1 id="project-title">Design and Robotic Assembly <br />of Architected Structures</h1><p>Connecting material architecture, modular interfaces, and robotic assembly to advance adaptable infrastructure.</p></div>
+  <Video id="structures-families" hero />
+  <div class="architected-hero-links"><a href="#innovations">Explore our research <span aria-hidden="true">↗</span></a><a href="#demonstrations">Watch the assembly demo <span aria-hidden="true">↗</span></a></div>
+  <p id="media-status" class="sr-only" role="status"></p>
+</section>
+<div class="architected-content">
+  <section class="architected-section" id="problem" aria-labelledby="problem-title">
+    <div class="architected-heading"><p class="architected-stage">Problem</p><div><h2 id="problem-title">How can complex materials<br />become buildable structures?</h2><p>Geometry can shape a material’s structural and environmental functions. Building with it brings fabrication, connections, handling, and assembly into the same design problem.</p></div></div>
+    <div class="architected-questions">{questions.map(q => <article><svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><path d={q.path} fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" /></svg><h3>{q.title}</h3><p>{q.text}</p></article>)}</div>
+  </section>
+  <section class="architected-section" id="innovations" aria-labelledby="innovations-title">
+    <div class="architected-heading"><p class="architected-stage">Innovations &amp; solutions</p><div><h2 id="innovations-title">Co-design the module,<br />the joint, and the motion.</h2></div></div>
+    <article class="architected-strand" id="material-design" aria-labelledby="material-title">
+      <div class="architected-strand-copy"><span class="architected-number" aria-hidden="true">01</span><h3 id="material-title">Architected material<br />and module design</h3><p>Explore how porosity and internal architecture shape modular components. Bring functional design, manufacturability, and robotic accessibility together from the beginning.</p><a href="#module-demo">Compare the module geometries ↗</a></div>
+      <div class="architected-material-pair"><div><h4>Module concept</h4><Figure id="module" notes /></div><div><h4>Fabrication reference</h4><Figure id="manufacturing" notes /></div></div>
+    </article>
+    <article class="architected-strand architected-joint" id="joint-demo" aria-labelledby="joint-title">
+      <div class="architected-strand-copy"><span class="architected-number" aria-hidden="true">02</span><h3 id="joint-title">Assembly-oriented<br />connection design</h3><p>Joint geometry defines how components approach, align, and engage. Study insertion directions alongside structural requirements and manufacturing tolerances.</p></div>
+      <Video id="structures-joint" />
+    </article>
+    <details class="architected-detail"><summary>Explore the connection-design concepts</summary><Figure id="connections" notes /></details>
+    <article class="architected-planning" id="planning" aria-labelledby="planning-title">
+      <div class="architected-planning-head"><span class="architected-number" aria-hidden="true">03</span><h3 id="planning-title">Robotic assembly<br />planning and execution</h3><p>Study the sequence from grasp to release. Virtual environments expose workspace and motion constraints; sensing, contact-aware manipulation, and verification are the next research steps.</p></div>
+      <ol class="architected-operations" aria-label="Illustrated vertical-insertion workflow">{operations.map((operation,i) => <li><span aria-hidden="true">0{i+1}</span><strong>{operation}</strong>{i<operations.length-1 && <span class="architected-operation-arrow" aria-hidden="true">→</span>}</li>)}</ol>
+    </article>
+  </section>
+  <section class="architected-section" id="demonstrations" aria-labelledby="demo-title">
+    <div class="architected-heading"><p class="architected-stage">Research demonstrations</p><div><h2 id="demo-title">From one placement<br />to a growing structure.</h2><p>Prescribed assembly motions make the relationship between geometry and sequence visible. Physical validation of gripping, contact, tolerances, and connection performance remains a research priority.</p></div></div>
+    <nav class="architected-demo-links" aria-label="Assembly demonstrations"><a href="#module-demo">Module concepts ↗</a><a href="#joint-demo">Joint &amp; insertion sequence ↗</a><a href="#assembly-demo">Repeated robotic assembly ↓</a></nav>
+    <div id="assembly-demo"><Video id="structures-assembly" /></div>
+  </section>
+  <section class="architected-section" id="application" aria-labelledby="application-title">
+    <div class="architected-application"><div><p class="architected-stage">Application</p><h2 id="application-title">Modular coastal<br />infrastructure.</h2><p>NACRE coastal modules, within the broader AMERICA research effort, connect coastal and ecological design objectives with fabrication, connection, and construction.</p><p>This application provides practical questions for robot-assisted handling and placement—and for future evaluation.</p><a class="architected-text-link" href={asset("robotic-block-assembly/")}>Explore the coastal assembly concept ↗</a></div><Figure id="breakwater" notes /></div>
+    <div class="architected-related" id="related-research"><h3>Related research</h3><div><a href="https://ccs.eng.ufl.edu/building-living-reefs-for-stronger-coastlines/">AMERICA &amp; NACRE: coastal research overview ↗</a><a href="https://www.sciencedirect.com/science/article/abs/pii/S0029801825025880">Related coastal-protection study in Ocean Engineering ↗</a></div></div>
+  </section>
+  <Vision project="architected-structures" kicker="Our vision" intro="Connect material innovation with robotic construction so structures can be assembled, extended, and maintained as needs evolve." />
+  <section class="architected-collaboration" id="collaborate" aria-labelledby="collaborate-title"><div><p class="architected-stage">Research team &amp; collaborators</p><h2 id="collaborate-title">Build across disciplines.</h2></div><div><p>Material architecture · Fabrication · Robotics<br />Structural &amp; coastal engineering · Ecology</p><a href={`mailto:${profile.email}`}>Contact Songyang Liu about collaboration ↗</a></div></section>
+  <section class="source-section" id="sources" aria-label="Sources and accessible media alternatives"><details><summary>Sources &amp; media descriptions</summary><ul>{sourceNotes.map(note => <li>{note}</li>)}</ul><p>The <a href="https://ccs.eng.ufl.edu/building-living-reefs-for-stronger-coastlines/">AMERICA and NACRE overview</a> documents the coastal application. The <a href="https://ccs.eng.ufl.edu/uf-ut-team-wins-875000-award-to-pilot-living-coastal-protection-in-cedar-key/">coastal pilot overview</a> links the related Ocean Engineering study. These external sources concern coastal research; the assembly films on this page are separate geometric visualizations.</p><p>The assembly films do not establish force-based gripping, collision-free planning, joint clearance, structural strength, or wave-response performance. Original joint shapes and complete frames are retained. The future-structure illustration is a conceptual schematic.</p><MediaNotes project="architected-structures" /><div class="project-image-notes"><h2>Image descriptions &amp; sources</h2>{imageIds.map(id => { const figure=labFigures[id]; return <section data-image-note={id}><h3>{figure.title}</h3><p id={`image-${id}-description`}>{figure.description}</p><p class="source-credit">Source: {figure.source}</p></section>; })}</div></details></section>
+</div>
+<Playback />

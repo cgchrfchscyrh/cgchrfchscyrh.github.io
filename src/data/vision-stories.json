@@ -225,5 +225,46 @@
     ],
     "sceneAlt": "Future concept: an occupied building connects environmental sensing, a digital model, and thermal conditions around people.",
     "description": "Published room-level models and separate recorded demonstrations are the starting point. Building scientists, sensing specialists and AI researchers must connect observations with predictions. Controls, robotics and facility operators must establish feasible interventions. Occupants, human-factors researchers and interaction designers must shape useful responses. The future concept is a building that anticipates environmental challenges while respecting human health, comfort and everyday needs; it is not an installed autonomous system."
+  },
+  "architected-structures": {
+    "headline": "Design and Robotic Assembly of Architected Structures",
+    "headlineLines": [
+      "Design and Robotic Assembly",
+      "of Architected Structures"
+    ],
+    "title": "One connection. Adaptable infrastructure.",
+    "current": "Geometry and prescribed assembly",
+    "evidence": "Design concepts + virtual demonstrations",
+    "image": "projects/robotic-block-assembly/joint-alignment.jpg",
+    "imageAlt": "Two porous modules aligned for vertical insertion in a geometric visualization.",
+    "sourceAnchor": "#demonstrations",
+    "scene": "coastal",
+    "sceneImage": {
+      "src": "projects/architected-structures/future-structure.svg",
+      "width": 640,
+      "height": 420
+    },
+    "future": "Structures that evolve with need",
+    "systems": [
+      "Assemble",
+      "Extend",
+      "Maintain"
+    ],
+    "connections": [
+      {
+        "task": "Make geometry buildable",
+        "partners": "Materials + fabrication + structural design"
+      },
+      {
+        "task": "Close the sensing–action loop",
+        "partners": "Perception + planning + contact-aware robotics"
+      },
+      {
+        "task": "Validate in real conditions",
+        "partners": "Coastal engineering + ecology + operators"
+      }
+    ],
+    "sceneAlt": "Future concept: a modular structure gains an extension, while an individual unit can be replaced from above. Solid units show the existing structure, outlined units show the proposed addition, and arrows label Add and Replace.",
+    "description": "Prescribed geometric assembly illustrates how a connection can constrain motion. Turning it into adaptable infrastructure requires materials, fabrication and structural expertise; sensing, planning and contact-aware robotics; and evaluation with coastal engineers, ecologists and operators. The future diagram shows adding modules and replacing one unit. Extension and maintenance are research ambitions, not demonstrated field capabilities."
   }
 }

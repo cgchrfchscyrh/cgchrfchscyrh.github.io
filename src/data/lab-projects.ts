@@ -2,6 +2,36 @@ const source = "https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f
 export interface ProjectClip { id: string; project: string; assetProject?: string; assetId?: string; mediaVersion?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; processingNote?: string; captions?: boolean; loop?: boolean; }
 export const labProjects = [
 {
+  "slug": "architected-structures",
+  "title": "Design and Robotic Assembly of Architected Structures",
+  "shortTitle": "Architected Structures",
+  "topic": "Material architecture · Modular interfaces · Robotic assembly",
+  "subtitle": "",
+  "description": "Co-designing architected modules, their connections, and robotic assembly processes for adaptable infrastructure.",
+  "source": "",
+  "credit": "",
+  "image": "tpms-families.jpg",
+  "imageProject": "robotic-block-assembly",
+  "imageWidth": 1920,
+  "imageHeight": 1080,
+  "imageAlt": "Diamond, gyroid, and primitive porous modules in a geometric assembly visualization.",
+  "question": "How can complex materials become buildable structures?",
+  "abstract": "Material architecture, modular connections, and robotic handling need to be designed together.",
+  "heroClips": [
+    "structures-families"
+  ],
+  "demoClips": [
+    "structures-joint",
+    "structures-assembly"
+  ],
+  "sourceNotes": [
+    "Page structure and research directions follow the supplied Design and Robotic Assembly of Architected Structures brief.",
+    "UF Robotics Workshop — Shuai Li, slide 7: architected module, fabrication reference, connection strategies, and coastal assembly concept. The fabrication photograph is a reference; it does not establish production of the illustrated modules.",
+    "Isaac Sim visualizations use the supplied diamond, gyroid, and primitive TPMS slot/tenon models, the Excavator02 appearance model, and local beach assets. Module geometry and full video frames are retained; cast shadows remain disabled. Motion is prescribed, with vertical lifting and insertion along the illustrated joint direction.",
+    "The supplied brief identifies NACRE as a coastal application within AMERICA. The coastal project overview provides application context. The displayed robotic assembly renderings are geometric concepts and do not document the field installation of NACRE units."
+  ]
+},
+{
   "slug": "healthy-built-environments",
   "title": "AI-Empowered Healthy Built Environments",
   "shortTitle": "Healthy Built Environments",
@@ -226,6 +256,11 @@ export const projectClips: ProjectClip[] = [
 for (const assetId of ["indoor-transport", "building-layers", "disinfection-simulation"]) {
   const original = projectClips.find(clip => clip.id === assetId)!;
   projectClips.push({ ...original, id: `healthy-${assetId}`, project: "healthy-built-environments", assetId });
+}
+
+for (const [id, assetId] of [["structures-families", "tpms-families"], ["structures-joint", "joint-alignment"], ["structures-assembly", "excavator-assembly"]]) {
+  const original = projectClips.find(clip => clip.id === assetId)!;
+  projectClips.push({ ...original, id, project: "architected-structures", assetProject: original.assetProject || original.project, assetId });
 }
 
 export const immunologyPublications = [

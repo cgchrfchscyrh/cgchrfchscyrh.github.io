@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <defs>
+    <g id="block" stroke="#353631" stroke-width="2.5" stroke-linejoin="round"><path d="m0 20 40-20 40 20-40 20Z" fill="#deded7"/><path d="M0 20v65l40 20V40Z" fill="#c5c6be"/><path d="M40 40v65l40-20V20Z" fill="#efefe9"/><path d="m12 37 16 8v20l-16-8Zm40 8 16-8v20l-16 8Z" fill="#fafaf8"/></g>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="m1 1 7 4-7 4" fill="none" stroke="#34352f" stroke-width="1.5"/></marker>
+  </defs>
+  <path d="m62 293 219-110 296 147-212 71Z" fill="#eeeee8" stroke="#b7b8af" stroke-width="2"/>
+  <g><use href="#block" x="127" y="205"/><use href="#block" x="207" y="205"/><use href="#block" x="287" y="205"/><use href="#block" x="87" y="225"/><use href="#block" x="167" y="225"/><use href="#block" x="247" y="225"/></g>
+  <g fill="none" stroke="#53544d" stroke-width="2.5" stroke-dasharray="7 6" stroke-linejoin="round"><path d="m367 225 40-20 40 20-40 20ZM367 225v65l40 20 40-20v-65M407 245v65"/><path d="m447 225 40-20 40 20-40 20ZM447 225v65l40 20 40-20v-65M487 245v65"/></g>
+  <use href="#block" x="207" y="40"/>
+  <g fill="none" stroke="#34352f" stroke-width="2.5" marker-end="url(#arrow)"><path d="M247 154v39"/><path d="M372 176h115"/></g>
+  <g font-family="Arial,sans-serif" font-size="25" fill="#30312d"><text x="307" y="105">Replace</text><text x="404" y="153">Add</text></g>
+  <path d="M274 103h20" fill="none" stroke="#74756c" stroke-width="2"/>
+  <text x="320" y="388" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" fill="#30312d">Assemble · Extend · Maintain</text>
+</svg>

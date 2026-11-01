@@ -13,6 +13,7 @@ import SurgeryFigureNotes from "../components/projects/SurgeryFigureNotes.astro"
 import MicrobiomeContent from "../components/projects/MicrobiomeContent.astro";
 import DisinfectionContent from "../components/projects/DisinfectionContent.astro";
 import AssemblyContent from "../components/projects/AssemblyContent.astro";
+import ArchitectedContent from "../components/projects/ArchitectedContent.astro";
 import HealthyContent from "../components/projects/HealthyContent.astro";
 import SchoolContent from "../components/projects/SchoolContent.astro";
 import { labProjects, immunologyPublications } from "../data/lab-projects";
@@ -26,13 +27,14 @@ const assembly = project.slug === "robotic-block-assembly";
 const papers = [4,5,6,0,1,2,3];
 const school = project.slug === "disease-resistant-school-communities";
 const healthy = project.slug === "healthy-built-environments";
-const nav = healthy ? [{ id: "problem", label: "Problem" }, { id: "innovations", label: "Innovations" }, { id: "publications", label: "Research" }, { id: "vision", label: "Vision" }] : school ? [{ id: "problem", label: "Problem" }, { id: "solutions", label: "Solutions" }, { id: "impact", label: "Impact" }, { id: "publications", label: "Research" }] : assembly ? [{ id: "abstract", label: "Concept" }, { id: "method", label: "Method" }, { id: "assembly", label: "Assembly" }, { id: "vision", label: "Vision" }]
+const architected = project.slug === "architected-structures";
+const nav = architected ? [{ id: "problem", label: "Problem" }, { id: "innovations", label: "Research" }, { id: "demonstrations", label: "Demos" }, { id: "application", label: "Application" }, { id: "vision", label: "Vision" }] : healthy ? [{ id: "problem", label: "Problem" }, { id: "innovations", label: "Innovations" }, { id: "publications", label: "Research" }, { id: "vision", label: "Vision" }] : school ? [{ id: "problem", label: "Problem" }, { id: "solutions", label: "Solutions" }, { id: "impact", label: "Impact" }, { id: "publications", label: "Research" }] : assembly ? [{ id: "abstract", label: "Concept" }, { id: "method", label: "Method" }, { id: "assembly", label: "Assembly" }, { id: "vision", label: "Vision" }]
   : surgery ? [{ id: "problems", label: "Problems" }, { id: "innovations", label: "Innovations" }, { id: "team", label: "Team" }, { id: "publications", label: "Related publications" }]
   : micro ? [{ id: "abstract", label: "Question" }, { id: "communities", label: "Microbiomes" }, { id: "method", label: "Method" }, { id: "simulation", label: "Digital twins" }, { id: "room-risk", label: "Room-level risk" }, { id: "vision", label: "Vision" }, { id: "publications", label: "Publications" }]
   : [{ id: "abstract", label: "Question" }, { id: "method", label: "Method" }, ...(surgery ? [{ id: "cleaning", label: "Cleaning concept" }] : [{ id: "navigation", label: "Navigation" }]), { id: "vision", label: "Vision" }, { id: "publications", label: "Publications" }];
 ---
-<ProjectLayout title={healthy ? project.title : `${project.shortTitle} — ${story.headline}`} shortTitle={project.shortTitle} description={project.description} slug={project.slug} source={project.source} nav={nav}>
-  {healthy ? <HealthyContent sourceNotes={project.sourceNotes} /> : assembly ? <AssemblyContent sourceNotes={project.sourceNotes} /> : school ? <SchoolContent sourceNotes={project.sourceNotes} /> : <>
+<ProjectLayout title={healthy || architected ? project.title : `${project.shortTitle} — ${story.headline}`} shortTitle={project.shortTitle} description={project.description} slug={project.slug} source={project.source} nav={nav}>
+  {architected ? <ArchitectedContent sourceNotes={project.sourceNotes} /> : healthy ? <HealthyContent sourceNotes={project.sourceNotes} /> : assembly ? <AssemblyContent sourceNotes={project.sourceNotes} /> : school ? <SchoolContent sourceNotes={project.sourceNotes} /> : <>
   <section class:list={["project-hero", { "immunity-hero": micro }]} aria-labelledby="project-title">
     <div class="hero-copy"><h1 id="project-title" class="project-display-title">{surgery ? story.headline : story.headlineLines.map(line => <span class="display-line">{line}{" "}</span>)}</h1>{surgery && <p class="hero-intro">{project.subtitle}</p>}{project.credit && <p class="project-credit">{project.credit}</p>}</div>
     <div class="hero-media paired">

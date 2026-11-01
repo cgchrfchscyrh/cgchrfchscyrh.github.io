@@ -6,11 +6,12 @@ A personal academic website inspired by the structure of [Mengjun Wang’s homep
 
 ## Content
 
-- Homepage: biography, research news, four linked paper projects, six locally hosted research overviews, additional publications, education, awards, and contact.
+- Homepage: biography, research news, four linked paper projects, seven locally hosted research overviews, additional publications, education, awards, and contact.
 - `/cv/`: concise HTML CV, based on the supplied 2026 CV and verified publication records. It is a summary, not a full transcription of the original document.
 - `/accessibility/`: accessibility information and known limits.
 - `/404.html`: accessible error page.
 - `/building-digital-twin/`: legacy entry that redirects into the combined building page; old room-risk and building-case anchors are preserved. The former demonstrations anchor goes to the robot page.
+- `/architected-structures/`: co-design of architected modules, connections, and robotic assembly, with shared Isaac Sim media, a separate NACRE coastal application, and a visual collaboration vision. Existing coastal-page media are referenced without duplication.
 - `/healthy-built-environments/`: BIM-based exposure modeling, predictive digital twins, and AI-enabled human–building interaction, based on the supplied brief. Reuses building and robot media without the School Communities materials. Shared media use `ProjectClip.assetProject` and `assetId`, with distinct player IDs.
 - `/disease-resistant-school-communities/`: student sampling, school environmental research, the full captioned school-modeling film, and community collaboration.
 - `/surgery-ai/`: camera-positioning prototypes and proposed biomimetic cleaning.
@@ -55,7 +56,7 @@ The GitHub Actions workflow builds, checks dependencies, runs axe checks, and de
 
 No UF logo, UF blue/orange interface theme, tracking scripts, remote fonts, or external media embeds are used. Original scientific figures retain their source colors. Research videos start muted when visible, with native controls, reduced-motion and Save-Data support, and remembered manual pause. The homepage and CV remain static. The website does not publish the private address or telephone number from the original CV. It provides an HTML CV rather than redistributing an unreviewed document.
 
-The axe script checks all eleven routes, including the legacy entry without JavaScript, desktop and 320 CSS-pixel layouts, text spacing, keyboard skip links, expandable descriptions, headings, and media. Automated checks do not establish complete WCAG or ADA compliance. See `reports/manual-review.md` and `reports/content-sources.md` for the scope and remaining limitations.
+The axe script checks all twelve routes, including the legacy entry without JavaScript, desktop and 320 CSS-pixel layouts, text spacing, keyboard skip links, expandable descriptions, headings, and media. Automated checks do not establish complete WCAG or ADA compliance. See `reports/manual-review.md` and `reports/content-sources.md` for the scope and remaining limitations.
 
 ## Research media
 
