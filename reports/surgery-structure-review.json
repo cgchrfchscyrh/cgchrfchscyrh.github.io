@@ -65,5 +65,14 @@
     "Automated checks do not certify full ADA/WCAG conformance.",
     "No new claim of clinical validation or integration of the three research strands.",
     "External PDF tagging and comprehensive screen-reader testing not verified."
-  ]
+  ],
+  "dependencyRepair": {
+    "advisory": "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+    "package": "minimatch",
+    "from": "10.2.6",
+    "to": "11.0.1",
+    "scope": "Development-only transitive dependency used by ESLint and TypeScript ESLint",
+    "resolution": "Exact override; existing dual ESM/CommonJS exports retained; build and lint checked after installation",
+    "audit": "zero vulnerabilities"
+  }
 }
