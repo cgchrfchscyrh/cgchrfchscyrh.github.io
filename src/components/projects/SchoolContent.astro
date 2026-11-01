@@ -1,0 +1,82 @@
+---
+import Video from "../ProjectVideo.astro";
+import Playback from "../ProjectPlayback.astro";
+import Figure from "../ProjectFigure.astro";
+import MediaNotes from "../ProjectMediaNotes.astro";
+import Vision from "../Vision.astro";
+import { labFigures } from "../../data/lab-figures";
+import transcript from "../../data/school-transcript.json";
+import { asset } from "../../data/profile";
+import "../../styles/school.css";
+interface Props { sourceNotes: string[]; }
+const { sourceNotes } = Astro.props;
+const imageIds = ["sampling", "culture-3", "culture-2", "culture-1", "school-operating-context"];
+const questions = [
+  {title:"Understand the environment", text:"What can we learn about the spaces students use every day?", icon:"M12 26h40v25H12z M20 26v-8l12-8 12 8v8 M20 36h5m14 0h5M30 51V38h6v13"},
+  {title:"Choose practical improvements", text:"How can schools balance health goals, operating costs and everyday needs?", icon:"M32 10v42M12 52h40M12 23h40M17 23 7 41h20L17 23m30 0L37 41h20L47 23"},
+  {title:"Connect with communities", text:"How can students, educators and families help shape the research?", icon:"M25 19a7 7 0 1 0 14 0 7 7 0 1 0-14 0M19 52v-8a13 13 0 0 1 26 0v8M9 29a5 5 0 1 0 10 0 5 5 0 1 0-10 0M45 29a5 5 0 1 0 10 0 5 5 0 1 0-10 0M4 52v-6a10 10 0 0 1 10-10m36 0a10 10 0 0 1 10 10v6"},
+];
+---
+<section class="school-hero" aria-labelledby="project-title">
+  <div class="school-hero-copy">
+    <h1 id="project-title">Disease-Resistant<br />School Communities</h1>
+    <p>How can school design, everyday activities and building operations work together to support healthier learning environments?</p>
+  </div>
+  <div class="school-hero-media"><Video id="school-research" hero /></div>
+  <p id="media-status" class="sr-only" role="status"></p>
+</section>
+<div class="project-content school-content">
+  <section class="project-section" id="problem" aria-labelledby="problem-title">
+    <div class="school-section-head"><p class="school-stage">01 / Problem</p><h2 id="problem-title">What makes a school healthy?</h2><p>Infections can interrupt attendance and affect families and educators. Healthier schools begin with understanding how shared spaces are used—and what schools can realistically change.</p></div>
+    <div class="school-question-grid">
+      {questions.map(question => <article><svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><path d={question.icon} fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" /></svg><h3>{question.title}</h3><p>{question.text}</p></article>)}
+    </div>
+  </section>
+  <section class="project-section" id="solutions" aria-labelledby="solutions-title">
+    <div class="school-section-head"><p class="school-stage">02 / Solutions</p><h2 id="solutions-title">Science with school communities.</h2><p>Bring student participation, environmental research and building modeling into the same conversation.</p></div>
+    <article class="school-feature school-sampling" aria-labelledby="sampling-title">
+      <div class="school-feature-copy"><h3 id="sampling-title">Students as citizen scientists</h3><p>Guided sampling makes everyday surfaces a starting point for scientific inquiry. Students help collect samples and explore questions about the environments around them.</p><ol class="school-process" aria-label="Environmental inquiry"><li>Ask</li><li>Sample</li><li>Observe</li></ol></div>
+      <Figure id="sampling" notes />
+    </article>
+    <article class="school-observations" aria-labelledby="observations-title">
+      <div class="school-feature-copy"><h3 id="observations-title">Make the unseen observable</h3><p>Culture images reveal differences in microbial appearance. Appearance alone does not identify a species or establish a health risk.</p></div>
+      <div class="school-culture-grid"><Figure id="culture-3" notes /><Figure id="culture-2" notes /><Figure id="culture-1" notes /></div>
+    </article>
+    <article class="school-feature school-modeling" aria-labelledby="modeling-title">
+      <div class="school-feature-copy"><p class="school-stage">A complementary research strand</p><h3 id="modeling-title">Explore choices before changing a building</h3><p>School models compare how ventilation and other operating choices may affect airborne exposure and energy costs. The opening film introduces this scenario-based research.</p><p class="school-evidence-note">Environmental sampling and national school modeling address different questions; they are separate source studies.</p></div>
+      <Figure id="school-operating-context" notes />
+    </article>
+    <article class="school-community" aria-labelledby="community-title">
+      <div class="school-feature-copy"><p class="school-stage">Next step / Community collaboration</p><h3 id="community-title">Make improvements practical, together.</h3><p>Work with schools and families to set priorities, interpret evidence and decide which options merit evaluation.</p></div>
+      <ol class="school-codesign" aria-label="Proposed community-informed research process"><li><span>Listen</span><strong>School priorities</strong></li><li><span>Compare</span><strong>Research scenarios</strong></li><li><span>Evaluate together</span><strong>Feasible improvements</strong></li></ol>
+    </article>
+  </section>
+  <section class="project-section" id="impact" aria-labelledby="impact-title">
+    <div class="school-section-head"><p class="school-stage">03 / Impact</p><h2 id="impact-title">What this work makes possible.</h2></div>
+    <div class="school-impact-grid">
+      <article><p class="school-stage">Documented activity</p><h3>Student learning<br />& participation</h3><p>Hands-on environmental sampling connects classroom curiosity with research practice.</p></article>
+      <article><p class="school-stage">Published modeling</p><h3>Better-informed<br />school decisions</h3><p>Scenario comparisons make infection-risk and energy-cost trade-offs visible.</p></article>
+      <article><p class="school-stage">Future collaboration</p><h3>Stronger community<br />partnerships</h3><p>Joint priority-setting and evaluation can connect research with everyday school needs.</p></article>
+    </div>
+  </section>
+  <Vision project="disease-resistant-school-communities" kicker="A shared direction" />
+  <section class="project-section" id="publications" aria-labelledby="research-title">
+    <div class="school-section-head"><h2 id="research-title">Related research</h2></div>
+    <div class="school-publications">
+      <article class="publication"><p class="publication-meta">Journal of Building Engineering · 2022</p><h3><a href="https://doi.org/10.1016/j.jobe.2021.103533">Nationwide assessment of energy costs and policies to limit airborne infection risks in U.S. schools</a></h3><p>Jiannan Cai, Shuai Li, Da Hu, Yifang Xu, Qiang He</p><a class="paper-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8556188/">Read the energy-cost study in HTML ↗</a></article>
+      <article class="publication"><p class="publication-meta">Sustainable Cities and Society · 2021</p><h3><a href="https://doi.org/10.1016/j.scs.2021.103188">Airborne infection risks of SARS-CoV-2 in US schools and impacts of different intervention strategies</a></h3><p>Yifang Xu, Jiannan Cai, Shuai Li, Qiang He, Siyao Zhu</p><a class="paper-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8290078/">Read the intervention study in HTML ↗</a></article>
+    </div>
+  </section>
+  <section class="source-section" id="sources" aria-label="Sources and accessible media alternatives">
+    <details><summary>Sources, transcript &amp; media descriptions</summary>
+      <ul>{sourceNotes.map(note => <li>{note}</li>)}</ul>
+      <p>The supplied film presents historical research scenarios, not current operating advice. The HTML research articles provide the original methods, chart discussions and tables.</p>
+      <MediaNotes project="disease-resistant-school-communities" />
+      <section class="school-transcript" aria-labelledby="transcript-title"><h2 id="transcript-title">English narration transcript</h2><p>Music accompanies the narration and continues through the closing credits.</p>{transcript.map(paragraph => <p>{paragraph}</p>)}</section>
+      <section aria-labelledby="visual-account-title"><h2 id="visual-account-title">Film visual account</h2><p>Opening illustrations show coronavirus symbols, classrooms, decision-makers and a magnifying glass over research charts. A U.S. map appears beside charts comparing school levels and months: larger bubbles mark greater modeled risk in the illustrated seasonal scenarios. Further panels compare ventilation and annual energy costs for ventilation increases, filter grades and proportions of students learning online. Bar lengths, markers, axis labels and legends carry the comparisons. These figures belong to the historical scenario study; the linked HTML paper provides the underlying explanation and tables.</p><p>The film then shows a masked teacher and students in a classroom with symbolic airborne particles and an air-handling unit. A ventilation diagram connects exhaled air and attendance with operating context; a thermometer and electricity meter represent climate and utility costs. An open book pairs operation and cost icons. A balance scale places reduced infection risk against increased cost, followed by figures representing decision-makers and the community. The closing slate reads “Energy Cost Assessment for Reducing Airborne Infection Risks in U.S. Schools,” names Shuai Li as contact, credits the University of Tennessee Knoxville and National Science Foundation, and retains the sponsor logo.</p></section>
+      <div class="project-image-notes"><h2>Image descriptions &amp; sources</h2>{imageIds.map(id => { const figure = labFigures[id]; return <section data-image-note={id}><h3>{figure.title}</h3><p id={`image-${id}-description`}>{figure.description}</p><p class="source-credit">Source: {figure.source}</p></section>; })}</div>
+      <p>Related collection: <a href={asset("building-immunology/")}>Building Immunology and digital twins</a>.</p>
+    </details>
+  </section>
+</div>
+<Playback />

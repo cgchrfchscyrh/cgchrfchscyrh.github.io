@@ -161,7 +161,7 @@ try {
       const clips = projectClips.filter(c => c.project === project.slug);
       const videos = page.locator('video');
       check(`${route}: expected project videos`, await videos.count() === clips.length);
-      check(`${route}: native controls, silent loops and descriptions`, await videos.evaluateAll(vs => vs.every(v => v.controls && v.muted && v.loop && v.playsInline && v.querySelector('track[kind="descriptions"]') && v.getAttribute('aria-describedby').split(' ').every(id => document.getElementById(id)))));
+      check(`${route}: native controls, muted playback and descriptions`, await videos.evaluateAll((vs, expected) => vs.every(v => v.controls && v.muted && v.loop === expected.find(c => `${c.id}-video` === v.id).loop && v.playsInline && v.querySelector('track[kind="descriptions"]') && v.getAttribute('aria-describedby').split(' ').every(id => document.getElementById(id))), clips.map(c => ({ id: c.id, loop: c.loop !== false }))));
       check(`${route}: standalone playback buttons absent`, await page.locator('#hero-playback-toggle,button[data-media-control]').count() === 0);
       if (clips.length) {
       const first = page.locator('video').first();
@@ -195,6 +195,29 @@ try {
         const track = await context.request.get(`${path}.vtt`);
         const body = await track.text();
         check(`${clip.id}: description track available`, track.ok() && body.startsWith('WEBVTT') && body.includes('-->'));
+        if (clip.captions) {
+          const captions = await context.request.get(`${path}.en.vtt`);
+          check(`${clip.id}: English captions available`, captions.ok() && (await captions.text()).startsWith('WEBVTT'));
+          check(`${clip.id}: captions enabled by default`, await page.locator(`#${clip.id}-video track[kind="captions"][default][srclang="en"]`).count() === 1);
+          const player = page.locator(`#${clip.id}-video`);
+          await player.evaluate(v => { v.textTracks[0].mode = 'showing'; });
+          await page.waitForFunction(id => document.getElementById(id).textTracks[0].cues?.length > 0, `${clip.id}-video`);
+          check(`${clip.id}: valid synchronized caption cues`, await player.evaluate(v => {
+            const cues = [...v.textTracks[0].cues];
+            return cues.length > 10 && cues.every((c, i) => c.startTime < c.endTime && c.endTime <= v.duration + .1 && (i === 0 || c.startTime >= cues[i-1].endTime));
+          }));
+          await player.evaluate(v => { v.currentTime = Math.max(0, v.duration - .2); });
+          await player.focus(); await page.keyboard.press('Space');
+          await page.waitForFunction(id => document.getElementById(id).ended, `${clip.id}-video`);
+          await page.locator('.project-footer').scrollIntoViewIfNeeded();
+          await player.scrollIntoViewIfNeeded(); await page.emulateMedia({ reducedMotion: 'no-preference' });
+          await page.waitForTimeout(350);
+          check(`${clip.id}: completed film does not restart automatically`, await player.evaluate(v => v instanceof HTMLVideoElement && v.ended && v.paused));
+          await player.focus(); await page.keyboard.press('Space');
+          await page.waitForFunction(id => !document.getElementById(id).paused, `${clip.id}-video`);
+          check(`${clip.id}: completed film can be replayed with keyboard`, true);
+          await page.keyboard.press('Space'); await page.emulateMedia({ reducedMotion: 'reduce' });
+        }
         for (const ext of ['jpg','mp4']) check(`${clip.id}: ${ext} available`, (await context.request.head(`${path}.${ext}`)).ok());
       }
       }

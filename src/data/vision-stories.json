@@ -148,5 +148,46 @@
       "Coastal resilience,",
       "block by block."
     ]
+  },
+  "disease-resistant-school-communities": {
+    "headline": "Disease-Resistant School Communities",
+    "headlineLines": [
+      "Disease-Resistant",
+      "School Communities"
+    ],
+    "title": "From one classroom to a healthier community.",
+    "current": "Observe the spaces we share",
+    "evidence": "Sampling activities + research models",
+    "image": "projects/building-immunology/sampling.webp",
+    "imageAlt": "School students use gloves and sampling materials to collect samples from indoor surfaces.",
+    "sourceAnchor": "#solutions",
+    "scene": "building",
+    "sceneImage": {
+      "src": "projects/disease-resistant-school-communities/school-research.jpg",
+      "width": 1920,
+      "height": 1080
+    },
+    "future": "Healthier learning environments",
+    "systems": [
+      "Learning",
+      "Health",
+      "Sustainable operation"
+    ],
+    "connections": [
+      {
+        "task": "Turn curiosity into inquiry",
+        "partners": "Students + educators + microbiologists"
+      },
+      {
+        "task": "Compare practical choices",
+        "partners": "School operations + building researchers"
+      },
+      {
+        "task": "Set priorities together",
+        "partners": "Families + schools + community partners"
+      }
+    ],
+    "sceneAlt": "An animated classroom from the supplied research film, illustrating the shared goal of healthier learning environments.",
+    "description": "The current evidence consists of student environmental-sampling activities and separate studies modeling school infection risk and ventilation energy costs. Moving toward healthier school communities requires student and educator participation, microbiology, building science and school operations, and family and community input. The shared-vision classroom is an illustration from the supplied film. It does not document an adopted intervention or measured improvement in health, learning or energy use."
   }
 }

@@ -1,6 +1,32 @@
 const source = "https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842";
-export interface ProjectClip { id: string; project: string; assetProject?: string; mediaVersion?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; processingNote?: string; }
+export interface ProjectClip { id: string; project: string; assetProject?: string; mediaVersion?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; processingNote?: string; captions?: boolean; loop?: boolean; }
 export const labProjects = [
+{
+  "slug": "disease-resistant-school-communities",
+  "title": "Disease-Resistant School Communities",
+  "shortTitle": "School Communities",
+  "topic": "Citizen science \u00b7 School environments \u00b7 Building operations",
+  "subtitle": "",
+  "description": "Connecting student participation in environmental inquiry with building research to support healthier learning environments.",
+  "source": "",
+  "credit": "",
+  "image": "school-research.jpg",
+  "imageWidth": 1920,
+  "imageHeight": 1080,
+  "imageAlt": "An animated classroom with a teacher, students, an air-handling unit and symbolic airborne particles, from the school research film.",
+  "question": "What makes a school healthy?",
+  "abstract": "Our research asks how school design, everyday activities, and building operations can work together to reduce exposure and support healthier learning environments.",
+  "heroClips": [
+    "school-research"
+  ],
+  "demoClips": [],
+  "sourceNotes": [
+    "Structure and introductory copy follow the supplied Disease-Resistant School Communities brief: Problem, Solutions and Impact.",
+    "Research Presentation, slide 12: elementary-school sampling photographs and microbial culture images. These illustrate outreach and environmental observation; they do not establish pathogen identity, health outcomes or a connection to the separate national modeling study.",
+    "3508_raw.MP4: full supplied narrated animation, Energy Cost Assessment for Reducing Airborne Infection Risks in U.S. Schools. Complete frame, original speed, audio and closing research credits retained. The animation presents historical COVID-19 scenario modeling, not a current risk forecast or an implemented school intervention.",
+    "Community priority-setting and joint evaluation are presented as future collaboration. No unprovided school names, adoption records, participant feedback or measured educational outcomes are claimed."
+  ]
+},
   {
     slug: "building-immunology", title: "Building Immunology", shortTitle: "Building Immunology", topic: "Microbiomes · Building simulation · Room-level risk",
     subtitle: "Microbiomes. Digital twins. Healthier indoor environments.", description: "Microbial communities, building simulations and digital twins, and infection-risk visualization at the room level.",
@@ -44,6 +70,21 @@ export const labProjects = [
 ];
 
 export const projectClips: ProjectClip[] = [
+{
+  "id": "school-research",
+  "project": "disease-resistant-school-communities",
+  "duration": 146.867,
+  "title": "Energy cost and airborne infection risk in U.S. schools \u2014 narrated research film",
+  "caption": "",
+  "captions": true,
+  "loop": false,
+  "description": "An animated research film introduces the challenge of maintaining in-person schooling while reducing airborne infection risk and managing energy cost. Charts compare modeled infection risk across school levels and months, ventilation requirements, and energy costs under intervention scenarios. Maps indicate national, state and county analysis. A classroom illustration introduces ventilation; labeled icons show exhaled air, student attendance, climate and utility costs. A balance scale connects reduced infection risk with increased energy cost, followed by research and policy figures. The closing slate names the study, contact Shuai Li, the University of Tennessee Knoxville and the National Science Foundation. This is a historical research explainer about COVID-19 scenarios, not footage of a school deployment or a forecast of present-day risk. A timed description track and an expanded visual account accompany the film.",
+  "sourceLabel": "User-supplied 3508_raw.MP4; associated study by Cai, Li, Hu, Xu and He (2022)",
+  "sourceUrl": "https://doi.org/10.1016/j.jobe.2021.103533",
+  "sourceRange": "complete supplied film",
+  "audioNote": "Original English narration and music are retained. Playback starts muted; use the native volume control to hear the film. English captions are on by default. A full transcript is available in Sources & media notes.",
+  "processingNote": "Web-optimized H.264 with AAC audio at the original resolution and frame rate. Captions were cross-checked with two local speech-recognition passes, word timestamps, on-screen text and the source study; an independent listening and screen-reader review remains outstanding."
+},
 {
   "id": "excavator-assembly",
   "mediaVersion": "vertical-insertion-20261027",

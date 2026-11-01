@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-01T19:01:46.614Z",
+  "date": "2026-11-01T19:36:00.623Z",
   "base": "http://127.0.0.1:4480",
   "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
   "scans": [
@@ -114,6 +114,34 @@
       "violations": [],
       "incomplete": [],
       "passes": 13
+    },
+    {
+      "route": "/disease-resistant-school-communities/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [],
+      "passes": 24
+    },
+    {
+      "route": "/disease-resistant-school-communities/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [],
+      "passes": 24
+    },
+    {
+      "route": "/disease-resistant-school-communities/",
+      "mode": "text-spacing",
+      "violations": [],
+      "incomplete": [],
+      "passes": 24
+    },
+    {
+      "route": "/disease-resistant-school-communities/",
+      "mode": "mobile-spacing-expanded-figures",
+      "violations": [],
+      "incomplete": [],
+      "passes": 25
     },
     {
       "route": "/building-immunology/",
@@ -392,6 +420,11 @@
     },
     {
       "name": "/: skip link focuses main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Disease-Resistant School Communities: homepage project link",
       "pass": true,
       "detail": ""
     },
@@ -736,6 +769,226 @@
       "detail": ""
     },
     {
+      "name": "/disease-resistant-school-communities/: page response",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "/disease-resistant-school-communities/: one h1 and sequential headings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: loaded images with alt text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: restrictive CSP",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: only reviewed local media",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: declared English language",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: fragment targets",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "/disease-resistant-school-communities/: skip link first in keyboard order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: skip link focuses main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: no introductory subtitles",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: no text captions below videos",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: larger vision section exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: visual collaboration map",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: expected project videos",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: native controls, muted playback and descriptions",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: standalone playback buttons absent",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: visible video starts automatically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: native player is reachable by Tab",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: manual pause persists after scrolling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: native keyboard resumes playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: reduced motion suppresses automatic playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: reduced-motion users can explicitly play",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "school-research: description track available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "school-research: English captions available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "school-research: captions enabled by default",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "school-research: valid synchronized caption cues",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "school-research: completed film does not restart automatically",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "school-research: completed film can be replayed with keyboard",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "school-research: jpg available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "school-research: mp4 available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: data saving suppresses automatic playback",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: no-JavaScript content and controls",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: figure descriptions and source attribution",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: desktop reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: mobile reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: text-spacing reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: figure description has visible keyboard focus",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure description: keyboard opens disclosure",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: expanded descriptions at 320px reflow",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "/building-immunology/: page response",
       "pass": true,
       "detail": 200
@@ -826,7 +1079,7 @@
       "detail": ""
     },
     {
-      "name": "/building-immunology/: native controls, silent loops and descriptions",
+      "name": "/building-immunology/: native controls, muted playback and descriptions",
       "pass": true,
       "detail": ""
     },
@@ -1161,7 +1414,7 @@
       "detail": ""
     },
     {
-      "name": "/disinfection-robot/: native controls, silent loops and descriptions",
+      "name": "/disinfection-robot/: native controls, muted playback and descriptions",
       "pass": true,
       "detail": ""
     },
@@ -1396,7 +1649,7 @@
       "detail": ""
     },
     {
-      "name": "/surgery-ai/: native controls, silent loops and descriptions",
+      "name": "/surgery-ai/: native controls, muted playback and descriptions",
       "pass": true,
       "detail": ""
     },
@@ -1691,7 +1944,7 @@
       "detail": ""
     },
     {
-      "name": "/robotic-block-assembly/: native controls, silent loops and descriptions",
+      "name": "/robotic-block-assembly/: native controls, muted playback and descriptions",
       "pass": true,
       "detail": ""
     },

@@ -65,6 +65,11 @@
     }
   };
   for (const video of videos) {
+    video.addEventListener("ended", () => {
+      // A narrated film stays finished until the visitor explicitly replays it.
+      state.get(video)!.manualPause = true;
+      state.get(video)!.explicitPlayback = false;
+    });
     video.addEventListener("pause", () => {
       if (!systemPauses.has(video) && !video.ended) {
         state.get(video)!.manualPause = true;

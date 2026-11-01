@@ -1,5 +1,13 @@
 # Accessibility review
 
+## School Communities page — 1 November 2026
+
+A separate Disease-Resistant School Communities page follows the supplied brief: Problem, Solutions and Impact. It is linked from the personal homepage. Student sampling and microbial culture images remain distinct from the national school modeling study; future collaboration is explicitly labeled. Original Building Immunology content is unchanged.
+
+The complete supplied film retains 1920 × 1080 framing, original speed, narration, music and closing credits. The web copy starts muted, provides 38 default English caption cues, a complete transcript and timed visual descriptions, and does not loop. Two local recognition passes agreed on the narration except punctuation; captions were checked against word timing, source graphics and the study. Independent listening review remains outstanding. The player respects reduced motion and SaveData, remembers manual pause, and remains stopped after completion until explicitly replayed. Native keyboard controls and no-JavaScript playback remain available. Images have alternative text, full-size links and extended source descriptions; figures are not cropped.
+
+Build, lint and security audit passed, with zero dependency vulnerabilities. The audit passed **36 axe scans and 361 functional checks**, including the new caption track, completed-film behavior, keyboard controls, 320 CSS-pixel reflow and increased text spacing. Desktop and narrow layouts were also visually inspected. The new page adds HTML paper links rather than unreviewed PDF attachments. Multi-screen-reader behavior, independent caption listening and external-paper accessibility remain unverified; this is not full ADA/WCAG certification. See `reports/school-communities-review.json`.
+
 ## Surgery structure revision — 1 November 2026
 
 The surgery page follows the supplied brief: Problems, Innovations, Team, and Related Publications. Three problem cards stack on narrow screens. The innovations distinguish a laboratory magnetic-camera prototype, proposed bioinspired lens care, and a separate simulation training study. Team content describes research disciplines and collaboration without unconfirmed member names.

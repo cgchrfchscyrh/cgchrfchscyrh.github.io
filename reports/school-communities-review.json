@@ -1,0 +1,84 @@
+{
+  "reviewDate": "2026-11-01",
+  "route": "/disease-resistant-school-communities/",
+  "structure": [
+    "Problem",
+    "Solutions",
+    "Impact"
+  ],
+  "homepageEntry": true,
+  "brief": "Disease-Resistant School Communities.docx",
+  "sources": [
+    {
+      "file": "Disease-Resistant School Communities.docx",
+      "bytes": 17552,
+      "sha256": "02ee81545c2f6a62cd11d1b40ea88c3c04ff56152efe3c6a0bdbac7dbbfe4c36"
+    },
+    {
+      "file": "3508_raw.MP4",
+      "bytes": 84231421,
+      "sha256": "f2265c78b97c0c16cca8f951537b1eca21c7d8ea7641955d9629b6c66bc176e6"
+    }
+  ],
+  "media": [
+    {
+      "file": "favicon.svg",
+      "bytes": 318,
+      "sha256": "4c00f4d6b85e41436259aa19d0fac8f393a56d40d9ba42a04efc2fa9a08bc5b1"
+    },
+    {
+      "file": "operating-context.webp",
+      "bytes": 98270,
+      "sha256": "4a98f5412c5d6253838b16bb4e0182c75b611d14e355a8191f13e563fe8e38b4"
+    },
+    {
+      "file": "school-research.en.vtt",
+      "bytes": 3341,
+      "sha256": "ed5b3b7fa5fb3a75610f5d060576e90e5b8e353c29eb75d9382c4e21f81e70d5"
+    },
+    {
+      "file": "school-research.jpg",
+      "bytes": 128817,
+      "sha256": "461c4d758e7437cd0919859504850910860fcbebfc5da7915589e0dc676ecbb8"
+    },
+    {
+      "file": "school-research.mp4",
+      "bytes": 12573019,
+      "sha256": "0af7078e354ae19bc7f8f425c110286cb77f06cfe4f29475fa51ac5695e8351a"
+    },
+    {
+      "file": "school-research.vtt",
+      "bytes": 2380,
+      "sha256": "a500282c8cf1a8aa507be4ff579b9c8f636d96e8bf27d728a0d2454abda5cdb3"
+    }
+  ],
+  "sourceImages": "Research Presentation.pptx, slide 12: sampling and culture images reused from the existing Building Immunology assets without alteration.",
+  "preserves": {
+    "originalFiles": true,
+    "completeVideoFrame": true,
+    "originalSpeed": true,
+    "originalAudio": true,
+    "closingCredits": true
+  },
+  "captionReview": {
+    "cues": 38,
+    "method": "Two independent local faster-whisper small.en and medium.en passes; word-timing and source-graphic review. Transcripts agree except punctuation.",
+    "independentListening": "Outstanding"
+  },
+  "checks": {
+    "build": "pass",
+    "lint": "pass",
+    "fullMediaDecode": "pass",
+    "axeScans": 36,
+    "functionalChecks": 361,
+    "axeViolations": 0,
+    "functionalFailures": 0,
+    "dependencyVulnerabilities": 0
+  },
+  "limits": [
+    "Future community co-design is an intended next step, not a documented adoption outcome.",
+    "Student sampling and the national school modeling study are separate research sources.",
+    "Automated testing does not establish full ADA/WCAG certification.",
+    "Independent caption listening, multi-screen-reader experience and external paper accessibility remain unverified."
+  ]
+}
