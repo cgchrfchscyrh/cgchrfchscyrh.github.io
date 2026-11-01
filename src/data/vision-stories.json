@@ -72,7 +72,7 @@
     ]
   },
   "surgery-ai": {
-    "headline": "A clearer view for surgery.",
+    "headline": "Advancing Physical AI for Clearer Vision in Minimally Invasive Surgery",
     "title": "One camera. Continuous visual assistance.",
     "current": "Position an internal camera",
     "evidence": "Benchtop prototype",
@@ -103,8 +103,9 @@
     "sceneAlt": "Future concept: external actuation, an internal camera, lens care, and visual feedback connect to the surgeon.",
     "description": "The current benchtop prototype explores external actuation of an internal camera. Lens care, visual interpretation and integration into the procedure require soft robotics, materials, computer vision, control, surgeons and clinical evaluation. A concept diagram connects an actuator and internal camera with a cleaning flow, display and surgeon. The positioning demonstration and proposed cleaning architecture are separate; clinical outcomes are not established.",
     "headlineLines": [
-      "A clearer view",
-      "for surgery."
+      "Advancing Physical AI",
+      "for Clearer Vision in",
+      "Minimally Invasive Surgery"
     ]
   },
   "robotic-block-assembly": {

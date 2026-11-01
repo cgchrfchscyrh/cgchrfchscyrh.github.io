@@ -1,0 +1,69 @@
+{
+  "reviewDate": "2026-11-01",
+  "route": "/surgery-ai/",
+  "brief": "Advancing Physical AI for Clearer Vision in Minimally Invasive Surgery",
+  "structure": [
+    "Problems",
+    "Innovations",
+    "Team",
+    "Related Publications"
+  ],
+  "team": "Research disciplines and interdisciplinary roles only, as confirmed by the user; no placeholder or inferred members.",
+  "researchStages": {
+    "magneticCamera": "Laboratory prototype and concept animation",
+    "bioinspiredLensCare": "Proposed design and control architecture",
+    "visualAI": "Separate simulation training study, arXiv:2511.02233v1"
+  },
+  "media": [
+    {
+      "file": "eye-concept.webp",
+      "bytes": 102746,
+      "sha256": "965dd78a862d2a39f569c5ab50e1e68cc3f1a89cd4072be29a21e4d1881e0f2b",
+      "cropped": false
+    },
+    {
+      "file": "eyelid-concept.webp",
+      "bytes": 120486,
+      "sha256": "bc5b8651c2c2e6b3a1cdaf2b157d41164d414f181fd539b61343e312dcdbc913",
+      "cropped": false
+    },
+    {
+      "file": "surgical-workspace.webp",
+      "bytes": 65984,
+      "sha256": "f3070f8e4d2a0603779961ae6479e1728fcde4a0836108bb61c593e0fdfb676f",
+      "cropped": false
+    },
+    {
+      "file": "spatial-feedback.webp",
+      "bytes": 769012,
+      "sha256": "7239ff7e5d56a1acf73f3856d103c8f9f5686469c6cce04ce7cd28547c6ac695",
+      "cropped": false
+    },
+    {
+      "file": "ai-pipeline.webp",
+      "bytes": 553012,
+      "sha256": "a6daa55262548377e1d8372730c1ad23b2cd005594410f607f085182102b2a79",
+      "cropped": false
+    }
+  ],
+  "videoChanges": "Four existing videos retained without re-encoding; benchtop demonstration moved from hero into first innovation.",
+  "sourceFigureAttribution": "Liu, Tan and Li (2025), Figures 2 and 7, CC BY 4.0; full-size image links and detailed descriptions in source notes.",
+  "checks": {
+    "build": "passed, 0 errors/warnings/hints",
+    "lint": "passed",
+    "axeScans": 32,
+    "functionalChecks": 316,
+    "violations": 0,
+    "failures": 0,
+    "desktop": "1440 CSS pixels, inspected",
+    "mobile": "320 CSS pixels; document scrollWidth 305; inspected",
+    "keyboardDisclosure": "AI pipeline opened and closed with keyboard; native player checks passed",
+    "headings": "one H1, sequential headings",
+    "originalMaterials": "not edited"
+  },
+  "limits": [
+    "Automated checks do not certify full ADA/WCAG conformance.",
+    "No new claim of clinical validation or integration of the three research strands.",
+    "External PDF tagging and comprehensive screen-reader testing not verified."
+  ]
+}

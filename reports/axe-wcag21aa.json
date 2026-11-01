@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-27T22:11:55.410Z",
+  "date": "2026-11-01T18:56:20.118Z",
   "base": "http://127.0.0.1:4480",
   "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
   "scans": [
@@ -406,7 +406,7 @@
       "detail": ""
     },
     {
-      "name": "Surgery AI: homepage project link",
+      "name": "Physical AI for Surgery: homepage project link",
       "pass": true,
       "detail": ""
     },
@@ -1536,6 +1536,31 @@
       "detail": ""
     },
     {
+      "name": "/surgery-ai/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/surgery-ai/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/surgery-ai/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/surgery-ai/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/surgery-ai/: full-size source image available",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "/surgery-ai/: desktop reflow",
       "pass": true,
       "detail": ""
@@ -1547,26 +1572,6 @@
     },
     {
       "name": "/surgery-ai/: text-spacing reflow",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/surgery-ai/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "/surgery-ai/: figure description has visible keyboard focus",
-      "pass": true,
-      "detail": ""
-    },
-    {
-      "name": "Figure description: keyboard opens disclosure",
       "pass": true,
       "detail": ""
     },

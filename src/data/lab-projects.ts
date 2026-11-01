@@ -22,14 +22,14 @@ export const labProjects = [
     sourceNotes: ["Animated_Infographics_May_09_2022.mp4: Wiley infographic for Hu and Li (2022), Recognizing object surface materials to adapt robotic disinfection in infrastructure facilities, DOI: 10.1111/mice.12811. Three silent excerpts retain the complete frame, original speed, and publisher credits.", "Building, slides 10–11: affordance-aware navigation and disinfection simulation. Research Presentation, slide 7: simulated robotic disinfection. These examples do not demonstrate a complete deployed system or measure pathogen removal."]
   },
   {
-    slug: "surgery-ai", title: "Surgery AI", shortTitle: "Surgery AI", topic: "Minimally invasive surgery · Robotic vision",
-    subtitle: "Position the camera. Preserve the view.", description: "Magnetically actuated camera assistance and biomimetic cleaning concepts for minimally invasive surgery.",
+    slug: "surgery-ai", title: "Physical AI for Surgery", shortTitle: "Physical AI for Surgery", topic: "Minimally invasive surgery · Robotic vision",
+    subtitle: "Integrating magnetic actuation, bioinspired robotics, and artificial intelligence to advance laparoscopic visualization and assistance.", description: "Magnetic camera actuation, bioinspired lens care, and AI visual feedback for minimally invasive surgery.",
     source: `${source}/_projects/Surgery_AI.md`, credit: "",
     image: "surgery-cover.png", imageWidth: 617, imageHeight: 347, imageAlt: "Robot-mounted external actuator and an internal camera in an abdominal model.",
     question: "Move the camera. Keep a usable view.",
     abstract: "Camera positioning is a concrete task within minimally invasive surgery. The benchtop prototype explores external actuation of an internal camera. Maintaining a usable view throughout a procedure adds another problem: visibility can deteriorate even when the camera is correctly positioned.",
-    heroClips: ["camera-guidance", "bench-prototype"], demoClips: ["camera-assembly", "instrument-motion"],
-    sourceNotes: ["Redefine Surgery Intelligence with TEAM, slides 2–5: team, mechanism diagrams, rendered motion, and laboratory prototype.", "UF Robotics Workshop — Shuai Li — ESSIE, slides 4–6: adaptive mechanisms, visual obstruction examples, soft nozzle, and proposed cleaning control. The cleaning concept is separate from the prototype footage."]
+    heroClips: ["camera-guidance"], demoClips: ["bench-prototype", "camera-assembly", "instrument-motion"],
+    sourceNotes: ["Page structure and introductory copy follow the supplied brief, Advancing Physical AI for Clearer Vision in Minimally Invasive Surgery. Team content presents research disciplines, without unconfirmed member names.", "Redefine Surgery Intelligence with TEAM, slides 3–5: mechanism diagrams, rendered motion, and laboratory prototype.", "UF Robotics Workshop — Shuai Li — ESSIE, slides 2, 5–6: surgical workspace illustration, visual obstruction example, Eye Concept, robotic eyelid, soft nozzle, and proposed cleaning control. The cleaning concept is separate from the prototype footage.", "Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback, arXiv:2511.02233v1, Figures 2 and 7. Songyang Liu, Yunpeng Tan, and Shuai Li, 2025. Reproduced under CC BY 4.0, converted to WebP without cropping. This simulation training study is distinct from the magnetic camera prototype and the lens-care proposal."]
   },
   {
     slug: "robotic-block-assembly", title: "Robotic Block Assembly", shortTitle: "Robotic Block Assembly", topic: "Coastal construction · AMERICA",

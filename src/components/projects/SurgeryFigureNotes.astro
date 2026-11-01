@@ -1,0 +1,10 @@
+---
+import { labFigures } from "../../data/lab-figures";
+const ids = ["restricted-viewpoints", "obscured-view", "surgical-workspace", "surgery-mechanism", "eye-concept", "eyelid-concept", "soft-nozzle", "cleaning-control", "spatial-feedback", "ai-pipeline"];
+---
+<div class="project-image-notes">
+  <h2>Image descriptions &amp; sources</h2>
+  <p>The magnetic camera footage documents a laboratory prototype. Eye Concept, the eyelid, nozzle and cleaning controller are proposed designs. The AI training examples are a separate simulation study; integration with camera actuation and lens care remains a research goal.</p>
+  <p>Figures 2 and 7 are reproduced from <a href="https://arxiv.org/html/2511.02233v1">Liu, Tan and Li’s spatial-awareness training paper</a> under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a>. Images are converted to WebP without cropping. Select an image to open its full-size version.</p>
+  {ids.map(id => { const figure = labFigures[id]; return <section data-image-note={id}><h3>{figure.title}</h3><p id={`image-${id}-description`}>{figure.description}</p><p class="source-credit">Source: {figure.source}</p></section>; })}
+</div>

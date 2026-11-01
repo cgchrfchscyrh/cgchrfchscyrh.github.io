@@ -2,23 +2,64 @@
 import Vision from "../Vision.astro";
 import Figure from "../ProjectFigure.astro";
 import Video from "../ProjectVideo.astro";
+import "../../styles/surgery.css";
+const problems = [
+  { image: "restricted-viewpoints", title: "Restricted viewpoints", text: "The confined surgical workspace limits camera placement and movement. A useful view must also leave room for surgical instruments." },
+  { image: "obscured-view", title: "Compromised visual clarity", text: "Lens contamination, fogging, and surgical smoke can obscure the operative field. Clear vision requires effective positioning and reliable lens care." },
+  { image: "surgical-workspace", title: "Coordination demands", text: "Manual camera control depends on available assistants and close coordination with the surgeon. Repeated adjustments can add to the team’s workload." },
+];
 ---
-<section class="project-section" id="method" aria-labelledby="method-title">
-  <div class="section-heading"><p class="eyebrow">A concrete step</p><h2 id="method-title">Position the internal camera</h2><p>Coordinate external actuation with an internal viewpoint.</p></div>
-  <Figure id="surgery-mechanism" />
-  <div class="paired media-row"><Video id="camera-assembly" /><Video id="instrument-motion" /></div>
+<span id="abstract" class="section-anchor" aria-hidden="true"></span>
+<section class="project-section surgery-problems" id="problems" aria-labelledby="problems-title">
+  <div class="section-heading"><h2 id="problems-title">Problems</h2></div>
+  <div class="surgery-problem-grid">
+    {problems.map(problem => <article class="surgery-problem"><Figure id={problem.image} notes /><div><h3>{problem.title}</h3><p>{problem.text}</p></div></article>)}
+  </div>
 </section>
-<section class="project-section" id="visibility" aria-labelledby="visibility-title">
-  <div class="section-heading"><p class="eyebrow">The next constraint</p><h2 id="visibility-title">Position is only part of visibility</h2><p>Contamination and smoke can obscure a laparoscopic camera.</p></div>
-  <div class="paired clinical-examples"><Figure id="clear-view" /><Figure id="obscured-view" /></div>
-  <p class="scope-note">Source examples of visual clarity and obstruction; these are not a before-and-after cleaning trial.</p>
+<section class="project-section surgery-innovations" id="innovations" aria-labelledby="innovations-title">
+  <div class="section-heading"><h2 id="innovations-title">Innovations</h2></div>
+  <article class="surgery-innovation" id="method" aria-labelledby="magnetic-title">
+    <div class="surgery-feature">
+      <div class="surgery-feature-copy">
+        <p class="surgery-stage">01 / Laboratory prototype</p>
+        <h3 id="magnetic-title">Magnetic Actuation and Automated Camera Control</h3>
+        <p>We explore magnetic actuation and robotic control to position and orient an internal laparoscopic camera. Our goal is to enable flexible viewpoint adjustment and reduce the coordination burden of manual camera handling.</p>
+      </div>
+      <Video id="bench-prototype" />
+    </div>
+    <div class="surgery-secondary-media">
+      <div><p class="surgery-media-label">Camera assembly · design animation</p><Video id="camera-assembly" /></div>
+      <div><p class="surgery-media-label">Instrument motion · design animation</p><Video id="instrument-motion" /></div>
+    </div>
+    <details class="surgery-technical"><summary>Camera and actuator architecture</summary><Figure id="surgery-mechanism" notes /></details>
+  </article>
+  <article class="surgery-innovation" id="cleaning" aria-labelledby="cleaning-title">
+    <div class="surgery-feature surgery-eye-feature">
+      <div class="surgery-feature-copy">
+        <p class="surgery-stage">02 / Proposed design</p>
+        <h3 id="cleaning-title">Bioinspired Robotic Laparoscopy</h3>
+        <p>Inspired by how the human eye protects and maintains its optical surface, we explore robotic mechanisms for laparoscopic lens care. Protective structures, targeted cleaning, and coordinated control aim to maintain visual clarity with fewer interruptions.</p>
+      </div>
+      <div><p class="surgery-media-label">Eye Concept</p><Figure id="eye-concept" notes /></div>
+    </div>
+    <div class="surgery-lens-details">
+      <div><h4>Robotic eyelid</h4><Figure id="eyelid-concept" notes /></div>
+      <div><h4>Soft robotic nozzle</h4><Figure id="soft-nozzle" notes /></div>
+    </div>
+    <details class="surgery-technical"><summary>Proposed lens-care control architecture</summary><Figure id="cleaning-control" notes /></details>
+  </article>
+  <article class="surgery-innovation" id="visual-ai" aria-labelledby="visual-ai-title">
+    <div class="surgery-feature">
+      <div class="surgery-feature-copy">
+        <p class="surgery-stage">03 / Simulation research</p>
+        <h3 id="visual-ai-title">AI Models for Visual Understanding and Assistance</h3>
+        <p>We explore AI models that interpret laparoscopic images and provide visual feedback to support spatial awareness. Our long-term goal is to connect visual perception with camera guidance and lens care for more responsive surgical assistance.</p>
+        <p class="surgery-evidence">The related training study pairs 2D views with 3D context in Isaac Sim. The examples show tool contact in the top row and missed contact in the bottom row.</p>
+      </div>
+      <div class="surgery-spatial-example"><div class="surgery-view-labels" aria-hidden="true"><span>2D operative view</span><span>3D spatial context</span></div><Figure id="spatial-feedback" notes /></div>
+    </div>
+    <details class="surgery-technical"><summary>AI perception and training pipeline</summary><Figure id="ai-pipeline" notes /></details>
+  </article>
 </section>
-<section class="project-section" id="cleaning" aria-labelledby="cleaning-title">
-  <div class="section-heading"><p class="eyebrow">A proposed next step</p><h2 id="cleaning-title">A biomimetic cleaning system</h2><p>Inspired by how the eye protects and maintains its optical surface.</p></div>
-  <Figure id="soft-nozzle" />
-  <ol class="method-steps"><li><h3>Sense the view</h3><p>Estimate visual obstruction and the camera’s state.</p></li><li><h3>Protect the lens</h3><p>Explore an eyelid-like soft cleaning mechanism.</p></li><li><h3>Coordinate cleaning</h3><p>Direct flow and actuation through a feedback controller.</p></li></ol>
-  <Figure id="cleaning-control" />
-  <p class="scope-note">The positioning footage shows a laboratory prototype. Lens cleaning is presented here as a proposed design and control architecture.</p>
-</section>
-
-<Vision project="surgery-ai" />
+<span id="team" class="section-anchor" aria-hidden="true"></span>
+<Vision project="surgery-ai" title="Team" kicker="" intro="An interdisciplinary research team working across robotics, artificial intelligence, and surgical imaging. These complementary disciplines connect the current camera prototype to a broader vision of surgical assistance." />

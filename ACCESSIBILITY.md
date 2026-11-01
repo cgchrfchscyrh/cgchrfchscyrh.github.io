@@ -1,5 +1,13 @@
 # Accessibility review
 
+## Surgery structure revision — 1 November 2026
+
+The surgery page follows the supplied brief: Problems, Innovations, Team, and Related Publications. Three problem cards stack on narrow screens. The innovations distinguish a laboratory magnetic-camera prototype, proposed bioinspired lens care, and a separate simulation training study. Team content describes research disciplines and collaboration without unconfirmed member names.
+
+Five derived WebP assets retain their complete source framing. Eye Concept and the robotic eyelid were recovered from the original slide’s embedded PDF representations on white backgrounds; the paper figures retain their original labels and are credited under CC BY 4.0. Each image has alternative text, a full-size link, and a linked extended description in the source disclosure. Videos retain native controls, reviewed silent-media descriptions, viewport playback, reduced-motion/data-saving handling, and persistent manual pause. No visible text captions were added beneath players.
+
+Build and lint passed. The existing audit passed **32 axe scans and 316 functional checks**, with zero violations or failures. Desktop and 320 CSS-pixel layouts were inspected, including complete Eye Concept framing and keyboard operation of the expandable AI pipeline. The suite checked heading order, keyboard media controls, text spacing, reflow, no-JavaScript behavior, and local media. No dependencies or original research files were changed. The paper also has a linked HTML reading version; external PDF tagging and multi-screen-reader behavior remain unverified. These checks are not complete ADA/WCAG certification. See `reports/surgery-structure-review.json`.
+
 ## Coastal shared-vision screenshot — 27 October 2026
 
 The shared-vision illustration now uses a complete frame from the opening assembly video, with descriptive alt text and an updated extended description identifying it as an Isaac Sim kinematic concept. Desktop and 320 CSS-pixel views were inspected; the image keeps its full aspect ratio. Build and lint passed. The existing audit passed 32 axe scans and 315 functional checks with zero violations or failures. Source-frame provenance is recorded in `reports/coastal-vision-frame.json`. Existing PDF and screen-reader review limitations remain; automated checks are not complete WCAG certification.

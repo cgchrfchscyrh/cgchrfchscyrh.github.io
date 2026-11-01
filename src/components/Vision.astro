@@ -2,13 +2,14 @@
 import stories from "../data/vision-stories.json";
 import VisionScene from "./VisionScene.astro";
 import "../styles/vision.css";
-interface Props { project: keyof typeof stories; }
+interface Props { project: keyof typeof stories; title?: string; kicker?: string; intro?: string; }
 const story = stories[Astro.props.project];
+const { title = story.title, kicker = "The bigger picture", intro } = Astro.props;
 const sceneImage = "sceneImage" in story ? story.sceneImage : null;
 const asset = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 ---
 <section class="research-vision" id="vision" aria-labelledby="vision-title" data-vision-project={Astro.props.project}>
-  <header class="vision-heading"><p class="vision-kicker">The bigger picture</p><h2 id="vision-title">{story.title}</h2></header>
+  <header class="vision-heading">{kicker && <p class="vision-kicker">{kicker}</p>}<h2 id="vision-title">{title}</h2>{intro && <p class="vision-intro">{intro}</p>}</header>
   <div class="vision-map" role="group" aria-label="Current work, missing connections, and a shared future vision" aria-describedby="vision-description">
     <section class="vision-current" aria-labelledby="vision-current-title">
       <p class="vision-stage">01 / Current work</p>
