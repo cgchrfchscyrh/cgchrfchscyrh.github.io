@@ -1,0 +1,26 @@
+{
+  "reviewDate": "2026-11-01",
+  "route": "/disease-resistant-school-communities/#problem",
+  "change": "Real classroom reference photograph with a numbered environmental observation schematic",
+  "photographer": "Nguyen Phan Nam Anh (@dying_apricity)",
+  "sourcePage": "https://unsplash.com/photos/an-empty-classroom-with-desks-and-windows-fKAUB1uYFcc",
+  "sourceAsset": "https://images.unsplash.com/photo-1685159375749-04060db8cefb?auto=format&fit=max&fm=jpg&q=85&w=1800",
+  "license": "https://unsplash.com/license",
+  "asset": "classroom-reference.webp",
+  "width": 1800,
+  "height": 1013,
+  "bytes": 139076,
+  "sha256": "72a7e3698d2c46da115bba8e0b4c67d5476feee8998b07ee89eb5fd04b85d299",
+  "processing": "Complete frame converted to WebP; no cropping, compositing, retouching or AI generation. Diagram is native SVG and HTML.",
+  "provenanceBoundary": "Reference classroom; not identified as a project research site or a measured risk/airflow map.",
+  "checks": {
+    "build": "pass",
+    "lint": "pass",
+    "axeScans": 36,
+    "functionalChecks": 362,
+    "violations": 0,
+    "failures": 0,
+    "desktopAnd320px": "visually reviewed"
+  },
+  "limitations": "Automated checks do not constitute full ADA/WCAG certification; earlier caption and screen-reader review limitations remain."
+}

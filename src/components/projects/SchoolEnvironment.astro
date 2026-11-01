@@ -1,0 +1,37 @@
+---
+import Figure from "../ProjectFigure.astro";
+---
+<div class="school-environment" role="group" aria-label="A real classroom and a simple environmental observation diagram">
+  <div class="school-environment-photo">
+    <p class="school-stage">A real classroom / Reference photograph</p>
+    <Figure id="school-classroom" notes />
+  </div>
+  <div class="school-environment-map">
+    <h3>Observe the everyday environment</h3>
+    <svg viewBox="0 0 480 250" role="img" aria-labelledby="school-map-title school-map-description">
+      <title id="school-map-title">Three environmental observation points in a classroom</title>
+      <desc id="school-map-description">A simplified top-down classroom has windows along the upper wall, four shared desks and an entrance at the lower right. Point 1 highlights air and ventilation near the windows. Point 2 highlights a desktop and other shared surfaces. Point 3 follows the aisle to represent attendance, movement and daily routines. Arrows illustrate questions to investigate, not measured airflow or infection risk.</desc>
+      <defs><marker id="school-observation-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#74746c" stroke-width="1" /></marker></defs>
+      <g fill="none" stroke="#74746c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M400 206H54V36H426V171" stroke="#353532" stroke-width="2.2" />
+        <path d="M97 36H172M272 36H347" stroke="#fafaf8" stroke-width="7" />
+        <path d="M97 31H172V41H97zM272 31H347V41H272z" />
+        <path d="M426 206V171M391 206a35 35 0 0 1 35-35" stroke-dasharray="3 4" />
+        <rect x="98" y="93" width="95" height="30" rx="4" fill="#eaeae4" />
+        <rect x="279" y="93" width="95" height="30" rx="4" fill="#eaeae4" />
+        <rect x="98" y="160" width="95" height="30" rx="4" fill="#eaeae4" />
+        <rect x="279" y="160" width="95" height="30" rx="4" fill="#eaeae4" />
+        <path d="M115 130v8h24v-8m12 0v8h24v-8m121 0v8h24v-8m12 0v8h24v-8" />
+        <path d="M130 48v29M144 48v29M309 48v29M323 48v29" marker-end="url(#school-observation-arrow)" />
+        <path d="M449 222H239V152" stroke-dasharray="5 6" marker-end="url(#school-observation-arrow)" />
+      </g>
+      <g fill="#242424" stroke="#fafaf8" stroke-width="3"><circle cx="209" cy="59" r="16" /><circle cx="94" cy="155" r="16" /><circle cx="242" cy="199" r="16" /></g>
+      <g fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="600"><text x="209" y="64">1</text><text x="94" y="160">2</text><text x="242" y="204">3</text></g>
+    </svg>
+    <ol class="school-observation-key">
+      <li><span aria-hidden="true">1</span><div><strong>Air &amp; ventilation</strong><p>Windows, airflow, indoor conditions</p></div></li>
+      <li><span aria-hidden="true">2</span><div><strong>Shared surfaces</strong><p>Desks, handles, sampling locations</p></div></li>
+      <li><span aria-hidden="true">3</span><div><strong>Daily routines</strong><p>Attendance, movement, shared activities</p></div></li>
+    </ol>
+  </div>
+</div>

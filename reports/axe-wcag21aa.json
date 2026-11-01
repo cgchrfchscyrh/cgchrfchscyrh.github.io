@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-01T19:36:00.623Z",
+  "date": "2026-11-01T19:48:18.025Z",
   "base": "http://127.0.0.1:4480",
   "standard": "WCAG 2.1 A and AA automated checks; not a compliance certification",
   "scans": [
@@ -119,29 +119,52 @@
       "route": "/disease-resistant-school-communities/",
       "mode": "desktop",
       "violations": [],
-      "incomplete": [],
-      "passes": 24
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 3
+        }
+      ],
+      "passes": 25
     },
     {
       "route": "/disease-resistant-school-communities/",
       "mode": "mobile",
       "violations": [],
-      "incomplete": [],
-      "passes": 24
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 3
+        }
+      ],
+      "passes": 25
     },
     {
       "route": "/disease-resistant-school-communities/",
       "mode": "text-spacing",
       "violations": [],
-      "incomplete": [],
-      "passes": 24
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 3
+        }
+      ],
+      "passes": 25
     },
     {
       "route": "/disease-resistant-school-communities/",
       "mode": "mobile-spacing-expanded-figures",
       "violations": [],
-      "incomplete": [],
-      "passes": 25
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 3
+        }
+      ],
+      "passes": 26
     },
     {
       "route": "/building-immunology/",
@@ -930,6 +953,11 @@
     },
     {
       "name": "/disease-resistant-school-communities/: figure descriptions and source attribution",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "/disease-resistant-school-communities/: full-size source image available",
       "pass": true,
       "detail": ""
     },

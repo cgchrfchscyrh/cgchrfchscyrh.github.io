@@ -1,5 +1,11 @@
 # Accessibility review
 
+## School problem visual — 1 November 2026
+
+The Problem section now pairs a real, unoccupied classroom photograph with a simple numbered environmental-observation diagram. The complete photograph is retained, with alternative text, a full-size link, photographer attribution and the Unsplash license link in the source notes. It is explicitly labeled as a reference photograph, not a research site. The schematic has an accessible SVG title and description, visible numbered text labels, and no hover-only interaction. Air/ventilation, shared surfaces and daily routines are distinguished independently of color; the arrows do not claim measured airflow or risk.
+
+Build and lint passed. The required audit passed **36 axe scans and 362 functional checks**, with zero violations or failures. Desktop and 320 CSS-pixel layouts were visually checked. No dependencies, videos or source research materials were changed. Existing independent caption listening and screen-reader review limitations remain. See `reports/school-problem-visual-review.json`.
+
 ## School Communities page — 1 November 2026
 
 A separate Disease-Resistant School Communities page follows the supplied brief: Problem, Solutions and Impact. It is linked from the personal homepage. Student sampling and microbial culture images remain distinct from the national school modeling study; future collaboration is explicitly labeled. Original Building Immunology content is unchanged.

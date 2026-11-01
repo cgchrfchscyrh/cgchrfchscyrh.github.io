@@ -1,4 +1,5 @@
 ---
+import SchoolEnvironment from "./SchoolEnvironment.astro";
 import Video from "../ProjectVideo.astro";
 import Playback from "../ProjectPlayback.astro";
 import Figure from "../ProjectFigure.astro";
@@ -10,7 +11,7 @@ import { asset } from "../../data/profile";
 import "../../styles/school.css";
 interface Props { sourceNotes: string[]; }
 const { sourceNotes } = Astro.props;
-const imageIds = ["sampling", "culture-3", "culture-2", "culture-1", "school-operating-context"];
+const imageIds = ["school-classroom", "sampling", "culture-3", "culture-2", "culture-1", "school-operating-context"];
 const questions = [
   {title:"Understand the environment", text:"What can we learn about the spaces students use every day?", icon:"M12 26h40v25H12z M20 26v-8l12-8 12 8v8 M20 36h5m14 0h5M30 51V38h6v13"},
   {title:"Choose practical improvements", text:"How can schools balance health goals, operating costs and everyday needs?", icon:"M32 10v42M12 52h40M12 23h40M17 23 7 41h20L17 23m30 0L37 41h20L47 23"},
@@ -28,6 +29,7 @@ const questions = [
 <div class="project-content school-content">
   <section class="project-section" id="problem" aria-labelledby="problem-title">
     <div class="school-section-head"><p class="school-stage">01 / Problem</p><h2 id="problem-title">What makes a school healthy?</h2><p>Infections can interrupt attendance and affect families and educators. Healthier schools begin with understanding how shared spaces are used—and what schools can realistically change.</p></div>
+    <SchoolEnvironment />
     <div class="school-question-grid">
       {questions.map(question => <article><svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><path d={question.icon} fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" /></svg><h3>{question.title}</h3><p>{question.text}</p></article>)}
     </div>
@@ -74,7 +76,7 @@ const questions = [
       <MediaNotes project="disease-resistant-school-communities" />
       <section class="school-transcript" aria-labelledby="transcript-title"><h2 id="transcript-title">English narration transcript</h2><p>Music accompanies the narration and continues through the closing credits.</p>{transcript.map(paragraph => <p>{paragraph}</p>)}</section>
       <section aria-labelledby="visual-account-title"><h2 id="visual-account-title">Film visual account</h2><p>Opening illustrations show coronavirus symbols, classrooms, decision-makers and a magnifying glass over research charts. A U.S. map appears beside charts comparing school levels and months: larger bubbles mark greater modeled risk in the illustrated seasonal scenarios. Further panels compare ventilation and annual energy costs for ventilation increases, filter grades and proportions of students learning online. Bar lengths, markers, axis labels and legends carry the comparisons. These figures belong to the historical scenario study; the linked HTML paper provides the underlying explanation and tables.</p><p>The film then shows a masked teacher and students in a classroom with symbolic airborne particles and an air-handling unit. A ventilation diagram connects exhaled air and attendance with operating context; a thermometer and electricity meter represent climate and utility costs. An open book pairs operation and cost icons. A balance scale places reduced infection risk against increased cost, followed by figures representing decision-makers and the community. The closing slate reads “Energy Cost Assessment for Reducing Airborne Infection Risks in U.S. Schools,” names Shuai Li as contact, credits the University of Tennessee Knoxville and National Science Foundation, and retains the sponsor logo.</p></section>
-      <div class="project-image-notes"><h2>Image descriptions &amp; sources</h2>{imageIds.map(id => { const figure = labFigures[id]; return <section data-image-note={id}><h3>{figure.title}</h3><p id={`image-${id}-description`}>{figure.description}</p><p class="source-credit">Source: {figure.source}</p></section>; })}</div>
+      <div class="project-image-notes"><h2>Image descriptions &amp; sources</h2><p>Classroom photograph by <a href="https://unsplash.com/photos/an-empty-classroom-with-desks-and-windows-fKAUB1uYFcc">Nguyen Phan Nam Anh on Unsplash</a>, used under the <a href="https://unsplash.com/license">Unsplash License</a>. This reference photograph does not identify a participating school. The adjacent diagram is an explanatory schematic; its arrows do not represent measured airflow or risk.</p>{imageIds.map(id => { const figure = labFigures[id]; return <section data-image-note={id}><h3>{figure.title}</h3><p id={`image-${id}-description`}>{figure.description}</p><p class="source-credit">Source: {figure.source}</p></section>; })}</div>
       <p>Related collection: <a href={asset("building-immunology/")}>Building Immunology and digital twins</a>.</p>
     </details>
   </section>

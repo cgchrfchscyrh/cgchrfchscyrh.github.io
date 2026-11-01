@@ -50,3 +50,19 @@
 @media(max-width:1050px) { .school-hero { grid-template-columns:minmax(0,1fr); gap:2rem; } .school-hero-copy { max-width:850px; } .school-hero h1 { font-size:clamp(2.8rem,7vw,4.4rem); } .school-hero-copy>p { max-width:68ch; } .school-question-grid { gap:1.5rem; } .school-feature { gap:2rem; } }
 @media(max-width:720px) { .school-hero h1 { font-size:clamp(2.3rem,7.8vw,3.6rem); } .school-question-grid,.school-feature,.school-impact-grid,.school-publications { grid-template-columns:minmax(0,1fr); } .school-section-head { margin-bottom:2rem; } .school-feature { gap:1.4rem; } .school-question-grid article { padding-top:1.3rem; } .school-culture-grid { gap:.55rem; } .school-observations,.school-modeling,.school-community { margin-top:3rem; } .school-codesign { grid-template-columns:minmax(0,1fr); gap:2rem; } .school-codesign li:not(:last-child)::after { content:'↓'; top:auto; right:auto; bottom:-1.8rem; left:0; } }
 @media(max-width:420px) { .school-culture-grid { grid-template-columns:minmax(0,1fr); gap:1rem; } }
+
+/* Pair a photographed setting with a readable, non-data observation schematic. */
+.school-environment { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:clamp(1.5rem,3vw,3rem); align-items:center; margin:0 0 3rem; }
+.school-environment-photo>.school-stage { margin-bottom:.9rem; }
+.school-environment .project-figure { margin:0; }
+.school-environment-photo img { width:100%; height:auto; }
+.school-environment-map { border:1px solid #d8d8d3; border-radius:6px; padding:clamp(1.1rem,2vw,1.6rem); background:#f4f4ef; }
+.school-environment-map h3 { font-size:1.1rem; font-weight:550; line-height:1.4; }
+.school-environment-map>svg { display:block; width:100%; height:auto; margin:.5rem 0; }
+.school-observation-key { display:grid; gap:.8rem; list-style:none; margin:0; padding:0; }
+.school-observation-key li { display:flex; align-items:start; gap:.7rem; }
+.school-observation-key li>span { flex-shrink:0; display:grid; place-items:center; width:1.55rem; height:1.55rem; border-radius:50%; background:#242424; color:#fff; font-size:.8rem; line-height:1.55rem; }
+.school-observation-key strong { display:block; font-size:.9rem; line-height:1.4; font-weight:550; }
+.school-observation-key p { font-size:.8rem; color:#575753; line-height:1.5; margin-top:.15rem; }
+@media(max-width:800px) { .school-environment { grid-template-columns:minmax(0,1fr); gap:1.4rem; } .school-environment-map>svg { max-width:480px; margin-inline:auto; } }
+@media(forced-colors:active) { .school-observation-key li>span { border:1px solid CanvasText; } }
