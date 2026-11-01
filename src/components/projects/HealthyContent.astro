@@ -1,0 +1,68 @@
+---
+import Video from "../ProjectVideo.astro";
+import Playback from "../ProjectPlayback.astro";
+import Figure from "../ProjectFigure.astro";
+import MediaNotes from "../ProjectMediaNotes.astro";
+import Vision from "../Vision.astro";
+import { labFigures } from "../../data/lab-figures";
+import { profile } from "../../data/profile";
+import "../../styles/healthy.css";
+interface Props { sourceNotes: string[]; }
+const { sourceNotes } = Astro.props;
+const imageIds = ["office-plan", "office-network", "twin-framework", "occupant-interaction"];
+const questions = [
+  { title: "Understand exposure", text: "Where people spend time, how rooms connect, and how conditions evolve." },
+  { title: "Anticipate change", text: "Move from isolated observations to predictions that communicate uncertainty." },
+  { title: "Coordinate a response", text: "Account for comfort, occupant preferences, and operating constraints." },
+];
+const papers = [
+  { area: "BIM-based modeling", title: "Integrated environment-occupant-pathogen information modeling to assess and communicate room-level outbreak risks of infectious diseases", authors: "Shuai Li, Yifang Xu, Jiannan Cai, Da Hu, Qiang He", venue: "Building and Environment · 2021", doi: "https://doi.org/10.1016/j.buildenv.2020.107394", html: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7584519/", note: "Connects building information, occupancy, and pathogen parameters for room-level surface-mediated transmission modeling and risk communication." },
+  { area: "Predictive simulation", title: "Simulation-based trade-off modeling for indoor infection risk of airborne diseases, energy consumption, and thermal comfort", authors: "Yifang Xu, Jianli Chen, Jiannan Cai, Shuai Li, Qiang He", venue: "Journal of Building Engineering · 2023", doi: "https://doi.org/10.1016/j.jobe.2023.107137", html: "", note: "Compares infection-risk, energy, and comfort trade-offs through building simulations. This is scenario-based evidence, rather than validation of a live digital twin." },
+  { area: "AI-enabled intervention", title: "Recognizing object surface materials to adapt robotic disinfection in infrastructure facilities", authors: "Da Hu, Shuai Li", venue: "Computer-Aided Civil and Infrastructure Engineering · 2022", doi: "https://doi.org/10.1111/mice.12811", html: "", note: "Uses visual material recognition and transmission modeling to inform adaptive robotic disinfection. It is separate from the simulation demonstration on this page." },
+];
+---
+<section class="healthy-hero" aria-labelledby="project-title">
+  <div class="healthy-hero-copy">
+    <h1 id="project-title">AI-Empowered <br />Healthy Built <br />Environments</h1>
+    <p>Integrating BIM-based modeling, digital twins, and AI-driven control around human needs.</p>
+  </div>
+  <div class="healthy-hero-media"><Video id="healthy-indoor-transport" hero /></div>
+  <div class="healthy-hero-links"><a href="#innovations">Explore our innovations <span aria-hidden="true">↗</span></a><a href="#publications">Research &amp; publications <span aria-hidden="true">↗</span></a></div>
+  <p id="media-status" class="sr-only" role="status"></p>
+</section>
+<div class="project-content healthy-content">
+  <section class="project-section" id="problem" aria-labelledby="problem-title">
+    <div class="healthy-heading"><p class="healthy-stage">Problem</p><h2 id="problem-title">How can buildings anticipate health risks<br class="healthy-wide-break" /> and respond to human needs?</h2><p>Indoor conditions change with occupancy, human activity, and building operation. Understanding these changes means connecting the space, its environment, and the people who use it.</p></div>
+    <div class="healthy-spatial" role="group" aria-label="From an office floor plan to its spatial network">
+      <div><h3>Physical spaces</h3><Figure id="office-plan" notes /></div>
+      <span class="healthy-spatial-arrow" aria-hidden="true">→</span>
+      <div><h3>Connected spaces</h3><Figure id="office-network" notes /></div>
+    </div>
+    <ol class="healthy-questions">{questions.map((q,i) => <li><span class="healthy-index" aria-hidden="true">0{i+1}</span><h3>{q.title}</h3><p>{q.text}</p></li>)}</ol>
+  </section>
+  <section class="project-section" id="innovations" aria-labelledby="innovations-title">
+    <div class="healthy-heading"><p class="healthy-stage">Innovations &amp; solutions</p><h2 id="innovations-title">Models. Predictions. Actions.</h2><p>Three research directions toward building intelligence that serves the people inside.</p></div>
+    <article class="healthy-strand" id="modeling" aria-labelledby="modeling-title">
+      <div class="healthy-strand-head"><span class="healthy-index" aria-hidden="true">01</span><div><h3 id="modeling-title">BIM-based environmental<br />and exposure modeling</h3><p>Organize rooms, systems, and occupant activities in a shared spatial model. Connect that model with environmental processes to investigate exposure pathways and compare scenarios.</p></div></div>
+      <Figure id="twin-framework" notes />
+    </article>
+    <article class="healthy-strand" id="prediction" aria-labelledby="prediction-title">
+      <div class="healthy-strand-head"><span class="healthy-index" aria-hidden="true">02</span><div><h3 id="prediction-title">Digital twins for<br />real-time prediction</h3><p>Develop models that update with sensor observations and changing occupancy—estimating current conditions, forecasting change, and comparing possible responses.</p></div></div>
+      <Video id="healthy-building-layers" />
+      <div class="healthy-process" aria-labelledby="prediction-loop-title"><h4 id="prediction-loop-title">Research direction</h4><ol><li><strong>Observe</strong><span>Sensors &amp; occupancy</span></li><li><strong>Estimate</strong><span>Current conditions</span></li><li><strong>Forecast</strong><span>Changes &amp; uncertainty</span></li><li><strong>Compare</strong><span>Possible responses</span></li></ol></div>
+    </article>
+    <article class="healthy-strand" id="response" aria-labelledby="response-title">
+      <div class="healthy-strand-head"><span class="healthy-index" aria-hidden="true">03</span><div><h3 id="response-title">AI-driven control and<br />human–building interaction</h3><p>Investigate how predictions can inform building controls, robotic intervention, and guidance that occupants can understand and shape.</p></div></div>
+      <div class="healthy-response-media"><div><h4>Robotic intervention · Simulation</h4><Video id="healthy-disinfection-simulation" /></div><div><h4>Human–robot interaction</h4><Figure id="occupant-interaction" notes /></div></div>
+      <div class="healthy-dialogue" role="group" aria-labelledby="interaction-title"><div><h4 id="interaction-title">A person asks.<br />The building helps them reason.</h4><p>Natural-language interfaces could connect occupant questions and feedback with building information and analytical tools.</p></div><ol aria-label="Proposed human–building interaction"><li><span>Occupant</span><strong>Questions &amp; preferences</strong></li><li><span>AI interface</span><strong>Building data &amp; models</strong></li><li><span>Shared decision</span><strong>Options &amp; feedback</strong></li></ol></div>
+    </article>
+  </section>
+  <section class="project-section" id="publications" aria-labelledby="publications-title">
+    <div class="healthy-heading"><p class="healthy-stage">Research &amp; publications</p><h2 id="publications-title">Evidence across modeling,<br />prediction, and intervention.</h2><p>These studies establish individual parts of the research. Connecting them into a responsive building remains the larger challenge.</p></div>
+    <div class="healthy-publications">{papers.map(paper => <article class="publication"><p class="healthy-stage">{paper.area}</p><div><p class="publication-meta">{paper.venue}</p><h3><a href={paper.doi}>{paper.title}</a></h3><p class="healthy-authors">{paper.authors}</p><p>{paper.note}</p>{paper.html && <a class="paper-link" href={paper.html}>Read the room-level modeling study in HTML ↗</a>}</div></article>)}</div>
+  </section>
+  <Vision project="healthy-built-environments" kicker="Our vision" intro="Buildings that anticipate environmental challenges and coordinate responses around health, comfort, and everyday needs." />
+  <section class="healthy-collaboration" id="collaborate" aria-labelledby="collaborate-title"><div><p class="healthy-stage">Research team &amp; collaborators</p><h2 id="collaborate-title">A shared space for<br />different kinds of expertise.</h2></div><div><p>Building science · AI &amp; robotics · Human factors · Facility operations</p><a href={`mailto:${profile.email}`}>Contact Songyang Liu about collaboration ↗</a></div></section>
+  <section class="source-section" id="sources" aria-label="Sources and accessible media alternatives"><details><summary>Sources &amp; media descriptions</summary><ul>{sourceNotes.map(note => <li>{note}</li>)}</ul><p>Digital-twin footage shows recorded model visualizations; it is not a live forecast or a sensor-connected service. Robotic footage is a separate simulation. The human–robot photograph does not establish a recognized preference or measured health outcome. The proposed prediction and interaction loops describe research directions.</p><p>The BIM study models surface-mediated transmission. The trade-off study concerns airborne transmission in simulation; these are distinct mechanisms. The publications provide the original assumptions, methods, figures and limitations.</p><MediaNotes project="healthy-built-environments" /><div class="project-image-notes"><h2>Image descriptions &amp; sources</h2>{imageIds.map(id => { const figure = labFigures[id]; return <section data-image-note={id}><h3>{figure.title}</h3><p id={`image-${id}-description`}>{figure.description}</p><p class="source-credit">Source: {figure.source}</p></section>; })}</div></details></section>
+</div>
+<Playback />

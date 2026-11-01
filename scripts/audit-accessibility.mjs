@@ -191,7 +191,7 @@ try {
       check(`${route}: reduced-motion users can explicitly play`, true);
       await page.keyboard.press('Space');
       for (const clip of clips) {
-        const path = `${base}/projects/${clip.assetProject || clip.project}/${clip.id}`;
+        const path = `${base}/projects/${clip.assetProject || clip.project}/${clip.assetId || clip.id}`;
         const track = await context.request.get(`${path}.vtt`);
         const body = await track.text();
         check(`${clip.id}: description track available`, track.ok() && body.startsWith('WEBVTT') && body.includes('-->'));

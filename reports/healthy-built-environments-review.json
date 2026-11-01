@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-01T20:46:54.706040+00:00",
+  "route": "/healthy-built-environments/",
+  "title": "AI-Empowered Healthy Built Environments",
+  "brief": {
+    "filename": "Human-Centered Healthy Built Environment.docx",
+    "sha256": "b25197592444c470df971ffa5400fed8f7b6ee0002e88d6f08f3f8ffca08e2af",
+    "original_unmodified": true
+  },
+  "structure": [
+    "Problem",
+    "Innovations & Solutions: BIM, digital twins, AI-driven control and human–building interaction",
+    "Research & Publications",
+    "Our Vision",
+    "Research disciplines and collaboration contact"
+  ],
+  "media": {
+    "new_video_files": 0,
+    "shared_assets": [
+      "building-digital-twin/indoor-transport",
+      "building-digital-twin/building-layers",
+      "building-digital-twin/disinfection-simulation"
+    ],
+    "figure_ids": [
+      "office-plan",
+      "office-network",
+      "twin-framework",
+      "occupant-interaction"
+    ],
+    "face_redaction_preserved": true,
+    "school_communities_assets_reused": false,
+    "full_frames_and_source_figures_retained": true
+  },
+  "evidence_limits": [
+    "Recorded models are not live forecasts or sensor-connected demonstrations.",
+    "The separate robot simulation does not validate pathogen removal or integration with risk models.",
+    "The human–robot photograph does not validate sensed preferences or health outcomes.",
+    "LLM interaction and coordinated control are research directions.",
+    "The room-risk paper concerns surface-mediated transmission; the trade-off paper concerns airborne risk."
+  ],
+  "local_checks": {
+    "build": "passed",
+    "lint": "passed",
+    "axe_scans": 40,
+    "functional_checks": 407,
+    "violations": 0,
+    "failures": 0,
+    "dependency_vulnerabilities": 0,
+    "desktop_visual_review": "passed",
+    "320_css_pixel_visual_review": "passed",
+    "source_diagrams_complete": "passed",
+    "neutral_ui_and_no_UF_branding": "passed"
+  },
+  "manual_limits": [
+    "Automated checks do not establish complete WCAG/ADA conformance.",
+    "Full assistive-technology review and external PDF tags/reading order remain unverified."
+  ],
+  "screenshots": "research/healthy-built-environments/{desktop-preview,problem-preview,vision-preview,mobile-preview}.png",
+  "deployment": "Verify the Pages workflow and public URL after push."
+}

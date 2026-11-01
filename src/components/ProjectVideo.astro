@@ -4,7 +4,7 @@ import { asset } from "../data/profile";
 interface Props { id: string; hero?: boolean; }
 const { id, hero = false } = Astro.props;
 const clip = projectClips.find(item => item.id === id)!;
-const base = `projects/${clip.assetProject || clip.project}/${clip.id}`;
+const base = `projects/${clip.assetProject || clip.project}/${clip.assetId || clip.id}`;
 const version = clip.mediaVersion ? `?v=${encodeURIComponent(clip.mediaVersion)}` : "";
 ---
 <figure class="project-video">

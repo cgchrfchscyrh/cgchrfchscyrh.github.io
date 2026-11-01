@@ -1,6 +1,35 @@
 const source = "https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842";
-export interface ProjectClip { id: string; project: string; assetProject?: string; mediaVersion?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; processingNote?: string; captions?: boolean; loop?: boolean; }
+export interface ProjectClip { id: string; project: string; assetProject?: string; assetId?: string; mediaVersion?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; processingNote?: string; captions?: boolean; loop?: boolean; }
 export const labProjects = [
+{
+  "slug": "healthy-built-environments",
+  "title": "AI-Empowered Healthy Built Environments",
+  "shortTitle": "Healthy Built Environments",
+  "topic": "BIM · Digital twins · Human–building interaction",
+  "subtitle": "",
+  "description": "Connecting building information models, predictive digital twins, and AI-enabled responses around human health, comfort, and everyday needs.",
+  "source": "",
+  "credit": "",
+  "image": "building-model.jpg",
+  "imageWidth": 1280,
+  "imageHeight": 720,
+  "imageAlt": "An overhead digital building model with rooms, furniture, and layered services.",
+  "question": "How can buildings anticipate health risks and respond to human needs?",
+  "abstract": "We connect spatial models, changing indoor conditions, and human needs to study exposure, anticipate change, and compare responses.",
+  "heroClips": [
+    "healthy-indoor-transport"
+  ],
+  "demoClips": [
+    "healthy-building-layers",
+    "healthy-disinfection-simulation"
+  ],
+  "sourceNotes": [
+    "Page structure follows the supplied Human-Centered Healthy Built Environment brief: Problem, Innovations & Solutions, Research & Publications, and Our Vision.",
+    "Research Presentation, slide 3: the environmental and exposure modeling framework. Building, slides 3–4: office geometry, spatial network, and recorded indoor model animations. These do not demonstrate a live sensor-connected prediction service.",
+    "Building, slide 11 / Research Presentation, slide 7: a separate simulated robotic intervention. Building Immunology 1, slide 3: the human–robot interaction photograph, with the face redacted. These materials do not validate an integrated autonomous building controller or measure health outcomes.",
+    "The spatial and response diagrams on this page are explanatory schematics. Natural-language interaction and coordinated predictive control describe research directions, not deployed capabilities."
+  ]
+},
 {
   "slug": "disease-resistant-school-communities",
   "title": "Disease-Resistant School Communities",
@@ -192,6 +221,12 @@ export const projectClips: ProjectClip[] = [
   },
 ];
 
+
+// Reuse unchanged source media with distinct player IDs on the new overview.
+for (const assetId of ["indoor-transport", "building-layers", "disinfection-simulation"]) {
+  const original = projectClips.find(clip => clip.id === assetId)!;
+  projectClips.push({ ...original, id: `healthy-${assetId}`, project: "healthy-built-environments", assetId });
+}
 
 export const immunologyPublications = [
   "Xu, Y., Chen, J., Cai, J., Li, S., & He, Q. (2023). Simulation-based trade-off modeling for indoor infection risk of airborne diseases, energy consumption, and thermal comfort. Journal of Building Engineering, 76, 107137.",
