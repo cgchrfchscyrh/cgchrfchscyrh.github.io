@@ -1,5 +1,9 @@
 # Accessibility review
 
+## Surgery page: opening film and shorter text — 4 November 2026
+
+The surgery page now opens with a full-width silent film, using native controls, the existing viewport playback rules, a timed description track, and a complete text alternative. The title sits on a dark gradient. Narrow screens crop the sides of the frame, and the complete laboratory frame appears further down the page. The Team and vision section was removed at the author's request, and longer explanations were shortened into short bubbles. Status labels such as "Proposed design" and "Simulation research" left the visible text; the page wording says what is being designed, and the image and video notes keep the fuller scope. Other project pages were not changed. Frame-to-frame brightness was measured as a flash screen, which is not a certified flash analysis.
+
 ## School problem visual — 1 November 2026
 
 The Problem section now pairs a real, unoccupied classroom photograph with a simple numbered environmental-observation diagram. The complete photograph is retained, with alternative text, a full-size link, photographer attribution and the Unsplash license link in the source notes. It is explicitly labeled as a reference photograph, not a research site. The schematic has an accessible SVG title and description, visible numbered text labels, and no hover-only interaction. Air/ventilation, shared surfaces and daily routines are distinguished independently of color; the arrows do not claim measured airflow or risk.

@@ -1,12 +1,11 @@
 ---
-import Vision from "../Vision.astro";
 import Figure from "../ProjectFigure.astro";
 import Video from "../ProjectVideo.astro";
 import "../../styles/surgery.css";
 const problems = [
-  { image: "restricted-viewpoints", title: "Restricted viewpoints", text: "The confined surgical workspace limits camera placement and movement. A useful view must also leave room for surgical instruments." },
-  { image: "obscured-view", title: "Compromised visual clarity", text: "Lens contamination, fogging, and surgical smoke can obscure the operative field. Clear vision requires effective positioning and reliable lens care." },
-  { image: "surgical-workspace", title: "Coordination demands", text: "Manual camera control depends on available assistants and close coordination with the surgeon. Repeated adjustments can add to the team’s workload." },
+  { image: "restricted-viewpoints", title: "Restricted viewpoints", text: "The workspace limits where the camera can go." },
+  { image: "obscured-view", title: "An obscured view", text: "Fog, smoke, and contamination block the lens." },
+  { image: "surgical-workspace", title: "Coordination", text: "Moving the camera by hand takes an assistant working closely with the surgeon." },
 ];
 ---
 <span id="abstract" class="section-anchor" aria-hidden="true"></span>
@@ -19,29 +18,24 @@ const problems = [
 <section class="project-section surgery-innovations" id="innovations" aria-labelledby="innovations-title">
   <div class="section-heading"><h2 id="innovations-title">Innovations</h2></div>
   <article class="surgery-innovation" id="method" aria-labelledby="magnetic-title">
-    <div class="surgery-feature">
-      <div class="surgery-feature-copy">
-        <p class="surgery-stage">01 / Laboratory prototype</p>
-        <h3 id="magnetic-title">Magnetic Actuation and Automated Camera Control</h3>
-        <p>We explore magnetic actuation and robotic control to position and orient an internal laparoscopic camera. Our goal is to enable flexible viewpoint adjustment and reduce the coordination burden of manual camera handling.</p>
-      </div>
-      <Video id="bench-prototype" />
+    <div class="surgery-intro">
+      <h3 id="magnetic-title">Magnetic Actuation and Automated Camera Control</h3>
+      <p>A robot-mounted actuator outside the body positions and turns a camera inside it.</p>
     </div>
-    <div class="surgery-secondary-media">
-      <div><p class="surgery-media-label">Camera assembly · design animation</p><Video id="camera-assembly" /></div>
-      <div><p class="surgery-media-label">Instrument motion · design animation</p><Video id="instrument-motion" /></div>
+    <div class="surgery-media-pair">
+      <div class="surgery-clip"><Video id="bench-prototype" /><p class="surgery-bubble"><strong>In the lab.</strong> The robot moves the actuator above an abdominal model.</p></div>
+      <div class="surgery-clip"><Video id="camera-guidance" /><p class="surgery-bubble"><strong>Outside and inside.</strong> As the actuator moves, the camera follows.</p></div>
+      <div class="surgery-clip"><Video id="camera-assembly" /><p class="surgery-bubble"><strong>The camera.</strong> A capsule separates into its parts.</p></div>
+      <div class="surgery-clip"><Video id="instrument-motion" /><p class="surgery-bubble"><strong>The instrument.</strong> It opens and changes shape.</p></div>
     </div>
     <details class="surgery-technical"><summary>Camera and actuator architecture</summary><Figure id="surgery-mechanism" notes /></details>
   </article>
   <article class="surgery-innovation" id="cleaning" aria-labelledby="cleaning-title">
-    <div class="surgery-feature surgery-eye-feature">
-      <div class="surgery-feature-copy">
-        <p class="surgery-stage">02 / Proposed design</p>
-        <h3 id="cleaning-title">Bioinspired Robotic Laparoscopy</h3>
-        <p>Inspired by how the human eye protects and maintains its optical surface, we explore robotic mechanisms for laparoscopic lens care. Protective structures, targeted cleaning, and coordinated control aim to maintain visual clarity with fewer interruptions.</p>
-      </div>
-      <div><p class="surgery-media-label">Eye Concept</p><Figure id="eye-concept" notes /></div>
+    <div class="surgery-intro">
+      <h3 id="cleaning-title">Bioinspired Robotic Laparoscopy</h3>
+      <p>Inspired by the human eye, we are designing ways to keep the lens clear.</p>
     </div>
+    <div class="surgery-wide-figure"><Figure id="eye-concept" notes /></div>
     <div class="surgery-lens-details">
       <div><h4>Robotic eyelid</h4><Figure id="eyelid-concept" notes /></div>
       <div><h4>Soft robotic nozzle</h4><Figure id="soft-nozzle" notes /></div>
@@ -49,17 +43,11 @@ const problems = [
     <details class="surgery-technical"><summary>Proposed lens-care control architecture</summary><Figure id="cleaning-control" notes /></details>
   </article>
   <article class="surgery-innovation" id="visual-ai" aria-labelledby="visual-ai-title">
-    <div class="surgery-feature">
-      <div class="surgery-feature-copy">
-        <p class="surgery-stage">03 / Simulation research</p>
-        <h3 id="visual-ai-title">AI Models for Visual Understanding and Assistance</h3>
-        <p>We explore AI models that interpret laparoscopic images and provide visual feedback to support spatial awareness. Our long-term goal is to connect visual perception with camera guidance and lens care for more responsive surgical assistance.</p>
-        <p class="surgery-evidence">The related training study pairs 2D views with 3D context in Isaac Sim. The examples show tool contact in the top row and missed contact in the bottom row.</p>
-      </div>
-      <div class="surgery-spatial-example"><div class="surgery-view-labels" aria-hidden="true"><span>2D operative view</span><span>3D spatial context</span></div><Figure id="spatial-feedback" notes /></div>
+    <div class="surgery-intro">
+      <h3 id="visual-ai-title">AI Models for Visual Understanding and Assistance</h3>
+      <p>AI models read the 2D view and add 3D feedback, shown here in a simulated training study.</p>
     </div>
+    <div class="surgery-wide-figure surgery-spatial-example"><div class="surgery-view-labels" aria-hidden="true"><span>2D operative view</span><span>3D spatial context</span></div><Figure id="spatial-feedback" notes /></div>
     <details class="surgery-technical"><summary>AI perception and training pipeline</summary><Figure id="ai-pipeline" notes /></details>
   </article>
 </section>
-<span id="team" class="section-anchor" aria-hidden="true"></span>
-<Vision project="surgery-ai" title="Team" kicker="" intro="An interdisciplinary research team working across robotics, artificial intelligence, and surgical imaging. These complementary disciplines connect the current camera prototype to a broader vision of surgical assistance." />

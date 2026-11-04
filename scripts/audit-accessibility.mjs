@@ -155,8 +155,14 @@ try {
     if (project) {
       check(`${route}: no introductory subtitles`, await page.locator('.hero-copy > .eyebrow,.hero-subtitle,.coastal-hero .coastal-tagline,.coastal-hero .coastal-intro-copy').count() === 0);
       check(`${route}: no text captions below videos`, await page.locator('figure:has(video) > figcaption,figure:has(video) > details').count() === 0);
+      if (route === "/surgery-ai/") {
+        check(`${route}: team and vision section removed`, await page.locator('#vision,#team').count() === 0);
+        check(`${route}: opening film fills the page width`, await page.locator('#surgery-opening-video').evaluate(v => Math.round(v.getBoundingClientRect().width) === document.documentElement.clientWidth && v.getBoundingClientRect().height >= innerHeight * 0.6));
+        check(`${route}: every research clip has a short bubble`, await page.locator('.surgery-bubble').count() === 4);
+      } else {
       check(`${route}: larger vision section exists`, await page.locator('#vision').count() === 1);
       check(`${route}: visual collaboration map`, await page.locator(".vision-connections li").count() === 3 && await page.locator(".vision-scene").getByRole("img").count() === 1);
+      }
 
       const clips = projectClips.filter(c => c.project === project.slug);
       const videos = page.locator('video');
