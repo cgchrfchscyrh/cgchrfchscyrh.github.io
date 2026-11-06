@@ -1,53 +1,65 @@
 ---
 import Figure from "../ProjectFigure.astro";
 import Video from "../ProjectVideo.astro";
+import { asset } from "../../data/profile";
 import "../../styles/surgery.css";
-const problems = [
-  { image: "restricted-viewpoints", title: "Restricted viewpoints", text: "The workspace limits where the camera can go." },
-  { image: "obscured-view", title: "An obscured view", text: "Fog, smoke, and contamination block the lens." },
-  { image: "surgical-workspace", title: "Coordination", text: "Moving the camera by hand takes an assistant working closely with the surgeon." },
+const clips = [
+  { id: "bench-prototype", tag: "Lab prototype" },
+  { id: "camera-guidance", tag: "Actuator · Camera" },
+  { id: "camera-assembly", tag: "Camera capsule" },
+  { id: "instrument-motion", tag: "Instrument" },
 ];
 ---
 <span id="abstract" class="section-anchor" aria-hidden="true"></span>
-<section class="project-section surgery-problems" id="problems" aria-labelledby="problems-title">
-  <div class="section-heading"><h2 id="problems-title">Problems</h2></div>
-  <div class="surgery-problem-grid">
-    {problems.map(problem => <article class="surgery-problem"><Figure id={problem.image} notes /><div><h3>{problem.title}</h3><p>{problem.text}</p></div></article>)}
+<section class="project-section surgery-section" id="background" aria-labelledby="background-title">
+  <h2 id="background-title">Background</h2>
+  <p class="surgery-lead">In minimally invasive surgery, the surgeon works through small incisions and sees inside the body only through a laparoscopic camera, which an assistant holds and moves.</p>
+  <div class="surgery-single"><Figure id="surgical-workspace" quiet /></div>
+</section>
+
+<section class="project-section surgery-section" id="problems" aria-labelledby="problems-title">
+  <h2 id="problems-title">Problem</h2>
+  <p class="surgery-lead">The confined workspace limits where the camera can look, and smoke, fog, and fluids can cover the lens.</p>
+  <div class="surgery-pair">
+    <Figure id="restricted-viewpoints" quiet tag="Restricted viewpoints" />
+    <Figure id="obscured-view" quiet tag="Obscured view" />
   </div>
 </section>
-<section class="project-section surgery-innovations" id="innovations" aria-labelledby="innovations-title">
-  <div class="section-heading"><h2 id="innovations-title">Innovations</h2></div>
-  <article class="surgery-innovation" id="method" aria-labelledby="magnetic-title">
-    <div class="surgery-intro">
-      <h3 id="magnetic-title">Magnetic Actuation and Automated Camera Control</h3>
-      <p>A robot-mounted actuator outside the body positions and turns a camera inside it.</p>
-    </div>
-    <div class="surgery-media-pair">
-      <div class="surgery-clip"><Video id="bench-prototype" /><p class="surgery-bubble"><strong>In the lab.</strong> The robot moves the actuator above an abdominal model.</p></div>
-      <div class="surgery-clip"><Video id="camera-guidance" /><p class="surgery-bubble"><strong>Outside and inside.</strong> As the actuator moves, the camera follows.</p></div>
-      <div class="surgery-clip"><Video id="camera-assembly" /><p class="surgery-bubble"><strong>The camera.</strong> A capsule separates into its parts.</p></div>
-      <div class="surgery-clip"><Video id="instrument-motion" /><p class="surgery-bubble"><strong>The instrument.</strong> It opens and changes shape.</p></div>
-    </div>
-    <details class="surgery-technical"><summary>Camera and actuator architecture</summary><Figure id="surgery-mechanism" notes /></details>
-  </article>
-  <article class="surgery-innovation" id="cleaning" aria-labelledby="cleaning-title">
-    <div class="surgery-intro">
-      <h3 id="cleaning-title">Bioinspired Robotic Laparoscopy</h3>
-      <p>Inspired by the human eye, we are designing ways to keep the lens clear.</p>
-    </div>
-    <div class="surgery-wide-figure"><Figure id="eye-concept" notes /></div>
-    <div class="surgery-lens-details">
-      <div><h4>Robotic eyelid</h4><Figure id="eyelid-concept" notes /></div>
-      <div><h4>Soft robotic nozzle</h4><Figure id="soft-nozzle" notes /></div>
-    </div>
-    <details class="surgery-technical"><summary>Proposed lens-care control architecture</summary><Figure id="cleaning-control" notes /></details>
-  </article>
-  <article class="surgery-innovation" id="visual-ai" aria-labelledby="visual-ai-title">
-    <div class="surgery-intro">
-      <h3 id="visual-ai-title">AI Models for Visual Understanding and Assistance</h3>
-      <p>AI models read the 2D view and add 3D feedback, shown here in a simulated training study.</p>
-    </div>
-    <div class="surgery-wide-figure surgery-spatial-example"><div class="surgery-view-labels" aria-hidden="true"><span>2D operative view</span><span>3D spatial context</span></div><Figure id="spatial-feedback" notes /></div>
-    <details class="surgery-technical"><summary>AI perception and training pipeline</summary><Figure id="ai-pipeline" notes /></details>
-  </article>
+
+<section class="project-section surgery-section" id="innovations" aria-labelledby="innovations-title">
+  <h2 id="innovations-title">Methodology</h2>
+  <p class="surgery-lead">Three directions toward a clear, steady view: magnetic camera actuation, bioinspired lens care, and AI visual feedback.</p>
+
+  <div class="surgery-step" id="method">
+    <h3>Magnetic camera actuation</h3>
+    <p>A robot-mounted actuator outside the body moves and turns a camera inside it.</p>
+  </div>
+  <div class="surgery-wide"><Figure id="surgery-mechanism" quiet /></div>
+  <div class="surgery-pair surgery-clips">
+    {clips.map(clip => <div class="surgery-clip"><Video id={clip.id} /><p class="media-tag" aria-hidden="true">{clip.tag}</p></div>)}
+  </div>
+
+  <div class="surgery-step" id="cleaning">
+    <h3>Bioinspired lens care</h3>
+    <p>Modeled on the human eye, a robotic eyelid and a soft nozzle are being designed to keep the lens clear.</p>
+  </div>
+  <div class="surgery-wide"><Figure id="eye-concept" quiet /></div>
+  <div class="surgery-pair">
+    <Figure id="eyelid-concept" quiet tag="Robotic eyelid" />
+    <Figure id="soft-nozzle" quiet tag="Soft nozzle" />
+  </div>
+  <div class="surgery-wide"><Figure id="cleaning-control" quiet /></div>
+
+  <div class="surgery-step" id="visual-ai">
+    <h3>AI visual feedback</h3>
+    <p>AI models locate the tools, detect tool–tissue contact, and add 3D feedback to the 2D view, tested in simulated training.</p>
+  </div>
+  <div class="surgery-wide"><Figure id="ai-pipeline" quiet /></div>
+  <div class="surgery-wide surgery-spatial"><Figure id="spatial-feedback" quiet /><p class="surgery-view-tags" aria-hidden="true"><span>2D view</span><span>3D context</span></p></div>
+</section>
+
+<section class="project-section surgery-citation" id="publications" aria-labelledby="publications-title">
+  <h2 id="publications-title">Citation</h2>
+  <p class="surgery-reference">Liu, S., Tan, Y., &amp; Li, S. (2025). <a href="https://arxiv.org/abs/2511.02233">Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback</a>. arXiv:2511.02233. <a href="https://arxiv.org/html/2511.02233v1">HTML version</a></p>
+  <p class="surgery-fine">AI figures are from this paper, reproduced under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. · <a href={asset("accessibility/#surgery-media")}>Accessibility &amp; media credits</a> · <a href={asset("#lab-projects")}>All projects</a></p>
 </section>

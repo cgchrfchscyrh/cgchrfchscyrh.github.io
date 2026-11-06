@@ -2,8 +2,8 @@
 import "@fontsource-variable/ibm-plex-sans";
 import "../styles/project.css";
 import { asset } from "../data/profile";
-interface Props { title: string; shortTitle: string; description: string; slug: string; source: string; nav: { id: string; label: string; }[]; }
-const { title, shortTitle, description, slug, source, nav } = Astro.props;
+interface Props { title: string; shortTitle: string; description: string; slug: string; source: string; nav: { id: string; label: string; }[]; bare?: boolean; }
+const { title, shortTitle, description, slug, source, nav, bare = false } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 ---
 <!doctype html>
@@ -23,15 +23,15 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
   </head>
   <body class:list={["project-page", { "architected-page": slug === "architected-structures", "healthy-page": slug === "healthy-built-environments", "coastal-page": slug === "robotic-block-assembly", "surgery-page": slug === "surgery-ai", "school-page": slug === "disease-resistant-school-communities" }]}>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="project-header">
+    {!bare && <header class="project-header">
       <a class="project-wordmark" href={asset(`${slug}/`)}><img src={asset(`projects/${slug}/favicon.svg`)} alt="" aria-hidden="true" width="30" height="30" />{shortTitle}</a>
       <nav aria-label="Project sections">{nav.map(item => <a href={`#${item.id}`}>{item.label}</a>)}</nav>
-    </header>
+    </header>}
     <main id="main" tabindex="-1"><slot /></main>
-    <footer class="project-footer">
+    {!bare && <footer class="project-footer">
       <div><strong>{shortTitle}</strong><a href="#main">Back to top ↑</a></div>
       <nav aria-label="Project resources"><a href={asset("#lab-projects")}>Songyang Liu’s project collection</a><a href="#sources">Project sources</a>{source && <a href={source}>Original research overview</a>}<a href={asset("accessibility/#project-media")}>Accessibility & media notes</a></nav>
       <p>Original research and media credits are retained in the project sources.</p>
-    </footer>
+    </footer>}
   </body>
 </html>

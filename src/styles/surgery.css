@@ -1,111 +1,48 @@
-.surgery-page .project-hero { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); align-items:center; gap:clamp(2rem,4vw,4rem); max-width:1520px; padding:clamp(2.8rem,5vw,5.5rem) clamp(1.2rem,4vw,4rem); margin:auto; }
-.surgery-page .hero-copy { text-align:left; padding:0; min-width:0; }
-.surgery-page .hero-copy h1 { font-size:clamp(2.4rem,3.9vw,3.8rem); line-height:1.08; letter-spacing:-.045em; margin:0 0 1.6rem; }
-.surgery-page .hero-intro { font-size:clamp(1rem,1.3vw,1.15rem); color:var(--muted, #575753); line-height:1.7; max-width:48ch; }
-.surgery-page .hero-media { padding:0; width:100%; grid-template-columns:minmax(0,1fr); }
-.surgery-page .hero-media video { border-radius:8px; }
-.surgery-page .project-content { max-width:1340px; padding-inline:clamp(1.2rem,4vw,4rem); }
-.surgery-page .project-section { padding-block:clamp(3.5rem,6vw,6rem); }
-.surgery-page .section-heading h2,.surgery-page .vision-heading h2 { font-size:clamp(2rem,4vw,3rem); margin-top:0; }
-.surgery-problem-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.4rem; }
-.surgery-problem { min-width:0; border:1px solid var(--line, #d8d8d3); border-radius:8px; overflow:hidden; background:#fff; }
-.surgery-problem .project-figure { margin:0; }
-.surgery-problem .figure-link { border:0; border-bottom:1px solid var(--line, #d8d8d3); border-radius:0; }
-.surgery-problem .project-figure img { width:100%; aspect-ratio:16/10; object-fit:contain; background:#f2f2ef; }
-.surgery-problem>div { padding:1.5rem; }
-.surgery-problem h3 { font-size:1.12rem; line-height:1.4; letter-spacing:-.02em; margin-bottom:.75rem; }
-.surgery-problem p { font-size:.95rem; line-height:1.75; color:var(--muted, #575753); }
-.surgery-innovation { padding-block:1rem 3rem; scroll-margin-top:2rem; }
-.surgery-innovation+.surgery-innovation { border-top:1px solid var(--line, #d8d8d3); padding-top:4.5rem; }
-.surgery-innovation:last-child { padding-bottom:0; }
-.surgery-feature { display:grid; grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr); gap:clamp(2rem,4vw,4rem); align-items:center; }
-.surgery-feature-copy h3 { font-size:clamp(1.6rem,2.5vw,2.15rem); letter-spacing:-.035em; line-height:1.2; margin:1rem 0 1.3rem; }
-.surgery-feature-copy>p:not(.surgery-stage) { font-size:1.02rem; color:var(--muted, #575753); line-height:1.8; }
-.surgery-stage { font-size:.72rem; letter-spacing:.09em; text-transform:uppercase; font-weight:600; color:#565650; }
-.surgery-secondary-media { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.4rem; margin-top:2.5rem; }
-.surgery-media-label,.surgery-view-labels { font-size:.81rem; font-weight:500; color:#53534e; margin-bottom:.7rem; }
-.surgery-innovation .project-figure { margin:0; }
-.surgery-eye-feature .figure-link { padding:1rem; }
-.surgery-lens-details { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.4rem; margin-top:2.5rem; }
-.surgery-lens-details>div { padding:1.5rem; background:#fff; border:1px solid var(--line, #d8d8d3); border-radius:4px; }
-.surgery-lens-details h4 { margin:0 0 1.2rem; font-size:1rem; font-weight:500; }
-.surgery-lens-details .figure-link { border:0; }
-.surgery-lens-details img { aspect-ratio:1.9; object-fit:contain; }
-.surgery-technical { margin-top:2rem; padding:.7rem 0; border-top:1px solid var(--line, #d8d8d3); font-size:.9rem; }
-.surgery-technical summary { width:fit-content; }
-.surgery-technical[open] .project-figure { margin-top:1.5rem; }
-.surgery-view-labels { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; text-align:center; }
-.surgery-feature-copy>.surgery-evidence { font-size:.88rem; }
-.surgery-page .vision-heading { max-width:780px; }
-.surgery-page .vision-intro { font-size:1.05rem; color:var(--muted, #575753); max-width:68ch; }
-.surgery-page .research-vision { padding-block:4.5rem; }
-.surgery-page .source-section .project-image-notes h2 { font-size:1.3rem; }
-.surgery-page .source-section .project-image-notes h3 { font-size:1rem; margin-top:1.7rem; }
-.surgery-page .publication { max-width:900px; }
-@media(max-width:1000px) {
-  .surgery-page .project-hero { grid-template-columns:minmax(0,1fr); gap:2rem; }
-  .surgery-page .hero-copy { max-width:800px; margin:0; }
-  .surgery-page .hero-copy h1 { font-size:clamp(2.2rem,5.8vw,3.8rem); }
-  .surgery-page .hero-intro { max-width:65ch; }
-  .surgery-feature { grid-template-columns:minmax(0,1fr); gap:1.5rem; }
-  .surgery-feature-copy { max-width:720px; }
-  .surgery-problem>div { padding:1.1rem; }
-}
-@media(max-width:700px) {
-  .surgery-problem-grid,.surgery-secondary-media,.surgery-lens-details { grid-template-columns:minmax(0,1fr); }
-  .surgery-page .project-hero { padding-block:2.5rem; }
-  .surgery-page .hero-copy h1 { font-size:clamp(2.1rem,6.7vw,3rem); }
-  .surgery-problem h3 { font-size:1.15rem; }
-  .surgery-lens-details>div { padding:1rem; }
-  .surgery-lens-details img { aspect-ratio:auto; }
-  .surgery-innovation+.surgery-innovation { padding-top:3rem; }
-  .surgery-page .research-vision { padding-block:3rem; }
-}
+/* Surgery AI: full-width opening film, short leads, large media. No header or footer bars. */
 
-.surgery-page .paper-link { margin-right:1.5rem; }
-
-/* Full-width opening film. The copy sits in normal flow so the block grows with zoom and text spacing. */
-.surgery-page .project-hero { position:relative; display:grid; grid-template-columns:minmax(0,1fr); align-content:end; gap:0; max-width:none; min-height:calc(100svh - 72px); margin:0; padding:0; overflow:hidden; background:#111; color:#fff; }
+/* Opening film. The title sits in normal flow so the block grows with zoom and text spacing. */
+.surgery-page .project-hero { position:relative; display:grid; grid-template-columns:minmax(0,1fr); align-content:end; gap:0; max-width:none; min-height:100svh; margin:0; padding:0; overflow:hidden; background:#111; color:#fff; }
 .surgery-page .project-hero::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(to top,rgb(0 0 0 / 82%) 0,rgb(0 0 0 / 62%) 30%,rgb(0 0 0 / 0%) 55%); }
 .surgery-page .project-hero .hero-media { position:absolute; inset:0; width:100%; padding:0; margin:0; max-width:none; display:block; }
 .surgery-page .project-hero .project-video { margin:0; width:100%; height:100%; }
 .surgery-page .project-hero .hero-media video { position:absolute; inset:0; width:100%; height:100%; max-width:none; aspect-ratio:auto; object-fit:cover; border-radius:0; background:#111; }
 .surgery-page .project-hero .hero-media video:focus-visible { outline:3px solid #fff; outline-offset:-3px; }
-.surgery-page .project-hero .hero-copy { position:relative; z-index:1; max-width:none; margin:0; padding:96px clamp(1.25rem,4vw,4rem) 76px; pointer-events:none; }
+.surgery-page .project-hero .hero-copy { position:relative; z-index:1; max-width:none; margin:0; padding:96px clamp(1.25rem,4vw,4rem) 76px; text-align:left; pointer-events:none; }
 .surgery-page .project-hero .hero-copy h1 { margin:0; color:#fff; font-size:clamp(2.2rem,6.4vw,7.5rem); font-weight:600; line-height:.98; letter-spacing:-.045em; }
 .surgery-page .project-hero .display-line { display:block; }
 
-/* Larger media and short bubbles. */
+/* Sections */
 .surgery-page .project-content { max-width:1560px; padding-inline:16px; }
-.surgery-problem>div { padding:1rem 1.2rem; }
-.surgery-problem h3 { margin-bottom:.35rem; }
-.surgery-intro { max-width:760px; margin-bottom:1.5rem; }
-.surgery-intro h3 { font-size:clamp(1.5rem,2.3vw,2rem); letter-spacing:-.035em; line-height:1.2; margin:0 0 .6rem; }
-.surgery-intro p { font-size:1.05rem; color:var(--muted,#575753); line-height:1.6; margin:0; }
-.surgery-media-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; }
-.surgery-clip { display:grid; gap:1rem; align-content:start; min-width:0; }
+.surgery-section { padding-block:clamp(3.5rem,6vw,6rem) 0; scroll-margin-top:1rem; }
+.surgery-section h2 { font-size:clamp(2rem,4vw,3rem); letter-spacing:-.035em; margin:0 0 1rem; }
+.surgery-lead { max-width:62ch; margin:0 0 2rem; font-size:clamp(1.05rem,1.4vw,1.25rem); line-height:1.6; color:#3d3d39; }
+.surgery-step { max-width:62ch; margin:clamp(3rem,5vw,4.5rem) 0 1.5rem; scroll-margin-top:1rem; }
+.surgery-step h3 { font-size:clamp(1.4rem,2.2vw,1.9rem); letter-spacing:-.03em; line-height:1.2; margin:0 0 .5rem; }
+.surgery-step p { margin:0; font-size:1.05rem; line-height:1.6; color:#484844; }
+
+/* Media */
+.surgery-page .project-figure { position:relative; margin:0; }
+.surgery-page .figure-link { border:0; border-radius:6px; background:#fff; }
+.surgery-page .project-figure img { display:block; width:100%; height:auto; }
+.surgery-single { max-width:760px; margin-inline:auto; }
+.surgery-wide { margin-block:1.5rem; }
+.surgery-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; margin-block:1.5rem; align-items:start; }
+.surgery-pair .project-figure img { aspect-ratio:16/10; object-fit:contain; background:#f3f3f0; }
+.surgery-clip { position:relative; min-width:0; }
 .surgery-clip .project-video { margin:0; }
-.surgery-bubble { position:relative; margin:0; padding:.8rem 1rem; border:1px solid #d0d0d0; border-radius:12px; background:#f5f5f3; color:#333; font-size:.95rem; line-height:1.5; }
-.surgery-bubble strong { color:#171717; }
-.surgery-bubble::after { content:""; position:absolute; top:-8px; left:28px; width:14px; height:14px; border-top:1px solid #d0d0d0; border-left:1px solid #d0d0d0; background:#f5f5f3; transform:rotate(45deg); }
-.surgery-wide-figure { max-width:1240px; margin-inline:auto; }
-.surgery-wide-figure .figure-link { padding:0; }
-.surgery-wide-figure img { width:100%; height:auto; max-height:none; }
-.surgery-lens-details img { width:100%; }
+.surgery-clip video { border-radius:6px; }
+.surgery-page .media-tag { position:absolute; top:12px; left:12px; z-index:1; margin:0; padding:.3rem .65rem; border-radius:999px; background:rgb(20 20 20 / 82%); color:#fff; font-size:.82rem; font-weight:500; line-height:1.3; pointer-events:none; }
+.surgery-spatial { position:relative; }
+.surgery-view-tags { display:grid; grid-template-columns:1fr 1fr; margin:.6rem 0 0; font-size:.88rem; font-weight:500; color:#484844; text-align:center; }
 
-/* Compact publication list. */
-.surgery-page .publications { padding-block:2rem; }
-.surgery-page .publications .section-heading h2 { font-size:1.25rem; margin-bottom:.5rem; }
-.surgery-page .publication { max-width:760px; font-size:.88rem; }
-.surgery-page .publication h3 { font-size:1rem; }
+/* Compact citation */
+.surgery-citation { padding-block:clamp(3rem,5vw,4.5rem) 3rem; margin-top:clamp(3rem,5vw,4.5rem); border-top:1px solid var(--line,#d8d8d3); }
+.surgery-citation h2 { font-size:1.25rem; margin:0 0 .6rem; }
+.surgery-reference { max-width:80ch; margin:0 0 .5rem; font-size:.95rem; line-height:1.6; }
+.surgery-fine { margin:0; font-size:.85rem; color:#575753; }
 
-@media(max-width:1000px) {
-  .surgery-page .project-hero { grid-template-columns:minmax(0,1fr); }
-  .surgery-page .project-hero .hero-copy { max-width:none; }
-  .surgery-page .project-hero .hero-copy h1 { font-size:clamp(2.2rem,6.4vw,7.5rem); }
-}
 @media(max-width:700px) {
-  .surgery-page .project-hero { min-height:calc(100svh - 110px); padding:0; }
   .surgery-page .project-hero .hero-copy h1 { font-size:7.6vw; }
-  .surgery-media-pair { grid-template-columns:minmax(0,1fr); }
+  .surgery-pair { grid-template-columns:minmax(0,1fr); }
+  .surgery-page .media-tag { top:8px; left:8px; font-size:.78rem; }
 }

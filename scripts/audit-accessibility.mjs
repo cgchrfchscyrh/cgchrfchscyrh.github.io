@@ -151,14 +151,19 @@ try {
       check("Robot page links back to combined building research", await page.locator('a[href$="/building-immunology/"]').count() > 0);
     }
     if (legacyContext) check("Legacy fallback has usable destination links", await page.locator('#combined-project,#robot-project').count() === 2);
-    if (route === "/surgery-ai/") check("Surgery multipanel a-h prototype figure removed", await page.locator('img[src*="adaptive-prototype"]').count() === 0);
+    if (route === "/accessibility/") check("Surgery image and video credits are on the accessibility page", await page.locator('#surgery-media h3').count() === 10 + projectClips.filter(c => c.project === "surgery-ai").length);
+    if (route === "/surgery-ai/") check("Surgery multipanel a-h prototype figure removed",await page.locator('img[src*="adaptive-prototype"]').count() === 0);
     if (project) {
       check(`${route}: no introductory subtitles`, await page.locator('.hero-copy > .eyebrow,.hero-subtitle,.coastal-hero .coastal-tagline,.coastal-hero .coastal-intro-copy').count() === 0);
       check(`${route}: no text captions below videos`, await page.locator('figure:has(video) > figcaption,figure:has(video) > details').count() === 0);
       if (route === "/surgery-ai/") {
         check(`${route}: team and vision section removed`, await page.locator('#vision,#team').count() === 0);
         check(`${route}: opening film fills the page width`, await page.locator('#surgery-opening-video').evaluate(v => Math.round(v.getBoundingClientRect().width) === document.documentElement.clientWidth && v.getBoundingClientRect().height >= innerHeight * 0.6));
-        check(`${route}: every research clip has a short bubble`, await page.locator('.surgery-bubble').count() === 4);
+        check(`${route}: every research clip has a short overlay tag`, await page.locator('.surgery-clip .media-tag').count() === 4);
+        check(`${route}: no header or footer bars`, await page.locator('.project-header,.project-footer').count() === 0);
+        check(`${route}: story follows background, problem, methodology, citation`, JSON.stringify(await page.locator('main h2').allInnerTexts()) === JSON.stringify(["Background", "Problem", "Methodology", "Citation"]));
+        check(`${route}: no collapsed details or visible source blocks`, await page.locator('main details,.source-section,.surgery-bubble').count() === 0);
+        check(`${route}: credits link reaches the accessibility page`, await page.locator('a[href$="accessibility/#surgery-media"]').count() === 1);
       } else {
       check(`${route}: larger vision section exists`, await page.locator('#vision').count() === 1);
       check(`${route}: visual collaboration map`, await page.locator(".vision-connections li").count() === 3 && await page.locator(".vision-scene").getByRole("img").count() === 1);
@@ -182,7 +187,7 @@ try {
       check(`${route}: native player is reachable by Tab`, await page.evaluate(id => document.activeElement.id === id, firstId));
       await page.keyboard.press('Space');
       await page.waitForFunction(id => document.getElementById(id).paused, firstId);
-      await page.locator('.project-footer').scrollIntoViewIfNeeded();
+      await page.locator('#publications, .project-footer').last().scrollIntoViewIfNeeded();
       await first.scrollIntoViewIfNeeded();
       await page.waitForTimeout(350);
       check(`${route}: manual pause persists after scrolling`, await first.evaluate(v => v.paused));
@@ -215,7 +220,7 @@ try {
           await player.evaluate(v => { v.currentTime = Math.max(0, v.duration - .2); });
           await player.focus(); await page.keyboard.press('Space');
           await page.waitForFunction(id => document.getElementById(id).ended, `${clip.id}-video`);
-          await page.locator('.project-footer').scrollIntoViewIfNeeded();
+          await page.locator('#publications, .project-footer').last().scrollIntoViewIfNeeded();
           await player.scrollIntoViewIfNeeded(); await page.emulateMedia({ reducedMotion: 'no-preference' });
           await page.waitForTimeout(350);
           check(`${clip.id}: completed film does not restart automatically`, await player.evaluate(v => v instanceof HTMLVideoElement && v.ended && v.paused));
