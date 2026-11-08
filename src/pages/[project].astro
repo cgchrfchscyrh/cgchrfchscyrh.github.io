@@ -33,8 +33,8 @@ const nav = architected ? [{ id: "problem", label: "Problem" }, { id: "innovatio
   : micro ? [{ id: "abstract", label: "Question" }, { id: "communities", label: "Microbiomes" }, { id: "method", label: "Method" }, { id: "simulation", label: "Digital twins" }, { id: "room-risk", label: "Room-level risk" }, { id: "vision", label: "Vision" }, { id: "publications", label: "Publications" }]
   : [{ id: "abstract", label: "Question" }, { id: "method", label: "Method" }, ...(surgery ? [{ id: "cleaning", label: "Cleaning concept" }] : [{ id: "navigation", label: "Navigation" }]), { id: "vision", label: "Vision" }, { id: "publications", label: "Publications" }];
 ---
-<ProjectLayout title={healthy || architected || school ? project.title : `${project.shortTitle} — ${story.headline}`} shortTitle={project.shortTitle} description={project.description} slug={project.slug} source={project.source} nav={nav} bare={surgery || school}>
-  {architected ? <ArchitectedContent sourceNotes={project.sourceNotes} /> : healthy ? <HealthyContent sourceNotes={project.sourceNotes} /> : assembly ? <AssemblyContent sourceNotes={project.sourceNotes} /> : school ? <SchoolContent /> : <>
+<ProjectLayout title={healthy || architected || school ? project.title : `${project.shortTitle} — ${story.headline}`} shortTitle={project.shortTitle} description={project.description} slug={project.slug} source={project.source} nav={nav} bare={surgery || school || architected || healthy}>
+  {architected ? <ArchitectedContent /> : healthy ? <HealthyContent /> : assembly ? <AssemblyContent sourceNotes={project.sourceNotes} /> : school ? <SchoolContent /> : <>
   {surgery ? <SurgeryHero /> : <section class:list={["project-hero", { "immunity-hero": micro }]} aria-labelledby="project-title">
     <div class="hero-copy"><h1 id="project-title" class="project-display-title">{story.headlineLines.map(line => <span class="display-line">{line}{" "}</span>)}</h1>{project.credit && <p class="project-credit">{project.credit}</p>}</div>
     <div class="hero-media paired">
