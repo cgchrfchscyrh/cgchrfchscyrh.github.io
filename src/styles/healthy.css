@@ -4,10 +4,8 @@
 .healthy-hero-copy h1 { font-size:clamp(2rem,3.5vw,3rem); line-height:1.12; font-weight:600; letter-spacing:-.04em; overflow-wrap:anywhere; }
 .healthy-page .healthy-content { width:min(100% - 5rem,1200px); max-width:1200px; padding:0; }
 .healthy-content .project-section { padding:3.5rem 0; border-color:#dedede; }
-.healthy-heading { max-width:860px; margin:0 auto 2.5rem; text-align:center; }
 .healthy-stage { font-size:.75rem; text-transform:uppercase; letter-spacing:.12em; color:#555550; font-weight:500; }
-.healthy-heading h2 { font-size:clamp(1.6rem,2.5vw,2rem); line-height:1.2; font-weight:600; letter-spacing:-.03em; margin:.8rem 0 1.2rem; }
-.healthy-heading>p:last-child { max-width:45rem; margin-inline:auto; color:#515151; font-size:1rem; }
+.healthy-content .healthy-publications-title { margin:0 0 2rem; font-size:.75rem; font-weight:500; letter-spacing:.12em; text-align:center; text-transform:uppercase; color:#555550; }
 .healthy-index { display:block; font-size:1rem; color:#62625b; font-variant-numeric:tabular-nums; }
 .healthy-research { padding-bottom:3.5rem; }
 .healthy-strand { margin-top:3.5rem; padding-top:2.5rem; border-top:1px solid var(--line, #d8d8d3); }
@@ -31,9 +29,6 @@
 .healthy-publications .healthy-authors { font-size:.88rem; color:#4c4c48; }
 .healthy-publications .publication>div>p:not(.publication-meta,.healthy-authors) { font-size:.94rem; color:#555550; }
 .healthy-doi { overflow-wrap:anywhere; }
-.healthy-collaboration { display:grid; grid-template-columns:1.3fr 1fr; gap:3rem; border-top:1px solid var(--line, #d8d8d3); padding:3rem 0; align-items:center; }
-.healthy-collaboration h2 { font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:500; line-height:1.25; }
-.healthy-collaboration>div>p:not(.healthy-stage) { color:#50504a; font-size:.98rem; margin-bottom:1.5rem; }
 @media (max-width:1000px) {
   .healthy-strand-head>div { grid-template-columns:1fr; gap:1rem; }
 }
@@ -47,6 +42,6 @@
   .healthy-strand { margin-top:2rem; padding-top:1.5rem; }
   .healthy-strand-head { grid-template-columns:1fr; gap:.7rem; }
   .healthy-strand-head>.healthy-index { font-size:1.1rem; }
-  .healthy-prediction-media,.healthy-response-media,.healthy-collaboration { grid-template-columns:1fr; gap:1.7rem; }
+  .healthy-prediction-media,.healthy-response-media { grid-template-columns:1fr; gap:1.7rem; }
   .healthy-publications .publication { grid-template-columns:1fr; gap:.8rem; }
 }

@@ -37,9 +37,8 @@ const papers = [
     </article>
   </div>
   <section class="project-section" id="publications" aria-labelledby="publications-title">
-    <div class="healthy-heading"><p class="healthy-stage">Research &amp; publications</p><h2 id="publications-title">Evidence across modeling,<br /> prediction, and intervention.</h2><p>These studies establish individual parts of the research. Connecting them into a responsive building remains the larger challenge.</p></div>
+    <h2 id="publications-title" class="healthy-publications-title">Research &amp; publications</h2>
     <div class="healthy-publications">{papers.map(paper => <article class="publication"><p class="healthy-stage">{paper.area}</p><div><p class="publication-meta">{paper.venue}</p><h3>{paper.title}</h3><p class="healthy-authors">{paper.authors}</p><p>{paper.note}</p><p class="healthy-doi">DOI: {paper.doi.replace("https://doi.org/", "")}</p></div></article>)}</div>
   </section>
-  <section class="healthy-collaboration" id="collaborate" aria-labelledby="collaborate-title"><div><p class="healthy-stage">Research team &amp; collaborators</p><h2 id="collaborate-title">A shared space for<br /> different kinds of expertise.</h2></div><div><p>Building science · AI &amp; robotics · Human factors · Facility operations</p></div></section>
 </div>
 <Playback />
