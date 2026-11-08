@@ -5,10 +5,7 @@
 .school-intro > p { max-width:630px; margin:24px auto 0; font-size:1.15rem; line-height:1.6; color:#5b5b5b; }
 .school-chapter { display:grid; grid-template-columns:minmax(0, .85fr) minmax(0, 1.3fr); align-items:center; gap:clamp(28px,4.5vw,64px); padding:64px 0; border-top:1px solid #dedede; }
 .school-chapter-copy { min-width:0; }
-.school-chapter-marker { display:flex; flex-wrap:wrap; gap:8px 20px; align-items:baseline; color:#666; font-size:.75rem; letter-spacing:.06em; }
-.school-chapter-marker span:first-child { text-transform:uppercase; font-weight:600; }
-.school-chapter-marker span:last-child { font-variant-numeric:tabular-nums; }
-.school-chapter h2 { font-size:clamp(1.65rem,2.5vw,2.2rem); line-height:1.17; letter-spacing:-.035em; font-weight:600; margin:14px 0 22px; }
+.school-chapter h2 { font-size:clamp(1.65rem,2.5vw,2.2rem); line-height:1.17; letter-spacing:-.035em; font-weight:600; margin:0 0 22px; }
 .school-narration { color:#525252; font-size:1rem; }
 .school-narration p { line-height:1.7; }
 .school-narration p + p { margin-top:14px; }
@@ -19,7 +16,6 @@
 .school-study p { font-size:.85rem; line-height:1.65; }
 .school-study > div > p:first-child a { color:#333; font-size:1rem; }
 .school-study .school-authors { margin-top:8px; }
-.school-study .school-film-note { margin-top:20px; }
 @media (max-width:850px) {
   .school-intro { padding:54px 0 48px; }
   .school-intro > p { font-size:1.05rem; }

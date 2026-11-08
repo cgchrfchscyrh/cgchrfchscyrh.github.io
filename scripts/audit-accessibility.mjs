@@ -172,7 +172,7 @@ try {
         check(`${route}: no header, footer or disclosures`, await page.locator('.project-header,.project-footer,main details,main summary,.source-section').count() === 0);
         check(`${route}: five consecutive video chapters`, await page.locator('.school-chapter').count() === 5 && schoolChapters.every((chapter, i) => chapter.start === (i ? schoolChapters[i-1].end : 0)));
         check(`${route}: narration text matches each chapter`, await page.locator('.school-narration').evaluateAll((nodes, chapters) => nodes.length === chapters.length && nodes.every((node, i) => [...node.querySelectorAll('p')].map(p => p.textContent).join('\n') === chapters[i].paragraphs.join('\n')), schoolChapters));
-        check(`${route}: original study and complete film retained`, await page.locator('#publications a').count() === 2);
+        check(`${route}: original study retained`, await page.locator('#publications a[href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8556188/"]').count() === 1);
       } else if (route === "/architected-structures/" || route === "/healthy-built-environments/") {
         check(`${route}: no navigation bars, footer, disclosures or vision`, await page.locator('.project-header,.project-footer,main nav,main details,main summary,#vision,.research-vision,.source-section').count() === 0);
         check(`${route}: no outgoing links`, await page.locator('a[href]').evaluateAll(links => links.every(a => a.getAttribute('href').startsWith('#'))));
