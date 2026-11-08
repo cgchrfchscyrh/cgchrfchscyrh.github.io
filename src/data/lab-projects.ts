@@ -18,11 +18,9 @@ export const labProjects = [
   "imageAlt": "Diamond, gyroid, and primitive porous modules in a geometric assembly visualization.",
   "question": "How can complex materials become buildable structures?",
   "abstract": "Material architecture, modular connections, and robotic handling need to be designed together.",
-  "heroClips": [
-    "structures-families"
-  ],
+  "heroClips": [],
   "demoClips": [
-    "structures-joint",
+    "structures-families",
     "structures-assembly"
   ],
   "sourceNotes": [
@@ -255,7 +253,7 @@ for (const assetId of ["indoor-transport", "building-layers", "disinfection-simu
   projectClips.push({ ...original, id: `healthy-${assetId}`, project: "healthy-built-environments", assetId });
 }
 
-for (const [id, assetId] of [["structures-families", "tpms-families"], ["structures-joint", "joint-alignment"], ["structures-assembly", "excavator-assembly"]]) {
+for (const [id, assetId] of [["structures-families", "tpms-families"], ["structures-assembly", "excavator-assembly"]]) {
   const original = projectClips.find(clip => clip.id === assetId)!;
   projectClips.push({ ...original, id, project: "architected-structures", assetProject: original.assetProject || original.project, assetId });
 }

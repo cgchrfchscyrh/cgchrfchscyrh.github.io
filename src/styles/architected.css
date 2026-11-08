@@ -1,15 +1,9 @@
 .architected-page { background:#fff; }
 .architected-hero,.architected-content { width:min(100% - 5rem,1200px); margin-inline:auto; }
 .architected-hero { padding:3.5rem 0; }
-.architected-hero-intro { max-width:960px; margin:0 auto 2.5rem; text-align:center; }
+.architected-hero-intro { max-width:960px; margin:0 auto; text-align:center; }
 .architected-hero h1 { font-size:clamp(2rem,3.5vw,3rem); font-weight:600; letter-spacing:-.04em; line-height:1.12; overflow-wrap:anywhere; }
-.architected-hero-intro>p { max-width:42rem; margin:1.25rem auto 0; color:#515151; font-size:1.05rem; line-height:1.65; }
-.architected-hero .project-video { max-width:1000px; margin:auto; }
-.architected-hero .project-video video { border-radius:0; background:#fff; object-fit:contain; }
-.architected-section { padding:3.5rem 0; border-top:1px solid #dedede; }
 .architected-research { padding-bottom:3.5rem; scroll-margin-top:2rem; }
-.architected-stage { text-transform:uppercase; letter-spacing:.11em; font-size:.75rem; font-weight:500; color:#53534d; }
-.architected-application h2 { font-size:clamp(1.6rem,2.5vw,2rem); font-weight:600; line-height:1.2; letter-spacing:-.03em; margin:0 0 1.2rem; }
 .architected-strand { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:3.5rem; padding:3rem 0; border-top:1px solid #d8d8d3; align-items:center; }
 .architected-number { display:block; color:#62625a; font-size:1rem; margin-bottom:1rem; }
 .architected-strand h2,.architected-planning h2 { font-size:clamp(1.5rem,2.5vw,2rem); font-weight:500; letter-spacing:-.035em; line-height:1.2; margin:0 0 1.2rem; }
@@ -22,35 +16,26 @@
 .architected-material-pair img { height:280px; object-fit:contain; }
 .architected-joint video { border-radius:0; }
 .architected-connections { padding:0 0 1.5rem; }
-.architected-connections h3 { text-align:center; font-size:1rem; font-weight:500; margin:0 0 1.25rem; }
 .architected-connections .project-figure { max-width:1000px; margin:auto; }
 .architected-connections img { width:100%; height:auto; }
 .architected-planning { padding-top:3rem; margin-top:1rem; border-top:1px solid #d8d8d3; }
 .architected-planning-head { display:grid; grid-template-columns:4rem 1fr 1.4fr; gap:2rem; }
 .architected-planning-head>p { font-size:.98rem; color:#51514c; max-width:40rem; }
-.architected-planning #demonstrations { margin-top:2rem; }
+.architected-planning #demonstrations { display:grid; gap:2rem; margin-top:2rem; }
+.architected-planning .project-figure { width:100%; max-width:1000px; margin:0 auto; }
 .architected-page #assembly-demo { scroll-margin-top:2rem; }
 .architected-page #assembly-demo video { border-radius:0; }
-.architected-application { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); align-items:center; gap:4rem; }
-.architected-application h2 { margin-top:1rem; }
-.architected-application>div>p:not(.architected-stage) { color:#51514b; font-size:1rem; }
-.architected-application .project-figure { margin:0; }
-.architected-application .figure-static { background:white; padding:1rem; }
 @media (max-width:1100px) {
   .architected-strand { grid-template-columns:1fr; gap:2rem; }
   .architected-strand-copy { max-width:42rem; }
   .architected-planning-head { grid-template-columns:3rem 1fr; gap:1rem; }
   .architected-planning-head>p { grid-column:2; }
-  .architected-application { gap:2.5rem; }
 }
 @media (max-width:700px) {
   .architected-hero,.architected-content { width:calc(100% - 2.5rem); }
   .architected-hero { padding-top:2.5rem; }
-  .architected-hero-intro { margin-bottom:1.7rem; }
   .architected-hero h1 { font-size:clamp(2rem,6vw,2.6rem); }
   .architected-hero h1 br { display:none; }
-  .architected-hero-intro>p { font-size:1rem; }
-  .architected-section { padding:3rem 0; }
   .architected-research { padding-bottom:3rem; }
   .architected-strand { padding:2rem 0; }
   .architected-material-pair { gap:1rem; }
@@ -58,5 +43,4 @@
   .architected-material-pair img { height:auto; aspect-ratio:1; }
   .architected-planning-head { grid-template-columns:1fr; gap:0; }
   .architected-planning-head>p { grid-column:auto; }
-  .architected-application { grid-template-columns:1fr; gap:1.5rem; }
 }
