@@ -152,7 +152,7 @@ try {
       check("Robot page links back to combined building research", await page.locator('a[href$="/building-immunology/"]').count() > 0);
     }
     if (legacyContext) check("Legacy fallback has usable destination links", await page.locator('#combined-project,#robot-project').count() === 2);
-    if (route === "/accessibility/") check("Surgery image and video credits are on the accessibility page", await page.locator('#surgery-media h3').count() === 10 + projectClips.filter(c => c.project === "surgery-ai").length);
+    if (route === "/accessibility/") check("Surgery image and video credits are on the accessibility page", await page.locator('#surgery-media h3').count() === 8 + projectClips.filter(c => c.project === "surgery-ai").length);
     if (route === "/surgery-ai/") check("Surgery multipanel a-h prototype figure removed",await page.locator('img[src*="adaptive-prototype"]').count() === 0);
     if (project) {
       check(`${route}: no introductory subtitles`, await page.locator('.hero-copy > .eyebrow,.hero-subtitle,.coastal-hero .coastal-tagline,.coastal-hero .coastal-intro-copy').count() === 0);

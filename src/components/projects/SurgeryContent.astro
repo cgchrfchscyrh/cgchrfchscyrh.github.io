@@ -9,13 +9,12 @@ const directions = [
   { number: "03", title: "Interpret the view", text: "A 2D image can make tool–tissue contact difficult to judge.", method: "AI visual feedback", target: "visual-ai" },
 ];
 const clips = [
-  { id: "camera-guidance", title: "External actuation, internal camera motion", caption: "Design animation of an actuator moving above the abdominal wall and a camera responding below it." },
-  { id: "instrument-motion", title: "Working within a confined space", caption: "An articulated instrument changes configuration inside a rendered abdominal workspace. These complementary views illustrate the design context." },
+  { id: "camera-guidance", title: "External actuation, internal camera motion" },
+  { id: "instrument-motion", title: "Working within a confined space" },
 ];
 ---
 <span id="abstract" class="section-anchor" aria-hidden="true"></span>
-<section class="project-section surgery-section" id="background" aria-labelledby="background-title">
-  <h2 id="background-title">Small incisions make the camera the surgeon’s window.</h2>
+<section class="project-section surgery-section" id="background" aria-label="Surgical workspace">
   <p class="surgery-lead">In minimally invasive surgery, instruments enter through small incisions. A laparoscopic camera provides the view inside the body and is typically held and repositioned by an assistant.</p>
   <div class="surgery-single"><Figure id="surgical-workspace" quiet /></div>
 </section>
@@ -30,10 +29,6 @@ const clips = [
       <a href={`#${direction.target}`}>{direction.method}<span aria-hidden="true"> ↓</span></a>
     </article>)}
   </div>
-  <div class="surgery-pair surgery-problem-media">
-    <div><Figure id="restricted-viewpoints" quiet /><p class="surgery-caption">Restricted viewpoints in a confined workspace. Design animation.</p></div>
-    <div><Figure id="obscured-view" quiet /><p class="surgery-caption">An obscured laparoscopic view motivates lens-care research.</p></div>
-  </div>
 </section>
 
 <span id="innovations" class="section-anchor" aria-hidden="true"></span>
@@ -43,7 +38,7 @@ const clips = [
   <p class="surgery-lead">A robot-mounted magnetic actuator outside the body is designed to move and orient a camera inside it. The laboratory prototype above explores external actuation; the diagrams and animations below explain the hardware concept.</p>
   <div class="surgery-wide"><Figure id="surgery-mechanism" quiet /></div>
   <div class="surgery-pair surgery-clips">
-    {clips.map(clip => <div class="surgery-clip"><h3>{clip.title}</h3><Video id={clip.id} /><p class="surgery-caption">{clip.caption}</p></div>)}
+    {clips.map(clip => <div class="surgery-clip"><h3>{clip.title}</h3><Video id={clip.id} /></div>)}
   </div>
 </section>
 
