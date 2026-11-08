@@ -4,13 +4,13 @@ import Video from "../ProjectVideo.astro";
 import { asset } from "../../data/profile";
 import "../../styles/surgery.css";
 const directions = [
-  { number: "01", title: "Move the viewpoint", text: "A confined workspace limits where the camera can look.", method: "Magnetic camera actuation", target: "method", status: "Benchtop prototype + design animations" },
-  { number: "02", title: "Keep the lens clear", text: "Smoke, fog, and fluids can obscure the surgical view.", method: "Bioinspired lens care", target: "cleaning", status: "Proposed mechanisms + controller" },
-  { number: "03", title: "Interpret the view", text: "A 2D image can make tool–tissue contact difficult to judge.", method: "AI visual feedback", target: "visual-ai", status: "Related simulation training study" },
+  { number: "01", title: "Move the viewpoint", text: "A confined workspace limits where the camera can look.", method: "Magnetic camera actuation", target: "method" },
+  { number: "02", title: "Keep the lens clear", text: "Smoke, fog, and fluids can obscure the surgical view.", method: "Bioinspired lens care", target: "cleaning" },
+  { number: "03", title: "Interpret the view", text: "A 2D image can make tool–tissue contact difficult to judge.", method: "AI visual feedback", target: "visual-ai" },
 ];
 const clips = [
   { id: "camera-guidance", title: "External actuation, internal camera motion", caption: "Design animation of an actuator moving above the abdominal wall and a camera responding below it." },
-  { id: "camera-assembly", title: "Inside the camera capsule", caption: "An exploded design animation shows how the camera components fit together." },
+  { id: "instrument-motion", title: "Working within a confined space", caption: "An articulated instrument changes configuration inside a rendered abdominal workspace. These complementary views illustrate the design context." },
 ];
 ---
 <span id="abstract" class="section-anchor" aria-hidden="true"></span>
@@ -28,7 +28,6 @@ const clips = [
       <h3>{direction.title}</h3>
       <p>{direction.text}</p>
       <a href={`#${direction.target}`}>{direction.method}<span aria-hidden="true"> ↓</span></a>
-      <p class="surgery-evidence">{direction.status}</p>
     </article>)}
   </div>
   <div class="surgery-pair surgery-problem-media">
@@ -46,10 +45,6 @@ const clips = [
   <div class="surgery-pair surgery-clips">
     {clips.map(clip => <div class="surgery-clip"><h3>{clip.title}</h3><Video id={clip.id} /><p class="surgery-caption">{clip.caption}</p></div>)}
   </div>
-  <div class="surgery-supporting-demo">
-    <div><h3>Working within a confined space</h3><p>An articulated instrument changes configuration inside a rendered abdominal workspace. These complementary views illustrate the design context.</p></div>
-    <Video id="instrument-motion" />
-  </div>
 </section>
 
 <section class="project-section surgery-section" id="cleaning" aria-labelledby="cleaning-title">
@@ -66,7 +61,6 @@ const clips = [
     <p class="surgery-sublead">The proposed controller uses visual estimates of lens condition to coordinate eyelid actuation and airflow.</p>
     <Figure id="cleaning-control" quiet />
   </div>
-  <p class="surgery-scope">Research stage: mechanism and control proposals. A measured cleaning result is not reported in these materials.</p>
 </section>
 
 <section class="project-section surgery-section" id="visual-ai" aria-labelledby="visual-ai-title">
@@ -85,7 +79,6 @@ const clips = [
     <p class="surgery-view-tags" aria-hidden="true"><span>2D view</span><span>3D context</span></p>
     <p class="surgery-caption">Top: the tool contacts the target. Bottom: the tool misses it. The 3D view makes the difference visible in Isaac Sim.</p>
   </div>
-  <p class="surgery-scope">Research stage: simulation training. This study is separate from the magnetic camera prototype and the lens-care proposals.</p>
 </section>
 
 <section class="project-section surgery-citation" id="publications" aria-labelledby="publications-title">

@@ -160,7 +160,9 @@ try {
       if (route === "/surgery-ai/") {
         check(`${route}: team and vision section removed`, await page.locator('#vision,#team').count() === 0);
         check(`${route}: opening films retain their complete frames`, await page.locator('.surgery-opening video').evaluateAll(vs => vs.length === 2 && vs.every(v => getComputedStyle(v).objectFit === 'contain')));
-        check(`${route}: research navigation reaches named sections`, await page.locator('.surgery-section-links a').evaluateAll(links => links.length === 3 && links.every(a => document.querySelector(a.getAttribute('href'))?.querySelector('h2'))));
+        check(`${route}: opening simulation and laboratory films are separate`, await page.locator('.surgery-opening video').evaluateAll(vs => vs.length === 2 && vs[0].id === 'camera-assembly-video' && vs[1].id === 'bench-prototype-video'));
+        check(`${route}: repeated film and requested text removed`, await page.locator('.surgery-section-links,.surgery-publication > p,.surgery-scope,.surgery-evidence,#surgery-opening-video').count() === 0 && !/research stage/i.test(await page.locator('main').innerText()));
+        check(`${route}: each video source appears once`, await page.locator('video source').evaluateAll(sources => new Set(sources.map(source => source.src)).size === sources.length));
         check(`${route}: no header or footer bars`, await page.locator('.project-header,.project-footer').count() === 0);
         check(`${route}: research directions have separate named sections`, await page.locator('#method > h2,#cleaning > h2,#visual-ai > h2').count() === 3);
         check(`${route}: video IDs are unique`, await page.locator('video').evaluateAll(vs => new Set(vs.map(v => v.id)).size === vs.length));

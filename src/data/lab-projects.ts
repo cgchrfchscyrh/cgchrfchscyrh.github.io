@@ -117,7 +117,7 @@ export const labProjects = [
     image: "surgery-cover.png", imageWidth: 617, imageHeight: 347, imageAlt: "Robot-mounted external actuator and an internal camera in an abdominal model.",
     question: "Move the camera. Keep a usable view.",
     abstract: "Camera positioning is a concrete task within minimally invasive surgery. The benchtop prototype explores external actuation of an internal camera. Maintaining a usable view throughout a procedure adds another problem: visibility can deteriorate even when the camera is correctly positioned.",
-    heroClips: ["surgery-opening"], demoClips: ["bench-prototype", "camera-guidance", "camera-assembly", "instrument-motion"],
+    heroClips: ["camera-assembly", "bench-prototype"], demoClips: ["camera-guidance", "instrument-motion"],
     sourceNotes: ["Page structure and introductory copy follow the supplied brief, Advancing Physical AI for Clearer Vision in Minimally Invasive Surgery.", "Redefine Surgery Intelligence with TEAM, slides 3–5: mechanism diagrams, rendered motion, and laboratory prototype.", "UF Robotics Workshop — Shuai Li — ESSIE, slides 2, 5–6: surgical workspace illustration, visual obstruction example, Eye Concept, robotic eyelid, soft nozzle, and proposed cleaning control. The cleaning concept is separate from the prototype footage.", "Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback, arXiv:2511.02233v1, Figures 2 and 7. Songyang Liu, Yunpeng Tan, and Shuai Li, 2025. Reproduced under CC BY 4.0, converted to WebP without cropping. This simulation training study is distinct from the magnetic camera prototype and the lens-care proposal."]
   },
   {
@@ -228,12 +228,6 @@ export const projectClips: ProjectClip[] = [
     title: "A robotic response in simulation", caption: "A simulated robot approaches surfaces in a hospital room.",
     description: "A mobile robot with an arm moves near a bed and furniture in a rendered hospital room. A small inset provides a second view. The excerpt shows motion and positioning as part of a simulated disinfection scenario. It does not measure pathogen removal or demonstrate a live connection to the separate building risk models.",
     sourceLabel: "Building, slide 11 / Research Presentation, slide 7", sourceRange: "00:19–00:31", audioNote: "This web excerpt omits source audio and presents the full visual scene at its original speed."
-  },
-  {
-    id: "surgery-opening", project: "surgery-ai", duration: 13.8,
-    title: "Opening film: a camera capsule and the laboratory prototype", caption: "",
-    description: "A silent film of two shots. Against a black background, a capsule-like camera with a glowing ring around its lens turns in close view. The film then cuts to a laboratory, where a robot arm holds an actuator above an open, curved abdominal model on a table. The arm shifts position, and a small camera is visible inside the model. The first shot is a design animation. The second is an external benchtop setup; it does not show surgery on a person or quantify positioning accuracy. Narrow screens crop the sides of the frame; the complete laboratory frame appears in the clip further down the page.",
-    sourceFile: "assets/video/surgery_ai/video_1.mp4", sourceRange: "00:18.5–00:23.5 of video_1.mp4, then 00:00–00:08.8 of video_2.mp4", audioNote: "The web film is silent; source sounds are omitted.",
   },
   {
     id: "camera-guidance", project: "surgery-ai", duration: 12,
