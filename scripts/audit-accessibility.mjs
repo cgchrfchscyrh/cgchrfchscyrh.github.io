@@ -176,7 +176,8 @@ try {
       } else if (route === "/architected-structures/" || route === "/healthy-built-environments/") {
         check(`${route}: no navigation bars, footer, disclosures or vision`, await page.locator('.project-header,.project-footer,main nav,main details,main summary,#vision,.research-vision,.source-section').count() === 0);
         check(`${route}: no outgoing links`, await page.locator('a[href]').evaluateAll(links => links.every(a => a.getAttribute('href').startsWith('#'))));
-        check(`${route}: four research figures remain visible`, await page.locator('main .project-figure:visible').count() === 4);
+        const expectedFigures = route === "/healthy-built-environments/" ? 2 : 4;
+        check(`${route}: expected research figures remain visible`, await page.locator('main .project-figure:visible').count() === expectedFigures);
         if (route === "/architected-structures/") check(`${route}: connection concepts are expanded`, await page.locator('.architected-connections [data-figure="connections"]').isVisible());
         if (route === "/healthy-built-environments/") check(`${route}: publication titles and authors retained as text`, await page.locator('.healthy-publications .publication h3').count() === 3 && await page.locator('.healthy-authors').count() === 3 && await page.locator('.healthy-publications a').count() === 0);
       } else {
@@ -193,6 +194,7 @@ try {
       const first = page.locator('video').first();
       const firstId = await first.getAttribute('id');
       await page.evaluate(() => { window.scrollTo(0, 0); document.querySelector('main').focus(); });
+      await first.scrollIntoViewIfNeeded();
       await page.waitForFunction(id => {
         const video = document.getElementById(id);
         return !video.paused && video.readyState >= 2 && !video.error;

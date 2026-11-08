@@ -47,10 +47,9 @@ export const labProjects = [
   "imageAlt": "An overhead digital building model with rooms, furniture, and layered services.",
   "question": "How can buildings anticipate health risks and respond to human needs?",
   "abstract": "We connect spatial models, changing indoor conditions, and human needs to study exposure, anticipate change, and compare responses.",
-  "heroClips": [
-    "healthy-indoor-transport"
-  ],
+  "heroClips": [],
   "demoClips": [
+    "healthy-indoor-transport",
     "healthy-building-layers",
     "healthy-disinfection-simulation"
   ],
