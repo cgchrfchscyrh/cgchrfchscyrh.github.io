@@ -15,21 +15,18 @@
 .architected-material-pair .figure-static { padding:1rem; background:white; }
 .architected-material-pair img { height:280px; object-fit:contain; }
 .architected-joint video { border-radius:0; }
-.architected-connections { padding:0 0 1.5rem; }
-.architected-connections .project-figure { max-width:1000px; margin:auto; }
+.architected-connections { display:grid; grid-column:1 / -1; grid-template-columns:minmax(0,5fr) minmax(0,4fr); gap:2rem; align-items:center; }
+.architected-connections .project-figure { width:100%; margin:0; }
 .architected-connections img { width:100%; height:auto; }
 .architected-planning { padding-top:3rem; margin-top:1rem; border-top:1px solid #d8d8d3; }
-.architected-planning-head { display:grid; grid-template-columns:4rem 1fr 1.4fr; gap:2rem; }
-.architected-planning-head>p { font-size:.98rem; color:#51514c; max-width:40rem; }
-.architected-planning #demonstrations { display:grid; gap:2rem; margin-top:2rem; }
-.architected-planning .project-figure { width:100%; max-width:1000px; margin:0 auto; }
+.architected-planning-head { display:grid; grid-template-columns:4rem 1fr; gap:2rem; }
+.architected-planning #demonstrations { margin-top:2rem; }
 .architected-page #assembly-demo { scroll-margin-top:2rem; }
 .architected-page #assembly-demo video { border-radius:0; }
 @media (max-width:1100px) {
   .architected-strand { grid-template-columns:1fr; gap:2rem; }
   .architected-strand-copy { max-width:42rem; }
   .architected-planning-head { grid-template-columns:3rem 1fr; gap:1rem; }
-  .architected-planning-head>p { grid-column:2; }
 }
 @media (max-width:700px) {
   .architected-hero,.architected-content { width:calc(100% - 2.5rem); }
@@ -41,6 +38,6 @@
   .architected-material-pair { gap:1rem; }
   .architected-material-pair .figure-static { padding:.6rem; }
   .architected-material-pair img { height:auto; aspect-ratio:1; }
+  .architected-connections { grid-template-columns:1fr; gap:1.5rem; }
   .architected-planning-head { grid-template-columns:1fr; gap:0; }
-  .architected-planning-head>p { grid-column:auto; }
 }
