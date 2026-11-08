@@ -158,10 +158,11 @@ try {
       check(`${route}: no text captions below videos`, await page.locator('figure:has(video) > figcaption,figure:has(video) > details').count() === 0);
       if (route === "/surgery-ai/") {
         check(`${route}: team and vision section removed`, await page.locator('#vision,#team').count() === 0);
-        check(`${route}: opening film fills the page width`, await page.locator('#surgery-opening-video').evaluate(v => Math.round(v.getBoundingClientRect().width) === document.documentElement.clientWidth && v.getBoundingClientRect().height >= innerHeight * 0.6));
-        check(`${route}: every research clip has a short overlay tag`, await page.locator('.surgery-clip .media-tag').count() === 4);
+        check(`${route}: opening films retain their complete frames`, await page.locator('.surgery-opening video').evaluateAll(vs => vs.length === 2 && vs.every(v => getComputedStyle(v).objectFit === 'contain')));
+        check(`${route}: research navigation reaches named sections`, await page.locator('.surgery-section-links a').evaluateAll(links => links.length === 3 && links.every(a => document.querySelector(a.getAttribute('href'))?.querySelector('h2'))));
         check(`${route}: no header or footer bars`, await page.locator('.project-header,.project-footer').count() === 0);
-        check(`${route}: story follows background, problem, methodology, citation`, JSON.stringify(await page.locator('main h2').allInnerTexts()) === JSON.stringify(["Background", "Problem", "Methodology", "Citation"]));
+        check(`${route}: research directions have separate named sections`, await page.locator('#method > h2,#cleaning > h2,#visual-ai > h2').count() === 3);
+        check(`${route}: video IDs are unique`, await page.locator('video').evaluateAll(vs => new Set(vs.map(v => v.id)).size === vs.length));
         check(`${route}: no collapsed details or visible source blocks`, await page.locator('main details,.source-section,.surgery-bubble').count() === 0);
         check(`${route}: credits link reaches the accessibility page`, await page.locator('a[href$="accessibility/#surgery-media"]').count() === 1);
       } else {

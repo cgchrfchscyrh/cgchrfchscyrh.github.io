@@ -3,63 +3,94 @@ import Figure from "../ProjectFigure.astro";
 import Video from "../ProjectVideo.astro";
 import { asset } from "../../data/profile";
 import "../../styles/surgery.css";
+const directions = [
+  { number: "01", title: "Move the viewpoint", text: "A confined workspace limits where the camera can look.", method: "Magnetic camera actuation", target: "method", status: "Benchtop prototype + design animations" },
+  { number: "02", title: "Keep the lens clear", text: "Smoke, fog, and fluids can obscure the surgical view.", method: "Bioinspired lens care", target: "cleaning", status: "Proposed mechanisms + controller" },
+  { number: "03", title: "Interpret the view", text: "A 2D image can make tool–tissue contact difficult to judge.", method: "AI visual feedback", target: "visual-ai", status: "Related simulation training study" },
+];
 const clips = [
-  { id: "bench-prototype", tag: "Lab prototype" },
-  { id: "camera-guidance", tag: "Actuator · Camera" },
-  { id: "camera-assembly", tag: "Camera capsule" },
-  { id: "instrument-motion", tag: "Instrument" },
+  { id: "camera-guidance", title: "External actuation, internal camera motion", caption: "Design animation of an actuator moving above the abdominal wall and a camera responding below it." },
+  { id: "camera-assembly", title: "Inside the camera capsule", caption: "An exploded design animation shows how the camera components fit together." },
 ];
 ---
 <span id="abstract" class="section-anchor" aria-hidden="true"></span>
 <section class="project-section surgery-section" id="background" aria-labelledby="background-title">
-  <h2 id="background-title">Background</h2>
-  <p class="surgery-lead">In minimally invasive surgery, the surgeon works through small incisions and sees inside the body only through a laparoscopic camera, which an assistant holds and moves.</p>
+  <h2 id="background-title">Small incisions make the camera the surgeon’s window.</h2>
+  <p class="surgery-lead">In minimally invasive surgery, instruments enter through small incisions. A laparoscopic camera provides the view inside the body and is typically held and repositioned by an assistant.</p>
   <div class="surgery-single"><Figure id="surgical-workspace" quiet /></div>
 </section>
 
-<section class="project-section surgery-section" id="problems" aria-labelledby="problems-title">
-  <h2 id="problems-title">Problem</h2>
-  <p class="surgery-lead">The confined workspace limits where the camera can look, and smoke, fog, and fluids can cover the lens.</p>
-  <div class="surgery-pair">
-    <Figure id="restricted-viewpoints" quiet tag="Restricted viewpoints" />
-    <Figure id="obscured-view" quiet tag="Obscured view" />
+<section class="project-section surgery-section surgery-challenges" id="problems" aria-labelledby="problems-title">
+  <h2 id="problems-title">Three challenges guide three research directions.</h2>
+  <div class="surgery-direction-grid">
+    {directions.map(direction => <article class="surgery-direction">
+      <p class="surgery-number">{direction.number}</p>
+      <h3>{direction.title}</h3>
+      <p>{direction.text}</p>
+      <a href={`#${direction.target}`}>{direction.method}<span aria-hidden="true"> ↓</span></a>
+      <p class="surgery-evidence">{direction.status}</p>
+    </article>)}
+  </div>
+  <div class="surgery-pair surgery-problem-media">
+    <div><Figure id="restricted-viewpoints" quiet /><p class="surgery-caption">Restricted viewpoints in a confined workspace. Design animation.</p></div>
+    <div><Figure id="obscured-view" quiet /><p class="surgery-caption">An obscured laparoscopic view motivates lens-care research.</p></div>
   </div>
 </section>
 
-<section class="project-section surgery-section" id="innovations" aria-labelledby="innovations-title">
-  <h2 id="innovations-title">Methodology</h2>
-  <p class="surgery-lead">Three directions toward a clear, steady view: magnetic camera actuation, bioinspired lens care, and AI visual feedback.</p>
-
-  <div class="surgery-step" id="method">
-    <h3>Magnetic camera actuation</h3>
-    <p>A robot-mounted actuator outside the body moves and turns a camera inside it.</p>
-  </div>
+<span id="innovations" class="section-anchor" aria-hidden="true"></span>
+<section class="project-section surgery-section" id="method" aria-labelledby="method-title">
+  <p class="surgery-kicker">01 · Magnetic camera actuation</p>
+  <h2 id="method-title">Move an internal camera with an external actuator.</h2>
+  <p class="surgery-lead">A robot-mounted magnetic actuator outside the body is designed to move and orient a camera inside it. The laboratory prototype above explores external actuation; the diagrams and animations below explain the hardware concept.</p>
   <div class="surgery-wide"><Figure id="surgery-mechanism" quiet /></div>
   <div class="surgery-pair surgery-clips">
-    {clips.map(clip => <div class="surgery-clip"><Video id={clip.id} /><p class="media-tag" aria-hidden="true">{clip.tag}</p></div>)}
+    {clips.map(clip => <div class="surgery-clip"><h3>{clip.title}</h3><Video id={clip.id} /><p class="surgery-caption">{clip.caption}</p></div>)}
   </div>
+  <div class="surgery-supporting-demo">
+    <div><h3>Working within a confined space</h3><p>An articulated instrument changes configuration inside a rendered abdominal workspace. These complementary views illustrate the design context.</p></div>
+    <Video id="instrument-motion" />
+  </div>
+</section>
 
-  <div class="surgery-step" id="cleaning">
-    <h3>Bioinspired lens care</h3>
-    <p>Modeled on the human eye, a robotic eyelid and a soft nozzle are being designed to keep the lens clear.</p>
-  </div>
+<section class="project-section surgery-section" id="cleaning" aria-labelledby="cleaning-title">
+  <p class="surgery-kicker">02 · Bioinspired lens care</p>
+  <h2 id="cleaning-title">Borrow the eye’s approach to keeping a lens clear.</h2>
+  <p class="surgery-lead">A proposed robotic eyelid sweeps the lens cover, while a soft nozzle directs cleaning flow. Inspired by the human eye, these mechanisms and their controller form a lens-care research direction.</p>
   <div class="surgery-wide"><Figure id="eye-concept" quiet /></div>
-  <div class="surgery-pair">
-    <Figure id="eyelid-concept" quiet tag="Robotic eyelid" />
-    <Figure id="soft-nozzle" quiet tag="Soft nozzle" />
+  <div class="surgery-pair surgery-cleaning-parts">
+    <div><h3>A robotic eyelid</h3><Figure id="eyelid-concept" quiet /><p class="surgery-caption">A proposed shape-memory-alloy mechanism moves a wiper across the lens cover.</p></div>
+    <div><h3>A soft cleaning nozzle</h3><Figure id="soft-nozzle" quiet /><p class="surgery-caption">Air and liquid channels direct cleaning flow toward the lens.</p></div>
   </div>
-  <div class="surgery-wide"><Figure id="cleaning-control" quiet /></div>
+  <div class="surgery-control">
+    <h3>Coordinate sensing, wiping, and cleaning flow.</h3>
+    <p class="surgery-sublead">The proposed controller uses visual estimates of lens condition to coordinate eyelid actuation and airflow.</p>
+    <Figure id="cleaning-control" quiet />
+  </div>
+  <p class="surgery-scope">Research stage: mechanism and control proposals. A measured cleaning result is not reported in these materials.</p>
+</section>
 
-  <div class="surgery-step" id="visual-ai">
-    <h3>AI visual feedback</h3>
-    <p>AI models locate the tools, detect tool–tissue contact, and add 3D feedback to the 2D view, tested in simulated training.</p>
-  </div>
+<section class="project-section surgery-section" id="visual-ai" aria-labelledby="visual-ai-title">
+  <p class="surgery-kicker">03 · AI visual feedback</p>
+  <h2 id="visual-ai-title">Add spatial context to a two-dimensional view.</h2>
+  <p class="surgery-lead">In a related simulation training study, AI models locate surgical tools, detect tool–tissue interactions, and connect the 2D view to 3D and mixed-reality feedback.</p>
   <div class="surgery-wide"><Figure id="ai-pipeline" quiet /></div>
-  <div class="surgery-wide surgery-spatial"><Figure id="spatial-feedback" quiet /><p class="surgery-view-tags" aria-hidden="true"><span>2D view</span><span>3D context</span></p></div>
+  <ol class="surgery-pipeline">
+    <li><h3>Locate the tools</h3><p>Estimate tool positions from endoscopic images.</p></li>
+    <li><h3>Detect interaction</h3><p>Identify tool–tissue contact in the training scene.</p></li>
+    <li><h3>Show spatial feedback</h3><p>Connect image analysis to 2D and 3D views.</p></li>
+  </ol>
+  <div class="surgery-spatial">
+    <h3>Similar 2D views can hide different tool positions.</h3>
+    <Figure id="spatial-feedback" quiet />
+    <p class="surgery-view-tags" aria-hidden="true"><span>2D view</span><span>3D context</span></p>
+    <p class="surgery-caption">Top: the tool contacts the target. Bottom: the tool misses it. The 3D view makes the difference visible in Isaac Sim.</p>
+  </div>
+  <p class="surgery-scope">Research stage: simulation training. This study is separate from the magnetic camera prototype and the lens-care proposals.</p>
 </section>
 
 <section class="project-section surgery-citation" id="publications" aria-labelledby="publications-title">
-  <h2 id="publications-title">Citation</h2>
-  <p class="surgery-reference">Liu, S., Tan, Y., &amp; Li, S. (2025). <a href="https://arxiv.org/abs/2511.02233">Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback</a>. arXiv:2511.02233. <a href="https://arxiv.org/html/2511.02233v1">HTML version</a></p>
-  <p class="surgery-fine">AI figures are from this paper, reproduced under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. · <a href={asset("accessibility/#surgery-media")}>Accessibility &amp; media credits</a> · <a href={asset("#lab-projects")}>All projects</a></p>
+  <h2 id="publications-title">Related publication</h2>
+  <p class="surgery-reference">Liu, S., Tan, Y., &amp; Li, S. (2025). <a href="https://arxiv.org/abs/2511.02233">Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback</a>. arXiv:2511.02233.</p>
+  <p class="surgery-publication-links"><a href="https://arxiv.org/pdf/2511.02233">Paper ↗</a><a href="https://arxiv.org/html/2511.02233v1">HTML reading version ↗</a></p>
+  <p class="surgery-fine">AI figures are reproduced under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. <a href={asset("accessibility/#surgery-media")}>Accessibility &amp; media credits</a> · <a href={asset("#lab-projects")}>All projects</a> · <a href="#main">Back to top ↑</a></p>
 </section>

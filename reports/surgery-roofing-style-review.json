@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-08",
+  "reference": "https://cgchrfchscyrh.github.io/humanoid_roofing_webpage/",
+  "page": "/surgery-ai/",
+  "changes": [
+    "Place complete-frame laboratory and concept films above a centered project title.",
+    "Use the roofing page's white background, neutral palette, compact type scale, 1200px content width, and evidence tiles.",
+    "Connect three visualization challenges to camera actuation, lens care, and AI feedback in separate named sections.",
+    "Keep original research media, descriptions, credit links, and accessible native player controls.",
+    "State the evidence stage for laboratory hardware, cleaning proposals, and simulation training separately."
+  ],
+  "validation": {
+    "astro": "39 files checked: zero errors, warnings, or hints; 12 static routes built.",
+    "accessibility": "Original project audit: 44 axe scans, 456 checks, zero violations or failures.",
+    "responsive_widths": [1440, 768, 390, 320],
+    "horizontal_overflow": false,
+    "images_decoded": true,
+    "browser_errors": [],
+    "keyboard_and_media": "Skip link, native player keyboard operation, manual pause persistence, reduced motion, data saving, and no-JavaScript checks passed.",
+    "manual_review": "Desktop and mobile full-page screenshots reviewed for hierarchy, spacing, complete media frames, and research sequence.",
+    "limitations": "Automated checks and screenshot review do not establish complete WCAG conformance or validate the accessibility of external publications."
+  }
+}

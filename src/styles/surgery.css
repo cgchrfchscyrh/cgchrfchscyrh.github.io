@@ -1,48 +1,77 @@
-/* Surgery AI: full-width opening film, short leads, large media. No header or footer bars. */
-
-/* Opening film. The title sits in normal flow so the block grows with zoom and text spacing. */
-.surgery-page .project-hero { position:relative; display:grid; grid-template-columns:minmax(0,1fr); align-content:end; gap:0; max-width:none; min-height:100svh; margin:0; padding:0; overflow:hidden; background:#111; color:#fff; }
-.surgery-page .project-hero::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(to top,rgb(0 0 0 / 82%) 0,rgb(0 0 0 / 62%) 30%,rgb(0 0 0 / 0%) 55%); }
-.surgery-page .project-hero .hero-media { position:absolute; inset:0; width:100%; padding:0; margin:0; max-width:none; display:block; }
-.surgery-page .project-hero .project-video { margin:0; width:100%; height:100%; }
-.surgery-page .project-hero .hero-media video { position:absolute; inset:0; width:100%; height:100%; max-width:none; aspect-ratio:auto; object-fit:cover; border-radius:0; background:#111; }
-.surgery-page .project-hero .hero-media video:focus-visible { outline:3px solid #fff; outline-offset:-3px; }
-.surgery-page .project-hero .hero-copy { position:relative; z-index:1; max-width:none; margin:0; padding:96px clamp(1.25rem,4vw,4rem) 76px; text-align:left; pointer-events:none; }
-.surgery-page .project-hero .hero-copy h1 { margin:0; color:#fff; font-size:clamp(2.2rem,6.4vw,7.5rem); font-weight:600; line-height:.98; letter-spacing:-.045em; }
-.surgery-page .project-hero .display-line { display:block; }
-
-/* Sections */
-.surgery-page .project-content { max-width:1560px; padding-inline:16px; }
-.surgery-section { padding-block:clamp(3.5rem,6vw,6rem) 0; scroll-margin-top:1rem; }
-.surgery-section h2 { font-size:clamp(2rem,4vw,3rem); letter-spacing:-.035em; margin:0 0 1rem; }
-.surgery-lead { max-width:62ch; margin:0 0 2rem; font-size:clamp(1.05rem,1.4vw,1.25rem); line-height:1.6; color:#3d3d39; }
-.surgery-step { max-width:62ch; margin:clamp(3rem,5vw,4.5rem) 0 1.5rem; scroll-margin-top:1rem; }
-.surgery-step h3 { font-size:clamp(1.4rem,2.2vw,1.9rem); letter-spacing:-.03em; line-height:1.2; margin:0 0 .5rem; }
-.surgery-step p { margin:0; font-size:1.05rem; line-height:1.6; color:#484844; }
-
-/* Media */
-.surgery-page .project-figure { position:relative; margin:0; }
-.surgery-page .figure-link { border:0; border-radius:6px; background:#fff; }
-.surgery-page .project-figure img { display:block; width:100%; height:auto; }
-.surgery-single { max-width:760px; margin-inline:auto; }
-.surgery-wide { margin-block:1.5rem; }
-.surgery-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; margin-block:1.5rem; align-items:start; }
-.surgery-pair .project-figure img { aspect-ratio:16/10; object-fit:contain; background:#f3f3f0; }
-.surgery-clip { position:relative; min-width:0; }
-.surgery-clip .project-video { margin:0; }
+/* Match the roofing research page: complete media frames, centered statements,
+   neutral evidence tiles, and a compact publication block. */
+.surgery-page { background:#fff; color:#242424; overflow-wrap:anywhere; }
+.surgery-opening-films { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); background:#111; }
+.surgery-opening-film { min-width:0; position:relative; }
+.surgery-opening-film .project-video { margin:0; }
+.surgery-opening-film video { width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; border-radius:0; }
+.surgery-opening-film > p { margin:0; padding:.6rem 1rem; background:#f5f5f3; color:#454545; font-size:.85rem; text-align:center; }
+.surgery-publication { max-width:1000px; margin:auto; padding:2rem 1.25rem 0; text-align:center; }
+.surgery-publication h1 { max-width:32ch; margin:0 auto .8rem; font-size:clamp(24px,2.3vw,30px); font-weight:600; line-height:1.25; letter-spacing:-.02em; }
+.surgery-publication > p { max-width:65ch; margin:0 auto; color:#505050; font-size:1rem; line-height:1.65; }
+.surgery-section-links { display:flex; flex-wrap:wrap; gap:.3rem 1.5rem; justify-content:center; margin:1.1rem 0 0; }
+.surgery-section-links a { padding:.4rem 0; font-size:.9rem; }
+.surgery-page .project-content { width:100%; max-width:1200px; padding-inline:clamp(1.25rem,3vw,2rem); }
+.surgery-section { padding-block:3.5rem 0; border:0; scroll-margin-top:2rem; }
+.surgery-section > h2 { max-width:38em; margin:0 auto 1.25rem; font-size:clamp(21px,1.9vw,24px); font-weight:600; line-height:1.3; letter-spacing:-.02em; text-align:center; }
+.surgery-lead { max-width:76ch; margin:0 auto 1.8rem; font-size:1rem; line-height:1.75; color:#484844; text-align:center; }
+.surgery-kicker { margin:0 0 .65rem; text-align:center; color:#575753; font-size:.85rem; font-weight:500; }
+.surgery-section h3 { margin:0 0 .6rem; font-size:1.1rem; line-height:1.4; font-weight:500; letter-spacing:-.015em; }
+.surgery-page .project-figure { margin:0; }
+.surgery-page .figure-link { border:0; border-radius:0; background:#fff; }
+.surgery-page .project-figure img { display:block; width:100%; height:auto; object-fit:contain; }
+.surgery-single { max-width:620px; margin-inline:auto; }
+.surgery-wide { margin-block:1.75rem; }
+.surgery-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; margin-block:1.75rem 0; align-items:start; }
+.surgery-pair > div { min-width:0; }
+.surgery-direction-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+.surgery-direction { display:flex; flex-direction:column; padding:1.25rem; border:1px solid #d0d0d0; border-radius:8px; background:#fff; min-width:0; }
+.surgery-direction .surgery-number { margin:0 0 .75rem; color:#575753; font-size:.85rem; font-weight:500; line-height:1.2; }
+.surgery-direction h3 { font-size:1.2rem; font-weight:600; }
+.surgery-direction > p:not(.surgery-number):not(.surgery-evidence) { flex:1; margin:0 0 1rem; font-size:.95rem; line-height:1.6; color:#484844; }
+.surgery-direction > a { width:fit-content; font-size:.95rem; font-weight:500; line-height:1.6; padding-block:.3rem; }
+.surgery-direction .surgery-evidence { margin:.5rem 0 0; padding-top:.75rem; border-top:1px solid #e4e4df; color:#575753; font-size:.8rem; line-height:1.6; }
+.surgery-problem-media { max-width:900px; margin:2rem auto 0; }
+.surgery-problem-media img { aspect-ratio:16/9; object-fit:contain; }
+.surgery-caption { margin:.7rem 0 0; font-size:.88rem; line-height:1.65; color:#505050; }
 .surgery-clip video { border-radius:6px; }
-.surgery-page .media-tag { position:absolute; top:12px; left:12px; z-index:1; margin:0; padding:.3rem .65rem; border-radius:999px; background:rgb(20 20 20 / 82%); color:#fff; font-size:.82rem; font-weight:500; line-height:1.3; pointer-events:none; }
-.surgery-spatial { position:relative; }
-.surgery-view-tags { display:grid; grid-template-columns:1fr 1fr; margin:.6rem 0 0; font-size:.88rem; font-weight:500; color:#484844; text-align:center; }
-
-/* Compact citation */
-.surgery-citation { padding-block:clamp(3rem,5vw,4.5rem) 3rem; margin-top:clamp(3rem,5vw,4.5rem); border-top:1px solid var(--line,#d8d8d3); }
-.surgery-citation h2 { font-size:1.25rem; margin:0 0 .6rem; }
-.surgery-reference { max-width:80ch; margin:0 0 .5rem; font-size:.95rem; line-height:1.6; }
-.surgery-fine { margin:0; font-size:.85rem; color:#575753; }
-
-@media(max-width:700px) {
-  .surgery-page .project-hero .hero-copy h1 { font-size:7.6vw; }
-  .surgery-pair { grid-template-columns:minmax(0,1fr); }
-  .surgery-page .media-tag { top:8px; left:8px; font-size:.78rem; }
+.surgery-supporting-demo { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); align-items:center; gap:2rem; margin-top:2rem; }
+.surgery-supporting-demo > div > p { color:#505050; font-size:.95rem; line-height:1.7; }
+.surgery-cleaning-parts { margin-block:2.5rem; }
+.surgery-cleaning-parts img { aspect-ratio:16/10; object-fit:contain; }
+.surgery-control { margin-top:2.5rem; }
+.surgery-control > h3,.surgery-spatial > h3 { text-align:center; margin-bottom:.75rem; }
+.surgery-sublead { max-width:70ch; margin:0 auto 1.5rem; text-align:center; color:#505050; font-size:.95rem; }
+.surgery-control .project-figure { max-width:1000px; margin:auto; }
+.surgery-scope { max-width:80ch; margin:1.75rem auto 0; padding:.9rem 1rem; border-left:2px solid #aaa; background:#f5f5f3; color:#505050; font-size:.88rem; line-height:1.7; }
+.surgery-pipeline { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; margin:1.75rem 0 2.5rem; padding:0; list-style:none; counter-reset:pipeline; }
+.surgery-pipeline li { min-width:0; counter-increment:pipeline; border-top:1px solid #ccc; padding-top:.9rem; }
+.surgery-pipeline h3::before { content:counter(pipeline) ". "; }
+.surgery-pipeline p { font-size:.9rem; line-height:1.7; color:#505050; }
+.surgery-spatial { margin-top:2.5rem; }
+.surgery-view-tags { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); margin:.6rem 0 0; font-size:.88rem; font-weight:500; color:#484844; text-align:center; }
+.surgery-spatial > .surgery-caption { text-align:center; }
+.surgery-citation { padding-block:2rem; margin-top:3.5rem; border-top:1px solid #d0d0d0; }
+.surgery-citation h2 { margin:0 0 .8rem; font-size:1.25rem; line-height:1.4; letter-spacing:-.02em; }
+.surgery-reference { max-width:88ch; font-size:.9rem; line-height:1.75; }
+.surgery-publication-links { display:flex; gap:.6rem 1.5rem; flex-wrap:wrap; margin-top:.8rem; font-size:.9rem; }
+.surgery-fine { margin:1rem 0 0; font-size:.82rem; line-height:1.8; color:#575753; }
+@media(max-width:760px) {
+  .surgery-opening-films { grid-template-columns:minmax(0,1fr); }
+  .surgery-publication { padding-top:1.75rem; }
+  .surgery-direction-grid,.surgery-pair,.surgery-supporting-demo,.surgery-pipeline { grid-template-columns:minmax(0,1fr); }
+  .surgery-section { padding-top:2.75rem; }
+  .surgery-section > h2,.surgery-lead { text-align:left; }
+  .surgery-kicker { text-align:left; }
+  .surgery-pair { gap:1.75rem; }
+  .surgery-problem-media { max-width:540px; }
+  .surgery-cleaning-parts img { aspect-ratio:auto; }
+  .surgery-supporting-demo { gap:1rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .surgery-page { scroll-behavior:auto; }
+}
+@media print {
+  .surgery-opening-films { display:none; }
+  .surgery-section { break-inside:avoid; }
 }
