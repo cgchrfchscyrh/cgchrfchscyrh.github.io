@@ -1,0 +1,72 @@
+[
+  {
+    "id": "school-balancing-priorities",
+    "title": "Balancing learning, health and cost",
+    "start": 0,
+    "end": 28.5,
+    "posterTime": 19,
+    "sourceRange": "00:00–00:28.5",
+    "transcriptParagraphs": [0],
+    "paragraphs": [
+      "Facing resurgent waves of coronavirus infections and more infectious strains, schools and governments are wrestling with complex, high-stakes decisions.",
+      "They must balance the benefits of in-person schooling, the risks of virus spreading, and the financial burden of consistently implementing mitigation measures such as enhanced ventilation."
+    ],
+    "description": "The opening title introduces healthy and sustainable schools. Animated virus symbols, a classroom, decision-makers and a balance scale illustrate the competing priorities of in-person learning, infection risk and mitigation costs. These are explanatory illustrations."
+  },
+  {
+    "id": "school-national-analysis",
+    "title": "Studying 111,485 U.S. schools",
+    "start": 28.5,
+    "end": 49.7,
+    "posterTime": 44,
+    "sourceRange": "00:28.5–00:49.7",
+    "transcriptParagraphs": [1],
+    "paragraphs": [
+      "Using the COVID-19 pandemic as the epidemiological context, the research conducted scenario analyses across 111,485 public and private schools in the United States.",
+      "The analysis examined the relationship between reduced infection risk and the increased energy cost of improved ventilation."
+    ],
+    "description": "A clipboard and magnifying glass introduce scenario analysis. A U.S. map fills with school icons and the label 111,485 public and private schools. A chart begins to compare modeled infection risk across school levels and months."
+  },
+  {
+    "id": "school-risk-and-energy",
+    "title": "Comparing infection risk and energy cost",
+    "start": 49.7,
+    "end": 79,
+    "posterTime": 65,
+    "sourceRange": "00:49.7–01:19",
+    "transcriptParagraphs": [2, 3],
+    "paragraphs": [
+      "The work evaluated time-varying infection risks at different school levels and the ventilation rates required to keep infection risk low.",
+      "Energy costs were estimated per square meter and per person, at national, state and county levels, for both public and private schools."
+    ],
+    "description": "Maps and charts compare school-level infection risk, ventilation needs and annual energy costs. School-level and monthly risk is encoded by labeled bubbles. Intervention charts compare ventilation increases, MERV filter grades and proportions of students learning online. An open book pairs operation and cost icons. The linked HTML study provides the detailed numerical comparisons and tables."
+  },
+  {
+    "id": "school-ventilation-factors",
+    "title": "What shapes ventilation requirements",
+    "start": 79,
+    "end": 99,
+    "posterTime": 98,
+    "sourceRange": "01:19–01:39",
+    "transcriptParagraphs": [4, 5],
+    "paragraphs": [
+      "For ventilation to be effective, it must sufficiently lower the concentration of airborne virus to prevent infection from spreading.",
+      "The narration identifies four factors shaping ventilation requirements: the volume of air exhaled by students, the number of students in attendance, the climate, and utility costs."
+    ],
+    "description": "An animated classroom shows a masked teacher and students, symbolic airborne particles and an air-handling unit. A fan inside a school outline is surrounded by four labeled illustrations: volume of air exhaled, number of students in attendance, climate and utility costs."
+  },
+  {
+    "id": "school-informed-decisions",
+    "title": "From evidence to school decisions",
+    "start": 99,
+    "end": 146.866666667,
+    "posterTime": 117,
+    "sourceRange": "01:39–02:26.9",
+    "transcriptParagraphs": [6, 7],
+    "paragraphs": [
+      "The findings can help shape guidelines for operating HVAC systems that accommodate infection-control needs and manage energy costs, supporting healthy and sustainable school environments.",
+      "By comparing reduced airborne infection risk with increased energy costs under different scenarios and interventions, the analysis can inform how schools prepare for, respond to and recover from epidemics—and bring health and sustainability into research and policymaking."
+    ],
+    "description": "Icons and a balance scale connect lower infection risk with higher energy cost. A chart compares infection risk and energy cost as ventilation changes. Illustrated decision-makers represent school preparedness, response and recovery. Closing credits name Energy Cost Assessment for Reducing Airborne Infection Risks in U.S. Schools, contact Shuai Li, the University of Tennessee Knoxville and the National Science Foundation. The final publisher slate reads Wiley."
+  }
+]

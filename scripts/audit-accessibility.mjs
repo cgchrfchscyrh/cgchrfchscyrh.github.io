@@ -3,6 +3,7 @@ import AxeBuilder from "@axe-core/playwright";
 import { mkdir, writeFile } from "node:fs/promises";
 import { research, otherPapers } from "../src/data/profile.ts";
 import { labProjects, projectClips } from "../src/data/lab-projects.ts";
+import schoolChapters from "../src/data/school-chapters.json" with { type: "json" };
 
 const base = (process.env.TEST_URL || "http://127.0.0.1:4480").replace(
   /\/$/,
@@ -165,6 +166,11 @@ try {
         check(`${route}: video IDs are unique`, await page.locator('video').evaluateAll(vs => new Set(vs.map(v => v.id)).size === vs.length));
         check(`${route}: no collapsed details or visible source blocks`, await page.locator('main details,.source-section,.surgery-bubble').count() === 0);
         check(`${route}: credits link reaches the accessibility page`, await page.locator('a[href$="accessibility/#surgery-media"]').count() === 1);
+      } else if (route === "/disease-resistant-school-communities/") {
+        check(`${route}: no header, footer or disclosures`, await page.locator('.project-header,.project-footer,main details,main summary,.source-section').count() === 0);
+        check(`${route}: five consecutive video chapters`, await page.locator('.school-chapter').count() === 5 && schoolChapters.every((chapter, i) => chapter.start === (i ? schoolChapters[i-1].end : 0)));
+        check(`${route}: narration text matches each chapter`, await page.locator('.school-narration').evaluateAll((nodes, chapters) => nodes.length === chapters.length && nodes.every((node, i) => [...node.querySelectorAll('p')].map(p => p.textContent).join('\n') === chapters[i].paragraphs.join('\n')), schoolChapters));
+        check(`${route}: original study and complete film retained`, await page.locator('#publications a').count() === 2);
       } else {
       check(`${route}: larger vision section exists`, await page.locator('#vision').count() === 1);
       check(`${route}: visual collaboration map`, await page.locator(".vision-connections li").count() === 3 && await page.locator(".vision-scene").getByRole("img").count() === 1);
@@ -209,15 +215,23 @@ try {
         check(`${clip.id}: description track available`, track.ok() && body.startsWith('WEBVTT') && body.includes('-->'));
         if (clip.captions) {
           const captions = await context.request.get(`${path}.en.vtt`);
-          check(`${clip.id}: English captions available`, captions.ok() && (await captions.text()).startsWith('WEBVTT'));
+          const captionText = await captions.text();
+          const expectedCues = (captionText.match(/ --> /g) || []).length;
+          check(`${clip.id}: English captions available`, captions.ok() && captionText.startsWith('WEBVTT'));
           check(`${clip.id}: captions enabled by default`, await page.locator(`#${clip.id}-video track[kind="captions"][default][srclang="en"]`).count() === 1);
           const player = page.locator(`#${clip.id}-video`);
+          await player.evaluate(v => { if (v.readyState === 0) { v.preload = 'metadata'; v.load(); } });
+          await page.waitForFunction(id => document.getElementById(id).readyState >= 1, `${clip.id}-video`);
           await player.evaluate(v => { v.textTracks[0].mode = 'showing'; });
           await page.waitForFunction(id => document.getElementById(id).textTracks[0].cues?.length > 0, `${clip.id}-video`);
-          check(`${clip.id}: valid synchronized caption cues`, await player.evaluate(v => {
+          check(`${clip.id}: valid synchronized caption cues`, await player.evaluate((v, expected) => {
             const cues = [...v.textTracks[0].cues];
-            return cues.length > 10 && cues.every((c, i) => c.startTime < c.endTime && c.endTime <= v.duration + .1 && (i === 0 || c.startTime >= cues[i-1].endTime));
-          }));
+            return cues.length > 0 && cues.length === expected && cues.every((c, i) => c.startTime < c.endTime && c.endTime <= v.duration + .1 && (i === 0 || c.startTime >= cues[i-1].endTime));
+          }, expectedCues));
+          // Let visibility tracking settle before testing keyboard playback on
+          // a later chapter, which may initially be outside the viewport.
+          await player.scrollIntoViewIfNeeded();
+          await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
           await player.evaluate(v => { v.currentTime = Math.max(0, v.duration - .2); });
           await player.focus(); await page.keyboard.press('Space');
           await page.waitForFunction(id => document.getElementById(id).ended, `${clip.id}-video`);

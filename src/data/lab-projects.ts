@@ -1,3 +1,4 @@
+import schoolChapters from "./school-chapters.json" with { type: "json" };
 const source = "https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842";
 export interface ProjectClip { id: string; project: string; assetProject?: string; assetId?: string; mediaVersion?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; processingNote?: string; captions?: boolean; loop?: boolean; }
 export const labProjects = [
@@ -64,26 +65,29 @@ export const labProjects = [
   "slug": "disease-resistant-school-communities",
   "title": "Disease-Resistant School Communities",
   "shortTitle": "School Communities",
-  "topic": "Citizen science \u00b7 School environments \u00b7 Building operations",
+  "topic": "School ventilation · Airborne infection risk · Energy cost",
   "subtitle": "",
-  "description": "Connecting student participation in environmental inquiry with building research to support healthier learning environments.",
+  "description": "A five-chapter research film on airborne infection risk, ventilation and energy costs across 111,485 U.S. schools.",
   "source": "",
   "credit": "",
   "image": "school-research.jpg",
   "imageWidth": 1920,
   "imageHeight": 1080,
   "imageAlt": "An animated classroom with a teacher, students, an air-handling unit and symbolic airborne particles, from the school research film.",
-  "question": "What makes a school healthy?",
-  "abstract": "Our research asks how school design, everyday activities, and building operations can work together to reduce exposure and support healthier learning environments.",
+  "question": "How can schools balance infection risk and energy costs?",
+  "abstract": "Using COVID-19 as the epidemiological context, this nationwide study examines ventilation, airborne infection risk and energy costs across public and private schools.",
   "heroClips": [
-    "school-research"
+    "school-balancing-priorities"
   ],
-  "demoClips": [],
+  "demoClips": [
+    "school-national-analysis",
+    "school-risk-and-energy",
+    "school-ventilation-factors",
+    "school-informed-decisions"
+  ],
   "sourceNotes": [
-    "Structure and introductory copy follow the supplied Disease-Resistant School Communities brief: Problem, Solutions and Impact.",
-    "Research Presentation, slide 12: elementary-school sampling photographs and microbial culture images. These illustrate outreach and environmental observation; they do not establish pathogen identity, health outcomes or a connection to the separate national modeling study.",
-    "3508_raw.MP4: full supplied narrated animation, Energy Cost Assessment for Reducing Airborne Infection Risks in U.S. Schools. Complete frame, original speed, audio and closing research credits retained. The animation presents historical COVID-19 scenario modeling, not a current risk forecast or an implemented school intervention.",
-    "Community priority-setting and joint evaluation are presented as future collaboration. No unprovided school names, adoption records, participant feedback or measured educational outcomes are claimed."
+    "The supplied 3508_raw.MP4 research film is presented in five consecutive chapters with original audio, full frames and closing credits retained. Chapter text is condensed from the existing narration transcript. The original uncut web film remains available.",
+    "This film presents historical COVID-19 scenario modeling in 111,485 U.S. schools. Associated study: Cai, Li, Hu, Xu and He, Journal of Building Engineering (2022), DOI 10.1016/j.jobe.2021.103533."
   ]
 },
   {
@@ -129,21 +133,21 @@ export const labProjects = [
 ];
 
 export const projectClips: ProjectClip[] = [
-{
-  "id": "school-research",
-  "project": "disease-resistant-school-communities",
-  "duration": 146.867,
-  "title": "Energy cost and airborne infection risk in U.S. schools \u2014 narrated research film",
-  "caption": "",
-  "captions": true,
-  "loop": false,
-  "description": "An animated research film introduces the challenge of maintaining in-person schooling while reducing airborne infection risk and managing energy cost. Charts compare modeled infection risk across school levels and months, ventilation requirements, and energy costs under intervention scenarios. Maps indicate national, state and county analysis. A classroom illustration introduces ventilation; labeled icons show exhaled air, student attendance, climate and utility costs. A balance scale connects reduced infection risk with increased energy cost, followed by research and policy figures. The closing slate names the study, contact Shuai Li, the University of Tennessee Knoxville and the National Science Foundation. This is a historical research explainer about COVID-19 scenarios, not footage of a school deployment or a forecast of present-day risk. A timed description track and an expanded visual account accompany the film.",
-  "sourceLabel": "User-supplied 3508_raw.MP4; associated study by Cai, Li, Hu, Xu and He (2022)",
-  "sourceUrl": "https://doi.org/10.1016/j.jobe.2021.103533",
-  "sourceRange": "complete supplied film",
-  "audioNote": "Original English narration and music are retained. Playback starts muted; use the native volume control to hear the film. English captions are on by default. A full transcript is available in Sources & media notes.",
-  "processingNote": "Web-optimized H.264 with AAC audio at the original resolution and frame rate. Captions were cross-checked with two local speech-recognition passes, word timestamps, on-screen text and the source study; an independent listening and screen-reader review remains outstanding."
-},
+...schoolChapters.map(chapter => ({
+  id: chapter.id,
+  project: "disease-resistant-school-communities",
+  duration: chapter.end - chapter.start,
+  title: chapter.title,
+  caption: "",
+  captions: true,
+  loop: false,
+  description: chapter.description,
+  sourceLabel: "Supplied 3508_raw.MP4; associated study by Cai, Li, Hu, Xu and He (2022)",
+  sourceUrl: "https://doi.org/10.1016/j.jobe.2021.103533",
+  sourceRange: chapter.sourceRange,
+  audioNote: "Original English narration and music retained. Starts muted; use the native volume control to hear the film. English captions are enabled by default. Narration-derived text accompanies each chapter.",
+  processingNote: "Consecutive excerpts of the complete web film at 1920 by 1080 and 30 fps, original speed and full frame. Caption and description timings are rebased to each excerpt. The final chapter retains all closing credits."
+})),
 {
   "id": "excavator-assembly",
   "mediaVersion": "vertical-insertion-20261027",
