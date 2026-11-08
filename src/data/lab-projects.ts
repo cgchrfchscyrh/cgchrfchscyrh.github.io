@@ -117,7 +117,7 @@ export const labProjects = [
     image: "surgery-cover.png", imageWidth: 617, imageHeight: 347, imageAlt: "Robot-mounted external actuator and an internal camera in an abdominal model.",
     question: "Move the camera. Keep a usable view.",
     abstract: "Camera positioning is a concrete task within minimally invasive surgery. The benchtop prototype explores external actuation of an internal camera. Maintaining a usable view throughout a procedure adds another problem: visibility can deteriorate even when the camera is correctly positioned.",
-    heroClips: ["camera-assembly", "bench-prototype"], demoClips: ["camera-guidance", "instrument-motion"],
+    heroClips: ["camera-assembly", "bench-prototype"], demoClips: ["camera-guidance"],
     sourceNotes: ["Page structure and introductory copy follow the supplied brief, Advancing Physical AI for Clearer Vision in Minimally Invasive Surgery.", "Redefine Surgery Intelligence with TEAM, slides 3–5: mechanism diagrams, rendered motion, and laboratory prototype.", "UF Robotics Workshop — Shuai Li — ESSIE, slides 2, 5–6: surgical workspace illustration, visual obstruction example, Eye Concept, robotic eyelid, soft nozzle, and proposed cleaning control. The cleaning concept is separate from the prototype footage.", "Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback, arXiv:2511.02233v1, Figures 2 and 7. Songyang Liu, Yunpeng Tan, and Shuai Li, 2025. Reproduced under CC BY 4.0, converted to WebP without cropping. This simulation training study is distinct from the magnetic camera prototype and the lens-care proposal."]
   },
   {
@@ -246,12 +246,6 @@ export const projectClips: ProjectClip[] = [
     title: "Inside the camera concept", caption: "An exploded animation reveals the camera’s component arrangement.",
     description: "Against a black background, a capsule-like camera separates into aligned components. Transparent outer pieces, a cylindrical body, a circuit-board-like component, rings, and end parts appear along the same axis. The viewpoint changes slightly while the assembly remains centered. This is an excerpt of the same concept animation as the actuator-and-camera view.",
     sourceFile: "assets/video/surgery_ai/video_1.mp4", sourceRange: "00:05–00:17", audioNote: "The source audio track is digitally silent; it is omitted from the web excerpt.",
-  },
-  {
-    id: "instrument-motion", project: "surgery-ai", duration: 12,
-    title: "Rendered instrument motion", caption: "Complementary rendered views show an instrument changing configuration.",
-    description: "A split-screen animation shows a black articulated instrument within a rendered abdominal environment. The left panel offers a close view of its distal elements changing angle; the right panel shows the same motion within a wider anatomical scene. The instrument opens and changes configuration while the viewpoint remains largely fixed. These are rendered views, not a clinical procedure, and no performance metric is displayed.",
-    sourceFile: "assets/video/surgery_ai/video_3.mp4", sourceRange: "00:07–00:19", audioNote: "The source audio track is digitally silent; it is omitted from the web excerpt.",
   },
 ];
 
