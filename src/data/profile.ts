@@ -54,7 +54,7 @@ export const research = [
     alt: "Four sequences of a Unitree G1 stepping, bending, and reaching on a laboratory slope while attached to a safety hoist.",
     detail:
       "The physical experiments demonstrate four roofing-style motions on a laboratory slope. These are controlled experiments, not autonomous deployment on a construction roof.",
-    project: "https://cgchrfchscyrh.github.io/humanoid_roofing_webpage/",
+    project: "https://cgchrfchscyrh.github.io/humanoid_roofing/",
     paper: "https://arxiv.org/abs/2609.20558v1",
     code: "",
   },
