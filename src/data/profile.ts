@@ -112,7 +112,7 @@ export const research = [
     alt: "Reinforcement learning framework connecting the urban wind environment, aircraft state, policy, rewards, and actor–critic training.",
     detail:
       "The policy chooses an action from the aircraft state. The environment returns the next state and a reward. Training updates the policy using sampled experiences, with rewards that account for collision and boundary constraints, energy use, time, and reaching the target. Labeled objectives also include comfort and environmental noise.",
-    project: "https://cgchrfchscyrh.github.io/eVTOL_webpage/",
+    project: "https://cgchrfchscyrh.github.io/wind-aware-air-mobility/",
     paper: "https://doi.org/10.1016/j.engappai.2025.110392",
     code: "",
   },
