@@ -3,6 +3,13 @@
 .architected-hero { padding:3.5rem 0; }
 .architected-hero-intro { max-width:960px; margin:0 auto; text-align:center; }
 .architected-hero h1 { font-size:clamp(2rem,3.5vw,3rem); font-weight:600; letter-spacing:-.04em; line-height:1.12; overflow-wrap:anywhere; }
+.architected-subtitle { max-width:52ch; margin:1rem auto 0; color:#51514c; font-size:1.1rem; line-height:1.6; }
+.architected-intro { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:3.5rem; padding:3rem 0; border-top:1px solid #d8d8d3; scroll-margin-top:2rem; }
+.architected-intro h2,.architected-vision h2 { font-size:clamp(1.3rem,2vw,1.6rem); font-weight:500; letter-spacing:-.03em; line-height:1.25; margin:0 0 1rem; }
+.architected-intro p,.architected-vision p,.architected-planning-head p { color:#51514c; font-size:.98rem; line-height:1.75; margin:0 0 1rem; }
+.architected-media-text { color:#51514c; font-size:.9rem; line-height:1.65; margin:0 0 1rem; }
+.architected-joint-media,.architected-connections > div { min-width:0; }
+.architected-joint-media h3,.architected-connections h3,.architected-planning #demonstrations h3 { font-size:.95rem; font-weight:500; margin:0 0 .6rem; }
 .architected-research { padding-bottom:3.5rem; scroll-margin-top:2rem; }
 .architected-strand { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:3.5rem; padding:3rem 0; border-top:1px solid #d8d8d3; align-items:center; }
 .architected-number { display:block; color:#62625a; font-size:1rem; margin-bottom:1rem; }
@@ -10,12 +17,14 @@
 .architected-strand-copy>p { color:#51514c; font-size:.98rem; }
 .architected-material-pair { display:grid; grid-template-columns:1fr 1fr; gap:1.3rem; }
 .architected-material-pair>div { min-width:0; }
-.architected-material-pair h3 { font-size:.9rem; font-weight:500; margin:0 0 1rem; }
+.architected-material-pair h3 { font-size:.95rem; font-weight:500; margin:0 0 .6rem; }
 .architected-material-pair .project-figure { margin:0; }
 .architected-material-pair .figure-static { padding:1rem; background:white; }
 .architected-material-pair img { height:280px; object-fit:contain; }
 .architected-joint video { border-radius:0; }
-.architected-connections { display:grid; grid-column:1 / -1; grid-template-columns:minmax(0,5fr) minmax(0,4fr); gap:2rem; align-items:center; }
+.architected-connections { display:grid; grid-column:1 / -1; grid-template-columns:minmax(0,5fr) minmax(0,4fr); gap:2rem; align-items:stretch; }
+.architected-connections > div { display:flex; flex-direction:column; }
+.architected-connections > div > .project-figure { margin-top:auto; }
 .architected-connections .project-figure { width:100%; margin:0; }
 .architected-connections img { width:100%; height:auto; }
 .architected-planning { padding-top:3rem; margin-top:1rem; border-top:1px solid #d8d8d3; }
@@ -23,9 +32,13 @@
 .architected-planning #demonstrations { margin-top:2rem; }
 .architected-page #assembly-demo { scroll-margin-top:2rem; }
 .architected-page #assembly-demo video { border-radius:0; }
+.architected-vision { max-width:760px; margin:0 auto; padding:3rem 0 4rem; border-top:1px solid #d8d8d3; text-align:center; scroll-margin-top:2rem; }
+.architected-content > .architected-vision { max-width:none; }
+.architected-vision p { max-width:68ch; margin-inline:auto; }
 @media (max-width:1100px) {
   .architected-strand { grid-template-columns:1fr; gap:2rem; }
   .architected-strand-copy { max-width:42rem; }
+  .architected-intro { gap:2rem; }
   .architected-planning-head { grid-template-columns:3rem 1fr; gap:1rem; }
 }
 @media (max-width:700px) {
@@ -35,9 +48,11 @@
   .architected-hero h1 br { display:none; }
   .architected-research { padding-bottom:3rem; }
   .architected-strand { padding:2rem 0; }
-  .architected-material-pair { gap:1rem; }
+  .architected-material-pair { grid-template-columns:1fr; gap:2rem; }
   .architected-material-pair .figure-static { padding:.6rem; }
   .architected-material-pair img { height:auto; aspect-ratio:1; }
   .architected-connections { grid-template-columns:1fr; gap:1.5rem; }
+  .architected-intro { grid-template-columns:1fr; gap:1.5rem; padding:2rem 0; }
+  .architected-vision { text-align:left; padding:2rem 0 3rem; }
   .architected-planning-head { grid-template-columns:1fr; gap:0; }
 }

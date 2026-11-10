@@ -4,11 +4,11 @@ export interface ProjectClip { id: string; project: string; assetProject?: strin
 export const labProjects = [
 {
   "slug": "architected-structures",
-  "title": "Design and Robotic Assembly of Architected Structures",
+  "title": "Robot-Aware Design and Assembly of Architected Structures",
   "shortTitle": "Architected Structures",
   "topic": "Material architecture · Modular interfaces · Robotic assembly",
-  "subtitle": "",
-  "description": "Co-designing architected modules, their connections, and robotic assembly processes for adaptable infrastructure.",
+  "subtitle": "Integrating Computational Design, Structural Functionality, and Robotic Construction for Diverse Engineering Environments.",
+  "description": "Co-designing architected structures, assembly-aware structural interfaces, and robotic construction for diverse engineering environments.",
   "source": "",
   "credit": "",
   "image": "tpms-families.jpg",
@@ -24,7 +24,7 @@ export const labProjects = [
     "structures-assembly"
   ],
   "sourceNotes": [
-    "Page structure and research directions follow the supplied Design and Robotic Assembly of Architected Structures brief.",
+    "Page copy follows the supplied text, Robot-Aware Design and Assembly of Architected Structures (November 2026).",
     "UF Robotics Workshop — Shuai Li, slide 7: architected module, fabrication reference, connection strategies, and coastal assembly concept. The fabrication photograph is a reference; it does not establish production of the illustrated modules.",
     "Isaac Sim visualizations use the supplied diamond, gyroid, and primitive TPMS slot/tenon models, the Excavator02 appearance model, and local beach assets. Module geometry and full video frames are retained; cast shadows remain disabled. Motion is prescribed, with vertical lifting and insertion along the illustrated joint direction.",
     "The supplied brief identifies NACRE as a coastal application within AMERICA. The coastal project overview provides application context. The displayed robotic assembly renderings are geometric concepts and do not document the field installation of NACRE units."

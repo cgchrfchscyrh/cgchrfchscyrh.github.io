@@ -2,32 +2,66 @@
 import Video from "../ProjectVideo.astro";
 import Figure from "../ProjectFigure.astro";
 import Playback from "../ProjectPlayback.astro";
+import { labProjects } from "../../data/lab-projects";
 import "../../styles/architected.css";
+const project = labProjects.find(item => item.slug === "architected-structures")!;
 ---
 <section class="architected-hero" id="module-demo" aria-labelledby="project-title">
-  <div class="architected-hero-intro"><h1 id="project-title">Design and Robotic Assembly <br /> of Architected Structures</h1></div>
+  <div class="architected-hero-intro">
+    <h1 id="project-title">Robot-Aware Design and Assembly <br />of Architected Structures</h1>
+    <p class="architected-subtitle">{project.subtitle}</p>
+  </div>
   <p id="media-status" class="sr-only" role="status"></p>
 </section>
 <div class="architected-content">
+  <div class="architected-intro" id="problem">
+    <section aria-labelledby="problem-title">
+      <h2 id="problem-title">The Problem</h2>
+      <p>Architected structures enable tailored mechanical and functional properties through geometric and structural design. However, their geometric complexity and assembly requirements create fundamental challenges in fabrication, structural connectivity, and robotic construction.</p>
+    </section>
+    <section aria-labelledby="rationale-title">
+      <h2 id="rationale-title">Our Rationale</h2>
+      <p>We investigate the co-design of structural architectures, modular connections, and robotic assembly processes. By integrating structural performance requirements with robotic capabilities and assembly constraints, we aim to establish generalizable design principles for robot-constructible infrastructure.</p>
+    </section>
+  </div>
   <div class="architected-research" id="innovations">
     <article class="architected-strand" id="material-design" aria-labelledby="material-title">
-      <div class="architected-strand-copy"><span class="architected-number" aria-hidden="true">01</span><h2 id="material-title">Architected material<br /> and module design</h2><p>Explore how porosity and internal architecture shape modular components. Bring functional design, manufacturability, and robotic accessibility together from the beginning.</p></div>
-      <div class="architected-material-pair"><div><h3>Module concept</h3><Figure id="module" quiet linked={false} /></div><div><h3>Fabrication reference</h3><Figure id="manufacturing" quiet linked={false} /></div></div>
+      <div class="architected-strand-copy"><span class="architected-number" aria-hidden="true">01</span><h2 id="material-title">Architected Structural Design</h2><p>We investigate computational approaches for designing architected structures with tailored geometric, mechanical, and functional properties. Our research explores how structural configurations can be optimized for application-specific performance while accounting for fabrication feasibility and robotic constructability.</p></div>
+      <div class="architected-material-pair">
+        <div><h3>Architected Structural Geometries</h3><p class="architected-media-text">Representative structural configurations illustrate how geometric design can enable tailored functionality and modular construction.</p><Figure id="module" quiet linked={false} /></div>
+        <div><h3>Robotic Fabrication</h3><p class="architected-media-text">Exploring robotic fabrication approaches for producing architected structural components with complex geometries.</p><Figure id="manufacturing" quiet linked={false} /></div>
+      </div>
     </article>
     <article class="architected-strand architected-joint" id="joint-demo" aria-labelledby="joint-title">
-      <div class="architected-strand-copy"><span class="architected-number" aria-hidden="true">02</span><h2 id="joint-title">Assembly-oriented<br /> connection design</h2><p>Joint geometry defines how components approach, align, and engage. Study insertion directions alongside structural requirements and manufacturing tolerances.</p></div>
-      <Video id="structures-families" credits />
+      <div class="architected-strand-copy"><span class="architected-number" aria-hidden="true">02</span><h2 id="joint-title">Assembly-Aware Structural Interfaces</h2><p>We investigate connection geometries and modular interfaces that integrate structural requirements with robotic assembly constraints. Our research considers geometric compatibility, alignment, insertion accessibility, and connection stability to support robot-compatible construction.</p></div>
+      <div class="architected-joint-media">
+        <h3>Modular Connection Strategies</h3>
+        <p class="architected-media-text">Alternative connection geometries illustrate different approaches to structural integration and robot-compatible assembly.</p>
+        <Video id="structures-families" credits />
+      </div>
       <div class="architected-connections">
-        <Figure id="connections" quiet linked={false} />
-        <Figure id="breakwater" quiet linked={false} />
+        <div><h3>Structural Interface Design</h3><Figure id="connections" quiet linked={false} /></div>
+        <div><h3>Application-Oriented Modular Assembly</h3><p class="architected-media-text">Conceptual demonstrations explore how modular structural systems can be assembled for different engineering environments.</p><Figure id="breakwater" quiet linked={false} /></div>
       </div>
     </article>
     <article class="architected-planning" id="planning" aria-labelledby="planning-title">
-      <div class="architected-planning-head"><span class="architected-number" aria-hidden="true">03</span><h2 id="planning-title">Robotic assembly<br /> planning and execution</h2></div>
+      <div class="architected-planning-head">
+        <span class="architected-number" aria-hidden="true">03</span>
+        <div>
+          <h2 id="planning-title">Robotic Assembly Planning and Execution</h2>
+          <p>We investigate robotic construction strategies for architected modular structures, focusing on manipulation, motion planning, alignment, and sequential assembly.</p>
+          <p>Our research explores how robotic capabilities and assembly constraints can inform structural and connection design, supporting integrated approaches to robot-aware construction.</p>
+        </div>
+      </div>
       <div id="demonstrations">
+        <h3>Illustrative Robot-Assisted Assembly</h3>
         <div id="assembly-demo"><Video id="structures-assembly" credits /></div>
       </div>
     </article>
   </div>
+  <section class="architected-vision" id="research-vision" aria-labelledby="architected-vision-title">
+    <h2 id="architected-vision-title">Research Vision</h2>
+    <p>Our long-term goal is to establish a generalizable framework for the co-design of architected structures and robotic construction, enabling adaptable structural systems for applications ranging from coastal infrastructure to extraterrestrial construction.</p>
+  </section>
 </div>
 <Playback />

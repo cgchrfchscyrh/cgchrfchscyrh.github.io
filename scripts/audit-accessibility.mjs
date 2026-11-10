@@ -177,10 +177,14 @@ try {
         check(`${route}: narration text matches each chapter`, await page.locator('.school-narration').evaluateAll((nodes, chapters) => nodes.length === chapters.length && nodes.every((node, i) => [...node.querySelectorAll('p')].map(p => p.textContent).join('\n') === chapters[i].paragraphs.join('\n')), schoolChapters));
         check(`${route}: original study retained`, await page.locator('#publications a[href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8556188/"]').count() === 1);
       } else if (route === "/architected-structures/" || route === "/healthy-built-environments/") {
-        check(`${route}: no navigation bars, footer, disclosures or vision`, await page.locator('.project-header,.project-footer,main nav,main details,main summary,#vision,.research-vision,.source-section').count() === 0);
+        check(`${route}: no navigation bars, footer, disclosures, or illustrated vision section`, await page.locator('.project-header,.project-footer,main nav,main details,main summary,#vision,.research-vision,.source-section').count() === 0);
         check(`${route}: no outgoing links`, await page.locator('a[href]').evaluateAll(links => links.every(a => a.getAttribute('href').startsWith('#'))));
         const expectedFigures = route === "/healthy-built-environments/" ? 2 : 4;
         check(`${route}: expected research figures remain visible`, await page.locator('main .project-figure:visible').count() === expectedFigures);
+        if (route === "/architected-structures/") {
+          check(`${route}: title, subtitle, and section order follow the supplied copy`, (await page.locator('h1').innerText()).replace(/\s+/g, ' ').trim() === 'Robot-Aware Design and Assembly of Architected Structures' && (await page.locator('.architected-subtitle').innerText()) === 'Integrating Computational Design, Structural Functionality, and Robotic Construction for Diverse Engineering Environments.' && JSON.stringify(await page.locator('main h2').allTextContents()) === JSON.stringify(['The Problem', 'Our Rationale', 'Architected Structural Design', 'Assembly-Aware Structural Interfaces', 'Robotic Assembly Planning and Execution', 'Research Vision']));
+          check(`${route}: media labels follow the supplied figure mapping`, JSON.stringify(await page.locator('main h3').allTextContents()) === JSON.stringify(['Architected Structural Geometries', 'Robotic Fabrication', 'Modular Connection Strategies', 'Structural Interface Design', 'Application-Oriented Modular Assembly', 'Illustrative Robot-Assisted Assembly']) && await page.locator('#research-vision img,#research-vision video').count() === 0);
+        }
         if (route === "/architected-structures/") check(`${route}: connection concepts are expanded`, await page.locator('.architected-connections [data-figure="connections"]').isVisible());
         if (route === "/healthy-built-environments/") check(`${route}: publication titles and authors retained as text`, await page.locator('.healthy-publications .publication h3').count() === 3 && await page.locator('.healthy-authors').count() === 3 && await page.locator('.healthy-publications a').count() === 0);
       } else {
