@@ -71,12 +71,12 @@
       "with the surface."
     ]
   },
-  "surgery-ai": {
+  "agentic-robotics_surgeons": {
     "headline": "Physical AI for clearer vision in surgery.",
     "title": "One camera. Continuous visual assistance.",
     "current": "Position an internal camera",
     "evidence": "Benchtop prototype",
-    "image": "projects/surgery-ai/bench-prototype.jpg",
+    "image": "projects/agentic-robotics_surgeons/bench-prototype.jpg",
     "imageAlt": "Laboratory robot-mounted actuator above an abdominal model, from the original prototype recording.",
     "sourceAnchor": "#method",
     "scene": "surgery",

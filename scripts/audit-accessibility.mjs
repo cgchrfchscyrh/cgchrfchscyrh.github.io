@@ -152,16 +152,19 @@ try {
       check("Robot page links back to combined building research", await page.locator('a[href$="/building-immunology/"]').count() > 0);
     }
     if (legacyContext) check("Legacy fallback has usable destination links", await page.locator('#combined-project,#robot-project').count() === 2);
-    if (route === "/accessibility/") check("Surgery image and video credits are on the accessibility page", await page.locator('#surgery-media h3').count() === 8 + projectClips.filter(c => c.project === "surgery-ai").length);
-    if (route === "/surgery-ai/") check("Surgery multipanel a-h prototype figure removed",await page.locator('img[src*="adaptive-prototype"]').count() === 0);
+    if (route === "/accessibility/") check("Surgery image and video credits are on the accessibility page", await page.locator('#surgery-media h3').count() === 8 + projectClips.filter(c => c.project === "agentic-robotics_surgeons").length);
+    if (route === "/agentic-robotics_surgeons/") check("Surgery multipanel a-h prototype figure removed",await page.locator('img[src*="adaptive-prototype"]').count() === 0);
     if (project) {
       check(`${route}: no introductory subtitles`, await page.locator('.hero-copy > .eyebrow,.hero-subtitle,.coastal-hero .coastal-tagline,.coastal-hero .coastal-intro-copy').count() === 0);
       check(`${route}: no text captions below videos`, await page.locator('figure:has(video) > figcaption,figure:has(video) > details').count() === 0);
-      if (route === "/surgery-ai/") {
-        check(`${route}: team and vision section removed`, await page.locator('#vision,#team').count() === 0);
-        check(`${route}: opening films retain their complete frames`, await page.locator('.surgery-opening video').evaluateAll(vs => vs.length === 2 && vs.every(v => getComputedStyle(v).objectFit === 'contain')));
-        check(`${route}: opening simulation and laboratory films are separate`, await page.locator('.surgery-opening video').evaluateAll(vs => vs.length === 2 && vs[0].id === 'camera-assembly-video' && vs[1].id === 'bench-prototype-video'));
-        check(`${route}: repeated film and requested text removed`, await page.locator('.surgery-section-links,.surgery-publication > p,.surgery-scope,.surgery-evidence,#surgery-opening-video').count() === 0 && !/research stage/i.test(await page.locator('main').innerText()));
+      if (route === "/agentic-robotics_surgeons/") {
+        check(`${route}: team section removed; research vision is text only`, await page.locator('#vision,#team').count() === 0 && await page.locator('#research-vision img,#research-vision video').count() === 0);
+        check(`${route}: opening film retains its complete frame`, await page.locator('.surgery-opening video').evaluateAll(vs => vs.length === 1 && vs.every(v => getComputedStyle(v).objectFit === 'contain')));
+        check(`${route}: opening concept animation; laboratory prototype and coupling animation sit with External Magnetic Actuation`, await page.locator('.surgery-opening video').evaluateAll(vs => vs[0]?.id === 'camera-assembly-video') && await page.locator('#method .surgery-actuation video').evaluateAll(vs => vs.length === 2 && vs[0].id === 'bench-prototype-video' && vs[1].id === 'camera-guidance-video'));
+        check(`${route}: title and subtitle follow the supplied copy`, (await page.locator('h1').innerText()) === 'Agentic and Bioinspired Robotics for Minimally Invasive Surgery' && (await page.locator('.surgery-subtitle').innerText()) === 'Exploring robotic actuation, bioinspired mechanisms, and agentic intelligence for surgeon-centered robotic assistance.');
+        check(`${route}: section order follows the supplied copy`, JSON.stringify(await page.locator('main h2').allTextContents()) === JSON.stringify(['Three Research Challenges', '01 — Magnetically Actuated Surgical Cameras', '02 — Bioinspired Optical Maintenance', '03 — Agentic AI for Surgical Robotics', 'Research Vision', 'Related Publications']));
+        check(`${route}: twelve related publications link to DOI records`, await page.locator('#publications .surgery-pub-list > li').count() === 12 && await page.locator('#publications .surgery-pub-title a[href^="https://doi.org/10."]').count() === 12);
+        check(`${route}: repeated film and requested text removed`, await page.locator('.surgery-section-links,.surgery-publication > p:not(.surgery-subtitle),.surgery-scope,.surgery-evidence,#surgery-opening-video').count() === 0 && !/research stage/i.test(await page.locator('main').innerText()));
         check(`${route}: each video source appears once`, await page.locator('video source').evaluateAll(sources => new Set(sources.map(source => source.src)).size === sources.length));
         check(`${route}: no header or footer bars`, await page.locator('.project-header,.project-footer').count() === 0);
         check(`${route}: research directions have separate named sections`, await page.locator('#method > h2,#cleaning > h2,#visual-ai > h2').count() === 3);

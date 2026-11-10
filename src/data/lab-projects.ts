@@ -108,14 +108,14 @@ export const labProjects = [
     sourceNotes: ["Animated_Infographics_May_09_2022.mp4: Wiley infographic for Hu and Li (2022), Recognizing object surface materials to adapt robotic disinfection in infrastructure facilities, DOI: 10.1111/mice.12811. Three silent excerpts retain the complete frame, original speed, and publisher credits.", "Building, slides 10–11: affordance-aware navigation and disinfection simulation. Research Presentation, slide 7: simulated robotic disinfection. These examples do not demonstrate a complete deployed system or measure pathogen removal."]
   },
   {
-    slug: "surgery-ai", title: "Physical AI for Surgery", shortTitle: "Physical AI for Surgery", topic: "Minimally invasive surgery · Robotic vision",
-    subtitle: "Integrating magnetic actuation, bioinspired robotics, and artificial intelligence to advance laparoscopic visualization and assistance.", description: "Magnetic camera actuation, bioinspired lens care, and AI visual feedback for minimally invasive surgery.",
+    slug: "agentic-robotics_surgeons", title: "Agentic and Bioinspired Robotics for Minimally Invasive Surgery", shortTitle: "Agentic Surgical Robotics", topic: "Minimally invasive surgery · Surgical robotics · Agentic AI",
+    subtitle: "Exploring robotic actuation, bioinspired mechanisms, and agentic intelligence for surgeon-centered robotic assistance.", description: "Magnetically actuated surgical cameras, bioinspired optical maintenance, and agentic AI for surgeon-supervised robotic assistance.",
     source: `${source}/_projects/Surgery_AI.md`, credit: "",
     image: "surgery-cover.png", imageWidth: 617, imageHeight: 347, imageAlt: "Robot-mounted external actuator and an internal camera in an abdominal model.",
     question: "Move the camera. Keep a usable view.",
     abstract: "Camera positioning is a concrete task within minimally invasive surgery. The benchtop prototype explores external actuation of an internal camera. Maintaining a usable view throughout a procedure adds another problem: visibility can deteriorate even when the camera is correctly positioned.",
     heroClips: ["camera-assembly", "bench-prototype"], demoClips: ["camera-guidance"],
-    sourceNotes: ["Page structure and introductory copy follow the supplied brief, Advancing Physical AI for Clearer Vision in Minimally Invasive Surgery.", "Redefine Surgery Intelligence with TEAM, slides 3–5: mechanism diagrams, rendered motion, and laboratory prototype.", "UF Robotics Workshop — Shuai Li — ESSIE, slides 2, 5–6: surgical workspace illustration, visual obstruction example, Eye Concept, robotic eyelid, soft nozzle, and proposed cleaning control. The cleaning concept is separate from the prototype footage.", "Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback, arXiv:2511.02233v1, Figures 2 and 7. Songyang Liu, Yunpeng Tan, and Shuai Li, 2025. Reproduced under CC BY 4.0, converted to WebP without cropping. This simulation training study is distinct from the magnetic camera prototype and the lens-care proposal."]
+    sourceNotes: ["Page copy follows the supplied text, Agentic and Bioinspired Robotics for Minimally Invasive Surgery (November 2026).", "Redefine Surgery Intelligence with TEAM, slides 3–5: mechanism diagrams, rendered motion, and laboratory prototype.", "UF Robotics Workshop — Shuai Li — ESSIE, slides 2, 5–6: surgical workspace illustration, visual obstruction example, Eye Concept, robotic eyelid, soft nozzle, and proposed cleaning control. The cleaning concept is separate from the prototype footage.", "Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback, Songyang Liu, Yunpeng Tan, and Shuai Li, 2025 IEEE International Conference on Intelligent Reality (ICIR), DOI 10.1109/ICIR68135.2025.11361590. Figures 2 and 7 are reproduced from arXiv:2511.02233v1 under CC BY 4.0, converted to WebP without cropping."]
   },
   {
     slug: "robotic-block-assembly", title: "Robotic Block Assembly", shortTitle: "Robotic Block Assembly", topic: "Coastal construction · AMERICA",
@@ -227,19 +227,19 @@ export const projectClips: ProjectClip[] = [
     sourceLabel: "Building, slide 11 / Research Presentation, slide 7", sourceRange: "00:19–00:31", audioNote: "This web excerpt omits source audio and presents the full visual scene at its original speed."
   },
   {
-    id: "camera-guidance", project: "surgery-ai", duration: 12,
+    id: "camera-guidance", project: "agentic-robotics_surgeons", duration: 12,
     title: "External actuation and internal camera motion", caption: "A rendered view connects an external actuator with an internal camera.",
     description: "A split-screen computer animation shows an external actuator moving above an abdominal surface on the left and a capsule-like camera below the wall on the right. Curved lines depict the actuator–camera relationship. As the external device changes position, the internal camera changes its position or orientation. Black margins from the original video remain visible. The image represents a simulated hardware concept, not footage of a patient or a clinical outcome.",
     sourceFile: "assets/video/surgery_ai/video_1.mp4", sourceRange: "00:36–00:48", audioNote: "The source audio track is digitally silent; it is omitted from the web excerpt.",
   },
   {
-    id: "bench-prototype", project: "surgery-ai", duration: 8.8,
+    id: "bench-prototype", project: "agentic-robotics_surgeons", duration: 8.8,
     title: "Robot-mounted actuator in a laboratory setup", caption: "The physical robot moves above a benchtop abdominal model.",
     description: "A fixed laboratory camera faces an open, curved abdominal model on a table. A robot-mounted actuator above the model shifts position and orientation as part of the robot arm moves at the right of the frame. Fixtures, supports, and laboratory equipment remain visible. This clip shows an external benchtop setup; it does not show surgery on a person or quantify positioning accuracy. The complete frame and original motion speed are retained.",
     sourceFile: "assets/video/surgery_ai/video_2.mp4", sourceRange: "00:00–00:08.8", audioNote: "The web excerpt is silent; source laboratory sounds are omitted. No spoken instruction is used in this presentation.",
   },
   {
-    id: "camera-assembly", project: "surgery-ai", duration: 12,
+    id: "camera-assembly", project: "agentic-robotics_surgeons", duration: 12,
     title: "Inside the camera concept", caption: "An exploded animation reveals the camera’s component arrangement.",
     description: "Against a black background, a capsule-like camera separates into aligned components. Transparent outer pieces, a cylindrical body, a circuit-board-like component, rings, and end parts appear along the same axis. The viewpoint changes slightly while the assembly remains centered. This is an excerpt of the same concept animation as the actuator-and-camera view.",
     sourceFile: "assets/video/surgery_ai/video_1.mp4", sourceRange: "00:05–00:17", audioNote: "The source audio track is digitally silent; it is omitted from the web excerpt.",

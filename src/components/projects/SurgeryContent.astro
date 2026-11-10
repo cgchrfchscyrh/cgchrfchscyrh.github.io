@@ -3,79 +3,121 @@ import Figure from "../ProjectFigure.astro";
 import Video from "../ProjectVideo.astro";
 import { asset } from "../../data/profile";
 import "../../styles/surgery.css";
-const directions = [
-  { number: "01", title: "Move the viewpoint", text: "A confined workspace limits where the camera can look.", method: "Magnetic camera actuation", target: "method" },
-  { number: "02", title: "Keep the lens clear", text: "Smoke, fog, and fluids can obscure the surgical view.", method: "Bioinspired lens care", target: "cleaning" },
-  { number: "03", title: "Interpret the view", text: "A 2D image can make tool–tissue contact difficult to judge.", method: "AI visual feedback", target: "visual-ai" },
+const challenges = [
+  { number: "01", title: "Robotic Viewpoint Control", challenge: "Conventional laparoscopic camera positioning is constrained by limited workspace accessibility and instrument mobility.", direction: "Magnetically Actuated Surgical Cameras", target: "method" },
+  { number: "02", title: "Bioinspired Optical Maintenance", challenge: "Smoke, condensation, and fluid contamination can degrade endoscopic visibility and interrupt surgical procedures.", direction: "Bioinspired Lens Cleaning and Adaptive Control", target: "cleaning" },
+  { number: "03", title: "Agentic AI for Surgical Robotics", challenge: "Surgical robots must move beyond passive perception toward task-aware reasoning, adaptive decision-making, and coordinated actions under surgeon supervision.", direction: "Perception, Reasoning, and Control for Intelligent Surgical Assistance", target: "visual-ai" },
+];
+const understanding = [
+  { title: "Surgical Instrument Localization", text: "Estimate instrument positions from endoscopic images to support scene understanding and spatial reasoning." },
+  { title: "Instrument–Tissue Interaction Recognition", text: "Identify interactions between surgical instruments and anatomical structures to provide task-relevant information." },
+  { title: "Spatially Grounded Feedback", text: "Integrate AI-derived information with synchronized 2D and 3D visualization to support spatial awareness and future perception-driven decision-making." },
+];
+// Records follow Crossref (checked 10 November 2026), grouped by research direction, newest first.
+const publications = [
+  { group: "Magnetically actuated surgical cameras", papers: [
+    { authors: "Hui Liu, Ning Li, Shuai Li, Gregory J. Mancini, Jindong Tan", title: "Towards a Novel Soft Magnetic Laparoscope for Single Incision Laparoscopic Surgery", venue: "IEEE International Conference on Robotics and Automation (ICRA), 9845–9850", year: "2024", doi: "10.1109/ICRA57147.2024.10611068" },
+    { authors: "Hui Liu, Ning Li, Shuai Li, Gregory J. Mancini, Jindong Tan", title: "Design and Evaluation for a Soft Intra-Abdominal Wireless Laparoscope", venue: "IEEE Transactions on Medical Robotics and Bionics, 6(3), 940–950", year: "2024", doi: "10.1109/TMRB.2024.3391048" },
+    { authors: "Ning Li, Hui Liu, Reza Yazdanpanah Abdolmalaki, Gregory J. Mancini, Jindong Tan", title: "s-CAM: An Untethered Insertable Laparoscopic Surgical Camera Robot with Non-Contact Actuation", venue: "Sensors, 22(9), 3405", year: "2022", doi: "10.3390/s22093405" },
+    { authors: "Hui Liu, Ning Li, Gregory J. Mancini, Jindong Tan", title: "Magnetic Localization for an Intra-abdominal Wireless Laparoscope", venue: "IEEE International Conference on Robotics and Biomimetics (ROBIO)", year: "2022", doi: "10.1109/ROBIO55434.2022.10012008" },
+    { authors: "Ning Li, Gregory J. Mancini, Amy Chandler, Jindong Tan", title: "Recovering Stress Distribution on Deformable Tissue for a Magnetic Actuated Insertable Laparoscopic Surgical Camera", venue: "IEEE International Conference on Robotics and Automation (ICRA), 12314–12320", year: "2021", doi: "10.1109/ICRA48506.2021.9561043" },
+    { authors: "Ning Li, Gregory J. Mancini, Jindong Tan", title: "A Noninvasive Approach to Recovering the Lost Force Feedback for a Robotic-Assisted Insertable Laparoscopic Surgical Camera", venue: "International Conference on Robotics and Automation (ICRA), 1521–1526", year: "2019", doi: "10.1109/ICRA.2019.8793640" },
+    { authors: "Reza Yazdanpanah Abdolmalaki, Xiaolong Liu, Gregory J. Mancini, Jindong Tan", title: "Fine Orientation Control of an Insertable Robotic Camera System for Single Incision Laparoscopic Surgery", venue: "The International Journal of Medical Robotics and Computer Assisted Surgery, 15(1), e1957", year: "2019", doi: "10.1002/rcs.1957" },
+    { authors: "Ning Li, A. Reza Yazdanpanah, Gregory J. Mancini, Jindong Tan", title: "Initial Design and Results of an Untethered Insertable Laparoscopic Robotic Surgical Camera System", venue: "IEEE International Conference on Robotics and Biomimetics (ROBIO), 959–964", year: "2017", doi: "10.1109/ROBIO.2017.8324541" },
+  ] },
+  { group: "Optical maintenance and lens cleaning", papers: [
+    { authors: "Xiaolong Liu, Hui Liu, Jindong Tan", title: "Mesoscale Shape Memory Alloy Actuator for Visual Clarity of Surgical Cameras in Minimally Invasive Robotic Surgery", venue: "IEEE Transactions on Medical Robotics and Bionics, 1(3), 135–144", year: "2019", doi: "10.1109/TMRB.2019.2930752" },
+    { authors: "Xiaolong Liu, Hui Liu, Jindong Tan", title: "Towards a Generic In Vivo In Situ Camera Lens Cleaning Module for Laparoscopic Surgery", venue: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 6290–6295", year: "2019", doi: "10.1109/IROS40897.2019.8967591" },
+    { authors: "A. Reza Yazdanpanah, Xiaolong Liu, Ning Li, Jindong Tan", title: "A Novel Laparoscopic Camera Robot with In-Vivo Lens Cleaning and Debris Prevention Modules", venue: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 3669–3674", year: "2017", doi: "10.1109/IROS.2017.8206212" },
+  ] },
+  { group: "AI for surgical scene understanding", papers: [
+    { authors: "Songyang Liu, Yunpeng Tan, Shuai Li", title: "Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback", venue: "IEEE International Conference on Intelligent Reality (ICIR), 1–8", year: "2025", doi: "10.1109/ICIR68135.2025.11361590" },
+  ] },
 ];
 ---
 <span id="abstract" class="section-anchor" aria-hidden="true"></span>
-<section class="project-section surgery-section" id="background" aria-label="Surgical workspace">
-  <p class="surgery-lead">In minimally invasive surgery, instruments enter through small incisions. A laparoscopic camera provides the view inside the body and is typically held and repositioned by an assistant.</p>
+<section class="project-section surgery-section" id="background" aria-label="Minimally invasive surgery">
+  <p class="surgery-lead">Minimally invasive surgery requires precise manipulation, reliable visual feedback, and adaptive control in confined and dynamic anatomical environments. Our research investigates how robotics and artificial intelligence can enable more intelligent, adaptable, and reliable surgical assistance.</p>
   <div class="surgery-single"><Figure id="surgical-workspace" quiet /></div>
 </section>
 
 <section class="project-section surgery-section surgery-challenges" id="problems" aria-labelledby="problems-title">
-  <h2 id="problems-title">Three challenges guide three research directions.</h2>
+  <h2 id="problems-title">Three Research Challenges</h2>
   <div class="surgery-direction-grid">
-    {directions.map(direction => <article class="surgery-direction">
-      <p class="surgery-number">{direction.number}</p>
-      <h3>{direction.title}</h3>
-      <p>{direction.text}</p>
-      <a href={`#${direction.target}`}>{direction.method}<span aria-hidden="true"> ↓</span></a>
+    {challenges.map(item => <article class="surgery-direction">
+      <p class="surgery-number">{item.number}</p>
+      <h3>{item.title}</h3>
+      <p><strong>Challenge:</strong> {item.challenge}</p>
+      <p class="surgery-direction-label"><strong>Research Direction:</strong></p>
+      <a href={`#${item.target}`}>{item.direction}<span aria-hidden="true"> ↓</span></a>
     </article>)}
   </div>
 </section>
 
 <span id="innovations" class="section-anchor" aria-hidden="true"></span>
 <section class="project-section surgery-section" id="method" aria-labelledby="method-title">
-  <p class="surgery-kicker">01 · Magnetic camera actuation</p>
-  <h2 id="method-title">Move an internal camera with an external actuator.</h2>
-  <p class="surgery-lead">A robot-mounted magnetic actuator outside the body is designed to move and orient a camera inside it. The laboratory prototype above explores external actuation; the diagrams and animations below explain the hardware concept.</p>
-  <div class="surgery-wide"><Figure id="surgery-mechanism" quiet /></div>
-  <div class="surgery-clip surgery-guidance">
-    <h3>External actuation, internal camera motion</h3>
-    <Video id="camera-guidance" />
+  <h2 id="method-title">01 — Magnetically Actuated Surgical Cameras</h2>
+  <p class="surgery-lead">We investigate magnetic actuation mechanisms for flexible positioning and orientation of internal surgical cameras. By coupling an external robotic actuator with an internal camera, this approach explores alternative methods for controlling surgical viewpoints within constrained workspaces.</p>
+  <h3 class="surgery-subhead">External Magnetic Actuation</h3>
+  <p class="surgery-sublead">A laboratory prototype explores robotic magnetic actuation, while mechanical schematics and animations illustrate the proposed actuator–camera coupling and camera motion.</p>
+  <div class="surgery-pair surgery-actuation">
+    <div><p class="surgery-media-label">Laboratory prototype</p><Video id="bench-prototype" /></div>
+    <div><p class="surgery-media-label">Actuator–camera coupling (animation)</p><Video id="camera-guidance" /></div>
   </div>
+  <p class="surgery-media-label surgery-media-label-wide">Mechanical schematic</p>
+  <div class="surgery-wide surgery-schematic"><Figure id="surgery-mechanism" quiet /></div>
 </section>
 
 <section class="project-section surgery-section" id="cleaning" aria-labelledby="cleaning-title">
-  <p class="surgery-kicker">02 · Bioinspired lens care</p>
-  <h2 id="cleaning-title">Borrow the eye’s approach to keeping a lens clear.</h2>
-  <p class="surgery-lead">A proposed robotic eyelid sweeps the lens cover, while a soft nozzle directs cleaning flow. Inspired by the human eye, these mechanisms and their controller form a lens-care research direction.</p>
+  <h2 id="cleaning-title">02 — Bioinspired Optical Maintenance</h2>
+  <p class="surgery-lead">Inspired by the protective and cleaning mechanisms of the human eye, we investigate bioinspired robotic systems for maintaining endoscopic visibility. The proposed approach integrates robotic wiping, compliant fluid delivery, and perception-guided control to address optical contamination.</p>
   <div class="surgery-wide"><Figure id="eye-concept" quiet /></div>
   <div class="surgery-pair surgery-cleaning-parts">
-    <div><h3>A robotic eyelid</h3><Figure id="eyelid-concept" quiet /><p class="surgery-caption">A proposed shape-memory-alloy mechanism moves a wiper across the lens cover.</p></div>
-    <div><h3>A soft cleaning nozzle</h3><Figure id="soft-nozzle" quiet /><p class="surgery-caption">Air and liquid channels direct cleaning flow toward the lens.</p></div>
+    <div><h3>Bioinspired Robotic Eyelid</h3><p class="surgery-part-text">A shape-memory-alloy-driven wiping mechanism is proposed to remove contaminants from the camera’s optical surface.</p><Figure id="eyelid-concept" quiet /></div>
+    <div><h3>Soft Robotic Cleaning Nozzle</h3><p class="surgery-part-text">A compliant nozzle integrates air and liquid channels to direct cleaning flows toward the optical surface.</p><Figure id="soft-nozzle" quiet /></div>
   </div>
   <div class="surgery-control">
-    <h3>Coordinate sensing, wiping, and cleaning flow.</h3>
-    <p class="surgery-sublead">The proposed controller uses visual estimates of lens condition to coordinate eyelid actuation and airflow.</p>
+    <h3>Perception-Guided Cleaning Control</h3>
+    <p class="surgery-sublead">We investigate a feedback-control architecture that estimates visual obstruction and coordinates robotic wiping with directed cleaning flows.</p>
     <Figure id="cleaning-control" quiet />
   </div>
 </section>
 
 <section class="project-section surgery-section" id="visual-ai" aria-labelledby="visual-ai-title">
-  <p class="surgery-kicker">03 · AI visual feedback</p>
-  <h2 id="visual-ai-title">Add spatial context to a two-dimensional view.</h2>
-  <p class="surgery-lead">In a related simulation training study, AI models locate surgical tools, detect tool–tissue interactions, and connect the 2D view to 3D and mixed-reality feedback.</p>
+  <h2 id="visual-ai-title">03 — Agentic AI for Surgical Robotics</h2>
+  <h3 class="surgery-subhead">Toward Perception, Reasoning, and Intelligent Action</h3>
+  <p class="surgery-lead">Our long-term research goal is to develop surgeon-supervised robotic agents capable of understanding surgical environments, reasoning about procedural tasks, and coordinating adaptive robotic actions.</p>
+  <p class="surgery-lead">As a foundation for this vision, we investigate AI-based surgical scene understanding, including instrument localization, instrument–tissue interaction recognition, and spatial feedback in simulated laparoscopic environments.</p>
   <div class="surgery-wide"><Figure id="ai-pipeline" quiet /></div>
   <ol class="surgery-pipeline">
-    <li><h3>Locate the tools</h3><p>Estimate tool positions from endoscopic images.</p></li>
-    <li><h3>Detect interaction</h3><p>Identify tool–tissue contact in the training scene.</p></li>
-    <li><h3>Show spatial feedback</h3><p>Connect image analysis to 2D and 3D views.</p></li>
+    {understanding.map(item => <li><h3>{item.title}</h3><p>{item.text}</p></li>)}
   </ol>
   <div class="surgery-spatial">
-    <h3>Similar 2D views can hide different tool positions.</h3>
+    <h3>From Visual Understanding to Intelligent Assistance</h3>
+    <p class="surgery-sublead">Two-dimensional surgical views may obscure critical spatial relationships between instruments and tissues. Our simulation-based research demonstrates how 3D contextual feedback can distinguish visually similar but physically different interactions.</p>
     <Figure id="spatial-feedback" quiet />
     <p class="surgery-view-tags" aria-hidden="true"><span>2D view</span><span>3D context</span></p>
-    <p class="surgery-caption">Top: the tool contacts the target. Bottom: the tool misses it. The 3D view makes the difference visible in Isaac Sim.</p>
+    <p class="surgery-caption">Top: contact. Bottom: missed contact.</p>
+    <p class="surgery-sublead surgery-closing">These capabilities represent foundational steps toward agentic surgical robots that connect perception, reasoning, planning, and physical action under surgeon supervision.</p>
   </div>
 </section>
 
+<section class="project-section surgery-section surgery-vision" id="research-vision" aria-labelledby="research-vision-title">
+  <h2 id="research-vision-title">Research Vision</h2>
+  <p class="surgery-lead">We envision a new generation of intelligent surgical robotic systems that combine bioinspired physical mechanisms with agentic AI to enable context-aware, adaptive, and surgeon-centered assistance during minimally invasive procedures.</p>
+</section>
+
 <section class="project-section surgery-citation" id="publications" aria-labelledby="publications-title">
-  <h2 id="publications-title">Related publication</h2>
-  <p class="surgery-reference">Liu, S., Tan, Y., &amp; Li, S. (2025). <a href="https://arxiv.org/abs/2511.02233">Learning Spatial Awareness for Laparoscopic Surgery with AI Assisted Visual Feedback</a>. arXiv:2511.02233.</p>
-  <p class="surgery-publication-links"><a href="https://arxiv.org/pdf/2511.02233">Paper ↗</a><a href="https://arxiv.org/html/2511.02233v1">HTML reading version ↗</a></p>
-  <p class="surgery-fine">AI figures are reproduced under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. <a href={asset("accessibility/#surgery-media")}>Accessibility &amp; media credits</a> · <a href={asset("#lab-projects")}>All projects</a> · <a href="#main">Back to top ↑</a></p>
+  <h2 id="publications-title">Related Publications</h2>
+  {publications.map(group => <>
+    <h3 class="surgery-pub-group">{group.group}</h3>
+    <ol class="surgery-pub-list">
+      {group.papers.map(paper => <li>
+        <p class="surgery-pub-title"><a href={`https://doi.org/${paper.doi}`}>{paper.title}</a></p>
+        <p class="surgery-pub-authors">{paper.authors}</p>
+        <p class="surgery-pub-venue"><span>{paper.venue}</span> · {paper.year}</p>
+      </li>)}
+    </ol>
+  </>)}
+  <p class="surgery-fine">Links open the publisher’s DOI record. AI figures are reproduced from the <a href="https://arxiv.org/abs/2511.02233">arXiv version</a> under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. <a href={asset("accessibility/#surgery-media")}>Accessibility &amp; media credits</a> · <a href={asset("#lab-projects")}>All projects</a> · <a href="#main">Back to top ↑</a></p>
 </section>

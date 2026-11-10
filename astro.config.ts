@@ -5,4 +5,6 @@ export default defineConfig({
   output: "static",
   site: process.env.SITE_URL || undefined,
   base: process.env.BASE_PATH || "/",
+  // The surgery project moved from /surgery-ai/ in November 2026.
+  redirects: { "/surgery-ai": "/agentic-robotics_surgeons/" },
 });

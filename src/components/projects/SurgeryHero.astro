@@ -1,13 +1,13 @@
 ---
 import Video from "../ProjectVideo.astro";
+import { labProjects } from "../../data/lab-projects";
+const project = labProjects.find(item => item.slug === "agentic-robotics_surgeons")!;
 ---
 <section class="surgery-opening" aria-labelledby="project-title">
-  <div class="surgery-opening-films">
-    <div class="surgery-opening-film"><Video id="camera-assembly" hero /></div>
-    <div class="surgery-opening-film"><Video id="bench-prototype" hero /></div>
-  </div>
+  <div class="surgery-opening-film"><Video id="camera-assembly" hero /></div>
   <div class="surgery-publication">
-    <h1 id="project-title">Physical AI for clearer vision in surgery.</h1>
+    <h1 id="project-title">{project.title}</h1>
+    <p class="surgery-subtitle">{project.subtitle}</p>
   </div>
   <p id="media-status" class="sr-only" role="status"></p>
 </section>

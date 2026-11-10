@@ -5,7 +5,7 @@ import { labFigures } from "../data/lab-figures";
 import { projectClips } from "../data/lab-projects";
 import schoolTranscript from "../data/school-transcript.json";
 const surgeryFigures = ["surgical-workspace", "surgery-mechanism", "eye-concept", "eyelid-concept", "soft-nozzle", "cleaning-control", "ai-pipeline", "spatial-feedback"];
-const surgeryClips = projectClips.filter(clip => clip.project === "surgery-ai");
+const surgeryClips = projectClips.filter(clip => clip.project === "agentic-robotics_surgeons");
 ---
 
 <Layout title="Accessibility | Songyang Liu">
@@ -41,7 +41,7 @@ const surgeryClips = projectClips.filter(clip => clip.project === "surgery-ai");
     {schoolTranscript.map(paragraph => <p>{paragraph}</p>)}
   </section>
   <section class="section" id="surgery-media" aria-labelledby="surgery-media-heading">
-    <h2 id="surgery-media-heading">Surgery AI images & videos</h2>
+    <h2 id="surgery-media-heading">Surgical robotics images & videos</h2>
     <p>The magnetic camera footage documents a laboratory prototype. The Eye Concept, robotic eyelid, soft nozzle and cleaning controller are proposed designs. The AI examples come from a separate simulation training study; integration with camera actuation and lens care remains a research goal. On the project page, these descriptions are available to screen readers beside each image and video.</p>
     <p>Figures 2 and 7 are reproduced from <a href="https://arxiv.org/html/2511.02233v1">Liu, Tan and Li’s spatial-awareness training paper</a> under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a>, converted to WebP without cropping.</p>
     {surgeryFigures.map(id => { const figure = labFigures[id]; return <><h3>{figure.title}</h3><p>{figure.description}</p><p>Source: {figure.source}</p></>; })}

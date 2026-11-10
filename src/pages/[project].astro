@@ -20,7 +20,7 @@ import { labProjects, immunologyPublications } from "../data/lab-projects";
 export function getStaticPaths() { return labProjects.map(project => ({ params: { project: project.slug }, props: { project } })); }
 const { project } = Astro.props;
 const story = stories[project.slug as keyof typeof stories];
-const surgery = project.slug === "surgery-ai";
+const surgery = project.slug === "agentic-robotics_surgeons";
 const disinfection = project.slug === "disinfection-robot";
 const micro = project.slug === "building-immunology";
 const assembly = project.slug === "robotic-block-assembly";
@@ -29,11 +29,11 @@ const school = project.slug === "disease-resistant-school-communities";
 const healthy = project.slug === "healthy-built-environments";
 const architected = project.slug === "architected-structures";
 const nav = architected ? [{ id: "problem", label: "Problem" }, { id: "innovations", label: "Research" }, { id: "demonstrations", label: "Demos" }, { id: "application", label: "Application" }, { id: "vision", label: "Vision" }] : healthy ? [{ id: "problem", label: "Problem" }, { id: "innovations", label: "Innovations" }, { id: "publications", label: "Research" }, { id: "vision", label: "Vision" }] : school ? [{ id: "problem", label: "Problem" }, { id: "solutions", label: "Solutions" }, { id: "impact", label: "Impact" }, { id: "publications", label: "Research" }] : assembly ? [{ id: "abstract", label: "Concept" }, { id: "method", label: "Method" }, { id: "assembly", label: "Assembly" }, { id: "vision", label: "Vision" }]
-  : surgery ? [{ id: "problems", label: "Problems" }, { id: "innovations", label: "Innovations" }, { id: "publications", label: "Publications" }]
+  : surgery ? [{ id: "problems", label: "Challenges" }, { id: "innovations", label: "Research" }, { id: "research-vision", label: "Vision" }, { id: "publications", label: "Publications" }]
   : micro ? [{ id: "abstract", label: "Question" }, { id: "communities", label: "Microbiomes" }, { id: "method", label: "Method" }, { id: "simulation", label: "Digital twins" }, { id: "room-risk", label: "Room-level risk" }, { id: "vision", label: "Vision" }, { id: "publications", label: "Publications" }]
   : [{ id: "abstract", label: "Question" }, { id: "method", label: "Method" }, ...(surgery ? [{ id: "cleaning", label: "Cleaning concept" }] : [{ id: "navigation", label: "Navigation" }]), { id: "vision", label: "Vision" }, { id: "publications", label: "Publications" }];
 ---
-<ProjectLayout title={healthy || architected || school ? project.title : `${project.shortTitle} — ${story.headline}`} shortTitle={project.shortTitle} description={project.description} slug={project.slug} source={project.source} nav={nav} bare={surgery || school || architected || healthy}>
+<ProjectLayout title={healthy || architected || school || surgery ? project.title : `${project.shortTitle} — ${story.headline}`} shortTitle={project.shortTitle} description={project.description} slug={project.slug} source={project.source} nav={nav} bare={surgery || school || architected || healthy}>
   {architected ? <ArchitectedContent /> : healthy ? <HealthyContent /> : assembly ? <AssemblyContent sourceNotes={project.sourceNotes} /> : school ? <SchoolContent /> : <>
   {surgery ? <SurgeryHero /> : <section class:list={["project-hero", { "immunity-hero": micro }]} aria-labelledby="project-title">
     <div class="hero-copy"><h1 id="project-title" class="project-display-title">{story.headlineLines.map(line => <span class="display-line">{line}{" "}</span>)}</h1>{project.credit && <p class="project-credit">{project.credit}</p>}</div>
