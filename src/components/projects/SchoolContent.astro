@@ -1,28 +1,66 @@
 ---
 import Video from "../ProjectVideo.astro";
+import Figure from "../ProjectFigure.astro";
 import Playback from "../ProjectPlayback.astro";
-import chapters from "../../data/school-chapters.json";
+import { labProjects } from "../../data/lab-projects";
+import { asset } from "../../data/profile";
 import "../../styles/school.css";
+const project = labProjects.find(item => item.slug === "disease-resistant-school-communities")!;
+// Records follow Crossref (checked 10 November 2026), newest first.
+const publications = [
+  { authors: "Yifang Xu, Jianli Chen, Jiannan Cai, Shuai Li, Qiang He", title: "Simulation-Based Trade-Off Modeling for Indoor Infection Risk of Airborne Diseases, Energy Consumption, and Thermal Comfort", venue: "Journal of Building Engineering, 76, 107137", year: "2023", doi: "10.1016/j.jobe.2023.107137" },
+  { authors: "Yifang Xu, Shuai Li, Qiang He, Siyao Zhu, Jiannan Cai", title: "Assessing Transmission Risks of SARS-CoV-2 Omicron Variant in U.S. School Facilities and Mitigation Measures", venue: "Winter Simulation Conference (WSC), 629–640", year: "2022", doi: "10.1109/WSC57314.2022.10015486" },
+  { authors: "Jiannan Cai, Shuai Li, Da Hu, Yifang Xu, Qiang He", title: "Nationwide Assessment of Energy Costs and Policies to Limit Airborne Infection Risks in U.S. Schools", venue: "Journal of Building Engineering, 45, 103533", year: "2022", doi: "10.1016/j.jobe.2021.103533", film: true },
+  { authors: "Yifang Xu, Jiannan Cai, Shuai Li, Qiang He, Siyao Zhu", title: "Airborne Infection Risks of SARS-CoV-2 in U.S. Schools and Impacts of Different Intervention Strategies", venue: "Sustainable Cities and Society, 74, 103188", year: "2021", doi: "10.1016/j.scs.2021.103188" },
+  { authors: "Liu Cao, Lu Yang, Clifford S. Swanson, Shuai Li, Qiang He", title: "Comparative Analysis of Impact of Human Occupancy on Indoor Microbiomes", venue: "Frontiers of Environmental Science & Engineering, 15(5), 89", year: "2021", doi: "10.1007/s11783-020-1383-1" },
+  { authors: "Shuai Li, Zhiyao Yang, Da Hu, Liu Cao, Qiang He", title: "Understanding Building-Occupant-Microbiome Interactions Toward Healthy Built Environments: A Review", venue: "Frontiers of Environmental Science & Engineering, 15(4), 65", year: "2021", doi: "10.1007/s11783-020-1357-3" },
+];
 ---
 <div class="school-content">
   <section class="school-intro" aria-labelledby="project-title">
     <h1 id="project-title">Disease-Resistant<br /> School Communities</h1>
-    <p>Balancing in-person schooling, airborne infection risk and energy cost.</p>
+    <p>{project.subtitle}</p>
   </section>
   <p id="media-status" class="sr-only" role="status"></p>
-  {chapters.map((chapter, index) => <section class="school-chapter" id={chapter.id} aria-labelledby={`${chapter.id}-title`}>
-    <div class="school-chapter-copy">
-      <h2 id={`${chapter.id}-title`}>{chapter.title}</h2>
-      <div id={`${chapter.id}-narration`} class="school-narration">{chapter.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+
+  <section class="school-section school-overview" id="overview" aria-labelledby="overview-title">
+    <h2 id="overview-title">Research Overview</h2>
+    <div class="school-film"><Video id="school-research-film" hero transcriptHref={asset("accessibility/#school-transcript")} /></div>
+    <p class="school-film-note"><a href={asset("accessibility/#school-transcript")}>Read the film’s narration</a></p>
+    <div class="school-overview-copy">
+      <p>Building disease-resistant school communities requires understanding how built environments, occupants, and microbiomes interact to influence infectious disease risks.</p>
+      <p>We integrate environmental sensing, microbiome analysis, and computational modeling to develop evidence-based prevention strategies, while examining trade-offs among health protection, energy consumption, and operational costs.</p>
     </div>
-    <Video id={chapter.id} hero={index === 0} transcriptHref={`#${chapter.id}-narration`} />
-  </section>)}
-  <section class="school-study" id="publications" aria-labelledby="school-study-title">
-    <div><h2 id="school-study-title">The study behind the film</h2><p>COVID-19 scenario modeling · Journal of Building Engineering · 2022</p></div>
-    <div>
-      <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8556188/">Nationwide assessment of energy costs and policies to limit airborne infection risks in U.S. schools</a></p>
-      <p class="school-authors">Jiannan Cai, Shuai Li, Da Hu, Yifang Xu, Qiang He</p>
+  </section>
+
+  <section class="school-section school-engagement" id="engagement" aria-labelledby="engagement-title">
+    <h2 id="engagement-title">Community Engagement</h2>
+    <p class="school-lead">Building disease-resistant school communities extends beyond research to education, public participation, and policy.</p>
+    <div class="school-engagement-grid">
+      <article class="school-engagement-item" aria-labelledby="k12-title">
+        <p class="school-index" aria-hidden="true">01</p>
+        <h3 id="k12-title">K–12 Education &amp; Citizen Science</h3>
+        <p>We engage K–12 students in hands-on environmental sampling and microbiome exploration, fostering scientific curiosity and a deeper understanding of microbial communities in their everyday environments.</p>
+        <div class="school-photo"><Figure id="school-sampling" quiet linked={false} /></div>
+      </article>
+      <article class="school-engagement-item" aria-labelledby="policy-title">
+        <p class="school-index" aria-hidden="true">02</p>
+        <h3 id="policy-title">Community &amp; Policy Engagement</h3>
+        <p>We translate research insights into practical guidance for school administrators, communities, and policymakers, supporting informed decisions on disease prevention, school operations, and infrastructure investment.</p>
+      </article>
     </div>
+  </section>
+
+  <section class="school-section school-publications" id="publications" aria-labelledby="publications-title">
+    <h2 id="publications-title">Selected Publications</h2>
+    <ol class="school-pub-list">
+      {publications.map(paper => <li>
+        {paper.film && <p class="school-pub-tag">Featured in the research film</p>}
+        <p class="school-pub-title"><a href={`https://doi.org/${paper.doi}`}>{paper.title}</a></p>
+        <p class="school-pub-authors">{paper.authors}</p>
+        <p class="school-pub-venue"><span>{paper.venue}</span> · {paper.year}</p>
+      </li>)}
+    </ol>
   </section>
 </div>
 <Playback />

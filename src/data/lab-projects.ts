@@ -62,9 +62,9 @@ export const labProjects = [
   "slug": "disease-resistant-school-communities",
   "title": "Disease-Resistant School Communities",
   "shortTitle": "School Communities",
-  "topic": "School ventilation · Airborne infection risk · Energy cost",
-  "subtitle": "",
-  "description": "A five-chapter research film on airborne infection risk, ventilation and energy costs across 111,485 U.S. schools.",
+  "topic": "School health · Indoor microbiomes · Community engagement",
+  "subtitle": "Building healthier, more resilient school communities through science, technology, and community engagement.",
+  "description": "Environmental sensing, microbiome analysis, computational modeling, and community engagement for healthier, more resilient schools.",
   "source": "",
   "credit": "",
   "image": "school-research.jpg",
@@ -74,16 +74,12 @@ export const labProjects = [
   "question": "How can schools balance infection risk and energy costs?",
   "abstract": "Using COVID-19 as the epidemiological context, this nationwide study examines ventilation, airborne infection risk and energy costs across public and private schools.",
   "heroClips": [
-    "school-balancing-priorities"
+    "school-research-film"
   ],
-  "demoClips": [
-    "school-national-analysis",
-    "school-risk-and-energy",
-    "school-ventilation-factors",
-    "school-informed-decisions"
-  ],
+  "demoClips": [],
   "sourceNotes": [
-    "The supplied 3508_raw.MP4 research film is presented in five consecutive chapters with original audio, full frames and closing credits retained. Chapter text is condensed from the existing narration transcript. The original uncut web film remains available.",
+    "Page copy follows the supplied text, Disease-Resistant School Communities (November 2026). The supplied 3508_raw.MP4 research film is presented uncut, with original audio, full frames and closing credits retained.",
+    "Research Presentation, slide 12 (K-12 Outreach, Citizen Science): photographs of students sampling school surfaces, shown at their original resolution.",
     "This film presents historical COVID-19 scenario modeling in 111,485 U.S. schools. Associated study: Cai, Li, Hu, Xu and He, Journal of Building Engineering (2022), DOI 10.1016/j.jobe.2021.103533."
   ]
 },
@@ -130,21 +126,22 @@ export const labProjects = [
 ];
 
 export const projectClips: ProjectClip[] = [
-...schoolChapters.map(chapter => ({
-  id: chapter.id,
+{
+  id: "school-research-film",
   project: "disease-resistant-school-communities",
-  duration: chapter.end - chapter.start,
-  title: chapter.title,
+  assetId: "school-research",
+  duration: 146.888,
+  title: "Disease-resistant school communities research film",
   caption: "",
   captions: true,
   loop: false,
-  description: chapter.description,
+  description: schoolChapters.map(chapter => chapter.description).join(" "),
   sourceLabel: "Supplied 3508_raw.MP4; associated study by Cai, Li, Hu, Xu and He (2022)",
   sourceUrl: "https://doi.org/10.1016/j.jobe.2021.103533",
-  sourceRange: chapter.sourceRange,
-  audioNote: "Original English narration and music retained. Starts muted; use the native volume control to hear the film. English captions are enabled by default. Narration-derived text accompanies each chapter.",
-  processingNote: "Consecutive excerpts of the complete web film at 1920 by 1080 and 30 fps, original speed and full frame. Caption and description timings are rebased to each excerpt. The final chapter retains all closing credits."
-})),
+  sourceRange: "00:00–02:26.9 (complete film)",
+  audioNote: "Original English narration and music retained. Starts muted; use the native volume control to hear the film. English captions are enabled by default. The full narration transcript is on the accessibility page.",
+  processingNote: "Complete web film at 1920 by 1080 and 30 fps, original speed and full frame, with all closing credits."
+},
 {
   "id": "excavator-assembly",
   "mediaVersion": "vertical-insertion-20261027",

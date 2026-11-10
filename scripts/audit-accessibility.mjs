@@ -3,7 +3,6 @@ import AxeBuilder from "@axe-core/playwright";
 import { mkdir, writeFile } from "node:fs/promises";
 import { research, otherPapers } from "../src/data/profile.ts";
 import { labProjects, projectClips } from "../src/data/lab-projects.ts";
-import schoolChapters from "../src/data/school-chapters.json" with { type: "json" };
 
 const base = (process.env.TEST_URL || "http://127.0.0.1:4480").replace(
   /\/$/,
@@ -173,9 +172,10 @@ try {
         check(`${route}: credits link reaches the accessibility page`, await page.locator('a[href$="accessibility/#surgery-media"]').count() === 1);
       } else if (route === "/disease-resistant-school-communities/") {
         check(`${route}: no header, footer or disclosures`, await page.locator('.project-header,.project-footer,main details,main summary,.source-section').count() === 0);
-        check(`${route}: five consecutive video chapters`, await page.locator('.school-chapter').count() === 5 && schoolChapters.every((chapter, i) => chapter.start === (i ? schoolChapters[i-1].end : 0)));
-        check(`${route}: narration text matches each chapter`, await page.locator('.school-narration').evaluateAll((nodes, chapters) => nodes.length === chapters.length && nodes.every((node, i) => [...node.querySelectorAll('p')].map(p => p.textContent).join('\n') === chapters[i].paragraphs.join('\n')), schoolChapters));
-        check(`${route}: original study retained`, await page.locator('#publications a[href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8556188/"]').count() === 1);
+        check(`${route}: title, subtitle, and sections follow the supplied copy`, (await page.locator('h1').innerText()).replace(/\s+/g, ' ').trim() === 'Disease-Resistant School Communities' && (await page.locator('.school-intro > p').innerText()) === 'Building healthier, more resilient school communities through science, technology, and community engagement.' && JSON.stringify(await page.locator('main h2').allTextContents()) === JSON.stringify(['Research Overview', 'Community Engagement', 'Selected Publications']) && JSON.stringify(await page.locator('main h3').allTextContents()) === JSON.stringify(['K–12 Education & Citizen Science', 'Community & Policy Engagement']));
+        check(`${route}: one complete research film with captions, and a narration link`, await page.locator('#overview video').count() === 1 && await page.locator('#school-research-film-video track[kind="captions"]').count() === 1 && await page.locator('.school-film-note a[href$="accessibility/#school-transcript"]').count() === 1);
+        check(`${route}: K-12 sampling photo sits with K-12 Education & Citizen Science`, await page.locator('#engagement .school-engagement-item:first-child img[src$="k12-sampling.webp"]').count() === 1);
+        check(`${route}: six selected publications link to DOI records, including the film's study`, await page.locator('#publications .school-pub-list > li').count() === 6 && await page.locator('#publications .school-pub-title a[href^="https://doi.org/10."]').count() === 6 && await page.locator('#publications a[href="https://doi.org/10.1016/j.jobe.2021.103533"]').count() === 1);
       } else if (route === "/architected-structures/" || route === "/healthy-built-environments/") {
         check(`${route}: no navigation bars, footer, disclosures, or illustrated vision section`, await page.locator('.project-header,.project-footer,main nav,main details,main summary,#vision,.research-vision,.source-section').count() === 0);
         check(`${route}: no outgoing links`, await page.locator('a[href]').evaluateAll(links => links.every(a => a.getAttribute('href').startsWith('#'))));
