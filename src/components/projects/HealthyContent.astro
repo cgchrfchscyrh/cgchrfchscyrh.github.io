@@ -2,43 +2,58 @@
 import Video from "../ProjectVideo.astro";
 import Playback from "../ProjectPlayback.astro";
 import Figure from "../ProjectFigure.astro";
+import { labProjects } from "../../data/lab-projects";
 import "../../styles/healthy.css";
+const project = labProjects.find(item => item.slug === "digitaltwin_healthybuilding")!;
+// Records follow Crossref (checked 10 November 2026), newest first.
 const papers = [
-  { area: "BIM-based modeling", title: "Integrated environment-occupant-pathogen information modeling to assess and communicate room-level outbreak risks of infectious diseases", authors: "Shuai Li, Yifang Xu, Jiannan Cai, Da Hu, Qiang He", venue: "Building and Environment · 2021", doi: "https://doi.org/10.1016/j.buildenv.2020.107394", html: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7584519/", note: "Connects building information, occupancy, and pathogen parameters for room-level surface-mediated transmission modeling and risk communication." },
-  { area: "Predictive simulation", title: "Simulation-based trade-off modeling for indoor infection risk of airborne diseases, energy consumption, and thermal comfort", authors: "Yifang Xu, Jianli Chen, Jiannan Cai, Shuai Li, Qiang He", venue: "Journal of Building Engineering · 2023", doi: "https://doi.org/10.1016/j.jobe.2023.107137", html: "", note: "Compares infection-risk, energy, and comfort trade-offs through building simulations. This is scenario-based evidence, rather than validation of a live digital twin." },
-  { area: "AI-enabled intervention", title: "Recognizing object surface materials to adapt robotic disinfection in infrastructure facilities", authors: "Da Hu, Shuai Li", venue: "Computer-Aided Civil and Infrastructure Engineering · 2022", doi: "https://doi.org/10.1111/mice.12811", html: "", note: "Uses visual material recognition and transmission modeling to inform adaptive robotic disinfection. It is separate from the simulation demonstration on this page." },
+  { title: "Simulation-Based Trade-Off Modeling for Indoor Infection Risk of Airborne Diseases, Energy Consumption, and Thermal Comfort", authors: "Yifang Xu, Jianli Chen, Jiannan Cai, Shuai Li, Qiang He", venue: "Journal of Building Engineering, 76, 107137", year: "2023", doi: "10.1016/j.jobe.2023.107137" },
+  { title: "Integrated Environment-Occupant-Pathogen Information Modeling to Assess and Communicate Room-Level Outbreak Risks of Infectious Diseases", authors: "Shuai Li, Yifang Xu, Jiannan Cai, Da Hu, Qiang He", venue: "Building and Environment, 187, 107394", year: "2021", doi: "10.1016/j.buildenv.2020.107394" },
+  { title: "Understanding Building-Occupant-Microbiome Interactions Toward Healthy Built Environments: A Review", authors: "Shuai Li, Zhiyao Yang, Da Hu, Liu Cao, Qiang He", venue: "Frontiers of Environmental Science & Engineering, 15(4), 65", year: "2021", doi: "10.1007/s11783-020-1357-3" },
 ];
 ---
 <section class="healthy-hero" aria-labelledby="project-title">
   <div class="healthy-hero-copy">
-    <h1 id="project-title">AI-Empowered<br /> Healthy Built Environments</h1>
+    <h1 id="project-title">Digital Twins for<br /> Healthy Built Environments</h1>
+    <p class="healthy-subtitle">{project.subtitle}</p>
   </div>
   <p id="media-status" class="sr-only" role="status"></p>
 </section>
 <div class="project-content healthy-content">
+  <section class="healthy-vision" id="research-vision" aria-labelledby="research-vision-title">
+    <h2 id="research-vision-title">Research Vision</h2>
+    <div class="healthy-vision-copy">
+      <p class="healthy-vision-lead">We explore how digital twins and intelligent technologies can transform built environments into healthier, more responsive spaces.</p>
+      <p>By integrating building information, environmental sensing, and computational modeling, we seek to better understand indoor health risks and predict environmental dynamics. We further investigate social robotics to enable natural, context-aware interactions between people and intelligent built environments.</p>
+    </div>
+  </section>
   <div class="healthy-research" id="innovations">
     <article class="healthy-strand" id="modeling" aria-labelledby="modeling-title">
-      <div class="healthy-strand-head"><span class="healthy-index" aria-hidden="true">01</span><div><h2 id="modeling-title">BIM-based environmental<br /> and exposure modeling</h2><p>Organize rooms, systems, and occupant activities in a shared spatial model. Connect that model with environmental processes to investigate exposure pathways and compare scenarios.</p></div></div>
+      <div class="healthy-strand-head"><p class="healthy-index">01 — Understand</p><div><h2 id="modeling-title">Modeling Building–Occupant–Environment Interactions</h2><p>We integrate building information, occupant activities, and environmental data to characterize exposure pathways and assess spatial variations in indoor health risks.</p></div></div>
       <Figure id="twin-framework" quiet linked={false} />
     </article>
     <article class="healthy-strand" id="prediction" aria-labelledby="prediction-title">
-      <div class="healthy-strand-head"><span class="healthy-index" aria-hidden="true">02</span><div><h2 id="prediction-title">Digital twins for<br /> real-time prediction</h2><p>Develop models that update with sensor observations and changing occupancy—estimating current conditions, forecasting change, and comparing possible responses.</p></div></div>
+      <div class="healthy-strand-head"><p class="healthy-index">02 — Predict</p><div><h2 id="prediction-title">Digital Twins for Indoor Health Intelligence</h2><p>We develop digital twins to simulate evolving indoor conditions, predict potential exposure risks, and support health-informed building management.</p></div></div>
       <div class="healthy-prediction-media">
         <Video id="healthy-indoor-transport" credits />
         <Video id="healthy-building-layers" credits />
       </div>
     </article>
-    <article class="healthy-strand" id="response" aria-labelledby="response-title">
-      <div class="healthy-strand-head"><span class="healthy-index" aria-hidden="true">03</span><div><h2 id="response-title">AI-driven control and<br /> human–building interaction</h2><p>Investigate how predictions can inform building controls, robotic intervention, and guidance that occupants can understand and shape.</p></div></div>
-      <div class="healthy-response-media">
-        <Video id="healthy-disinfection-simulation" credits />
-        <Figure id="occupant-interaction" quiet linked={false} />
-      </div>
+    <article class="healthy-strand" id="engage" aria-labelledby="engage-title">
+      <div class="healthy-strand-head"><p class="healthy-index">03 — Engage</p><div><h2 id="engage-title">Social Robotics &amp; <span class="healthy-nowrap">Human–Robot</span> Interaction</h2><p>We investigate how social robots perceive, communicate, and interact with occupants in shared indoor environments. Our research explores natural, context-aware interactions that can enhance human engagement and support occupant needs.</p></div></div>
+      <div class="healthy-engage-media"><Figure id="occupant-interaction" quiet linked={false} /></div>
     </article>
   </div>
   <section class="project-section" id="publications" aria-labelledby="publications-title">
-    <h2 id="publications-title" class="healthy-publications-title">Research &amp; publications</h2>
-    <div class="healthy-publications">{papers.map(paper => <article class="publication"><p class="healthy-stage">{paper.area}</p><div><p class="publication-meta">{paper.venue}</p><h3>{paper.title}</h3><p class="healthy-authors">{paper.authors}</p><p>{paper.note}</p><p class="healthy-doi">DOI: {paper.doi.replace("https://doi.org/", "")}</p></div></article>)}</div>
+    <h2 id="publications-title" class="healthy-publications-title">Selected Publications</h2>
+    <ol class="healthy-pub-list">
+      {papers.map(paper => <li>
+        <h3>{paper.title}</h3>
+        <p class="healthy-authors">{paper.authors}</p>
+        <p class="healthy-venue"><span>{paper.venue}</span> · {paper.year}</p>
+        <p class="healthy-doi">DOI: {paper.doi}</p>
+      </li>)}
+    </ol>
   </section>
 </div>
 <Playback />

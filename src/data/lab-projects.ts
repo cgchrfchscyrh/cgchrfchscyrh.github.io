@@ -31,12 +31,12 @@ export const labProjects = [
   ]
 },
 {
-  "slug": "healthy-built-environments",
-  "title": "AI-Empowered Healthy Built Environments",
+  "slug": "digitaltwin_healthybuilding",
+  "title": "Digital Twins for Healthy Built Environments",
   "shortTitle": "Healthy Built Environments",
-  "topic": "BIM · Digital twins · Human–building interaction",
-  "subtitle": "",
-  "description": "Connecting building information models, predictive digital twins, and AI-enabled responses around human health, comfort, and everyday needs.",
+  "topic": "Digital twins · Indoor health · Social robotics",
+  "subtitle": "Connecting environmental intelligence, predictive modeling, and human-centered interaction.",
+  "description": "Digital twins, environmental sensing, and social robotics for healthier, more responsive built environments.",
   "source": "",
   "credit": "",
   "image": "building-model.jpg",
@@ -48,14 +48,13 @@ export const labProjects = [
   "heroClips": [],
   "demoClips": [
     "healthy-indoor-transport",
-    "healthy-building-layers",
-    "healthy-disinfection-simulation"
+    "healthy-building-layers"
   ],
   "sourceNotes": [
-    "Page structure follows the supplied Human-Centered Healthy Built Environment brief: Problem, Innovations & Solutions, Research & Publications, and Our Vision.",
+    "Page copy follows the supplied text, Digital Twins for Healthy Built Environments (November 2026).",
     "Research Presentation, slide 3: the environmental and exposure modeling framework. Building, slides 3–4: office geometry, spatial network, and recorded indoor model animations. These do not demonstrate a live sensor-connected prediction service.",
-    "Building, slide 11 / Research Presentation, slide 7: a separate simulated robotic intervention. Building Immunology 1, slide 3: the human–robot interaction photograph, with the face redacted. These materials do not validate an integrated autonomous building controller or measure health outcomes.",
-    "The spatial and response diagrams on this page are explanatory schematics. Natural-language interaction and coordinated predictive control describe research directions, not deployed capabilities."
+    "Building Immunology 1, slide 3: the human–robot interaction photograph, with the face redacted. It illustrates the social-robotics direction and does not measure a health outcome.",
+    "The framework diagram is an explanatory schematic. Social-robot interaction describes a research direction, not a deployed capability."
   ]
 },
 {
@@ -245,9 +244,9 @@ export const projectClips: ProjectClip[] = [
 
 
 // Reuse unchanged source media with distinct player IDs on the new overview.
-for (const assetId of ["indoor-transport", "building-layers", "disinfection-simulation"]) {
+for (const assetId of ["indoor-transport", "building-layers"]) {
   const original = projectClips.find(clip => clip.id === assetId)!;
-  projectClips.push({ ...original, id: `healthy-${assetId}`, project: "healthy-built-environments", assetId });
+  projectClips.push({ ...original, id: `healthy-${assetId}`, project: "digitaltwin_healthybuilding", assetId });
 }
 
 for (const [id, assetId] of [["structures-families", "tpms-families"], ["structures-assembly", "excavator-assembly"]]) {

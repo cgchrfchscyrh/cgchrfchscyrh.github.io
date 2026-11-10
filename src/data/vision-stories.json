@@ -189,10 +189,10 @@
     "sceneAlt": "An animated classroom from the supplied research film, illustrating the shared goal of healthier learning environments.",
     "description": "The current evidence consists of student environmental-sampling activities and separate studies modeling school infection risk and ventilation energy costs. Moving toward healthier school communities requires student and educator participation, microbiology, building science and school operations, and family and community input. The shared-vision classroom is an illustration from the supplied film. It does not document an adopted intervention or measured improvement in health, learning or energy use."
   },
-  "healthy-built-environments": {
-    "headline": "AI-Empowered Healthy Built Environments",
+  "digitaltwin_healthybuilding": {
+    "headline": "Digital Twins for Healthy Built Environments",
     "headlineLines": [
-      "AI-Empowered",
+      "Digital Twins for",
       "Healthy Built Environments"
     ],
     "title": "From room models to responsive buildings.",
