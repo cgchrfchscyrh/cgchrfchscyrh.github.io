@@ -49,12 +49,7 @@ const canonical = Astro.site
         <nav aria-label="Main navigation">
           <a href={asset("#about")}>About</a>
           <a href={asset("#research")}>Research</a>
-          <a
-            href={asset("cv/")}
-            aria-current={Astro.url.pathname.endsWith("/cv/")
-              ? "page"
-              : undefined}>CV</a
-          >
+          <a href={asset("Songyang_Liu_CV.pdf")}>CV <span class="link-note">(PDF)</span></a>
           <a href={`mailto:${profile.email}`}>Contact</a>
         </nav>
       </header>

@@ -27,7 +27,7 @@ const spacing =
   "* { line-height: 1.5 !important; letter-spacing: .12em !important; word-spacing: .16em !important; } p { margin-bottom: 2em !important; }";
 await mkdir("reports/screenshots", { recursive: true });
 try {
-  for (const route of ["/", "/cv/", "/accessibility/", "/404.html", "/building-digital-twin/", ...labProjects.filter(p => !p.website).map(p => `/${p.slug}/`)]) {
+  for (const route of ["/", "/accessibility/", "/404.html", "/building-digital-twin/", ...labProjects.filter(p => !p.website).map(p => `/${p.slug}/`)]) {
     const project = labProjects.find(p => route === `/${p.slug}/`);
     const legacyContext = route === "/building-digital-twin/" ? await browser.newContext({ viewport: { width: 1360, height: 1000 } }) : null;
     const page = await (legacyContext || context).newPage();
@@ -102,7 +102,7 @@ try {
       structure.brokenAnchors.length === 0,
       structure.brokenAnchors,
     );
-    if (route === "/" || route === "/cv/") {
+    if (route === "/") {
       const titles = await page.locator("h3").allTextContents();
       const authors = await page.locator(".authors").allTextContents();
       const normalize = (value) => value.replace(/\s+/g, " ").trim();
@@ -337,6 +337,13 @@ try {
     await legacyContext?.close();
   }
   const moved = await context.newPage();
+  const cv = await moved.request.get(`${base}/Songyang_Liu_CV.pdf`);
+  check("CV is published as a PDF", cv.status() === 200 && (await cv.body()).subarray(0, 5).toString() === "%PDF-");
+  check("Old CV address leads to the PDF", (await (await moved.request.get(`${base}/cv/`)).text()).includes("url=/Songyang_Liu_CV.pdf"));
+  for (const [from, to] of [["humanoid-hoisting", "humanoid-hoisting"], ["humanoid_roofing_webpage", "humanoid_roofing"], ["mixed_traffic", "mixed_traffic"], ["eVTOL_webpage", "wind-aware-air-mobility"]]) {
+    const html = await (await moved.request.get(`${base}/${from}/`)).text();
+    check(`CV project link /${from}/ redirects to the lab website`, html.includes(`url=https://shuaili90.github.io/${to}/`));
+  }
   for (const item of labProjects.filter(p => p.website)) {
     const response = await moved.request.get(`${base}/${item.slug}/`);
     const html = await response.text();

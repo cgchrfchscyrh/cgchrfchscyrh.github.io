@@ -7,7 +7,7 @@ A personal academic website inspired by the structure of [Mengjun Wang’s homep
 ## Content
 
 - Homepage: biography, research news, four linked paper projects, seven research project cards (three hosted here, four on the AIRIS Lab websites), additional publications, education, awards, and contact.
-- `/cv/`: concise HTML CV, based on the supplied 2026 CV and verified publication records. It is a summary, not a full transcription of the original document.
+- CV: the supplied PDF, published unchanged at `public/Songyang_Liu_CV.pdf` and linked from the header and the homepage. The old `/cv/` address redirects to it. Its project-website links use old addresses on this site, which `astro.config.ts` redirects to the AIRIS Lab websites.
 - `/accessibility/`: accessibility information and known limits.
 - `/404.html`: accessible error page.
 - `/building-digital-twin/`: legacy entry that redirects into the combined building page; old room-risk and building-case anchors are preserved. The former demonstrations anchor goes to the robot page.

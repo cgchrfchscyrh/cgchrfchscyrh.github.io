@@ -14,5 +14,14 @@ export default defineConfig({
     "/disease-resistant-school-communities": "https://shuaili90.github.io/disease-resistant-school-communities/",
     "/surgery-ai": "https://shuaili90.github.io/agentic-robotics_surgeons/",
     "/healthy-built-environments": "https://shuaili90.github.io/digitaltwin_healthybuilding/",
+    // Project addresses used in the PDF CV and earlier links.
+    "/humanoid-hoisting": "https://shuaili90.github.io/humanoid-hoisting/",
+    "/humanoid_roofing": "https://shuaili90.github.io/humanoid_roofing/",
+    "/humanoid_roofing_webpage": "https://shuaili90.github.io/humanoid_roofing/",
+    "/mixed_traffic": "https://shuaili90.github.io/mixed_traffic/",
+    "/wind-aware-air-mobility": "https://shuaili90.github.io/wind-aware-air-mobility/",
+    "/eVTOL_webpage": "https://shuaili90.github.io/wind-aware-air-mobility/",
+    // The CV is published as a PDF; the former HTML edition's address leads to it.
+    "/cv": "/Songyang_Liu_CV.pdf",
   },
 });
