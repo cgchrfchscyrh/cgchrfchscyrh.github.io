@@ -1,11 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { profile } from "../data/profile";
-import { labFigures } from "../data/lab-figures";
-import { projectClips } from "../data/lab-projects";
-import schoolTranscript from "../data/school-transcript.json";
-const surgeryFigures = ["surgical-workspace", "surgery-mechanism", "eye-concept", "eyelid-concept", "soft-nozzle", "cleaning-control", "ai-pipeline", "spatial-feedback"];
-const surgeryClips = projectClips.filter(clip => clip.project === "agentic-robotics_surgeons");
 ---
 
 <Layout title="Accessibility | Songyang Liu">
@@ -29,23 +24,11 @@ const surgeryClips = projectClips.filter(clip => clip.project === "agentic-robot
   </section>
   <section class="section" id="project-media" aria-labelledby="project-media-heading">
     <h2 id="project-media-heading">Project videos & source materials</h2>
-    <p>The Architected Structures, Digital Twins for Healthy Built Environments, Building Immunology, Robotic Disinfection, Agentic Surgical Robotics, Robotic Block Assembly, and Disease-Resistant School Communities pages use supplied research presentations, videos, and earlier DreamXLab project materials. Informative images have alternative text and longer explanations. Each video has an accessible text alternative and a timed WebVTT description track. Readable video descriptions and source credits are collected in the project’s Sources & media notes section. Figures can be opened at their original resolution. Research diagrams retain their original colors; labels and text explain their meaning independently of color.</p>
+    <p>The Building Immunology, Robotic Disinfection, and Robotic Block Assembly pages use supplied research presentations, videos, and earlier DreamXLab project materials. Informative images have alternative text and longer explanations. Each video has an accessible text alternative and a timed WebVTT description track. Readable video descriptions and source credits are collected in the project’s Sources & media notes section. Figures can be opened at their original resolution. Research diagrams retain their original colors; labels and text explain their meaning independently of color.</p>
     <p>Videos can start muted when visible and pause outside the viewport or in a hidden tab. Native controls support manual playback and pause; manual pause is remembered. Reduced-motion and data-saving preferences disable automatic playback. Keyboard users can Tab to a video and use Space to play or pause it. Native controls also remain available without JavaScript.</p>
-    <p>The web excerpts retain complete frames and original motion speed. The digital-twin model animations have no audio. The surgical concept animations have digitally silent audio tracks. Laboratory sounds are omitted from the benchtop excerpt, which is presented as a silent visual demonstration. The Robotic Disinfection infographic excerpts also omit source audio and provide text alternatives for the illustrated workflow; publisher and paper credits remain visible. Original media remain unchanged in the supplied files and source repository.</p>
-    <p>The School Communities research film is presented as one complete video with original English narration and music, default English captions and timed visual descriptions. It starts muted and plays once. The full transcript is provided below. Captions were compared across two local transcription passes, word timestamps and source material; independent listening and screen-reader review remain outstanding. The film presents historical school-modeling scenarios and retains its original research and publisher credits.</p>
+    <p>The web excerpts retain complete frames and original motion speed. The digital-twin model animations have no audio. The Robotic Disinfection infographic excerpts also omit source audio and provide text alternatives for the illustrated workflow; publisher and paper credits remain visible. Original media remain unchanged in the supplied files and source repository.</p>
     <p>These pages distinguish project goals, hardware illustrations, and demonstration footage from evidence in cited publications. Building Immunology and Robotic Disinfection retain the original bibliography authors; these are not presented as Songyang Liu’s personal publication list. The case selectors use keyboard-operable buttons and keep all cases visible when JavaScript is unavailable. Recorded interface screenshots are labeled as archived examples. Full screen-reader usability and external PDF reading order have not been certified.</p>
-  </section>
-  <section class="section" id="school-transcript" aria-labelledby="school-transcript-heading">
-    <h2 id="school-transcript-heading">School Communities: English narration</h2>
-    <p>The following transcript preserves the source narration. Music accompanies the narration and continues through the closing credits. The project page links here from below the film.</p>
-    {schoolTranscript.map(paragraph => <p>{paragraph}</p>)}
-  </section>
-  <section class="section" id="surgery-media" aria-labelledby="surgery-media-heading">
-    <h2 id="surgery-media-heading">Surgical robotics images & videos</h2>
-    <p>The magnetic camera footage documents a laboratory prototype. The Eye Concept, robotic eyelid, soft nozzle and cleaning controller are proposed designs. The AI examples come from a separate simulation training study; integration with camera actuation and lens care remains a research goal. On the project page, these descriptions are available to screen readers beside each image and video.</p>
-    <p>Figures 2 and 7 are reproduced from <a href="https://arxiv.org/html/2511.02233v1">Liu, Tan and Li’s spatial-awareness training paper</a> under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a>, converted to WebP without cropping.</p>
-    {surgeryFigures.map(id => { const figure = labFigures[id]; return <><h3>{figure.title}</h3><p>{figure.description}</p><p>Source: {figure.source}</p></>; })}
-    {surgeryClips.map(clip => <><h3>{clip.title}</h3><p>{clip.description} {clip.audioNote}</p><p>Source: <a href={`https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842/${clip.sourceFile}`}>DreamXLab’s original recording</a>; {clip.sourceRange}. Original speed and complete frame retained.</p></>)}
+    <p>The Architected Structures, Digital Twins for Healthy Built Environments, Disease-Resistant School Communities, and Agentic Surgical Robotics projects are now hosted on the AIRIS Lab websites. Links on this site lead there, and each of those websites has its own accessibility notes, transcripts, and media credits.</p>
   </section>
   <section class="section" aria-labelledby="attachments">
     <h2 id="attachments">Research papers & external websites</h2><p>

@@ -54,7 +54,7 @@ export const research = [
     alt: "Four sequences of a Unitree G1 stepping, bending, and reaching on a laboratory slope while attached to a safety hoist.",
     detail:
       "The physical experiments demonstrate four roofing-style motions on a laboratory slope. These are controlled experiments, not autonomous deployment on a construction roof.",
-    project: "https://cgchrfchscyrh.github.io/humanoid_roofing/",
+    project: "https://shuaili90.github.io/humanoid_roofing/",
     paper: "https://arxiv.org/abs/2609.20558v1",
     code: "",
   },
@@ -73,7 +73,7 @@ export const research = [
     alt: "Three physical humanoid trials, labeled VLA-50, VLA-80, and HOIST, guiding a suspended block toward a marked platform.",
     detail:
       "The comparison shows the placement task on a real humanoid platform. The robot guides a cable-suspended load; the crane supports its weight. The paper provides evaluation details.",
-    project: "https://cgchrfchscyrh.github.io/humanoid-hoisting/",
+    project: "https://shuaili90.github.io/humanoid-hoisting/",
     paper: "https://arxiv.org/abs/2606.00252",
     code: "",
   },
@@ -92,7 +92,7 @@ export const research = [
     alt: "Map of the 14-intersection Colorado Springs study network, with numbered intersections and enlarged road layouts.",
     detail:
       "The network combines traffic-signal-controlled intersections with intersections regulated by reinforcement-learning-controlled vehicles. The experiments use SUMO simulation; the map identifies the road network rather than a real vehicle deployment.",
-    project: "https://cgchrfchscyrh.github.io/mixed_traffic/",
+    project: "https://shuaili90.github.io/mixed_traffic/",
     paper: "https://doi.org/10.1109/IROS60139.2025.11245805",
     code: "https://github.com/cgchrfchscyrh/MixedTrafficControl_IROS",
   },
@@ -112,7 +112,7 @@ export const research = [
     alt: "Reinforcement learning framework connecting the urban wind environment, aircraft state, policy, rewards, and actor–critic training.",
     detail:
       "The policy chooses an action from the aircraft state. The environment returns the next state and a reward. Training updates the policy using sampled experiences, with rewards that account for collision and boundary constraints, energy use, time, and reaching the target. Labeled objectives also include comfort and environmental noise.",
-    project: "https://cgchrfchscyrh.github.io/wind-aware-air-mobility/",
+    project: "https://shuaili90.github.io/wind-aware-air-mobility/",
     paper: "https://doi.org/10.1016/j.engappai.2025.110392",
     code: "",
   },

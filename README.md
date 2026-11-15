@@ -6,15 +6,12 @@ A personal academic website inspired by the structure of [Mengjun Wang’s homep
 
 ## Content
 
-- Homepage: biography, research news, four linked paper projects, seven locally hosted research overviews, additional publications, education, awards, and contact.
+- Homepage: biography, research news, four linked paper projects, seven research project cards (three hosted here, four on the AIRIS Lab websites), additional publications, education, awards, and contact.
 - `/cv/`: concise HTML CV, based on the supplied 2026 CV and verified publication records. It is a summary, not a full transcription of the original document.
 - `/accessibility/`: accessibility information and known limits.
 - `/404.html`: accessible error page.
 - `/building-digital-twin/`: legacy entry that redirects into the combined building page; old room-risk and building-case anchors are preserved. The former demonstrations anchor goes to the robot page.
-- `/architected-structures/`: co-design of architected modules, connections, and robotic assembly, with shared Isaac Sim media, a separate NACRE coastal application, and a visual collaboration vision. Existing coastal-page media are referenced without duplication.
-- `/digitaltwin_healthybuilding/`: building–occupant–environment modeling, digital twins for indoor health, and social robotics, following the supplied November 2026 copy. The old `/healthy-built-environments/` address redirects here. Reuses building and robot media without the School Communities or disinfection-robot materials. Shared media use `ProjectClip.assetProject` and `assetId`, with distinct player IDs.
-- `/disease-resistant-school-communities/`: student sampling, school environmental research, the full captioned school-modeling film, and community collaboration.
-- `/agentic-robotics_surgeons/`: magnetically actuated surgical cameras, bioinspired optical maintenance, and agentic AI for surgical robotics. The old `/surgery-ai/` address redirects here.
+- Lab-hosted projects: Architected Structures, Digital Twins for Healthy Built Environments, Disease-Resistant School Communities, and Agentic Surgical Robotics now live on the AIRIS Lab websites (`https://shuaili90.github.io/<slug>/`). Their homepage cards link there through the `website` field in `src/data/lab-projects.ts`, and `astro.config.ts` turns their old addresses here, plus `/surgery-ai/` and `/healthy-built-environments/`, into redirects. Only each card's thumbnail remains in `public/projects/`.
 - `/building-immunology/`: combined microbiomes, building-immunity framework, digital-twin simulation, room-level risk, and four building cases. Figure assets from `Building Immunology 1.pptx` and the robot page’s excerpts from `Animated_Infographics_May_09_2022.mp4` are prepared with `python scripts/prepare-immunology-media.py`; provenance is recorded in `reports/immunology-media-refresh.json`.
 - `/disinfection-robot/`: material-aware robotic disinfection, indoor mapping, and hospital-room simulation. Videos retain their original asset URLs via `ProjectClip.assetProject`; project ownership and bibliography are separated from the combined building page.
 - `/robotic-block-assembly/`: architected modules and conceptual coastal breakwater assembly.

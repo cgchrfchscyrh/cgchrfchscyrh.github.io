@@ -1,9 +1,9 @@
-import schoolChapters from "./school-chapters.json" with { type: "json" };
 const source = "https://github.com/DreamXLab/DreamXLab.github.io/blob/c4a06d081f7f22f9966cbc5248b7ceb61de8c842";
 export interface ProjectClip { id: string; project: string; assetProject?: string; assetId?: string; mediaVersion?: string; duration: number; title: string; caption: string; description: string; sourceFile?: string; sourceLabel?: string; sourceUrl?: string; sourceRange: string; audioNote: string; processingNote?: string; captions?: boolean; loop?: boolean; }
 export const labProjects = [
 {
   "slug": "architected-structures",
+  "website": "https://shuaili90.github.io/architected-structures/",
   "title": "Robot-Aware Design and Assembly of Architected Structures",
   "shortTitle": "Architected Structures",
   "topic": "Material architecture · Modular interfaces · Robotic assembly",
@@ -32,6 +32,7 @@ export const labProjects = [
 },
 {
   "slug": "digitaltwin_healthybuilding",
+  "website": "https://shuaili90.github.io/digitaltwin_healthybuilding/",
   "title": "Digital Twins for Healthy Built Environments",
   "shortTitle": "Healthy Built Environments",
   "topic": "Digital twins · Indoor health · Social robotics",
@@ -59,6 +60,7 @@ export const labProjects = [
 },
 {
   "slug": "disease-resistant-school-communities",
+  "website": "https://shuaili90.github.io/disease-resistant-school-communities/",
   "title": "Disease-Resistant School Communities",
   "shortTitle": "School Communities",
   "topic": "School health · Indoor microbiomes · Community engagement",
@@ -103,7 +105,7 @@ export const labProjects = [
     sourceNotes: ["Animated_Infographics_May_09_2022.mp4: Wiley infographic for Hu and Li (2022), Recognizing object surface materials to adapt robotic disinfection in infrastructure facilities, DOI: 10.1111/mice.12811. Three silent excerpts retain the complete frame, original speed, and publisher credits.", "Building, slides 10–11: affordance-aware navigation and disinfection simulation. Research Presentation, slide 7: simulated robotic disinfection. These examples do not demonstrate a complete deployed system or measure pathogen removal."]
   },
   {
-    slug: "agentic-robotics_surgeons", title: "Agentic and Bioinspired Robotics for Minimally Invasive Surgery", shortTitle: "Agentic Surgical Robotics", topic: "Minimally invasive surgery · Surgical robotics · Agentic AI",
+    slug: "agentic-robotics_surgeons", website: "https://shuaili90.github.io/agentic-robotics_surgeons/", title: "Agentic and Bioinspired Robotics for Minimally Invasive Surgery", shortTitle: "Agentic Surgical Robotics", topic: "Minimally invasive surgery · Surgical robotics · Agentic AI",
     subtitle: "Exploring robotic actuation, bioinspired mechanisms, and agentic intelligence for surgeon-centered robotic assistance.", description: "Magnetically actuated surgical cameras, bioinspired optical maintenance, and agentic AI for surgeon-supervised robotic assistance.",
     source: `${source}/_projects/Surgery_AI.md`, credit: "",
     image: "surgery-cover.png", imageWidth: 617, imageHeight: 347, imageAlt: "Robot-mounted external actuator and an internal camera in an abdominal model.",
@@ -125,22 +127,6 @@ export const labProjects = [
 ];
 
 export const projectClips: ProjectClip[] = [
-{
-  id: "school-research-film",
-  project: "disease-resistant-school-communities",
-  assetId: "school-research",
-  duration: 146.888,
-  title: "Disease-resistant school communities research film",
-  caption: "",
-  captions: true,
-  loop: false,
-  description: schoolChapters.map(chapter => chapter.description).join(" "),
-  sourceLabel: "Supplied 3508_raw.MP4; associated study by Cai, Li, Hu, Xu and He (2022)",
-  sourceUrl: "https://doi.org/10.1016/j.jobe.2021.103533",
-  sourceRange: "00:00–02:26.9 (complete film)",
-  audioNote: "Original English narration and music retained. Starts muted; use the native volume control to hear the film. English captions are enabled by default. The full narration transcript is on the accessibility page.",
-  processingNote: "Complete web film at 1920 by 1080 and 30 fps, original speed and full frame, with all closing credits."
-},
 {
   "id": "excavator-assembly",
   "mediaVersion": "vertical-insertion-20261027",
@@ -222,37 +208,8 @@ export const projectClips: ProjectClip[] = [
     description: "A mobile robot with an arm moves near a bed and furniture in a rendered hospital room. A small inset provides a second view. The excerpt shows motion and positioning as part of a simulated disinfection scenario. It does not measure pathogen removal or demonstrate a live connection to the separate building risk models.",
     sourceLabel: "Building, slide 11 / Research Presentation, slide 7", sourceRange: "00:19–00:31", audioNote: "This web excerpt omits source audio and presents the full visual scene at its original speed."
   },
-  {
-    id: "camera-guidance", project: "agentic-robotics_surgeons", duration: 12,
-    title: "External actuation and internal camera motion", caption: "A rendered view connects an external actuator with an internal camera.",
-    description: "A split-screen computer animation shows an external actuator moving above an abdominal surface on the left and a capsule-like camera below the wall on the right. Curved lines depict the actuator–camera relationship. As the external device changes position, the internal camera changes its position or orientation. Black margins from the original video remain visible. The image represents a simulated hardware concept, not footage of a patient or a clinical outcome.",
-    sourceFile: "assets/video/surgery_ai/video_1.mp4", sourceRange: "00:36–00:48", audioNote: "The source audio track is digitally silent; it is omitted from the web excerpt.",
-  },
-  {
-    id: "bench-prototype", project: "agentic-robotics_surgeons", duration: 8.8,
-    title: "Robot-mounted actuator in a laboratory setup", caption: "The physical robot moves above a benchtop abdominal model.",
-    description: "A fixed laboratory camera faces an open, curved abdominal model on a table. A robot-mounted actuator above the model shifts position and orientation as part of the robot arm moves at the right of the frame. Fixtures, supports, and laboratory equipment remain visible. This clip shows an external benchtop setup; it does not show surgery on a person or quantify positioning accuracy. The complete frame and original motion speed are retained.",
-    sourceFile: "assets/video/surgery_ai/video_2.mp4", sourceRange: "00:00–00:08.8", audioNote: "The web excerpt is silent; source laboratory sounds are omitted. No spoken instruction is used in this presentation.",
-  },
-  {
-    id: "camera-assembly", project: "agentic-robotics_surgeons", duration: 12,
-    title: "Inside the camera concept", caption: "An exploded animation reveals the camera’s component arrangement.",
-    description: "Against a black background, a capsule-like camera separates into aligned components. Transparent outer pieces, a cylindrical body, a circuit-board-like component, rings, and end parts appear along the same axis. The viewpoint changes slightly while the assembly remains centered. This is an excerpt of the same concept animation as the actuator-and-camera view.",
-    sourceFile: "assets/video/surgery_ai/video_1.mp4", sourceRange: "00:05–00:17", audioNote: "The source audio track is digitally silent; it is omitted from the web excerpt.",
-  },
 ];
 
-
-// Reuse unchanged source media with distinct player IDs on the new overview.
-for (const assetId of ["indoor-transport", "building-layers"]) {
-  const original = projectClips.find(clip => clip.id === assetId)!;
-  projectClips.push({ ...original, id: `healthy-${assetId}`, project: "digitaltwin_healthybuilding", assetId });
-}
-
-for (const [id, assetId] of [["structures-families", "tpms-families"], ["structures-assembly", "excavator-assembly"]]) {
-  const original = projectClips.find(clip => clip.id === assetId)!;
-  projectClips.push({ ...original, id, project: "architected-structures", assetProject: original.assetProject || original.project, assetId });
-}
 
 export const immunologyPublications = [
   "Xu, Y., Chen, J., Cai, J., Li, S., & He, Q. (2023). Simulation-based trade-off modeling for indoor infection risk of airborne diseases, energy consumption, and thermal comfort. Journal of Building Engineering, 76, 107137.",

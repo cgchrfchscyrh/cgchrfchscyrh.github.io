@@ -27,7 +27,7 @@ const spacing =
   "* { line-height: 1.5 !important; letter-spacing: .12em !important; word-spacing: .16em !important; } p { margin-bottom: 2em !important; }";
 await mkdir("reports/screenshots", { recursive: true });
 try {
-  for (const route of ["/", "/cv/", "/accessibility/", "/404.html", "/building-digital-twin/", ...labProjects.map(p => `/${p.slug}/`)]) {
+  for (const route of ["/", "/cv/", "/accessibility/", "/404.html", "/building-digital-twin/", ...labProjects.filter(p => !p.website).map(p => `/${p.slug}/`)]) {
     const project = labProjects.find(p => route === `/${p.slug}/`);
     const legacyContext = route === "/building-digital-twin/" ? await browser.newContext({ viewport: { width: 1360, height: 1000 } }) : null;
     const page = await (legacyContext || context).newPage();
@@ -137,7 +137,8 @@ try {
         .evaluate((el) => el === document.activeElement),
     );
     if (route === "/") {
-      for (const item of labProjects) check(`${item.title}: homepage project link`, await page.locator(`#lab-projects a[href$="/${item.slug}/"]`).count() > 0);
+      for (const item of labProjects) check(`${item.title}: homepage project link`, await page.locator(item.website ? `#lab-projects a[href="${item.website}"]` : `#lab-projects a[href$="/${item.slug}/"]`).count() > 0);
+      check("Project links point to the AIRIS Lab websites, not old personal-site addresses", await page.locator('a[href*="cgchrfchscyrh.github.io/"]').count() === 0);
       check("Team project bibliography is not added to personal publications", !(await page.locator('#publications').innerText()).includes('Simulation-based trade-off modeling'));
     }
     if (route === "/building-immunology/") {
@@ -151,51 +152,12 @@ try {
       check("Robot page links back to combined building research", await page.locator('a[href$="/building-immunology/"]').count() > 0);
     }
     if (legacyContext) check("Legacy fallback has usable destination links", await page.locator('#combined-project,#robot-project').count() === 2);
-    if (route === "/accessibility/") check("Surgery image and video credits are on the accessibility page", await page.locator('#surgery-media h3').count() === 8 + projectClips.filter(c => c.project === "agentic-robotics_surgeons").length);
-    if (route === "/agentic-robotics_surgeons/") check("Surgery multipanel a-h prototype figure removed",await page.locator('img[src*="adaptive-prototype"]').count() === 0);
+    if (route === "/accessibility/") check("Accessibility page points to the lab websites for moved projects", (await page.locator("#project-media").innerText()).includes("now hosted on the AIRIS Lab websites"));
     if (project) {
       check(`${route}: no introductory subtitles`, await page.locator('.hero-copy > .eyebrow,.hero-subtitle,.coastal-hero .coastal-tagline,.coastal-hero .coastal-intro-copy').count() === 0);
       check(`${route}: no text captions below videos`, await page.locator('figure:has(video) > figcaption,figure:has(video) > details').count() === 0);
-      if (route === "/agentic-robotics_surgeons/") {
-        check(`${route}: team section removed; research vision is text only`, await page.locator('#vision,#team').count() === 0 && await page.locator('#research-vision img,#research-vision video').count() === 0);
-        check(`${route}: opening film retains its complete frame`, await page.locator('.surgery-opening video').evaluateAll(vs => vs.length === 1 && vs.every(v => getComputedStyle(v).objectFit === 'contain')));
-        check(`${route}: opening concept animation; laboratory prototype and coupling animation sit with External Magnetic Actuation`, await page.locator('.surgery-opening video').evaluateAll(vs => vs[0]?.id === 'camera-assembly-video') && await page.locator('#method .surgery-actuation video').evaluateAll(vs => vs.length === 2 && vs[0].id === 'bench-prototype-video' && vs[1].id === 'camera-guidance-video'));
-        check(`${route}: title and subtitle follow the supplied copy`, (await page.locator('h1').innerText()) === 'Agentic and Bioinspired Robotics for Minimally Invasive Surgery' && (await page.locator('.surgery-subtitle').innerText()) === 'Exploring robotic actuation, bioinspired mechanisms, and agentic intelligence for surgeon-centered robotic assistance.');
-        check(`${route}: section order follows the supplied copy`, JSON.stringify(await page.locator('main h2').allTextContents()) === JSON.stringify(['Three Research Challenges', '01 — Magnetically Actuated Surgical Cameras', '02 — Bioinspired Optical Maintenance', '03 — Agentic AI for Surgical Robotics', 'Research Vision', 'Related Publications']));
-        check(`${route}: twelve related publications link to DOI records`, await page.locator('#publications .surgery-pub-list > li').count() === 12 && await page.locator('#publications .surgery-pub-title a[href^="https://doi.org/10."]').count() === 12);
-        check(`${route}: repeated film and requested text removed`, await page.locator('.surgery-section-links,.surgery-publication > p:not(.surgery-subtitle),.surgery-scope,.surgery-evidence,#surgery-opening-video').count() === 0 && !/research stage/i.test(await page.locator('main').innerText()));
-        check(`${route}: each video source appears once`, await page.locator('video source').evaluateAll(sources => new Set(sources.map(source => source.src)).size === sources.length));
-        check(`${route}: no header or footer bars`, await page.locator('.project-header,.project-footer').count() === 0);
-        check(`${route}: research directions have separate named sections`, await page.locator('#method > h2,#cleaning > h2,#visual-ai > h2').count() === 3);
-        check(`${route}: video IDs are unique`, await page.locator('video').evaluateAll(vs => new Set(vs.map(v => v.id)).size === vs.length));
-        check(`${route}: no collapsed details or visible source blocks`, await page.locator('main details,.source-section,.surgery-bubble').count() === 0);
-        check(`${route}: credits link reaches the accessibility page`, await page.locator('a[href$="accessibility/#surgery-media"]').count() === 1);
-      } else if (route === "/disease-resistant-school-communities/") {
-        check(`${route}: no header, footer or disclosures`, await page.locator('.project-header,.project-footer,main details,main summary,.source-section').count() === 0);
-        check(`${route}: title, subtitle, and sections follow the supplied copy`, (await page.locator('h1').innerText()).replace(/\s+/g, ' ').trim() === 'Disease-Resistant School Communities' && (await page.locator('.school-intro > p').innerText()) === 'Building healthier, more resilient school communities through science, technology, and community engagement.' && JSON.stringify(await page.locator('main h2').allTextContents()) === JSON.stringify(['Research Overview', 'Community Engagement', 'Selected Publications']) && JSON.stringify(await page.locator('main h3').allTextContents()) === JSON.stringify(['K–12 Education & Citizen Science', 'Community & Policy Engagement']));
-        check(`${route}: one complete research film with captions, and a narration link`, await page.locator('#overview video').count() === 1 && await page.locator('#school-research-film-video track[kind="captions"]').count() === 1 && await page.locator('.school-film-note a[href$="accessibility/#school-transcript"]').count() === 1);
-        check(`${route}: K-12 sampling photo sits with K-12 Education & Citizen Science`, await page.locator('#engagement .school-engagement-item:first-child img[src$="k12-sampling.webp"]').count() === 1);
-        check(`${route}: six selected publications link to DOI records, including the film's study`, await page.locator('#publications .school-pub-list > li').count() === 6 && await page.locator('#publications .school-pub-title a[href^="https://doi.org/10."]').count() === 6 && await page.locator('#publications a[href="https://doi.org/10.1016/j.jobe.2021.103533"]').count() === 1);
-      } else if (route === "/architected-structures/" || route === "/digitaltwin_healthybuilding/") {
-        check(`${route}: no navigation bars, footer, disclosures, or illustrated vision section`, await page.locator('.project-header,.project-footer,main nav,main details,main summary,#vision,.research-vision,.source-section').count() === 0);
-        check(`${route}: no outgoing links`, await page.locator('a[href]').evaluateAll(links => links.every(a => a.getAttribute('href').startsWith('#'))));
-        const expectedFigures = route === "/digitaltwin_healthybuilding/" ? 2 : 4;
-        check(`${route}: expected research figures remain visible`, await page.locator('main .project-figure:visible').count() === expectedFigures);
-        if (route === "/architected-structures/") {
-          check(`${route}: title, subtitle, and section order follow the supplied copy`, (await page.locator('h1').innerText()).replace(/\s+/g, ' ').trim() === 'Robot-Aware Design and Assembly of Architected Structures' && (await page.locator('.architected-subtitle').innerText()) === 'Integrating Computational Design, Structural Functionality, and Robotic Construction for Diverse Engineering Environments.' && JSON.stringify(await page.locator('main h2').allTextContents()) === JSON.stringify(['The Problem', 'Our Rationale', 'Architected Structural Design', 'Assembly-Aware Structural Interfaces', 'Robotic Assembly Planning and Execution', 'Research Vision']));
-          check(`${route}: media labels follow the supplied figure mapping`, JSON.stringify(await page.locator('main h3').allTextContents()) === JSON.stringify(['Architected Structural Geometries', 'Robotic Fabrication', 'Modular Connection Strategies', 'Structural Interface Design', 'Application-Oriented Modular Assembly', 'Illustrative Robot-Assisted Assembly']) && await page.locator('#research-vision img,#research-vision video').count() === 0);
-        }
-        if (route === "/architected-structures/") check(`${route}: connection concepts are expanded`, await page.locator('.architected-connections [data-figure="connections"]').isVisible());
-        if (route === "/digitaltwin_healthybuilding/") {
-          check(`${route}: title, subtitle, and sections follow the supplied copy`, (await page.locator('h1').innerText()).replace(/\s+/g, ' ').trim() === 'Digital Twins for Healthy Built Environments' && (await page.locator('.healthy-subtitle').innerText()) === 'Connecting environmental intelligence, predictive modeling, and human-centered interaction.' && JSON.stringify(await page.locator('main h2').allTextContents()) === JSON.stringify(['Research Vision', 'Modeling Building–Occupant–Environment Interactions', 'Digital Twins for Indoor Health Intelligence', 'Social Robotics & Human–Robot Interaction', 'Selected Publications']));
-          check(`${route}: no disinfection-robot media or paper`, await page.locator('#healthy-disinfection-simulation-video,video[id*="disinfection"]').count() === 0 && !/disinfection/i.test(await page.locator('main').innerText()));
-          check(`${route}: framework, digital twin videos, and human–robot photo sit in their sections`, await page.locator('#modeling [data-figure="twin-framework"]').count() === 1 && await page.locator('#prediction video').count() === 2 && await page.locator('#engage [data-figure="occupant-interaction"]').count() === 1);
-          check(`${route}: publication titles and authors retained as text`, await page.locator('.healthy-pub-list h3').count() === 3 && await page.locator('.healthy-authors').count() === 3 && await page.locator('#publications a').count() === 0);
-        }
-      } else {
       check(`${route}: larger vision section exists`, await page.locator('#vision').count() === 1);
       check(`${route}: visual collaboration map`, await page.locator(".vision-connections li").count() === 3 && await page.locator(".vision-scene").getByRole("img").count() === 1);
-      }
 
       const clips = projectClips.filter(c => c.project === project.slug);
       const videos = page.locator('video');
@@ -374,6 +336,13 @@ try {
     await page.close();
     await legacyContext?.close();
   }
+  const moved = await context.newPage();
+  for (const item of labProjects.filter(p => p.website)) {
+    const response = await moved.request.get(`${base}/${item.slug}/`);
+    const html = await response.text();
+    check(`Old address /${item.slug}/ redirects to the lab website`, response.status() === 200 && html.includes(`url=${item.website}`));
+  }
+  await moved.close();
   const migration = await context.newPage();
   for (const [from, to] of [
     ["/building-digital-twin/", "/building-immunology/#simulation"],

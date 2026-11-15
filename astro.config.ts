@@ -5,6 +5,14 @@ export default defineConfig({
   output: "static",
   site: process.env.SITE_URL || undefined,
   base: process.env.BASE_PATH || "/",
-  // Project pages renamed in November 2026 keep their old addresses as redirects.
-  redirects: { "/surgery-ai": "/agentic-robotics_surgeons/", "/healthy-built-environments": "/digitaltwin_healthybuilding/" },
+  // Project pages that moved to the AIRIS Lab account in November 2026 redirect there,
+  // including the older addresses of renamed pages.
+  redirects: {
+    "/agentic-robotics_surgeons": "https://shuaili90.github.io/agentic-robotics_surgeons/",
+    "/architected-structures": "https://shuaili90.github.io/architected-structures/",
+    "/digitaltwin_healthybuilding": "https://shuaili90.github.io/digitaltwin_healthybuilding/",
+    "/disease-resistant-school-communities": "https://shuaili90.github.io/disease-resistant-school-communities/",
+    "/surgery-ai": "https://shuaili90.github.io/agentic-robotics_surgeons/",
+    "/healthy-built-environments": "https://shuaili90.github.io/digitaltwin_healthybuilding/",
+  },
 });
